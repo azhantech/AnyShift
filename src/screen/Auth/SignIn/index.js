@@ -32,6 +32,7 @@ const SignInScreen = () => {
       <View style={styles.btnContainer}>
       <CustomButton text="Sign In" />
       </View>
+      
     </View>
   );
 };
