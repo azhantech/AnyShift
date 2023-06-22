@@ -1,0 +1,33 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/index.js",
+      "sha1": "6daa770e9740eee3f548c1448a2e29066e214739"
+    },
+    {
+      "path": "src/assets/fonts/QanelasBold.otf",
+      "sha1": "08a2741ecb2b3b6de1bf32aac8eb334b5f63d76f"
+    },
+    {
+      "path": "src/assets/fonts/QanelasMedium.otf",
+      "sha1": "74f67a08c46cfd1eb9199c352d279539139f8c51"
+    },
+    {
+      "path": "src/assets/fonts/QanelasRegular.otf",
+      "sha1": "c7bcdc6336779780122587d022c05c7667b261fc"
+    },
+    {
+      "path": "src/assets/fonts/QanelasSemiBold.otf",
+      "sha1": "50b41619f53a2eec6a2027bba87af6402a4923c0"
+    },
+    {
+      "path": "src/assets/fonts/SFProDisplay-Medium.OTF",
+      "sha1": "a5f5e08dd38cac2f857fb7510f7e92a2399b6f5c"
+    },
+    {
+      "path": "src/assets/fonts/SFProDisplay-Regular.OTF",
+      "sha1": "e19df199e78d296e5b6491d4832a76756532ed43"
+    }
+  ]
+}

@@ -14,6 +14,13 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-AnyShift-AnyShiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AnyShift-AnyShiftTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		C875A530B3B046D285B78405 /* QanelasBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC15E547537B436F8FA819F4 /* QanelasBold.otf */; };
+		25FFB3072BFC4E0D9FAE70E7 /* QanelasMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 418C99A04A174EC99E65A686 /* QanelasMedium.otf */; };
+		FC953DE3D2164A0A96D39D7C /* QanelasRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */; };
+		BAE077857B5A40128F4DE91F /* QanelasSemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */; };
+		1EBC0DCAD17445B89CE667E9 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D5C2D3D524C78B45FDB1D /* index.js */; };
+		9E5EEAE42575452783914B3E /* SFProDisplay-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */; };
+		3FB712E07D944467B7615236 /* SFProDisplay-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +51,13 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AnyShift/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AnyShift-AnyShiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyShift-AnyShiftTests.release.xcconfig"; path = "Target Support Files/Pods-AnyShift-AnyShiftTests/Pods-AnyShift-AnyShiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		AC15E547537B436F8FA819F4 /* QanelasBold.otf */ = {isa = PBXFileReference; name = "QanelasBold.otf"; path = "../src/assets/fonts/QanelasBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		418C99A04A174EC99E65A686 /* QanelasMedium.otf */ = {isa = PBXFileReference; name = "QanelasMedium.otf"; path = "../src/assets/fonts/QanelasMedium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */ = {isa = PBXFileReference; name = "QanelasRegular.otf"; path = "../src/assets/fonts/QanelasRegular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */ = {isa = PBXFileReference; name = "QanelasSemiBold.otf"; path = "../src/assets/fonts/QanelasSemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7A1D5C2D3D524C78B45FDB1D /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/assets/fonts/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */ = {isa = PBXFileReference; name = "SFProDisplay-Medium.OTF"; path = "../src/assets/fonts/SFProDisplay-Medium.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */ = {isa = PBXFileReference; name = "SFProDisplay-Regular.OTF"; path = "../src/assets/fonts/SFProDisplay-Regular.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +136,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				DEF2C1AA6C3742C59FF5D2FF /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +162,21 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		DEF2C1AA6C3742C59FF5D2FF /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				AC15E547537B436F8FA819F4 /* QanelasBold.otf */,
+				418C99A04A174EC99E65A686 /* QanelasMedium.otf */,
+				67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */,
+				401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */,
+				7A1D5C2D3D524C78B45FDB1D /* index.js */,
+				46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */,
+				CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +274,13 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C875A530B3B046D285B78405 /* QanelasBold.otf in Resources */,
+				25FFB3072BFC4E0D9FAE70E7 /* QanelasMedium.otf in Resources */,
+				FC953DE3D2164A0A96D39D7C /* QanelasRegular.otf in Resources */,
+				BAE077857B5A40128F4DE91F /* QanelasSemiBold.otf in Resources */,
+				1EBC0DCAD17445B89CE667E9 /* index.js in Resources */,
+				9E5EEAE42575452783914B3E /* SFProDisplay-Medium.OTF in Resources */,
+				3FB712E07D944467B7615236 /* SFProDisplay-Regular.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
