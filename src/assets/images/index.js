@@ -19,6 +19,7 @@ export const icons = {
   email: require('./icons/eMail.png'),
   cameraIcon: require('./icons/camera.png'),
   userIcon: require('./icons/user.png'),
+  AppleIcon: require('./icons/AppleIcon.png'),
 };
 
 export const generalImage = {
@@ -28,5 +29,5 @@ export const generalImage = {
   image1: require('../images/generalImage/image1.png'),
   image2: require('../images/generalImage/image2.png'),
   image3: require('../images/generalImage/image3.png'),
-  authHeaderLogo: require('../images/generalImage/headerLogo.png')
+  authHeaderLogo: require('../images/generalImage/headerLogo.png'),
 };

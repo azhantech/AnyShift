@@ -34,4 +34,43 @@ export const styles = StyleSheet.create({
     height: vh * 10,
     justifyContent: 'center',
   },
+  donthaveAccountContainer: {
+    width: containerWidth,
+    height: containerWidth / 4.86,
+    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  rowContainer: {
+    width: containerWidth / 1.4733,
+    height: containerWidth / 16.733,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  textbtn: {
+    color: colors.primaryColor,
+    textDecorationLine: 'underline',
+  },
+  socialContainer: {
+    width: containerWidth * 0.81,
+    height: containerWidth / 2.9,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  socialbtnContainer: {
+    width: containerWidth / 4.9,
+    height: containerWidth / 4.9,
+    borderRadius: containerWidth / 4.9 / 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: colors.textColor,
+  },
+  iconStyle: {
+    resizeMode: 'contain',
+    width: containerWidth / 17.733,
+    height: containerWidth / 17.733,
+  },
 });
