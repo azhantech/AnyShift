@@ -20,6 +20,9 @@ export const icons = {
   cameraIcon: require('./icons/camera.png'),
   userIcon: require('./icons/user.png'),
   AppleIcon: require('./icons/AppleIcon.png'),
+  EmployeeIcon: require('./icons/EmployeeIcon.png'),
+  EmployerIcon: require('./icons/EmployerIcon.png'),
+  check: require('./icons/check.png'),
 };
 
 export const generalImage = {

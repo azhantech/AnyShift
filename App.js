@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {colors} from './src/utils/appTheme';
 import SignInScreen from './src/screen/Auth/SignIn';
+import SignupScreen from './src/screen/Auth/SignUp';
 import SplashScreen from 'react-native-splash-screen';
 const App = () => {
   useEffect(() => {
@@ -9,7 +10,7 @@ const App = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <SignInScreen />
+      <SignupScreen />
     </View>
   );
 };
