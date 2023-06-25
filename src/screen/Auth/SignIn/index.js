@@ -2,12 +2,10 @@ import React from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
 import InputField from '../../../component/Inputs/InputField';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {generalImage, icons} from '../../../assets/images';
+import {icons} from '../../../assets/images';
 import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
-import {vh, vw} from '../../../utils/dimensions';
 import AuthHeader from '../../../component/Headers/AuthHeader';
 const SignInScreen = () => {
   return (

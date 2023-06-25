@@ -31,6 +31,10 @@ export const colors = {
   purple: '#435BF6',
   completeText: '#43FC2E',
   themeColor: '#213D88',
+  unfilled: '#D5CFCF',
+  filled: '#FF8D8D',
+  darkGray: '#666666'
+
 };
 export const linearColors = {
   black: ['rgba(29,29,29,0.65)', 'rgba(55,55,55,0)'],
