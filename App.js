@@ -5,13 +5,14 @@ import SignInScreen from './src/screen/Auth/SignIn';
 import SignupScreen from './src/screen/Auth/SignUp';
 import SplashScreen from 'react-native-splash-screen';
 import OnBoarding from './src/screen/Auth/OnBoarding/OnBoarding';
+import ForgotPasswordScreen from './src/screen/Auth/ForgotPasswordScreen';
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
   }, []);
   return (
     <View style={styles.container}>
-      <OnBoarding />
+      <ForgotPasswordScreen />
     </View>
   );
 };

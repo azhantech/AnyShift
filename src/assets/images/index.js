@@ -23,6 +23,7 @@ export const icons = {
   EmployeeIcon: require('./icons/EmployeeIcon.png'),
   EmployerIcon: require('./icons/EmployerIcon.png'),
   check: require('./icons/check.png'),
+  warning: require('./icons/warning.png'),
 };
 
 export const generalImage = {

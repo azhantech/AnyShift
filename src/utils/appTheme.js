@@ -33,7 +33,8 @@ export const colors = {
   themeColor: '#213D88',
   unfilled: '#D5CFCF',
   filled: '#FF8D8D',
-  darkGray: '#666666'
+  darkGray: '#666666',
+  modalBackground: '#010101',
 
 };
 export const linearColors = {

@@ -179,6 +179,10 @@ const styles = StyleSheet.create({
 
   inputFieldStyle:{
     marginTop: 2 * vh,
-  }
+  },
+
+  modalContainerStyle: {
+    height: 45 * vh,
+  },
 });
 export default styles;

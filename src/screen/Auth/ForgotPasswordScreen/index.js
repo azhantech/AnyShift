@@ -3,15 +3,17 @@ import {TouchableOpacity, View} from 'react-native';
 import {icons} from '../../../assets/images/index';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-// import ButtonTouchableTextButton from '../../../components/Buttons/BottomTouchableTextButton';
 import styles from './styles';
 import MainContainer from '../../../component/MainContainer';
 import ScrollWrapper from '../../../component/ScrollWrapper';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import AuthHeader from '../../../component/Headers/AuthHeader';
 import InputField from '../../../component/Inputs/InputField';
+import GeneralModal from '../../../component/ModalMessages/GeneralModal';
 
 const ForgotPasswordScreen = props => {
+  const [cancelReasonModal, setCancelReasonModal] = useState(false);
+
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [confirmPassword, setConfirmPassword] = useState(null);
@@ -20,6 +22,10 @@ const ForgotPasswordScreen = props => {
   const [step, setStep] = useState(1);
   const handleEmail = () => {
     setStep(step + 1);
+  };
+
+  const onHandleCancelReasonModal = () => {
+    setCancelReasonModal(!cancelReasonModal);
   };
 
   const handleVerification = () => {
@@ -171,6 +177,17 @@ const ForgotPasswordScreen = props => {
         contentContainerStyle={styles.content}>
         <AuthHeader />
         {renderFields()}
+
+        <GeneralModal
+          visible={true}
+          onPress={onHandleCancelReasonModal}
+          onHide={onHandleCancelReasonModal}
+          style={styles.modalContainerStyle}
+          buttonTitle="OK"
+          icon={icons.warning}
+          firstDescription="Complete Profile to Proceed"
+          placeholder="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut."
+        />
       </ScrollWrapper>
     </MainContainer>
   );
