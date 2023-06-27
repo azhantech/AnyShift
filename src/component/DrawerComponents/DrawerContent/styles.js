@@ -5,7 +5,7 @@ import { vh, vw } from '../../../utils/dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.darkGray,
+    backgroundColor: colors.drawerColor,
   },
   routeContainer: {
     marginTop: 3 * vh,

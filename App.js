@@ -11,8 +11,8 @@ const App = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <ForgotPasswordScreen />
-      {/* <Navigation /> */}
+      {/* <ForgotPasswordScreen /> */}
+      <Navigation />
     </View>
   );
 };

@@ -35,6 +35,7 @@ export const colors = {
   filled: '#FF8D8D',
   darkGray: '#666666',
   modalBackground: '#010101',
+  drawerColor: '#FF0000'
 
 };
 export const linearColors = {

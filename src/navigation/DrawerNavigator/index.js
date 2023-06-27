@@ -29,15 +29,15 @@ const DrawerNavigator = props => {
         drawerType: 'slide',
         headerShown: false,
         drawerStyle: {
-          backgroundColor: colors.red,
+          backgroundColor: colors.drawerColor,
           width: '55%',
         },
         overlayColor: 'transparent',
         sceneContainerStyle: {
-          backgroundColor: colors.red,
+          backgroundColor: colors.drawerColor,
         },
       }}
-      // drawerContent={props => <DrawerContent {...props} />}
+      drawerContent={props => <DrawerContent {...props} />}
       >
       <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
       {/* <Drawer.Screen name="ProfileStack" component={AnimatedProfileStack} /> */}
