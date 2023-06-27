@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { colors } from '../../../utils/appTheme';
-import { vh, vw } from '../../../utils/dimensions';
+import {colors} from '../../../utils/appTheme';
+import {vh, vw} from '../../../utils/dimensions';
 
 export default StyleSheet.create({
   mainContainerView: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     width: 100 * vw,
     position: 'absolute',
     backgroundColor: colors.modalBackground,
-    opacity: 0.5,
+    opacity: 0.8,
   },
 
   miniContainerView: {
@@ -49,16 +49,17 @@ export default StyleSheet.create({
   textStyle: {
     textAlign: 'center',
     marginVertical: vh * 1.2,
-    fontSize:2* vh,
+    fontSize: 2 * vh,
     lineHeight: vh * 3,
     color: colors.black,
+    width: 40 * vw,
+    textTransform: 'uppercase',
   },
 
   textDescriptionView: {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 2 * vh,
-    marginHorizontal: vw * 7
   },
 
   textButtonStyle: {
@@ -84,5 +85,16 @@ export default StyleSheet.create({
     fontSize: 1.8 * vh,
     marginTop: 1.5 * vh,
     marginBottom: 1.5 * vh,
+  },
+
+  CustomButtonView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  CustomButtonStyle: {
+    width: 40 * vw,
+    marginTop: 2 * vh,
+    marginBottom: 3 * vh
   },
 });

@@ -1,9 +1,11 @@
 import React from 'react';
 import {View, Modal, Image, Animated, TouchableOpacity} from 'react-native';
 import styles from './styles';
-import QanelasMedium from '../../Texts/QanelasMedium';
+import QanelasBold from '../../Texts/QanelasBold';
+import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import CustomButton from '../../Buttons/CustomButton';
 import {icons} from '../../../assets/images';
+import {colors} from '../../../utils/appTheme';
 
 const GeneralModal = props => {
   const handleHide = () => {
@@ -22,8 +24,7 @@ const GeneralModal = props => {
       <View style={styles.mainContainerView}>
         <TouchableOpacity
           onPress={() => handleHide()}
-          style={styles.mainBlurViewContiner}>
-        </TouchableOpacity>
+          style={styles.mainBlurViewContiner}></TouchableOpacity>
         <View style={[styles.miniContainerView, props?.style]}>
           <View style={[styles.warningIconView]}>
             <Animated.Image
@@ -33,29 +34,26 @@ const GeneralModal = props => {
           </View>
 
           <View style={styles.textDescriptionView}>
-            <QanelasMedium style={styles.textStyle}>
+            <QanelasBold style={styles.textStyle}>
               {props?.firstDescription}
-            </QanelasMedium>
+            </QanelasBold>
 
             {props?.placeholder && (
-              <QanelasMedium style={styles.placeholderTextStyle}>
+              <QanelasSemiBold style={styles.placeholderTextStyle}>
                 {props?.placeholder}
-              </QanelasMedium>
+              </QanelasSemiBold>
             )}
 
             {props?.secondDescription && (
-              <QanelasMedium style={styles.textStyle}>
+              <QanelasSemiBold style={styles.textStyle}>
                 {props?.secondDescription}
-              </QanelasMedium>
+              </QanelasSemiBold>
             )}
-          </View>
 
-          <View style={styles.CustomButtonView}>
             <CustomButton
               onPress={props?.onPress}
               style={[styles.CustomButtonStyle, props?.buttonStyle]}
-              color={props?.buttonTextColor}
-              title={props?.buttonTitle}
+              text={props?.buttonTitle}
             />
           </View>
         </View>

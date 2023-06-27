@@ -179,11 +179,10 @@ const ForgotPasswordScreen = props => {
         {renderFields()}
 
         <GeneralModal
-          visible={true}
+          visible={cancelReasonModal}
           onPress={onHandleCancelReasonModal}
           onHide={onHandleCancelReasonModal}
-          style={styles.modalContainerStyle}
-          buttonTitle="OK"
+          buttonTitle="Okay"
           icon={icons.warning}
           firstDescription="Complete Profile to Proceed"
           placeholder="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut."
