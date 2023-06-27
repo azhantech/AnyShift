@@ -12,20 +12,21 @@ const styles = StyleSheet.create({
     marginLeft: vw * 10,
   },
   name: {
-    fontSize: 2 * vh,
+    fontSize: 2.6 * vh,
     color: colors.white,
-    marginLeft: 5 * vw,
     width: 30 * vw,
+    textAlign: 'center',
+    marginTop: 1 * vh
   },
   profileImage: {
-    height: vh * 6,
-    width: vh * 6,
+    height: vh * 7,
+    width: vh * 7,
     borderRadius: (vh * 10) / 2,
     tintColor: colors.white,
   },
   header: {
-    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
     marginTop: vh * 10,
     marginBottom: 2 * vh,
     marginLeft: 8 * vw,
@@ -48,5 +49,31 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+
+  locationTextStyle:{
+    color: colors.white,
+    fontSize: 1.6 * vh
+  },
+
+  locationIconStyle:{
+    resizeMode: 'contain',
+    height: 3 * vh,
+    width: 3 * vw
+  },
+
+  locationViewStyle:{
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: 28 * vw, 
+  },
+
+  profileImageViewStyle:{
+    backgroundColor: 'green',
+    borderWidth: 0.8 * vw,
+    borderColor: colors.white,
+    borderRadius: vh * 4,
+
+  }
 });
 export default styles;

@@ -2,11 +2,12 @@ import React from 'react';
 import styles from './styles';
 import DrawerButton from '../DrawerButton';
 import {Image, View} from 'react-native';
-import QanelasBold from '../../Texts/QanelasBold';
+import QanelasSemiBold from '../../Texts/QanelasSemiBold';
+import QanelasMedium from '../../Texts/QanelasMedium'
 import {useDrawerProgress} from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import {drawerRoutes} from '../../../navigation/NavigationOptions';
-import {generalImage} from '../../../assets/images';
+import {generalImage, icons} from '../../../assets/images';
 import {vw} from '../../../utils/dimensions';
 const routeOrders = ['HomeStack'];
 
@@ -39,11 +40,19 @@ const DrawerContent = props => {
   return (
     <View style={styles.container}>
       <AnimatedTouchable style={[styles.header, animatedStyles]}>
+        <View style={styles.profileImageViewStyle}>
         <Image
           source={generalImage.profilePlaceholder}
           style={styles.profileImage}
         />
-        <QanelasBold style={styles.name}>Hello User</QanelasBold>
+        </View>
+        <QanelasSemiBold style={styles.name}>James Milner</QanelasSemiBold>
+
+        <View style={styles.locationViewStyle}>
+          <Image source={icons.location} style={styles.locationIconStyle}/>
+
+          <QanelasMedium style={styles.locationTextStyle}>Frankfurt, Germany</QanelasMedium>
+        </View>
       </AnimatedTouchable>
       <View style={styles.routeContainer}>
         {routeOrders.map((item, index) => {

@@ -33,8 +33,8 @@ export const icons = {
   tab2: require('./icons/tab2.png'),
   tab3: require('./icons/tab3.png'),
   tab4: require('./icons/tab4.png'),
-  tab5: require('./icons/tab5.png')
-
+  tab5: require('./icons/tab5.png'),
+  location: require('./icons/location.png')
 };
 
 export const generalImage = {
