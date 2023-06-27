@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen';
 import Registration from './src/screen/Auth/Registration';
 import OnBoarding from './src/screen/Auth/OnBoarding/OnBoarding';
 import ForgotPasswordScreen from './src/screen/Auth/ForgotPasswordScreen';
+import OnBoarding from './src/screen/Auth/OnBoarding/OnBoarding';
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
