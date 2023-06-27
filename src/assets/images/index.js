@@ -25,6 +25,11 @@ export const icons = {
   check: require('./icons/check.png'),
   warning: require('./icons/warning.png'),
   dropDown: require('./icons/dropdown.png'),
+  homeDrawer: require('./icons/homeDrawer.png'),
+  drawer: require('./icons/drawer.png'),
+  back: require('./icons/back.png'),
+  notification: require('./icons/notification.png'),
+  tab1: require('./icons/tab1.png')
 };
 
 export const generalImage = {
@@ -35,4 +40,5 @@ export const generalImage = {
   image2: require('../images/generalImage/image2.png'),
   image3: require('../images/generalImage/image3.png'),
   authHeaderLogo: require('../images/generalImage/headerLogo.png'),
+  profilePlaceholder: require('../images/generalImage/profilePlaceholder.png')
 };

@@ -181,8 +181,6 @@ const styles = StyleSheet.create({
     marginTop: 2 * vh,
   },
 
-  modalContainerStyle: {
-    height: 45 * vh,
-  },
+ 
 });
 export default styles;

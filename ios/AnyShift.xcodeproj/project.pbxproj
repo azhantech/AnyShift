@@ -12,15 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1EBC0DCAD17445B89CE667E9 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D5C2D3D524C78B45FDB1D /* index.js */; };
+		25FFB3072BFC4E0D9FAE70E7 /* QanelasMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 418C99A04A174EC99E65A686 /* QanelasMedium.otf */; };
+		3FB712E07D944467B7615236 /* SFProDisplay-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */; };
 		7699B88040F8A987B510C191 /* libPods-AnyShift-AnyShiftTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-AnyShift-AnyShiftTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		C875A530B3B046D285B78405 /* QanelasBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC15E547537B436F8FA819F4 /* QanelasBold.otf */; };
-		25FFB3072BFC4E0D9FAE70E7 /* QanelasMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 418C99A04A174EC99E65A686 /* QanelasMedium.otf */; };
-		FC953DE3D2164A0A96D39D7C /* QanelasRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */; };
-		BAE077857B5A40128F4DE91F /* QanelasSemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */; };
-		1EBC0DCAD17445B89CE667E9 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 7A1D5C2D3D524C78B45FDB1D /* index.js */; };
 		9E5EEAE42575452783914B3E /* SFProDisplay-Medium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */; };
-		3FB712E07D944467B7615236 /* SFProDisplay-Regular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */; };
+		BAE077857B5A40128F4DE91F /* QanelasSemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */; };
+		C875A530B3B046D285B78405 /* QanelasBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC15E547537B436F8FA819F4 /* QanelasBold.otf */; };
+		FC953DE3D2164A0A96D39D7C /* QanelasRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,19 +45,19 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AnyShift/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-AnyShift-AnyShiftTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnyShift-AnyShiftTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-AnyShift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyShift.debug.xcconfig"; path = "Target Support Files/Pods-AnyShift/Pods-AnyShift.debug.xcconfig"; sourceTree = "<group>"; };
+		401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = QanelasSemiBold.otf; path = ../src/assets/fonts/QanelasSemiBold.otf; sourceTree = "<group>"; };
+		418C99A04A174EC99E65A686 /* QanelasMedium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = QanelasMedium.otf; path = ../src/assets/fonts/QanelasMedium.otf; sourceTree = "<group>"; };
+		46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProDisplay-Medium.OTF"; path = "../src/assets/fonts/SFProDisplay-Medium.OTF"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-AnyShift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyShift.release.xcconfig"; path = "Target Support Files/Pods-AnyShift/Pods-AnyShift.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-AnyShift-AnyShiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyShift-AnyShiftTests.debug.xcconfig"; path = "Target Support Files/Pods-AnyShift-AnyShiftTests/Pods-AnyShift-AnyShiftTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-AnyShift.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnyShift.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = QanelasRegular.otf; path = ../src/assets/fonts/QanelasRegular.otf; sourceTree = "<group>"; };
+		7A1D5C2D3D524C78B45FDB1D /* index.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = index.js; path = ../src/assets/fonts/index.js; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AnyShift/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-AnyShift-AnyShiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnyShift-AnyShiftTests.release.xcconfig"; path = "Target Support Files/Pods-AnyShift-AnyShiftTests/Pods-AnyShift-AnyShiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC15E547537B436F8FA819F4 /* QanelasBold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = QanelasBold.otf; path = ../src/assets/fonts/QanelasBold.otf; sourceTree = "<group>"; };
+		CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "SFProDisplay-Regular.OTF"; path = "../src/assets/fonts/SFProDisplay-Regular.OTF"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		AC15E547537B436F8FA819F4 /* QanelasBold.otf */ = {isa = PBXFileReference; name = "QanelasBold.otf"; path = "../src/assets/fonts/QanelasBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		418C99A04A174EC99E65A686 /* QanelasMedium.otf */ = {isa = PBXFileReference; name = "QanelasMedium.otf"; path = "../src/assets/fonts/QanelasMedium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		67EE480DB1304C6AB0D6AFD7 /* QanelasRegular.otf */ = {isa = PBXFileReference; name = "QanelasRegular.otf"; path = "../src/assets/fonts/QanelasRegular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		401187F1F400491EB68ADAD7 /* QanelasSemiBold.otf */ = {isa = PBXFileReference; name = "QanelasSemiBold.otf"; path = "../src/assets/fonts/QanelasSemiBold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7A1D5C2D3D524C78B45FDB1D /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/assets/fonts/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		46E1FF1DF29B4168ABE17165 /* SFProDisplay-Medium.OTF */ = {isa = PBXFileReference; name = "SFProDisplay-Medium.OTF"; path = "../src/assets/fonts/SFProDisplay-Medium.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */ = {isa = PBXFileReference; name = "SFProDisplay-Regular.OTF"; path = "../src/assets/fonts/SFProDisplay-Regular.OTF"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +164,7 @@
 			sourceTree = "<group>";
 		};
 		DEF2C1AA6C3742C59FF5D2FF /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				AC15E547537B436F8FA819F4 /* QanelasBold.otf */,
 				418C99A04A174EC99E65A686 /* QanelasMedium.otf */,
@@ -175,8 +175,8 @@
 				CA78BA7E416C4A15A2B7EE33 /* SFProDisplay-Regular.OTF */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

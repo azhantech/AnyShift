@@ -157,7 +157,9 @@ const ForgotPasswordScreen = props => {
           )}
         </View>
 
-        <TouchableOpacity style={styles.donthaveAccountContainer}>
+        <TouchableOpacity
+          onPress={onHandleCancelReasonModal}
+          style={styles.donthaveAccountContainer}>
           <View style={styles.rowContainer}>
             <QanelasRegular style={styles.backToTextStyle}>
               Back To Login

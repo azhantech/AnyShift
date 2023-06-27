@@ -8,7 +8,7 @@ buildscript {
         minSdkVersion = 21
         compileSdkVersion = 33
         targetSdkVersion = 31
-        kotlin_version = '1.5.21'
+        // kotlin_version = '1.5.21'
 
         if (System.properties['os.arch'] == "aarch64") {
             // For M1 Users we need to use the NDK 24 which added support for aarch64
@@ -30,11 +30,14 @@ buildscript {
         classpath("com.android.tools.build:gradle:7.0.4")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("de.undercouch:gradle-download-task:4.1.2")
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        // classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
+
+def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
+
 
 allprojects {
     repositories {
@@ -53,6 +56,11 @@ allprojects {
                 excludeGroup "com.facebook.react"
             }
         }
+        configurations.all {
+        resolutionStrategy {
+            force "com.facebook.react:react-native:" + REACT_NATIVE_VERSION
+        }
+    }
         google()
         maven { url 'https://www.jitpack.io' }
     }
