@@ -7,7 +7,7 @@ import {useDrawerProgress} from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import {drawerRoutes} from '../../../navigation/NavigationOptions';
 import {generalImage} from '../../../assets/images';
-import { vw } from '../../../utils/dimensions';
+import {vw} from '../../../utils/dimensions';
 const routeOrders = ['HomeStack'];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);
@@ -43,9 +43,7 @@ const DrawerContent = props => {
           source={generalImage.profilePlaceholder}
           style={styles.profileImage}
         />
-        <QanelasBold style={styles.name}>
-          Hello User
-        </QanelasBold>
+        <QanelasBold style={styles.name}>Hello User</QanelasBold>
       </AnimatedTouchable>
       <View style={styles.routeContainer}>
         {routeOrders.map((item, index) => {

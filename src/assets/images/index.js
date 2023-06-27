@@ -29,7 +29,12 @@ export const icons = {
   drawer: require('./icons/drawer.png'),
   back: require('./icons/back.png'),
   notification: require('./icons/notification.png'),
-  tab1: require('./icons/tab1.png')
+  tab1: require('./icons/tab1.png'),
+  tab2: require('./icons/tab2.png'),
+  tab3: require('./icons/tab3.png'),
+  tab4: require('./icons/tab4.png'),
+  tab5: require('./icons/tab5.png')
+
 };
 
 export const generalImage = {

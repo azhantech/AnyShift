@@ -12,38 +12,39 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     // borderTopLeftRadius: vh * 3,
     // borderTopRightRadius: vh * 3,
-    backgroundColor: colors.red,
+    backgroundColor: colors.white,
+    borderTopWidth: 0.5,
+    borderTopColor: colors.borderTopColor
   },
   tabItem: {
     alignItems: 'center',
-    flexDirection: 'row',
     height: 5 * vh,
     width: 22 * vw,
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
   },
 
-  icon: {
+  icon: (focused) => ({
     height: vh * 2.5,
     width: vh * 2.5,
     resizeMode: 'contain',
-  },
+    tintColor: focused ? colors.blackappText : colors.tabPlaceHolderColor
+  }),
 
-  titleColorStyle: {
-    color: colors.white,
+  titleColorStyle: (focused) => ({
+    color: focused ? colors.drawerColor : colors.tabPlaceHolderColor,
     fontSize: 1.6 * vh,
     // width: 15 * vw,
-  },
+  }),
 
   activeTabColorStyle: {
     alignItems: 'center',
-    // justifyContent: 'center',
-    flexDirection: 'row',
+    justifyContent: 'center',
+    // flexDirection: 'row',
     backgroundColor: colors.activeTabColor,
     // backgroundColor: 'red',
     height: 5 * vh,
     width: 22 * vw,
     borderRadius: 1 * vw,
-    justifyContent: 'space-evenly',
   },
 });
 
