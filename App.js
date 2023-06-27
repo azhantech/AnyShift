@@ -4,6 +4,7 @@ import {colors} from './src/utils/appTheme';
 import SignInScreen from './src/screen/Auth/SignIn';
 import SignupScreen from './src/screen/Auth/SignUp';
 import SplashScreen from 'react-native-splash-screen';
+import Registration from './src/screen/Auth/Registration';
 import OnBoarding from './src/screen/Auth/OnBoarding/OnBoarding';
 import ForgotPasswordScreen from './src/screen/Auth/ForgotPasswordScreen';
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
   }, []);
   return (
     <View style={styles.container}>
-      <ForgotPasswordScreen />
+      <Registration />
     </View>
   );
 };

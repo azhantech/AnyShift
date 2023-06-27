@@ -2,7 +2,7 @@ import React, {useImperativeHandle, useRef, useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity} from 'react-native';
 import {icons} from '../../../assets/images';
 import {vh, vw} from '../../../utils/dimensions';
-
+import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import styles from './styles';
 // import TextInputMask from 'react-native-text-input-mask';
 
@@ -23,6 +23,26 @@ const InputField = props => {
   };
   return (
     <View style={[styles.container, props.inputContainerStyle]}>
+      {props.label && (
+        <View style={styles.labelContainer}>
+          <QanelasRegular style={[styles.labelText, props?.labelText]}>
+            {props?.label}
+          </QanelasRegular>
+          {props?.required && (
+            <QanelasRegular style={[styles.require, props?.requireStyle]}>
+              *
+            </QanelasRegular>
+          )}
+          {props?.optional && (
+            <QanelasRegular
+              style={[
+                styles.optionalStyle,
+                props?.optionalStyle,
+              ]}>{`(Optional)`}</QanelasRegular>
+          )}
+        </View>
+      )}
+
       <View style={[styles.inputWithIcon, props.inputContainerIcon]}>
         {props.leftIcon && (
           <View

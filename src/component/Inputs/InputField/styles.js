@@ -59,6 +59,18 @@ const styles = StyleSheet.create({
   },
   require: {
     color: colors.red,
+    marginLeft: vw * 0.4,
+  },
+  labelText: {
+    color: colors.black,
+    fontSize: vh * 1.5,
+    textTransform: 'capitalize',
+  },
+  optionalStyle: {
+    color: colors.highlightedText,
+    fontSize: vh * 1.5,
+    textTransform: 'capitalize',
+    marginLeft: vw,
   },
 });
 

@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     marginLeft: 0,
     marginRight: 0,
-    color: colors.textColor,
+    color: colors.black,
   },
 });
 export default TextWrapper;

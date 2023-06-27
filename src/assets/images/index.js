@@ -24,6 +24,7 @@ export const icons = {
   EmployerIcon: require('./icons/EmployerIcon.png'),
   check: require('./icons/check.png'),
   warning: require('./icons/warning.png'),
+  dropDown: require('./icons/dropdown.png'),
 };
 
 export const generalImage = {
