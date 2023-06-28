@@ -38,7 +38,8 @@ export const colors = {
   drawerColor: '#FF0000',
   borderTopColor: '#D2D2D2',
   tabPlaceHolderColor: '#C8C8C8',
-  backgroundColor: '#F3F2F6'
+  backgroundColor: '#F3F2F6',
+  lightPlaceHolder: '#BEBEBE'
 
 };
 export const linearColors = {

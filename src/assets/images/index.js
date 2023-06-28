@@ -34,7 +34,8 @@ export const icons = {
   tab3: require('./icons/tab3.png'),
   tab4: require('./icons/tab4.png'),
   tab5: require('./icons/tab5.png'),
-  location: require('./icons/location.png')
+  location: require('./icons/location.png'),
+  online: require('./icons/online.png')
 };
 
 export const generalImage = {
@@ -45,5 +46,6 @@ export const generalImage = {
   image2: require('../images/generalImage/image2.png'),
   image3: require('../images/generalImage/image3.png'),
   authHeaderLogo: require('../images/generalImage/headerLogo.png'),
-  profilePlaceholder: require('../images/generalImage/profilePlaceholder.png')
+  profilePlaceholder: require('../images/generalImage/profilePlaceholder.png'),
+  profile: require('../images/generalImage/profile.png')
 };

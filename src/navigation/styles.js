@@ -21,15 +21,16 @@ const styles = StyleSheet.create({
 
   searchIconStyle: {
     resizeMode: 'contain',
-    height: 5 * vh,
-    width: 5 * vw,
+    height: 4 * vh,
+    width: 4 * vw,
   },
 
   textButton: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
-    width: 10 * vw,
+    width: 8 * vw,
+    height: 8 * vw,
     borderRadius: 8 * vw,
   },
   headerMesh: {
@@ -52,8 +53,8 @@ const styles = StyleSheet.create({
 
   notificationsIconStyle: {
     resizeMode: 'contain',
-    height: 5 * vh,
-    width: 5 * vw,
+    height: 4 * vh,
+    width: 4 * vw,
   },
 
   numberTextStyle: {

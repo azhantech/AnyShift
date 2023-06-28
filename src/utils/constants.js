@@ -48,9 +48,7 @@ const onboarding_screens = [
 
 
 
-
-
 export default {
     onboarding_screens,
-    SIZES
+    SIZES,
 }
