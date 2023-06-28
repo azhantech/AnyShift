@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import { vh, vw } from '../utils/dimensions';
-import { colors } from '../utils/appTheme';
+import {vh, vw} from '../utils/dimensions';
+import {colors} from '../utils/appTheme';
 
 const styles = StyleSheet.create({
   image: {
@@ -28,6 +28,9 @@ const styles = StyleSheet.create({
   textButton: {
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
+    width: 10 * vw,
+    borderRadius: 8 * vw,
   },
   headerMesh: {
     width: 100 * vw,
@@ -49,8 +52,8 @@ const styles = StyleSheet.create({
 
   notificationsIconStyle: {
     resizeMode: 'contain',
-    height: 8 * vh,
-    width: 8 * vw,
+    height: 5 * vh,
+    width: 5 * vw,
   },
 
   numberTextStyle: {

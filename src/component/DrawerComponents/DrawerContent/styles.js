@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 2.6 * vh,
     color: colors.white,
-    width: 30 * vw,
+    width: 40 * vw,
     textAlign: 'center',
     marginTop: 1 * vh
   },
@@ -52,7 +52,8 @@ const styles = StyleSheet.create({
 
   locationTextStyle:{
     color: colors.white,
-    fontSize: 1.6 * vh
+    fontSize: 1.6 * vh,
+    // width: 20 * vw
   },
 
   locationIconStyle:{
@@ -64,12 +65,11 @@ const styles = StyleSheet.create({
   locationViewStyle:{
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    width: 28 * vw, 
+    justifyContent: 'space-evenly',
+    width: 40 * vw,
   },
 
   profileImageViewStyle:{
-    backgroundColor: 'green',
     borderWidth: 0.8 * vw,
     borderColor: colors.white,
     borderRadius: vh * 4,

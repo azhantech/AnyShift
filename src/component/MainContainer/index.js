@@ -11,7 +11,7 @@ const MainContainer = props => {
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.backgroundColor,
     flex: 1,
   },
 });

@@ -6,13 +6,15 @@ import {vh, vw} from '../utils/dimensions';
 import {icons} from '../assets/images';
 
 const titles = {
-  HomeScreen: 'Home',
+  Home: 'Home',
+  Chat: 'Chat',
 };
 
 const backButtonRoutes = {};
 
 const notificationButtonRoutes = {
-  HomeScreen: 'Home',
+  Home: 'Home',
+  Chat: 'Chat',
 };
 
 const navigationOptions = (navProps, props) => {
@@ -25,16 +27,16 @@ const navigationOptions = (navProps, props) => {
     headerShown: true,
     headerTransparent: true,
     headerLeftContainerStyle: {paddingLeft: 4 * vw},
-    headerRightContainerStyle: {paddingRight: 4 * vw},
+    headerRightContainerStyle: {paddingRight: 4 * vw, },
     headerStyle: getHeaderStyle(navProps),
   };
 };
 
 const getHeaderStyle = props => {
   return {
-    backgroundColor: 'transparent',
     height: 15 * vh,
     maxHeight: 20 * vh,
+    backgroundColor: 'red'
   };
 };
 

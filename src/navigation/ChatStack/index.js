@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import navigationOptions from '../NavigationOptions';
-import Home from '../../screen/Main/Home';
+import Chat from '../../screen/Main/Chat';
 
 const ChatStack = createStackNavigator();
 
@@ -10,8 +10,8 @@ const ChatNavigator = () => {
     <ChatStack.Navigator
       headerShown={false}
       screenOptions={navigationOptions}
-      initialRouteName="Home">
-      <ChatStack.Screen name="Home" component={Home} />
+      initialRouteName="Chat">
+      <ChatStack.Screen name="Chat" component={Chat} />
     </ChatStack.Navigator>
   );
 };

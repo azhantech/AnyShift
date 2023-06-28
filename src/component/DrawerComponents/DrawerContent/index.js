@@ -3,7 +3,7 @@ import styles from './styles';
 import DrawerButton from '../DrawerButton';
 import {Image, View} from 'react-native';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
-import QanelasMedium from '../../Texts/QanelasMedium'
+import QanelasMedium from '../../Texts/QanelasMedium';
 import {useDrawerProgress} from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import {drawerRoutes} from '../../../navigation/NavigationOptions';
@@ -41,17 +41,19 @@ const DrawerContent = props => {
     <View style={styles.container}>
       <AnimatedTouchable style={[styles.header, animatedStyles]}>
         <View style={styles.profileImageViewStyle}>
-        <Image
-          source={generalImage.profilePlaceholder}
-          style={styles.profileImage}
-        />
+          <Image
+            source={generalImage.profilePlaceholder}
+            style={styles.profileImage}
+          />
         </View>
         <QanelasSemiBold style={styles.name}>James Milner</QanelasSemiBold>
 
         <View style={styles.locationViewStyle}>
-          <Image source={icons.location} style={styles.locationIconStyle}/>
+          <Image source={icons.location} style={styles.locationIconStyle} />
 
-          <QanelasMedium style={styles.locationTextStyle}>Frankfurt, Germany</QanelasMedium>
+          <QanelasMedium style={styles.locationTextStyle}>
+            Frankfurt, Germany
+          </QanelasMedium>
         </View>
       </AnimatedTouchable>
       <View style={styles.routeContainer}>

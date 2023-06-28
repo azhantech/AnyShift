@@ -37,7 +37,8 @@ export const colors = {
   modalBackground: '#010101',
   drawerColor: '#FF0000',
   borderTopColor: '#D2D2D2',
-  tabPlaceHolderColor: '#C8C8C8'
+  tabPlaceHolderColor: '#C8C8C8',
+  backgroundColor: '#F3F2F6'
 
 };
 export const linearColors = {
