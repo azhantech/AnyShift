@@ -11,7 +11,9 @@ const titles = {
   Chat: 'Chat',
 };
 
-const backButtonRoutes = {};
+const backButtonRoutes = {
+  ChatDetail: 'ChatDetail'
+};
 
 const notificationButtonRoutes = {
   Home: 'Home',

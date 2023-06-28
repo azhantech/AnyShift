@@ -39,7 +39,8 @@ export const colors = {
   borderTopColor: '#D2D2D2',
   tabPlaceHolderColor: '#C8C8C8',
   backgroundColor: '#F3F2F6',
-  lightPlaceHolder: '#BEBEBE'
+  lightPlaceHolder: '#BEBEBE',
+  myMessageColor: '#056ED8'
 
 };
 export const linearColors = {
@@ -55,7 +56,7 @@ export const themeShadow = {
     width: 0,
     height: 3,
   },
-  shadowOpacity: 0.27,
-  shadowRadius: 4.65,
+  shadowOpacity: 0.25,
+  shadowRadius: 3.84,
   elevation: 6,
 };

@@ -76,3 +76,39 @@ export const chatlist = [
     time: '25 min ago',
   },
 ];
+
+export const messages = [
+  {
+    id: 1,
+    message: 'Hey, what time are we going surfing?',
+    type: 'me',
+    time: '10:00 AM'
+  },
+
+  {
+    id: 2,
+    message: 'Hey, what time are we going surfing?',
+    type: 'you',
+    time: '10:00 AM'
+  },
+
+  {
+    id: 3,
+    message: 'Hey, what time are we going surfing?',
+    type: 'me',
+    time: '10:00 AM'
+  },
+
+  {
+    id: 4,
+    message: 'Hey, what time are we going surfing?',
+    type: 'you',
+    time: '10:00 AM'
+  },
+  {
+    id: 5,
+    message: 'Hey, what time are we going surfing?',
+    type: 'you',
+    time: '10:00 AM'
+  }
+]

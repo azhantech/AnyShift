@@ -7,9 +7,9 @@ import QanelasMedium from '../Texts/QanelasMedium';
 import {icons} from '../../assets/images';
 
 const ChatItem = props => {
-  const {item} = props;
+  const {item, onPress} = props;
   return (
-    <TouchableOpacity style={styles.container} activeOpacity={0.8}>
+    <TouchableOpacity onPress={onPress} style={styles.container} activeOpacity={0.8}>
       <View style={styles.row}>
         <View style={styles.profileImageViewStyle}>
           <Image source={item?.image} style={styles.userImage} />

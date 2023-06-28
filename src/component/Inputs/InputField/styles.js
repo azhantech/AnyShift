@@ -47,6 +47,7 @@ const styles = StyleSheet.create({
     padding: 0,
     fontSize: vh * 1.9,
     color: 'black',
+    marginLeft: 4 * vw,
     // paddingBottom: vh * 0.5,
     // opacity: 0.1
   },

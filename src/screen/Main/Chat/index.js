@@ -6,9 +6,12 @@ import ChatItem from '../../../component/ChatItem';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import {chatlist} from '../../../utils/tempData';
 
-const Chat = () => {
+const Chat = ({navigation}) => {
   const renderItem = ({item}) => {
-    return <ChatItem item={item} />;
+    return <ChatItem 
+    item={item} 
+    onPress={() => navigation.navigate('ChatDetail')}
+    />;
   };
 
   const renderEmptyComponent = () => {
