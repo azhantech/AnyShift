@@ -10,6 +10,11 @@ const App = () => {
   }, []);
   return (
     <View style={styles.container}>
+        <StatusBar
+              translucent={true}
+              backgroundColor="transparent"
+              barStyle="light-content"
+            />
       <Navigation />
     </View>
   );
@@ -18,7 +23,7 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.backgroundColor,
   },
 });
 

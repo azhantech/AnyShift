@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, SafeAreaView} from 'react-native';
 import {colors} from '../../utils/appTheme';
 
 const MainContainer = props => {

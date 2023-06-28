@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   titleTextStyle: {
-    color: colors.black,
+    color: colors.white,
     fontSize: 2.2 * vh,
     textAlign: 'center',
   },

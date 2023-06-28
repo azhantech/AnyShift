@@ -4,6 +4,7 @@ import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
 import {vh, vw} from '../utils/dimensions';
 import {icons} from '../assets/images';
+import { colors } from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
@@ -25,10 +26,9 @@ const navigationOptions = (navProps, props) => {
     headerBackVisible: false,
     headerTitleAlign: 'center',
     headerShown: true,
-    headerTransparent: true,
     headerLeftContainerStyle: {paddingLeft: 4 * vw},
     headerRightContainerStyle: {paddingRight: 4 * vw, },
-    headerStyle: getHeaderStyle(navProps),
+    headerStyle: getHeaderStyle(navProps)
   };
 };
 
@@ -36,7 +36,7 @@ const getHeaderStyle = props => {
   return {
     height: 15 * vh,
     maxHeight: 20 * vh,
-    backgroundColor: 'red'
+    backgroundColor: colors.primaryColor
   };
 };
 
