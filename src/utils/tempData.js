@@ -18,7 +18,7 @@ export const chatlist = [
   },
 
   {
-    id: 2,
+    id: 3,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -27,7 +27,7 @@ export const chatlist = [
   },
 
   {
-    id: 2,
+    id: 4,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -35,7 +35,7 @@ export const chatlist = [
     time: '25 min ago',
   },
   {
-    id: 2,
+    id: 5,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -43,7 +43,7 @@ export const chatlist = [
     time: '25 min ago',
   },
   {
-    id: 2,
+    id: 6,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -52,7 +52,7 @@ export const chatlist = [
   },
 
   {
-    id: 2,
+    id: 7,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -60,7 +60,7 @@ export const chatlist = [
     time: '25 min ago',
   },
   {
-    id: 2,
+    id: 8,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
@@ -68,12 +68,11 @@ export const chatlist = [
     time: '25 min ago',
   },
   {
-    id: 2,
+    id: 9,
     name: 'David Mathew',
     status: false,
     image: require('../assets/images/generalImage/profile.png'),
     message: 'There are many variations of passages of Lorem Ipsum available,',
     time: '25 min ago',
   },
-  
 ];
