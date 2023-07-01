@@ -36,7 +36,8 @@ export const icons = {
   tab5: require('./icons/tab5.png'),
   location: require('./icons/location.png'),
   online: require('./icons/online.png'),
-  send: require('./icons/send.png')
+  send: require('./icons/send.png'),
+  success: require('./icons/success.png'),
 };
 
 export const generalImage = {

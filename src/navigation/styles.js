@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
 
   backIconStyle: {
     resizeMode: 'contain',
-    height: 2 * vh,
-    width: 2 * vw,
+    height: 5 * vw,
+    width: 5 * vw,
   },
 
   notificationsIconStyle: {

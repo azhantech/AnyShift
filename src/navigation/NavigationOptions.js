@@ -4,20 +4,29 @@ import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
 import {vh, vw} from '../utils/dimensions';
 import {icons} from '../assets/images';
-import { colors } from '../utils/appTheme';
+import {colors} from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
   Chat: 'Chat',
+  Profile: 'Profile',
+  UpdateName: 'Update Name',
+  UpdatePassword: 'Update Password',
+  UpdateBankDetails: 'Change Bank Details'
 };
 
 const backButtonRoutes = {
-  ChatDetail: 'ChatDetail'
+  ChatDetail: 'ChatDetail',
+  UpdateName: 'Update Name',
+  UpdatePassword: 'Update Password',
+  UpdateBankDetails: 'Change Bank Details'
+
 };
 
 const notificationButtonRoutes = {
   Home: 'Home',
   Chat: 'Chat',
+  Profile: 'Profile',
 };
 
 const navigationOptions = (navProps, props) => {
@@ -29,16 +38,16 @@ const navigationOptions = (navProps, props) => {
     headerTitleAlign: 'center',
     headerShown: true,
     headerLeftContainerStyle: {paddingLeft: 4 * vw},
-    headerRightContainerStyle: {paddingRight: 4 * vw, },
-    headerStyle: getHeaderStyle(navProps)
+    headerRightContainerStyle: {paddingRight: 4 * vw},
+    headerStyle: getHeaderStyle(navProps),
   };
 };
 
 const getHeaderStyle = props => {
   return {
-    height: 15 * vh,
+    height: 13 * vh,
     maxHeight: 20 * vh,
-    backgroundColor: colors.primaryColor
+    backgroundColor: colors.primaryColor,
   };
 };
 
@@ -74,7 +83,12 @@ const renderHeaderLeft = props => {
     return (
       <TouchableOpacity
         onPress={() => props?.navigation.goBack()}
-        style={styles.textButton}>
+        style={[
+          styles.textButton,
+          {
+            backgroundColor: 'transparent',
+          },
+        ]}>
         <Image source={icons.back} style={styles.backIconStyle} />
       </TouchableOpacity>
     );

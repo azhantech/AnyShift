@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
     // flexDirection: 'row',
     // marginVertical  : vh*2,
     width: vw * 80,
+    marginTop: 2 * vh
   },
   inputWithIcon: {
     // flexDirection: 'row',

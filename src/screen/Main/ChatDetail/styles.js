@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   searchBar: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     width: vw * 100,
     marginBottom: vh * 2,
     alignSelf: 'center',
