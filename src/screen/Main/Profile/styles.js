@@ -41,6 +41,35 @@ const styles = StyleSheet.create({
   buttonTextStyle: {
     color: colors.myMessageColor,
   },
+
+  pagerView: {
+    flex: 1,
+  },
+
+  mainTitlesViewStyle:{
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 4 * vh,
+    marginBottom: 2 * vh,
+    borderBottomWidth: 0.1 * vh,
+    borderBottomColor: colors.grey,
+    width: 100 * vw,
+    height: 4 * vh,
+    alignItems: 'center'
+  },
+
+  tabTitleViewStyle:{
+    borderBottomWidth: 0.2 * vh,
+    borderBottomColor: colors.red,
+    width: 30 * vw,
+    height: 4 * vh,
+  },
+
+  tabTitleTextStyle:{
+    color: colors.greyText,
+    fontSize: 1.7 * vh,
+    textAlign: 'center',
+  }
 });
 
 export default styles;

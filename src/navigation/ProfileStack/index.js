@@ -13,7 +13,7 @@ const ProfileNavigator = () => {
     <ProfileStack.Navigator
       headerShown={false}
       screenOptions={navigationOptions}
-      initialRouteName="UpdateBankDetails">
+      initialRouteName="Profile">
       <ProfileStack.Screen name="Profile" component={Profile} />
       <ProfileStack.Screen name="UpdateName" component={UpdateName} />
       <ProfileStack.Screen name="UpdatePassword" component={UpdatePassword} />
