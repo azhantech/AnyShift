@@ -14,7 +14,7 @@ import {colors} from '../../../utils/appTheme';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../component/ScrollWrapper';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const handleTabChange = index => {
@@ -29,10 +29,8 @@ const Profile = () => {
             source={generalImage.profilePlaceholder}
           />
 
-        <Image source={icons.online} style={styles.onlineIconStyle} />
-
+          <Image source={icons.online} style={styles.onlineIconStyle} />
         </View>
-
 
         <QanelasBold style={styles.titleTextStyle}>James Milner</QanelasBold>
 
@@ -47,6 +45,7 @@ const Profile = () => {
           style={styles.buttonStyle}
           textStyle={styles.buttonTextStyle}
           text="Edit Profile"
+          onPress={() => navigation.navigate('EditProfile')}
         />
       </View>
     );
@@ -332,7 +331,11 @@ const Profile = () => {
       <HalfHeader />
       {renderProfile()}
       {renderTitles()}
-      {renderContent()}
+      <ScrollWrapper
+        style={styles.listStyle}
+        contentContainerStyle={styles.contentContainerStyle}>
+        {renderContent()}
+      </ScrollWrapper>
     </MainContainer>
   );
 };

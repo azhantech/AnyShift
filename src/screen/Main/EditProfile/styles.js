@@ -40,13 +40,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: colors.greyText,
     borderBottomWidth: 0.1 * vw,
-    paddingVertical: 2 *vh
+    paddingVertical: 2 * vh,
   },
 
   flatListStyle: {
     flex: 1,
-    marginBottom: 8 * vh
-
+    marginBottom: 8 * vh,
   },
 
   contentContainerStyle: {
@@ -68,8 +67,7 @@ const styles = StyleSheet.create({
   nameViewStyle: {
     // backgroundColor: 'red',
     width: 68 * vw,
-    marginLeft: 2 * vw
-
+    marginLeft: 2 * vw,
   },
 
   statusButtonViewStyle: status => ({
@@ -78,7 +76,12 @@ const styles = StyleSheet.create({
     borderWidth: 0.2 * vw,
     width: 7 * vw,
     height: 7 * vw,
-    borderColor: status == 'incomplete' ? colors.warningColor : status == 'complete' ? colors.successColor : colors.primaryColor,
+    borderColor:
+      status == 'incomplete'
+        ? colors.warningColor
+        : status == 'complete'
+        ? colors.successColor
+        : colors.primaryColor,
     borderRadius: 6 * vw,
   }),
 
@@ -88,17 +91,16 @@ const styles = StyleSheet.create({
     width: 8 * vw,
   },
 
-  nameKeyStyle:{
+  nameKeyStyle: {
     color: colors.blackappText,
     fontSize: 1.8 * vh,
   },
 
-  nameValueStyle:{
+  nameValueStyle: {
     color: colors.greyText,
     fontSize: 1.8 * vh,
-    marginTop: 0.5 * vh
-
-  }
+    marginTop: 0.5 * vh,
+  },
 });
 
 export default styles;

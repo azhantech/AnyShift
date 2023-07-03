@@ -14,14 +14,15 @@ const ProfileNavigator = () => {
     <ProfileStack.Navigator
       headerShown={false}
       screenOptions={navigationOptions}
-      initialRouteName="EditProfile">
+      initialRouteName="Profile">
       <ProfileStack.Screen name="Profile" component={Profile} />
       <ProfileStack.Screen name="EditProfile" component={EditProfile} />
       <ProfileStack.Screen name="UpdateName" component={UpdateName} />
       <ProfileStack.Screen name="UpdatePassword" component={UpdatePassword} />
-      <ProfileStack.Screen name="UpdateBankDetails" component={UpdateBankDetails} />
-
-
+      <ProfileStack.Screen
+        name="UpdateBankDetails"
+        component={UpdateBankDetails}
+      />
     </ProfileStack.Navigator>
   );
 };

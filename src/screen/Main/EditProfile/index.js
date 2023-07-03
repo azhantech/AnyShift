@@ -6,7 +6,7 @@ import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import {generalImage, icons} from '../../../assets/images';
 
-const EditProfile = () => {
+const EditProfile = ({navigation}) => {
   const profileData = [
     {
       id: 1,
@@ -14,6 +14,7 @@ const EditProfile = () => {
       value: 'James Milner Jimmy',
       icon: icons.profile1,
       status: 'incomplete',
+      onPress: () => navigation.navigate('UpdateName')
     },
 
     {
@@ -37,6 +38,7 @@ const EditProfile = () => {
       key: 'Change Password',
       icon: icons.profile4,
       status: 'empty',
+      onPress: () => navigation.navigate('UpdatePassword')
     },
 
     {
@@ -72,6 +74,8 @@ const EditProfile = () => {
       key: 'Bank Info',
       icon: icons.profile9,
       status: 'incomplete',
+      onPress: () => navigation.navigate('UpdateBankDetails')
+
     },
   ];
 
@@ -109,7 +113,7 @@ const EditProfile = () => {
 
   const renderData = ({item}) => {
     return (
-      <TouchableOpacity style={styles.mainButtonViewStyle}>
+      <TouchableOpacity onPress={item?.onPress} style={styles.mainButtonViewStyle}>
         <View style={styles.itemIconViewStyle}>
           <Image source={item?.icon} style={styles.itemIconStyle} />
         </View>

@@ -144,6 +144,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 0.5 * vh,
   },
+
+  listStyle:{
+    height: 100 * vh
+  },
+
+  contentContainerStyle:{
+    paddingBottom: 10 * vh
+  }
 });
 
 export default styles;
