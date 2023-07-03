@@ -69,6 +69,25 @@ const styles = StyleSheet.create({
     color: colors.greyText,
     fontSize: 1.7 * vh,
     textAlign: 'center',
+  },
+
+  contentHeadingStyle:{
+    fontSize: 2.2 * vh,
+    color: colors.myMessageColor
+  },
+
+  contentDescriptionStyle:{
+    color: colors.darkGray,
+    fontSize: 1.6 * vh,
+    marginTop: 2 * vh
+  },
+
+  mainContentContainerStyle:{
+    marginTop: 2 * vh,
+    marginBottom: 2 * vh,
+    width: 90 * vw,
+    justifyContent: 'center',
+    alignSelf: 'center'
   }
 });
 

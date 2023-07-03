@@ -4,6 +4,7 @@ import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
+import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {generalImage} from '../../../assets/images';
 import {AirbnbRating} from 'react-native-ratings';
@@ -11,6 +12,7 @@ import {vh} from '../../../utils/dimensions';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import PagerView from 'react-native-pager-view';
 import { colors } from '../../../utils/appTheme';
+import ScrollWrapper from '../../../component/ScrollWrapper';
 
 const Profile = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -91,11 +93,39 @@ const Profile = () => {
     );
   };
 
+  const renderContent = () => {
+    if(selectedTab == 1){
+      return (
+        <View style={styles.mainContentContainerStyle}>
+          <QanelasSemiBold style={styles.contentHeadingStyle}>
+            Biography
+          </QanelasSemiBold>
+
+          <QanelasRegular style={styles.contentDescriptionStyle}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.
+
+          </QanelasRegular>
+
+          <QanelasRegular style={styles.contentDescriptionStyle}>
+          Sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+          </QanelasRegular>
+
+          <QanelasRegular style={styles.contentDescriptionStyle}>
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat sed diam
+          </QanelasRegular>
+
+        </View>
+      )
+    }
+  }
+
   return (
     <MainContainer>
       <HalfHeader />
       {renderProfile()}
       {renderTitles()}
+      {renderContent()}
     </MainContainer>
   );
 };
