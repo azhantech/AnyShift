@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8 * vw,
+    marginTop: 2 * vh
   },
 
   inputContainer: {
