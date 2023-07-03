@@ -12,7 +12,7 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 import {colors} from '../../../utils/appTheme';
 const Registration = () => {
-  const [step, setStep] = useState(2);
+  const [step, setStep] = useState(1);
   const renderStep = () => {
     if (step == 1) {
       return (
@@ -59,9 +59,6 @@ const Registration = () => {
               optional
             />
           </View>
-          <View>
-            <CustomButton text="Continue" />
-          </View>
         </View>
       );
     } else {
@@ -104,10 +101,6 @@ const Registration = () => {
               Anyshift
             </QanelasRegular>
           </View>
-          <View style={styles.btnContainer}>
-            <CustomButton text="Sign up" />
-            <TouchableText text="Back to" touchableText="Login" />
-          </View>
         </View>
       );
     }
@@ -131,6 +124,10 @@ const Registration = () => {
         </QanelasBold>
       </View>
       {renderStep()}
+      <View style={styles.btnContainer}>
+        <CustomButton text="Sign up" />
+        <TouchableText text="Back to" touchableText="Login" />
+      </View>
     </Scrollable>
   );
 };

@@ -28,7 +28,6 @@ const DrawerContent = props => {
       console.log(drawerRoutes[routeName]);
       if (routeName === routeOrders[routeOrders.length - 1]) {
         console.log('logout', routeName);
-        logoutFunc();
       }
 
       if (drawerRoutes[routeName].notRoute != true) {

@@ -47,9 +47,11 @@ const navigationOptions = (navProps, props) => {
 
 const getHeaderStyle = props => {
   return {
-    height: 13 * vh,
+    height: 25 * vh,
     maxHeight: 20 * vh,
     backgroundColor: colors.primaryColor,
+    borderBottomRightRadius: vh * 4,
+    borderBottomLeftRadius: vh * 4,
   };
 };
 

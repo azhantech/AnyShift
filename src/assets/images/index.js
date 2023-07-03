@@ -28,6 +28,7 @@ export const icons = {
   homeDrawer: require('./icons/homeDrawer.png'),
   drawer: require('./icons/drawer.png'),
   back: require('./icons/back.png'),
+  profileImage: require('./icons/original.png'),
   notification: require('./icons/notification.png'),
   tab1: require('./icons/tab1.png'),
   tab2: require('./icons/tab2.png'),

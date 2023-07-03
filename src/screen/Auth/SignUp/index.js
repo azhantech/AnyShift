@@ -7,7 +7,7 @@ import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import {icons} from '../../../assets/images';
 import {vh, vw} from '../../../utils/dimensions';
 import TouchableText from '../../../component/Buttons/TouchableText';
-const SignupScreen = () => {
+const SignupScreen = props => {
   const registrationData = [
     {
       id: 0,
@@ -47,7 +47,9 @@ const SignupScreen = () => {
       <View style={styles.renderSelectionView}>
         {registrationData.map((val, index) => {
           return (
-            <TouchableOpacity style={styles.selectionCOntainer}>
+            <TouchableOpacity
+              style={styles.selectionCOntainer}
+              onPress={() => props?.navigation.navigate('Registration')}>
               <View style={styles.selectionImageContainer}>
                 <Image source={val?.image} style={styles.employeeImage} />
                 <QanelasRegular style={styles.selectiontext}>

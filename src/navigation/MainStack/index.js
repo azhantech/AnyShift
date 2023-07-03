@@ -5,22 +5,19 @@ import DrawerNavigator from '../DrawerNavigator';
 const RootStack = createStackNavigator();
 
 const MainNavigator = () => {
-  const loggedIn = true;
+  const loggedIn = false;
   return (
     <RootStack.Navigator initialRouteName="AuthStack">
-      {loggedIn ? (
-        <RootStack.Screen
-          name="DrawerNavigator"
-          component={DrawerNavigator}
-          options={{headerShown: false}}
-        />
-      ) : (
-        <RootStack.Screen
-          name="AuthStack"
-          component={AuthStack}
-          options={{headerShown: false}}
-        />
-      )}
+      <RootStack.Screen
+        name="DrawerNavigator"
+        component={DrawerNavigator}
+        options={{headerShown: false}}
+      />
+      <RootStack.Screen
+        name="AuthStack"
+        component={AuthStack}
+        options={{headerShown: false}}
+      />
     </RootStack.Navigator>
   );
 };

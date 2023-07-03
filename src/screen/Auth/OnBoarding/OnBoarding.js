@@ -98,6 +98,7 @@ const OnBoarding = ({navigation}) => {
                       <CustomButton
                         style={styles.getStartedButtonStyle}
                         text="Get Started"
+                        onPress={() => navigation.navigate('SignInScreen')}
                       />
                     </View>
                   </View>

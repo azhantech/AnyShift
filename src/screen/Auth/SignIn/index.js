@@ -7,7 +7,7 @@ import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
-const SignInScreen = () => {
+const SignInScreen = props => {
   return (
     <View style={styles.mainContainer}>
       <AuthHeader />
@@ -29,7 +29,10 @@ const SignInScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.btnContainer}>
-        <CustomButton text="Sign In" />
+        <CustomButton
+          text="Sign In"
+          onPress={() => props?.navigation.navigate('DrawerNavigator')}
+        />
       </View>
       <View style={styles.donthaveAccountContainer}>
         <View style={styles.rowContainer}>
