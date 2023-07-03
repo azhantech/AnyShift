@@ -40,7 +40,10 @@ export const colors = {
   tabPlaceHolderColor: '#C8C8C8',
   backgroundColor: '#F3F2F6',
   lightPlaceHolder: '#BEBEBE',
-  myMessageColor: '#056ED8'
+  myMessageColor: '#056ED8',
+  anotherBlackColor: '#1A1824',
+  warningColor: '#E99C2D',
+  successColor: '#05D897'
 
 };
 export const linearColors = {

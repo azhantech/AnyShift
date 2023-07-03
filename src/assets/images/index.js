@@ -38,6 +38,20 @@ export const icons = {
   online: require('./icons/online.png'),
   send: require('./icons/send.png'),
   success: require('./icons/success.png'),
+  cam: require('./icons/cam.png'),
+  profile1: require('./icons/profile1.png'),
+  profile2: require('./icons/profile2.png'),
+  profile3: require('./icons/profile3.png'),
+  profile4: require('./icons/profile4.png'),
+  profile5: require('./icons/profile5.png'),
+  profile6: require('./icons/profile6.png'),
+  profile7: require('./icons/profile7.png'),
+  profile8: require('./icons/profile8.png'),
+  profile9: require('./icons/profile9.png'),
+
+  incomplete: require('./icons/incomplete.png'),
+  complete: require('./icons/complete.png'),
+  empty: require('./icons/empty.png')
 };
 
 export const generalImage = {
@@ -49,5 +63,8 @@ export const generalImage = {
   image3: require('../images/generalImage/image3.png'),
   authHeaderLogo: require('../images/generalImage/headerLogo.png'),
   profilePlaceholder: require('../images/generalImage/profilePlaceholder.png'),
-  profile: require('../images/generalImage/profile.png')
+  profile: require('../images/generalImage/profile.png'),
+  placeholderImage: require('../images/generalImage/placeholderImage.png'),
+  horizontalMap: require('../images/generalImage/horizontalmap.png')
+
 };

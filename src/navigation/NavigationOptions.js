@@ -12,14 +12,16 @@ const titles = {
   Profile: 'Profile',
   UpdateName: 'Update Name',
   UpdatePassword: 'Update Password',
-  UpdateBankDetails: 'Change Bank Details'
+  UpdateBankDetails: 'Change Bank Details',
+  EditProfile: 'Edit Profile'
 };
 
 const backButtonRoutes = {
   ChatDetail: 'ChatDetail',
   UpdateName: 'Update Name',
   UpdatePassword: 'Update Password',
-  UpdateBankDetails: 'Change Bank Details'
+  UpdateBankDetails: 'Change Bank Details',
+  EditProfile: 'Edit Profile'
 
 };
 
