@@ -14,7 +14,7 @@ const VacanciesNavigator = () => {
     <VacanciesStack.Navigator
       headerShown={false}
       screenOptions={navigationOptions}
-      initialRouteName="VacancyJobDetails">
+      initialRouteName="Vacancies">
       <VacanciesStack.Screen name="Vacancies" component={Vacancies} />
       <VacanciesStack.Screen name="VacancyJobDetails" component={VacancyJobDetails} />
       <VacanciesStack.Screen name="Applications" component={Applications} />

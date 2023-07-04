@@ -237,13 +237,6 @@ const VacancyJobDetails = ({navigation, route}) => {
             selectable={true}
             />
           ))}
-
-          <CustomButton
-            style={styles.rateButtonStyle}
-            textStyle={styles.buttonTextStyle}
-            onPress={() => navigation.navigate('GiveReview')}
-            text="Give Rate and Review"
-          />
         </View>
       );
     }
