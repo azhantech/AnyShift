@@ -57,7 +57,10 @@ export const icons = {
   heartFilled: require('./icons/heartFilled.png'),
   heartNotFilled: require('./icons/heartNotFilled.png'),
   starbucks: require('./icons/starbucks.png'),
-  whiteTick: require('./icons/whiteTick.png')
+  whiteTick: require('./icons/whiteTick.png'),
+  filter: require('./icons/filters.png'),
+  list: require('./icons/list.png'),
+  slider: require('./icons/slider.png')
 };
 
 export const generalImage = {

@@ -24,7 +24,6 @@ const VacancyJobDetails = ({navigation, route}) => {
   const [isFavourite, setIsFavourite] = useState(false);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
 
-
   const handleTabChange = index => {
     setSelectedTab(index);
   };
@@ -52,7 +51,10 @@ const VacancyJobDetails = ({navigation, route}) => {
           <Image style={styles.profileImageStyle} source={icons.amazon} />
           <View style={styles.statusMainContainerStyle}>
             <TouchableOpacity onPress={handleFav} style={styles.heartViewStyle}>
-              <Image source={renderFavIcon()} style={styles.onlineIconStyle(isFavourite)} />
+              <Image
+                source={renderFavIcon()}
+                style={styles.onlineIconStyle(isFavourite)}
+              />
             </TouchableOpacity>
           </View>
         </View>
@@ -232,10 +234,7 @@ const VacancyJobDetails = ({navigation, route}) => {
           </QanelasSemiBold>
 
           {shifts?.map((item, index) => (
-            <ShiftItem 
-            item={item} 
-            selectable={true}
-            />
+            <ShiftItem item={item} selectable={true} />
           ))}
         </View>
       );
@@ -243,15 +242,17 @@ const VacancyJobDetails = ({navigation, route}) => {
   };
 
   const renderShowInterest = () => {
-        return (
-          <TouchableOpacity onPress={onHandleCancelReasonModal} style={styles.showInterestButtonStyle}>
-            <QanelasMedium style={styles.textButtonStyle}>
-              Show Interest
-            </QanelasMedium>
+    return (
+      <TouchableOpacity
+        onPress={onHandleCancelReasonModal}
+        style={styles.showInterestButtonStyle}>
+        <QanelasMedium style={styles.textButtonStyle}>
+          Show Interest
+        </QanelasMedium>
 
-            <Image style={styles.heartIconStyle} source={icons.heartFilled} />
-          </TouchableOpacity>
-        );
+        <Image style={styles.heartIconStyle} source={icons.heartFilled} />
+      </TouchableOpacity>
+    );
   };
 
   return (
@@ -267,15 +268,15 @@ const VacancyJobDetails = ({navigation, route}) => {
       {renderShowInterest()}
 
       <ConfirmationModal
-          visible={cancelReasonModal}
-          onPress={onHandleCancelReasonModal}
-          onHide={onHandleCancelReasonModal}
-          yesbuttonTitle="Yes"
-          nobuttonTitle='No'
-          icon={icons.warning}
-          firstDescription="Apply for Job"
-          placeholder="Are you sure you want to apply for job?"
-        />
+        visible={cancelReasonModal}
+        onPress={onHandleCancelReasonModal}
+        onHide={onHandleCancelReasonModal}
+        yesbuttonTitle="Yes"
+        nobuttonTitle="No"
+        icon={icons.warning}
+        firstDescription="Apply for Job"
+        placeholder="Are you sure you want to apply for job?"
+      />
     </MainContainer>
   );
 };
