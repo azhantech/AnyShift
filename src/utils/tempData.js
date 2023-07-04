@@ -225,3 +225,55 @@ export const reviews = [
       'Lorem ipsum dolor sit amet, consetetur sadipscing elitrsed dia minonumy eirmod tempor invidunt.',
   },
 ];
+
+export const shifts = [
+  {
+    id: 1,
+    date: 'Monday 15 May, 2023',
+    from1: '01:00 PM',
+    to1: '15:00 PM',
+    from2: '06:00 PM',
+    to2: '10:00 PM',
+    checkinTime: '12:55 PM',
+    checkoutTime: '10:50 PM',
+    amount: '$20'
+  },
+
+  {
+    id: 2,
+    date: 'Monday 15 May, 2023',
+    from1: '01:00 PM',
+    to1: '15:00 PM',
+    from2: '06:00 PM',
+    to2: '10:00 PM',
+    checkinTime: '12:55 PM',
+    checkoutTime: '10:50 PM',
+    amount: '$20'
+  },
+
+  {
+    id: 3,
+    date: 'Monday 15 May, 2023',
+    from1: '01:00 PM',
+    to1: '15:00 PM',
+    from2: '06:00 PM',
+    to2: '10:00 PM',
+    checkinTime: '12:55 PM',
+    checkoutTime: '10:50 PM',
+    amount: '$20'
+  },
+
+  {
+    id: 4,
+    date: 'Monday 15 May, 2023',
+    from1: '01:00 PM',
+    to1: '15:00 PM',
+    from2: '06:00 PM',
+    to2: '10:00 PM',
+    checkinTime: '12:55 PM',
+    checkoutTime: '10:50 PM',
+    amount: '$20'
+  },
+
+  
+]

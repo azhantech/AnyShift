@@ -11,11 +11,12 @@ import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import {colors} from '../../../utils/appTheme';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../component/ScrollWrapper';
-import {jobDetails} from '../../../utils/tempData';
+import {jobDetails, shifts} from '../../../utils/tempData';
 import {AirbnbRating} from 'react-native-ratings';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {reviews} from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
+import ShiftItem from '../../../component/ShiftItem';
 
 const JobDetails = ({navigation, route}) => {
   const status = route?.params?.status;
@@ -243,28 +244,12 @@ const JobDetails = ({navigation, route}) => {
       return (
         <View style={styles.mainContentContainerStyle}>
           <QanelasSemiBold style={styles.contentHeadingStyle}>
-            Bank Information
+            Shifts
           </QanelasSemiBold>
 
-          <View style={styles.bankSubInfoViewStyle}>
-            <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-              Account holder name
-            </QanelasSemiBold>
-
-            <QanelasMedium style={styles.bankInfoValueStyle}>
-              James Milner
-            </QanelasMedium>
-          </View>
-
-          <View style={styles.bankSubInfoViewStyle}>
-            <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-              IBAN Number
-            </QanelasSemiBold>
-
-            <QanelasMedium style={styles.bankInfoValueStyle}>
-              ES2820958297603648596978
-            </QanelasMedium>
-          </View>
+          {shifts?.map((item, index) => (
+            <ShiftItem item={item}/>
+          ))}
         </View>
       );
     }
