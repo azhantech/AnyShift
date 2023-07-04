@@ -44,7 +44,9 @@ export const colors = {
   myMessageColor: '#056ED8',
   anotherBlackColor: '#1A1824',
   warningColor: '#E99C2D',
-  successColor: '#05D897'
+  successColor: '#05D897',
+  inProgress: '#CC02A4',
+  behindProfile: '#F7F3ED'
 
 };
 export const linearColors = {

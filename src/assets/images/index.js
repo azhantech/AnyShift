@@ -49,10 +49,11 @@ export const icons = {
   profile7: require('./icons/profile7.png'),
   profile8: require('./icons/profile8.png'),
   profile9: require('./icons/profile9.png'),
-
   incomplete: require('./icons/incomplete.png'),
   complete: require('./icons/complete.png'),
-  empty: require('./icons/empty.png')
+  empty: require('./icons/empty.png'),
+  heart: require('./icons/heart.png'),
+  amazon: require('./icons/amazon.png')
 };
 
 export const generalImage = {

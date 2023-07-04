@@ -13,7 +13,10 @@ const titles = {
   UpdateName: 'Update Name',
   UpdatePassword: 'Update Password',
   UpdateBankDetails: 'Change Bank Details',
-  EditProfile: 'Edit Profile'
+  EditProfile: 'Edit Profile',
+  Applications: 'Applications',
+  JobDetails: 'Job Details'
+
 };
 
 const backButtonRoutes = {
@@ -21,14 +24,15 @@ const backButtonRoutes = {
   UpdateName: 'Update Name',
   UpdatePassword: 'Update Password',
   UpdateBankDetails: 'Change Bank Details',
-  EditProfile: 'Edit Profile'
-
+  EditProfile: 'Edit Profile',
+  JobDetails: 'Job Details'
 };
 
 const notificationButtonRoutes = {
   Home: 'Home',
   Chat: 'Chat',
   Profile: 'Profile',
+  Applications: 'Applications'
 };
 
 const navigationOptions = (navProps, props) => {
@@ -47,11 +51,11 @@ const navigationOptions = (navProps, props) => {
 
 const getHeaderStyle = props => {
   return {
-    height: 25 * vh,
+    height: 15 * vh, //25
     maxHeight: 20 * vh,
     backgroundColor: colors.primaryColor,
-    borderBottomRightRadius: vh * 4,
-    borderBottomLeftRadius: vh * 4,
+    // borderBottomRightRadius: vh * 4,
+    // borderBottomLeftRadius: vh * 4,
   };
 };
 

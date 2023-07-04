@@ -1,7 +1,8 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import navigationOptions from '../NavigationOptions';
-import Home from '../../screen/Main/Home';
+import Applications from '../../screen/Main/Applications';
+import JobDetails from '../../screen/Main/JobDetails';
 
 const VacanciesStack = createStackNavigator();
 
@@ -10,8 +11,9 @@ const VacanciesNavigator = () => {
     <VacanciesStack.Navigator
       headerShown={false}
       screenOptions={navigationOptions}
-      initialRouteName="Home">
-      <VacanciesStack.Screen name="Home" component={Home} />
+      initialRouteName="Applications">
+      <VacanciesStack.Screen name="Applications" component={Applications} />
+      <VacanciesStack.Screen name="JobDetails" component={JobDetails} />
     </VacanciesStack.Navigator>
   );
 };
