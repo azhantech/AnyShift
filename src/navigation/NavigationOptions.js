@@ -18,7 +18,8 @@ const titles = {
   JobDetails: 'Job Details',
   GiveReview: 'Rate Job',
   Vacancies: 'Vacancies',
-  VacancyJobDetails: 'Job Details'
+  VacancyJobDetails: 'Job Details',
+  Favorites: 'Favorites'
 
 };
 
@@ -39,7 +40,8 @@ const notificationButtonRoutes = {
   Chat: 'Chat',
   Profile: 'Profile',
   Applications: 'Applications',
-  Vacancies: 'Vacancies'
+  Vacancies: 'Vacancies',
+  Favorites: 'Favorites'
 
 };
 
@@ -124,6 +126,11 @@ export const drawerRoutes = {
     label: 'Home',
     icon: icons.homeDrawer,
   },
+
+  FavStack:{
+    label: 'Favorites',
+    icon: icons.heartNotFilled
+  }
 };
 
 export default navigationOptions;

@@ -17,14 +17,20 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import {reviews} from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
+import ConfirmationModal from '../../../component/ModalMessages/ConfirmationModal';
 
 const VacancyJobDetails = ({navigation, route}) => {
-  const status = route?.params?.status;
   const [selectedTab, setSelectedTab] = useState(0);
   const [isFavourite, setIsFavourite] = useState(false);
+  const [cancelReasonModal, setCancelReasonModal] = useState(false);
+
 
   const handleTabChange = index => {
     setSelectedTab(index);
+  };
+
+  const onHandleCancelReasonModal = () => {
+    setCancelReasonModal(!cancelReasonModal);
   };
 
   const renderFavIcon = () => {
@@ -245,7 +251,7 @@ const VacancyJobDetails = ({navigation, route}) => {
 
   const renderShowInterest = () => {
         return (
-          <TouchableOpacity style={styles.showInterestButtonStyle}>
+          <TouchableOpacity onPress={onHandleCancelReasonModal} style={styles.showInterestButtonStyle}>
             <QanelasMedium style={styles.textButtonStyle}>
               Show Interest
             </QanelasMedium>
@@ -266,6 +272,17 @@ const VacancyJobDetails = ({navigation, route}) => {
         {renderContent()}
       </ScrollWrapper>
       {renderShowInterest()}
+
+      <ConfirmationModal
+          visible={cancelReasonModal}
+          onPress={onHandleCancelReasonModal}
+          onHide={onHandleCancelReasonModal}
+          yesbuttonTitle="Yes"
+          nobuttonTitle='No'
+          icon={icons.warning}
+          firstDescription="Apply for Job"
+          placeholder="Are you sure you want to apply for job?"
+        />
     </MainContainer>
   );
 };

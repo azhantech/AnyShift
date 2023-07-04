@@ -236,7 +236,7 @@ export const shifts = [
     to2: '10:00 PM',
     checkinTime: '12:55 PM',
     checkoutTime: '10:50 PM',
-    amount: '$20'
+    amount: '$20',
   },
 
   {
@@ -248,7 +248,7 @@ export const shifts = [
     to2: '10:00 PM',
     checkinTime: '12:55 PM',
     checkoutTime: '10:50 PM',
-    amount: '$20'
+    amount: '$20',
   },
 
   {
@@ -260,7 +260,7 @@ export const shifts = [
     to2: '10:00 PM',
     checkinTime: '12:55 PM',
     checkoutTime: '10:50 PM',
-    amount: '$20'
+    amount: '$20',
   },
 
   {
@@ -272,11 +272,9 @@ export const shifts = [
     to2: '10:00 PM',
     checkinTime: '12:55 PM',
     checkoutTime: '10:50 PM',
-    amount: '$20'
+    amount: '$20',
   },
-
-  
-]
+];
 
 export const vacancies = [
   {
@@ -286,7 +284,7 @@ export const vacancies = [
     location: 'Texas',
     amount: '$100/6days',
     favorite: false,
-    picture: require('../assets/images/icons/starbucks.png')
+    picture: require('../assets/images/icons/starbucks.png'),
   },
 
   {
@@ -296,7 +294,7 @@ export const vacancies = [
     location: 'Texas',
     amount: '$100/6days',
     favorite: true,
-    picture: require('../assets/images/icons/starbucks.png')
+    picture: require('../assets/images/icons/starbucks.png'),
   },
 
   {
@@ -306,7 +304,7 @@ export const vacancies = [
     location: 'Texas',
     amount: '$100/6days',
     favorite: false,
-    picture: require('../assets/images/icons/starbucks.png')
+    picture: require('../assets/images/icons/starbucks.png'),
   },
 
   {
@@ -316,7 +314,7 @@ export const vacancies = [
     location: 'Texas',
     amount: '$100/6days',
     favorite: true,
-    picture: require('../assets/images/icons/starbucks.png')
+    picture: require('../assets/images/icons/starbucks.png'),
   },
   {
     id: 5,
@@ -325,9 +323,57 @@ export const vacancies = [
     location: 'Texas',
     amount: '$100/6days',
     favorite: false,
-    picture: require('../assets/images/icons/starbucks.png')
+    picture: require('../assets/images/icons/starbucks.png'),
+  },
+];
+
+export const favorites = [
+  {
+    id: 1,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png'),
   },
 
+  {
+    id: 2,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png'),
+  },
 
-  
-]
+  {
+    id: 3,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png'),
+  },
+
+  {
+    id: 4,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png'),
+  },
+  {
+    id: 5,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png'),
+  },
+];

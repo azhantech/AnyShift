@@ -3,6 +3,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerScreenWrapper from '../../component/DrawerComponents/DrawerScreenWrapper';
 import DrawerContent from '../../component/DrawerComponents/DrawerContent';
 import TabNavigator from '../TabNavigator';
+import FavNavigator from '../FavStack';
 import {colors} from '../../utils/appTheme';
 
 const Drawer = createDrawerNavigator();
@@ -14,13 +15,13 @@ const AnimatedHomeStack = props => {
   );
 };
 
-// const AnimatedProfileStack = props => {
-//   return (
-//     <DrawerScreenWrapper {...props}>
-//       <ProfileStack />
-//     </DrawerScreenWrapper>
-//   );
-// };
+const AnimatedFavStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <FavNavigator />
+    </DrawerScreenWrapper>
+  );
+};
 
 const DrawerNavigator = props => {
   return (
@@ -40,7 +41,7 @@ const DrawerNavigator = props => {
       drawerContent={props => <DrawerContent {...props} />}
       >
       <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
-      {/* <Drawer.Screen name="ProfileStack" component={AnimatedProfileStack} /> */}
+      <Drawer.Screen name="FavStack" component={AnimatedFavStack} />
     </Drawer.Navigator>
   );
 };
