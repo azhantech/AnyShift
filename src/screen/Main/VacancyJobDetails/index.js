@@ -18,58 +18,36 @@ import {reviews} from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
 
-const JobDetails = ({navigation, route}) => {
+const VacancyJobDetails = ({navigation, route}) => {
   const status = route?.params?.status;
   const [selectedTab, setSelectedTab] = useState(0);
+  const [isFavourite, setIsFavourite] = useState(false);
 
   const handleTabChange = index => {
     setSelectedTab(index);
   };
 
-  const handleStatusColor = () => {
-    if (status == 'pending') {
-      return colors.warningColor;
+  const renderFavIcon = () => {
+    if (isFavourite) {
+      return icons.heartFilled;
+    } else {
+      return icons.heartNotFilled;
     }
-
-    if (status == 'rejected') {
-      return colors.primaryColor;
-    }
-
-    if (status == 'completed') {
-      return colors.successColor;
-    }
-
-    if (status == 'in-progress') {
-      return colors.inProgress;
-    }
-
-    if (status == 'paid') {
-      return colors.highlightedText;
-    }
-
-    return colors.darkGray;
   };
+
+  const handleFav = () => {
+    setIsFavourite(!isFavourite);
+  };
+
   const renderProfile = () => {
     return (
       <View style={styles.mainContainerStyle}>
         <View style={styles.profileImageViewStyle}>
           <Image style={styles.profileImageStyle} source={icons.amazon} />
           <View style={styles.statusMainContainerStyle}>
-            <TouchableOpacity style={styles.heartViewStyle}>
-              <Image source={icons.heart} style={styles.onlineIconStyle} />
+            <TouchableOpacity onPress={handleFav} style={styles.heartViewStyle}>
+              <Image source={renderFavIcon()} style={styles.onlineIconStyle(isFavourite)} />
             </TouchableOpacity>
-
-            <View
-              style={[
-                styles.statusViewStyle,
-                {
-                  backgroundColor: handleStatusColor(),
-                },
-              ]}>
-              <QanelasSemiBold style={styles.statusTextStyle}>
-                {status}
-              </QanelasSemiBold>
-            </View>
           </View>
         </View>
 
@@ -248,7 +226,10 @@ const JobDetails = ({navigation, route}) => {
           </QanelasSemiBold>
 
           {shifts?.map((item, index) => (
-            <ShiftItem item={item} />
+            <ShiftItem 
+            item={item} 
+            selectable={true}
+            />
           ))}
 
           <CustomButton
@@ -263,8 +244,6 @@ const JobDetails = ({navigation, route}) => {
   };
 
   const renderShowInterest = () => {
-    if (status == 'in-progress' || status == 'paid') {
-      if (selectedTab == 0) {
         return (
           <TouchableOpacity style={styles.showInterestButtonStyle}>
             <QanelasMedium style={styles.textButtonStyle}>
@@ -274,8 +253,6 @@ const JobDetails = ({navigation, route}) => {
             <Image style={styles.heartIconStyle} source={icons.heartFilled} />
           </TouchableOpacity>
         );
-      }
-    }
   };
 
   return (
@@ -293,4 +270,4 @@ const JobDetails = ({navigation, route}) => {
   );
 };
 
-export default JobDetails;
+export default VacancyJobDetails;

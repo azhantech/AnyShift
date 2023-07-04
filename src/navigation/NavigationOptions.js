@@ -16,7 +16,9 @@ const titles = {
   EditProfile: 'Edit Profile',
   Applications: 'Applications',
   JobDetails: 'Job Details',
-  GiveReview: 'Rate Job'
+  GiveReview: 'Rate Job',
+  Vacancies: 'Vacancies',
+  VacancyJobDetails: 'Job Details'
 
 };
 
@@ -27,14 +29,18 @@ const backButtonRoutes = {
   UpdateBankDetails: 'Change Bank Details',
   EditProfile: 'Edit Profile',
   JobDetails: 'Job Details',
-  GiveReview: 'Rate Job'
+  GiveReview: 'Rate Job',
+  VacancyJobDetails: 'Job Details'
+
 };
 
 const notificationButtonRoutes = {
   Home: 'Home',
   Chat: 'Chat',
   Profile: 'Profile',
-  Applications: 'Applications'
+  Applications: 'Applications',
+  Vacancies: 'Vacancies'
+
 };
 
 const navigationOptions = (navProps, props) => {

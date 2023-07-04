@@ -277,3 +277,57 @@ export const shifts = [
 
   
 ]
+
+export const vacancies = [
+  {
+    id: 1,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: false,
+    picture: require('../assets/images/icons/starbucks.png')
+  },
+
+  {
+    id: 2,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png')
+  },
+
+  {
+    id: 3,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: false,
+    picture: require('../assets/images/icons/starbucks.png')
+  },
+
+  {
+    id: 4,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: true,
+    picture: require('../assets/images/icons/starbucks.png')
+  },
+  {
+    id: 5,
+    name: 'Counter Cashier',
+    date: '2 days ago',
+    location: 'Texas',
+    amount: '$100/6days',
+    favorite: false,
+    picture: require('../assets/images/icons/starbucks.png')
+  },
+
+
+  
+]
