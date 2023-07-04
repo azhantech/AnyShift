@@ -15,7 +15,8 @@ const titles = {
   UpdateBankDetails: 'Change Bank Details',
   EditProfile: 'Edit Profile',
   Applications: 'Applications',
-  JobDetails: 'Job Details'
+  JobDetails: 'Job Details',
+  GiveReview: 'Rate Job'
 
 };
 
@@ -25,7 +26,8 @@ const backButtonRoutes = {
   UpdatePassword: 'Update Password',
   UpdateBankDetails: 'Change Bank Details',
   EditProfile: 'Edit Profile',
-  JobDetails: 'Job Details'
+  JobDetails: 'Job Details',
+  GiveReview: 'Rate Job'
 };
 
 const notificationButtonRoutes = {

@@ -42,6 +42,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
 
+  rateButtonStyle: {
+    backgroundColor: 'transparent',
+    borderWidth: 0.2 * vw,
+    borderColor: colors.myMessageColor,
+    width: 80 * vw,
+    marginTop: 2 * vh,
+    height: 6 * vh,
+    alignSelf: 'center',
+  },
+
   buttonTextStyle: {
     color: colors.myMessageColor,
   },
@@ -269,6 +279,30 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     borderColor: colors.grey,
   },
+
+  showInterestButtonStyle: {
+    backgroundColor: colors.highlightedText,
+    width: 80 * vw,
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    flexDirection: 'row',
+    alignSelf: 'center',
+    height: 7 * vh,
+    borderRadius: 8 * vw,
+    position: 'absolute',
+    bottom: 10 * vh
+  },
+
+  heartIconStyle:{
+    resizeMode: 'contain',
+    height: 3 * vh,
+    width: 3 * vw
+  },
+
+  textButtonStyle:{
+    color: colors.white,
+    fontSize: 2 * vh,
+  }
 });
 
 export default styles;

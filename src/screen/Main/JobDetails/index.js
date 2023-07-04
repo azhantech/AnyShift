@@ -248,10 +248,33 @@ const JobDetails = ({navigation, route}) => {
           </QanelasSemiBold>
 
           {shifts?.map((item, index) => (
-            <ShiftItem item={item}/>
+            <ShiftItem item={item} />
           ))}
+
+          <CustomButton
+            style={styles.rateButtonStyle}
+            textStyle={styles.buttonTextStyle}
+            onPress={() => navigation.navigate('GiveReview')}
+            text="Give Rate and Review"
+          />
         </View>
       );
+    }
+  };
+
+  const renderShowInterest = () => {
+    if (status == 'in-progress' || status == 'paid') {
+      if (selectedTab == 0) {
+        return (
+          <TouchableOpacity style={styles.showInterestButtonStyle}>
+            <QanelasMedium style={styles.textButtonStyle}>
+              Show Interest
+            </QanelasMedium>
+
+            <Image style={styles.heartIconStyle} source={icons.heartFilled} />
+          </TouchableOpacity>
+        );
+      }
     }
   };
 
@@ -265,6 +288,7 @@ const JobDetails = ({navigation, route}) => {
         contentContainerStyle={styles.contentContainerStyle}>
         {renderContent()}
       </ScrollWrapper>
+      {renderShowInterest()}
     </MainContainer>
   );
 };
