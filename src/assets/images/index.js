@@ -60,10 +60,16 @@ export const icons = {
   whiteTick: require('./icons/whiteTick.png'),
   filter: require('./icons/filters.png'),
   list: require('./icons/list.png'),
-  slider: require('./icons/slider.png')
+  slider: require('./icons/slider.png'),
+  readMessageIcon: require('./icons/readMessageIcon.png'),
+  unreadMessageIcon: require('./icons/unReadMessageIcon.png'),
+  contactUsIcon: require('./icons/ContactUs.png'),
+  aboutUsIcon: require('./icons/AboutUs.png'),
+  paymentLogsIcon: require('./icons/paymentLogs.png'),
 };
 
 export const generalImage = {
+  headerBackgroundImage: require('../images/generalImage/headerBackgroundImage.png'),
   homeHeader: require('../images/generalImage/HomeHeader.png'),
   profileImage: require('../images/generalImage/profileImage.png'),
   map: require('../images/generalImage/map.png'),
@@ -74,6 +80,5 @@ export const generalImage = {
   profilePlaceholder: require('../images/generalImage/profilePlaceholder.png'),
   profile: require('../images/generalImage/profile.png'),
   placeholderImage: require('../images/generalImage/placeholderImage.png'),
-  horizontalMap: require('../images/generalImage/horizontalmap.png')
-
+  horizontalMap: require('../images/generalImage/horizontalmap.png'),
 };

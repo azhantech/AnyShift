@@ -66,7 +66,7 @@ export const Styles = StyleSheet.create({
     backgroundColor: colors.white,
     height: vh * 15,
     width: containerWidth,
-    marginTop: vh * 20,
+    marginTop: vh * 35,
     borderRadius: vh * 2,
     justifyContent: 'space-around',
     alignItems: 'center',

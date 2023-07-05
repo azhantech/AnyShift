@@ -9,7 +9,13 @@ import Animated from 'react-native-reanimated';
 import {drawerRoutes} from '../../../navigation/NavigationOptions';
 import {generalImage, icons} from '../../../assets/images';
 import {vw} from '../../../utils/dimensions';
-const routeOrders = ['HomeStack', 'FavStack'];
+const routeOrders = [
+  'HomeStack',
+  'FavStack',
+  'AboutUS',
+  'ContactUs',
+  'PaymentLogs',
+];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);
 

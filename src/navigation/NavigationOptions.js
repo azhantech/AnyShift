@@ -19,8 +19,11 @@ const titles = {
   GiveReview: 'Rate Job',
   Vacancies: 'Vacancies',
   VacancyJobDetails: 'Job Details',
-  Favorites: 'Favorites'
-
+  Favorites: 'Favorites',
+  NotificationScreen: 'Notifications',
+  AboutUS: 'About Us',
+  ContactUs: 'ContactUs',
+  PaymentLogs: 'Payments Logs',
 };
 
 const backButtonRoutes = {
@@ -31,8 +34,8 @@ const backButtonRoutes = {
   EditProfile: 'Edit Profile',
   JobDetails: 'Job Details',
   GiveReview: 'Rate Job',
-  VacancyJobDetails: 'Job Details'
-
+  VacancyJobDetails: 'Job Details',
+  NotificationScreen: 'Notifications',
 };
 
 const notificationButtonRoutes = {
@@ -41,8 +44,10 @@ const notificationButtonRoutes = {
   Profile: 'Profile',
   Applications: 'Applications',
   Vacancies: 'Vacancies',
-  Favorites: 'Favorites'
-
+  Favorites: 'Favorites',
+  AboutUS: 'About Us',
+  ContactUs: 'ContactUs',
+  PaymentLogs: 'Payments Logs',
 };
 
 const navigationOptions = (navProps, props) => {
@@ -84,7 +89,7 @@ const renderHeaderRight = props => {
     return (
       <TouchableOpacity
         onPress={() => {
-          props.navigation.navigate('NotificationsScreen');
+          props.navigation.navigate('NotificationScreen');
         }}
         style={styles.textButton}>
         <Image
@@ -127,10 +132,22 @@ export const drawerRoutes = {
     icon: icons.homeDrawer,
   },
 
-  FavStack:{
+  FavStack: {
     label: 'Favorites',
-    icon: icons.heartNotFilled
-  }
+    icon: icons.heartNotFilled,
+  },
+  AboutUS: {
+    label: 'About US',
+    icon: icons.aboutUsIcon,
+  },
+  ContactUs: {
+    label: 'Contact Us',
+    icon: icons.contactUsIcon,
+  },
+  PaymentLogs: {
+    label: 'Payment Logs',
+    icons: icons.paymentLogsIcon,
+  },
 };
 
 export default navigationOptions;

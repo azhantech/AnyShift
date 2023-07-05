@@ -4,7 +4,7 @@ import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 const ScrollWrapper = props => {
   const Scrollable = props.avoidKeyboard ? KeyboardAwareScrollView : ScrollView;
   return (
-    <Scrollable showsVerticalScrollIndicator={false} {...props} >
+    <Scrollable showsVerticalScrollIndicator={false} {...props}>
       {props.children}
     </Scrollable>
   );
