@@ -12,6 +12,7 @@ import {vw} from '../../../utils/dimensions';
 const routeOrders = [
   'HomeStack',
   'FavStack',
+  'PlanningStack',
   'AboutUS',
   'ContactUs',
   'PaymentLogs',

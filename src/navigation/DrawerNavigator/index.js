@@ -8,13 +8,30 @@ import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
 import PaymentLogs from '../../navigation/paymentLogsStack';
-// import FavNavigator from '../FavStack';
+import PlanningStack from '../../navigation/PlanningStack'
+import FavStack from '../../navigation/FavStack';
 
 const Drawer = createDrawerNavigator();
 const AnimatedHomeStack = props => {
   return (
     <DrawerScreenWrapper {...props}>
       <TabNavigator />
+    </DrawerScreenWrapper>
+  );
+};
+
+const AnimatedFavStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <FavStack />
+    </DrawerScreenWrapper>
+  );
+};
+
+const AnimatedPlanningStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <PlanningStack />
     </DrawerScreenWrapper>
   );
 };
@@ -39,13 +56,7 @@ const AnimatedPaymentLogsStack = props => {
     </DrawerScreenWrapper>
   );
 };
-// const AnimatedFavStack = props => {
-//   return (
-//     <DrawerScreenWrapper {...props}>
-//       <FavNavigator />
-//     </DrawerScreenWrapper>
-//   );
-// };
+
 
 const DrawerNavigator = props => {
   return (
@@ -64,11 +75,12 @@ const DrawerNavigator = props => {
       }}
       drawerContent={props => <DrawerContent {...props} />}>
       <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
-      <Drawer.Screen name="AboutUS" component={AnimatedAboutUsStack} />
+      <Drawer.Screen name="FavStack" component={AnimatedFavStack} />
+      <Drawer.Screen name="PlanningStack" component={AnimatedPlanningStack} />
+      {/* <Drawer.Screen name="AboutUS" component={AnimatedAboutUsStack} />
       <Drawer.Screen name="ContactUs" component={AnimatedContactUsStack} />
-      <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />
+      <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} /> */}
 
-      {/* <Drawer.Screen name="FavStack" component={AnimatedFavStack} /> */}
     </Drawer.Navigator>
   );
 };
