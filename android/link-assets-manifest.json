@@ -2,10 +2,6 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/index.js",
-      "sha1": "6daa770e9740eee3f548c1448a2e29066e214739"
-    },
-    {
       "path": "src/assets/fonts/QanelasBold.otf",
       "sha1": "08a2741ecb2b3b6de1bf32aac8eb334b5f63d76f"
     },
@@ -28,6 +24,10 @@
     {
       "path": "src/assets/fonts/SFProDisplay-Regular.OTF",
       "sha1": "e19df199e78d296e5b6491d4832a76756532ed43"
+    },
+    {
+      "path": "src/assets/fonts/index.js",
+      "sha1": "273f2597b9c6b440cfb08e78e86ce9c6b4662099"
     }
   ]
 }
