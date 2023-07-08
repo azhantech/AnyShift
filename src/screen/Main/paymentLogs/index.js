@@ -1,8 +1,39 @@
-import React from 'react';
-import {View, FlatList} from 'react-native';
+import React, {useLayoutEffect} from 'react';
+import {View, FlatList, TouchableOpacity, Image} from 'react-native';
 import {Styles} from './styles';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
-const PaymentLogs = () => {
+import {icons} from '../../../assets/images';
+const PaymentLogs = props => {
+  useLayoutEffect(() => {
+    props.navigation.setOptions({
+      headerRight: () => {
+        return (
+          <View style={Styles.headerRight}>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('NotificationScreen');
+              }}
+              style={Styles.textButton}>
+              <Image
+                source={icons.filter}
+                style={Styles.notificationsIconStyle}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('NotificationScreen');
+              }}
+              style={Styles.textButton}>
+              <Image
+                source={icons.notification}
+                style={Styles.notificationsIconStyle}
+              />
+            </TouchableOpacity>
+          </View>
+        );
+      },
+    });
+  });
   const renderItem = () => {
     return (
       <View style={Styles.renderItem}>

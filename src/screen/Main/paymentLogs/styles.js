@@ -11,6 +11,25 @@ export const Styles = StyleSheet.create({
     paddingTop: vh * 2,
     paddingBottom: vh * 10,
   },
+  headerRight: {
+    width: vw * 25,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  textButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: 8 * vw,
+    height: 8 * vw,
+    borderRadius: 8 * vw,
+  },
+
+  notificationsIconStyle: {
+    resizeMode: 'contain',
+    height: 4 * vh,
+    width: 4 * vw,
+  },
   renderItem: {
     width: vw * 90,
     height: vh * 30,

@@ -6,6 +6,7 @@ import JobDetails from '../../screen/Main/JobDetails';
 import GiveReview from '../../screen/Main/GiveReview';
 import Vacancies from '../../screen/Main/Vacancies';
 import VacancyJobDetails from '../../screen/Main/VacancyJobDetails';
+import NotificationScreen from '../../screen/Main/Notification';
 
 const VacanciesStack = createStackNavigator();
 
@@ -16,10 +17,17 @@ const VacanciesNavigator = () => {
       screenOptions={navigationOptions}
       initialRouteName="Vacancies">
       <VacanciesStack.Screen name="Vacancies" component={Vacancies} />
-      <VacanciesStack.Screen name="VacancyJobDetails" component={VacancyJobDetails} />
+      <VacanciesStack.Screen
+        name="VacancyJobDetails"
+        component={VacancyJobDetails}
+      />
       <VacanciesStack.Screen name="Applications" component={Applications} />
       <VacanciesStack.Screen name="JobDetails" component={JobDetails} />
       <VacanciesStack.Screen name="GiveReview" component={GiveReview} />
+      <VacanciesStack.Screen
+        name="NotificationScreen"
+        component={NotificationScreen}
+      />
     </VacanciesStack.Navigator>
   );
 };

@@ -329,35 +329,6 @@ export const vacancies = [
   },
 ];
 
-export const planning = [
-    {
-      id: 1,
-      name: 'Counter Cashier',
-      time: '12 : 00 - 20:00 ( 8h)',
-      including: 'Including 30 min Break',
-      status: 'pending',
-      picture: require('../assets/images/icons/starbucks.png'),
-    },
-
-    {
-      id: 2,
-      name: 'Counter Cashier',
-      time: '12 : 00 - 20:00 ( 8h)',
-      including: 'Including 30 min Break',
-      status: 'approved',
-      picture: require('../assets/images/icons/starbucks.png'),
-    },
-
-    {
-      id: 3,
-      name: 'Counter Cashier',
-      time: '12 : 00 - 20:00 ( 8h)',
-      including: 'Including 30 min Break',
-      status: 'pending',
-      picture: require('../assets/images/icons/starbucks.png'),
-    },
-]
-
 export const favorites = [
   {
     id: 1,
