@@ -20,6 +20,7 @@ const titles = {
   Vacancies: 'Vacancies',
   VacancyJobDetails: 'Job Details',
   Favorites: 'Favorites',
+  Planning: 'Planning',
   NotificationScreen: 'Notifications',
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
@@ -46,6 +47,7 @@ const notificationButtonRoutes = {
   Applications: 'Applications',
   Vacancies: 'Vacancies',
   Favorites: 'Favorites',
+  Planning: 'Planning',
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
@@ -133,7 +135,6 @@ export const drawerRoutes = {
     label: 'Home',
     icon: icons.homeDrawer,
   },
-
   FavStack: {
     label: 'Favorites',
     icon: icons.heartNotFilled,
@@ -152,8 +153,21 @@ export const drawerRoutes = {
   },
   PlanningStack: {
     label: 'Planning',
-    icon: icons.AppleIcon,
+    icon: icons.planning,
   },
+
+  // AboutUS: {
+  //   label: 'About US',
+  //   icon: icons.aboutUsIcon,
+  // },
+  // ContactUs: {
+  //   label: 'Contact Us',
+  //   icon: icons.contactUsIcon,
+  // },
+  // PaymentLogs: {
+  //   label: 'Payment Logs',
+  //   icons: icons.paymentLogsIcon,
+  // },
 };
 
 export default navigationOptions;

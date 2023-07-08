@@ -1,9 +1,9 @@
 export const fonts = {
   Qanelas: {
-    semiBold: 'QanelasSemiBold',
-    bold: 'QanelasBold',
-    regular: 'QanelasRegular',
-    medium: 'QanelasMedium',
+    semiBold: 'Qanelas-SemiBold',
+    bold: 'Qanelas-Bold',
+    regular: 'Qanelas-Regular',
+    medium: 'Qanelas-Medium',
   },
   SFProDisplay: {
     Regular: 'SFProDisplay-Regular',

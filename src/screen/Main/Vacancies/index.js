@@ -9,6 +9,7 @@ import VacancyItem from '../../../component/VacancyItem';
 import { icons } from '../../../assets/images';
 
 const Vacancies = ({navigation}) => {
+  
   const renderHeader = () => {
     return (
       <View style={styles.mainHeaderViewStyle}>

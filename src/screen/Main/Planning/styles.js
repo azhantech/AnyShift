@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primaryColor,
     justifyContent: 'flex-end',
   },
+
   contentContainerStyle: {
     width: 100 * vw,
     paddingBottom: 10 * vh,
@@ -81,6 +82,48 @@ const styles = StyleSheet.create({
     fontSize: vw * 4,
     marginRight: vh * 2,
   },
+
+  headingViewStyle: {
+    // justifyContent: 'center',
+    // alignItems: 'center'
+  },
+
+  headingTextStyle: {
+    color: colors.black,
+    fontSize: 2.4 * vh,
+    textAlign: 'left',
+    textTransform: 'capitalize',
+  },
+
+  allOptionsViewStyle: {
+    // justifyContent: 'center',
+    // alignItems: 'center',
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+
+  mainHeaderViewStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: 90 * vw,
+    alignSelf: 'center'
+  },
+
+  optionIconStyle:{
+    resizeMode: 'contain',
+    height: 4 * vw,
+    width: 4 * vw
+  },
+
+  optionButtonStyle:{
+    backgroundColor: colors.white,
+    height: 8 * vw,
+    width: 8 *vw,
+    borderRadius: 4 * vw,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 export default styles;

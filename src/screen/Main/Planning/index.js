@@ -40,7 +40,6 @@ const Planning = ({navigation}) => {
   const renderItem = ({item}) => {
     return <PlanningItem item={item} />;
   };
-
   const renderEmptyComponent = () => {
     return (
       <View style={styles.emptyComponentViewStyle}>
