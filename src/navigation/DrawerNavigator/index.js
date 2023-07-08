@@ -8,6 +8,7 @@ import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
 import PaymentLogs from '../../navigation/paymentLogsStack';
+import PlanningStack from '../PlanningStack';
 // import FavNavigator from '../FavStack';
 
 const Drawer = createDrawerNavigator();
@@ -39,6 +40,15 @@ const AnimatedPaymentLogsStack = props => {
     </DrawerScreenWrapper>
   );
 };
+
+const AnimatedPlanningStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <PlanningStack />
+    </DrawerScreenWrapper>
+  );
+};
+
 // const AnimatedFavStack = props => {
 //   return (
 //     <DrawerScreenWrapper {...props}>
@@ -67,6 +77,7 @@ const DrawerNavigator = props => {
       <Drawer.Screen name="AboutUS" component={AnimatedAboutUsStack} />
       <Drawer.Screen name="ContactUs" component={AnimatedContactUsStack} />
       <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />
+      <Drawer.Screen name="PlanningStack" component={AnimatedPlanningStack} />
 
       {/* <Drawer.Screen name="FavStack" component={AnimatedFavStack} /> */}
     </Drawer.Navigator>

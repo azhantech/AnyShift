@@ -66,6 +66,7 @@ export const icons = {
   contactUsIcon: require('./icons/ContactUs.png'),
   aboutUsIcon: require('./icons/AboutUs.png'),
   paymentLogsIcon: require('./icons/paymentLogs.png'),
+  arrowIcon: require('./icons/arrowIcon.png'),
 };
 
 export const generalImage = {

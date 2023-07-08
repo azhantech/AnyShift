@@ -11,8 +11,16 @@ import {vh} from '../../../utils/dimensions';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 import {colors} from '../../../utils/appTheme';
-const Registration = () => {
+const Registration = props => {
   const [step, setStep] = useState(1);
+
+  const hanldebtn = () => {
+    if (step == 1) {
+      setStep(e => e + 1);
+    } else {
+      props.navigation.navigate('Validation');
+    }
+  };
   const renderStep = () => {
     if (step == 1) {
       return (
@@ -115,7 +123,14 @@ const Registration = () => {
         </View>
         <View style={styles.stepIndicatorMainContainer}>
           <View style={styles.stepIndicatorContainer}></View>
-          <View style={styles.stepIndicatorContainer}></View>
+          <View
+            style={[
+              styles.stepIndicatorContainer,
+              {
+                backgroundColor:
+                  step == 2 ? colors.primaryColor : colors.greyBtnOrder,
+              },
+            ]}></View>
         </View>
       </View>
       <View style={styles.headingContainer}>
@@ -125,7 +140,7 @@ const Registration = () => {
       </View>
       {renderStep()}
       <View style={styles.btnContainer}>
-        <CustomButton text="Sign up" />
+        <CustomButton text="Sign up" onPress={hanldebtn} />
         <TouchableText text="Back to" touchableText="Login" />
       </View>
     </Scrollable>

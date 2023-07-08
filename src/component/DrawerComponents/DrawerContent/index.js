@@ -15,6 +15,7 @@ const routeOrders = [
   'AboutUS',
   'ContactUs',
   'PaymentLogs',
+  'PlanningStack',
 ];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);

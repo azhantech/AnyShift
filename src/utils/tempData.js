@@ -1,3 +1,5 @@
+import {colors} from './appTheme';
+
 export const chatlist = [
   {
     id: 1,
@@ -375,5 +377,44 @@ export const favorites = [
     amount: '$100/6days',
     favorite: true,
     picture: require('../assets/images/icons/starbucks.png'),
+  },
+];
+
+export const planning = [
+  {
+    id: 1,
+    name: 'Counter Cashier',
+    amount: '$100/6days',
+    date: '12 : 00 - 20:00 ( 8h)',
+    status: 'Approved',
+    picture: require('../assets/images/icons/amazon.png'),
+    bgColor: colors.successColor,
+  },
+
+  {
+    id: 2,
+    name: 'Counter Cashier',
+    date: '12 : 00 - 20:00 ( 8h)',
+    status: 'Approved',
+    picture: require('../assets/images/icons/starbucks.png'),
+    bgColor: colors.successColor,
+  },
+
+  {
+    id: 3,
+    name: 'Counter Cashier',
+    date: '12 : 00 - 20:00 ( 8h)',
+    status: 'Pending',
+    picture: require('../assets/images/icons/starbucks.png'),
+    bgColor: colors.warningColor,
+  },
+
+  {
+    id: 4,
+    name: 'Counter Cashier',
+    date: '12 : 00 - 20:00 ( 8h)',
+    status: 'Pending',
+    picture: require('../assets/images/icons/starbucks.png'),
+    bgColor: colors.warningColor,
   },
 ];

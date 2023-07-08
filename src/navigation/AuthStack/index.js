@@ -5,7 +5,7 @@ import Registration from '../../screen/Auth/Registration';
 import SignupScreen from '../../screen/Auth/SignUp';
 import SignInScreen from '../../screen/Auth/SignIn';
 import ForgotPasswordScreen from '../../screen/Auth/ForgotPasswordScreen';
-
+import Validation from '../../screen/Auth/Validation';
 const AuthStack = createStackNavigator();
 
 const AuthNavigator = () => {
@@ -21,6 +21,7 @@ const AuthNavigator = () => {
         name="ForgotPasswordScreen"
         component={ForgotPasswordScreen}
       />
+      <AuthStack.Screen name="Validation" component={Validation} />
     </AuthStack.Navigator>
   );
 };

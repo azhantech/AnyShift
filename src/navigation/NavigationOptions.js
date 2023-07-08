@@ -24,6 +24,7 @@ const titles = {
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
+  Planning: 'Planning',
 };
 
 const backButtonRoutes = {
@@ -48,6 +49,7 @@ const notificationButtonRoutes = {
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
+  Planning: 'Planning',
 };
 
 const navigationOptions = (navProps, props) => {
@@ -146,7 +148,11 @@ export const drawerRoutes = {
   },
   PaymentLogs: {
     label: 'Payment Logs',
-    icons: icons.paymentLogsIcon,
+    icon: icons.paymentLogsIcon,
+  },
+  PlanningStack: {
+    label: 'Planning',
+    icon: icons.AppleIcon,
   },
 };
 

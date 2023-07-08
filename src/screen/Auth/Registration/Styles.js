@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
   },
   contentContainerStyle: {
     alignItems: 'center',
+    paddingBottom: vh * 5,
   },
   stepStyle: {
     width: containerWidth,
