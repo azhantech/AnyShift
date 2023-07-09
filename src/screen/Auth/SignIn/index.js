@@ -22,7 +22,9 @@ const SignInScreen = props => {
         />
       </View>
       <View style={styles.forgotPasswordContainer}>
-        <TouchableOpacity style={styles.forgotPasswordTouchable}>
+        <TouchableOpacity
+          style={styles.forgotPasswordTouchable}
+          onPress={() => props.navigation.navigate('ForgotPasswordScreen')}>
           <QanelasRegular style={styles.forgotPasswordText}>
             Forgot Password
           </QanelasRegular>

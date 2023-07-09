@@ -29,6 +29,9 @@ const Planning = ({navigation}) => {
                 calendarHeaderStyle={{color: 'white'}}
                 dateNumberStyle={{color: 'white'}}
                 dateNameStyle={{color: 'white'}}
+                iconContainer={{flex: 0.1}}
+                iconLeftStyle={{tintColor: 'white'}}
+                iconRightStyle={{tintColor: 'white'}}
               />
             </View>
           </View>

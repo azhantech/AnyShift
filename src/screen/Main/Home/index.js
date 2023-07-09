@@ -10,6 +10,8 @@ import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {FlatList} from 'react-native-gesture-handler';
+import {AirbnbRating} from 'react-native-ratings';
+
 const Home = props => {
   useLayoutEffect(() => {
     props.navigation.setOptions({
@@ -26,6 +28,13 @@ const Home = props => {
               </View>
               <View style={Styles.profileBottomContainer}>
                 <QanelasBold style={Styles.userName}>James Milner</QanelasBold>
+                <AirbnbRating
+                  isDisabled={true}
+                  count={5}
+                  defaultRating={4}
+                  size={2.5 * vh}
+                  showRating={false}
+                />
               </View>
             </View>
           </View>

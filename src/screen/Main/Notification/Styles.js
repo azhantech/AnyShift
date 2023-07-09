@@ -15,6 +15,7 @@ export const Style = StyleSheet.create({
   },
   contentContainerStyle: {
     alignItems: 'center',
+    paddingBottom: vh * 10,
   },
   renderItemMainContainer: {
     width: containerWidth,

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems: 'center',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   mainHeaderViewStyle: {
@@ -50,23 +50,24 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     width: 90 * vw,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    height: vh * 8,
   },
 
-  optionIconStyle:{
+  optionIconStyle: {
     resizeMode: 'contain',
     height: 4 * vw,
-    width: 4 * vw
+    width: 4 * vw,
   },
 
-  optionButtonStyle:{
+  optionButtonStyle: {
     backgroundColor: colors.white,
     height: 8 * vw,
-    width: 8 *vw,
+    width: 8 * vw,
     borderRadius: 4 * vw,
     justifyContent: 'center',
-    alignItems: 'center'
-  }
+    alignItems: 'center',
+  },
 });
 
 export default styles;
