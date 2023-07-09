@@ -68,6 +68,58 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  renderCarouselItem: {
+    height: vh * 50,
+    width: vw * 80,
+    backgroundColor: colors.white,
+    borderRadius: vh * 2,
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  imageContainer: {
+    height: '70%',
+    width: '90%',
+    backgroundColor: 'white',
+    borderRadius: vh * 2,
+    alignItems: 'center',
+    backgroundColor: '#F7F3ED',
+    image: {
+      height: '90%',
+      width: '90%',
+      resizeMode: 'contain',
+    },
+  },
+  detailsContainer: {
+    height: '20%',
+    width: '90%',
+    justifyContent: 'space-between',
+  },
+  row: {
+    height: '30%',
+    width: '100%',
+  },
+  heartIconStyle: fav => ({
+    resizeMode: 'contain',
+    height: 4 * vw,
+    width: 4 * vw,
+    tintColor: fav ? colors.primaryColor : null,
+  }),
+  nameViewStyle: {
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  userName: {
+    textTransform: 'capitalize',
+    fontSize: vh * 1.7,
+    color: colors.black,
+    width: '70%',
+  },
+  heartFilledViewStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
 
 export default styles;
