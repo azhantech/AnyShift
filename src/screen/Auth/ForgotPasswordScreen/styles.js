@@ -6,6 +6,7 @@ const containerWidth = vw * 90;
 const styles = StyleSheet.create({
   scroll: {
     flex: 1,
+    backgroundColor: colors.white,
   },
   content: {
     alignItems: 'center',
@@ -25,7 +26,6 @@ const styles = StyleSheet.create({
   },
 
   fieldContainer: {
-    backgroundColor: colors.white,
     height: 100 * vh,
     width: 100 * vw,
     borderTopRightRadius: 15 * vw,
@@ -177,10 +177,8 @@ const styles = StyleSheet.create({
     fontSize: 1.8 * vh,
   },
 
-  inputFieldStyle:{
+  inputFieldStyle: {
     marginTop: 2 * vh,
   },
-
- 
 });
 export default styles;

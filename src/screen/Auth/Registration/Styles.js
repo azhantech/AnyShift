@@ -47,25 +47,27 @@ export const styles = StyleSheet.create({
     color: colors.black,
   },
   fieldContainer: {
-    height: vh * 35,
+    height: vh * 37,
     width: containerWidth,
     justifyContent: 'space-around',
   },
   noteContainer: {
     height: vh * 5,
     justifyContent: 'center',
-    width: containerWidth,
+    width: containerWidth + 30,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   noteText: {
     color: colors.highlightedText,
     fontSize: vh * 1.5,
+    width: containerWidth -10,
   },
   dobContainer: {
     height: vh * 10,
     width: containerWidth,
+    justifyContent: 'center',
   },
   pickerContainer: {
     flexDirection: 'row',
@@ -94,6 +96,7 @@ export const styles = StyleSheet.create({
     height: 8 * vw,
     borderRadius: 8 * vw,
   },
+  text: {fontSize: vh * 1.5},
 
   backIconStyle: {
     resizeMode: 'contain',
@@ -110,13 +113,15 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     borderWidth: 1,
     borderColor: checked ? colors.primaryColor : colors.lightBorderColor,
-    backgroundColor: checked ? colors.lightRed : colors.textInputBackgroundColor
+    backgroundColor: checked
+      ? colors.lightRed
+      : colors.textInputBackgroundColor,
   }),
 
   tickBoxImageStyle: checked => ({
     resizeMode: 'contain',
     height: 2 * vw,
     width: 2 * vw,
-    tintColor: checked && colors.primaryColor
-  })
+    tintColor: checked && colors.primaryColor,
+  }),
 });

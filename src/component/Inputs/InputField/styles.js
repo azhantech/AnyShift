@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   },
   labelContainer: {
     flexDirection: 'row',
+    marginBottom: vh * 0.5
   },
   label: {
     color: colors.blackappText,

@@ -56,6 +56,7 @@ export const Style = StyleSheet.create({
     width: '90%',
     height: '30%',
     alignItems: 'center',
+    justifyContent:'space-between',
     rightContainer: {
       width: '15%',
       height: '100%',
@@ -67,13 +68,13 @@ export const Style = StyleSheet.create({
       },
     },
     leftContainer: {
-      width: '90%',
+      width: '85%',
       height: '100%',
       justifyContent: 'center',
 
       text: {
         color: colors.grey,
-        fontSize: vw * 3,
+        fontSize: vw * 2.8,
       },
     },
   },
@@ -83,7 +84,7 @@ export const Style = StyleSheet.create({
     justifyContent: 'center',
     text: {
       color: colors.highlightedText,
-      fontSize: vw * 4,
+      fontSize: vw * 3,
     },
   },
   ItemSeprator: {
