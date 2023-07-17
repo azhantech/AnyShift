@@ -26,7 +26,7 @@ export const icons = {
   warning: require('./icons/warning.png'),
   dropDown: require('./icons/dropdown.png'),
   homeDrawer: require('./icons/homeDrawer.png'),
-  planning:require('./icons/planning.png'),
+  planning: require('./icons/planning.png'),
   drawer: require('./icons/drawer.png'),
   back: require('./icons/back.png'),
   profileImage: require('./icons/original.png'),
@@ -69,7 +69,8 @@ export const icons = {
   paymentLogsIcon: require('./icons/paymentLogs.png'),
   arrowIcon: require('./icons/arrowIcon.png'),
   rightArrow: require('./icons/rightArrow.png'),
-  verify: require('./icons/verify.png')
+  verify: require('./icons/verify.png'),
+  logout: require('./icons/logout.png'),
 };
 
 export const generalImage = {

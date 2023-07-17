@@ -1,22 +1,24 @@
 import {StyleSheet} from 'react-native';
-import { colors } from '../../../utils/appTheme';
-import { vh, vw } from '../../../utils/dimensions';
+import {colors} from '../../../utils/appTheme';
+import {vh, vw} from '../../../utils/dimensions';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.drawerColor,
+    alignItems: 'center',
   },
   routeContainer: {
     marginTop: 3 * vh,
-    marginLeft: vw * 10,
+
+    width: vw * 45,
   },
   name: {
     fontSize: 2.6 * vh,
     color: colors.white,
     width: 40 * vw,
     textAlign: 'center',
-    marginTop: 1 * vh
+    marginTop: 1 * vh,
   },
   profileImage: {
     height: vh * 7,
@@ -50,30 +52,46 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  locationTextStyle:{
+  locationTextStyle: {
     color: colors.white,
     fontSize: 1.6 * vh,
     // width: 20 * vw
   },
 
-  locationIconStyle:{
+  locationIconStyle: {
     resizeMode: 'contain',
     height: 3 * vh,
-    width: 3 * vw
+    width: 3 * vw,
   },
 
-  locationViewStyle:{
+  locationViewStyle: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     width: 40 * vw,
   },
 
-  profileImageViewStyle:{
+  profileImageViewStyle: {
     borderWidth: 0.8 * vw,
     borderColor: colors.white,
     borderRadius: vh * 4,
-
-  }
+  },
+  signOutContainer: {
+    justifyContent: 'center',
+    width: vw * 45,
+  },
+  logoutbtn: {
+    width: '45%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  logoutIcons: {
+    resizeMode: 'contain',
+    height: 4 * vh,
+    width: 4 * vw,
+    tintColor: colors.white,
+  },
+  signoutText: {fontSize: vh * 2, color: 'white'},
 });
 export default styles;

@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './styles';
 import DrawerButton from '../DrawerButton';
-import {Image, View} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import QanelasMedium from '../../Texts/QanelasMedium';
+import QanelasRegular from '../../Texts/QanelasRegular';
+
 import {useDrawerProgress} from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import {drawerRoutes} from '../../../navigation/NavigationOptions';
 import {generalImage, icons} from '../../../assets/images';
-import {vw} from '../../../utils/dimensions';
+import {vh, vw} from '../../../utils/dimensions';
+import {colors} from '../../../utils/appTheme';
 const routeOrders = [
   'HomeStack',
   'FavStack',
@@ -72,6 +75,14 @@ const DrawerContent = props => {
             />
           );
         })}
+      </View>
+      <View style={styles.signOutContainer}>
+        <TouchableOpacity
+          style={styles.logoutbtn}
+          onPress={() => props.navigation.navigate('AuthStack')}>
+          <Image source={icons.logout} style={styles.logoutIcons} />
+          <QanelasRegular style={styles.signoutText}>Signout</QanelasRegular>
+        </TouchableOpacity>
       </View>
     </View>
   );
