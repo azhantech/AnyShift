@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, TouchableOpacity, View, Image} from 'react-native';
 import InputField from '../../../component/Inputs/InputField';
 import {styles} from './styles';
@@ -7,7 +7,9 @@ import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import {icons} from '../../../assets/images';
 import {vh, vw} from '../../../utils/dimensions';
 import TouchableText from '../../../component/Buttons/TouchableText';
+import {colors} from '../../../utils/appTheme';
 const SignupScreen = props => {
+  const [signedInAs, setSignedInAs] = useState(null);
   const registrationData = [
     {
       id: 0,
@@ -42,23 +44,33 @@ const SignupScreen = props => {
       text: 'Sign In With Apple',
     },
   ];
+
+  const handleSignUp = id => {
+    setSignedInAs(id);
+  };
+
   const renderSelectionView = () => {
     return (
       <View style={styles.renderSelectionView}>
         {registrationData.map((val, index) => {
           return (
             <TouchableOpacity
-              style={styles.selectionCOntainer}
-              onPress={() => props?.navigation.navigate('Registration')}>
+              style={styles.selectionCOntainer(signedInAs, val?.id)}
+              onPress={() => handleSignUp(val?.id)}
+            >
               <View style={styles.selectionImageContainer}>
-                <Image source={val?.image} style={styles.employeeImage} />
+                <Image
+                  source={val?.image}
+                  style={styles.employeeImage(signedInAs, val?.id)}
+                />
                 <QanelasRegular style={styles.selectiontext}>
                   {val?.text}
                 </QanelasRegular>
               </View>
-              <View style={styles.selectionMarkContainer}>
-                <Image source={icons.check} />
-              </View>
+              <TouchableOpacity
+                style={styles.selectionMarkContainer(signedInAs, val?.id)}>
+                {signedInAs == val?.id && <Image source={icons.check} />}
+              </TouchableOpacity>
             </TouchableOpacity>
           );
         })}
@@ -70,7 +82,7 @@ const SignupScreen = props => {
       <View style={styles.socialLoginMainContainer}>
         {socialLoginData.map((val, index) => {
           return (
-            <TouchableOpacity style={styles.renderSocialLogin}>
+            <TouchableOpacity onPress={() => props?.navigation.navigate('Registration')} style={styles.renderSocialLogin}>
               <View style={styles.socialLoginImageContainer}>
                 <Image source={val?.image} style={styles.socialLoginIcon} />
               </View>

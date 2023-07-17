@@ -55,6 +55,9 @@ export const styles = StyleSheet.create({
     height: vh * 5,
     justifyContent: 'center',
     width: containerWidth,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   noteText: {
     color: colors.highlightedText,
@@ -82,4 +85,38 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
+
+  textButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    width: 8 * vw,
+    height: 8 * vw,
+    borderRadius: 8 * vw,
+  },
+
+  backIconStyle: {
+    resizeMode: 'contain',
+    height: 6 * vw,
+    width: 6 * vw,
+    tintColor: colors.black,
+  },
+
+  tickBoxViewStyle: checked => ({
+    height: vh * 2.5,
+    width: vh * 2.5,
+    borderRadius: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    borderColor: checked ? colors.primaryColor : colors.lightBorderColor,
+    backgroundColor: checked ? colors.lightRed : colors.textInputBackgroundColor
+  }),
+
+  tickBoxImageStyle: checked => ({
+    resizeMode: 'contain',
+    height: 2 * vw,
+    width: 2 * vw,
+    tintColor: checked && colors.primaryColor
+  })
 });

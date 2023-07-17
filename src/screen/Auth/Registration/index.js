@@ -12,6 +12,7 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 import {colors} from '../../../utils/appTheme';
 const Registration = props => {
+  const [checked, setChecked] = useState(false);
   const [step, setStep] = useState(1);
 
   const hanldebtn = () => {
@@ -27,18 +28,18 @@ const Registration = props => {
         <View>
           <View style={styles.fieldContainer}>
             <InputField
-              placeholder="Enter email password"
+              placeholder="Enter First Name"
               label="First name"
               required
             />
             <InputField
-              placeholder="Enter email password"
-              label="First name"
+              placeholder="Enter Last Name"
+              label="Last name"
               required
             />
             <InputField
-              placeholder="Enter email password"
-              label="First name"
+              placeholder="Enter Nick Name"
+              label="Nick Name"
               optional
             />
           </View>
@@ -60,6 +61,7 @@ const Registration = props => {
               placeholder="Enter Your Address"
               label="Address "
               required
+              
             />
             <InputField
               placeholder="Enter Invitation Code"
@@ -81,11 +83,13 @@ const Registration = props => {
             <InputField
               placeholder="Enter Password"
               label="Password"
+              secureTextEntry
               required
             />
             <InputField
               placeholder="Confirm Password"
               label="Confirm Password"
+              secureTextEntry
               required
             />
           </View>
@@ -104,22 +108,49 @@ const Registration = props => {
             </QanelasRegular>
           </View>
           <View style={styles.noteContainer}>
-            <QanelasRegular style={[styles.noteText, {color: colors.black}]}>
-              I agree to General Terms and Condition & Privacy Policy of
-              Anyshift
-            </QanelasRegular>
+            <TouchableOpacity
+              onPress={() => setChecked(!checked)}
+              style={styles.tickBoxViewStyle(checked)}>
+              {checked && (
+                <Image style={styles.tickBoxImageStyle(checked)} source={icons.check} />
+              )}
+            </TouchableOpacity>
+            <View>
+              <QanelasRegular style={[styles.noteText, {color: colors.black}]}>
+                I agree to General Terms and Condition & Privacy Policy of
+                Anyshift
+              </QanelasRegular>
+            </View>
           </View>
         </View>
       );
     }
+  };
+
+  const renderBackHeader = () => {
+    const handleOnPress = () => {
+      if (step == 1) {
+        props?.navigation.goBack();
+      }
+
+      if (step > 1) {
+        setStep(step - 1);
+      }
+    };
+    return (
+      <TouchableOpacity onPress={handleOnPress} style={[styles.textButton]}>
+        <Image source={icons.back} style={styles.backIconStyle} />
+      </TouchableOpacity>
+    );
   };
   return (
     <Scrollable
       style={styles.mainContainer}
       contentContainerStyle={styles.contentContainerStyle}>
       <View style={styles.stepTextContainer}>
+        {renderBackHeader()}
         <View style={styles.stepStyle}>
-          <QanelasBold style={styles.stepText}>Step 1/2</QanelasBold>
+          <QanelasBold style={styles.stepText}>Step {step}/2</QanelasBold>
         </View>
         <View style={styles.stepIndicatorMainContainer}>
           <View style={styles.stepIndicatorContainer}></View>
@@ -135,7 +166,7 @@ const Registration = props => {
       </View>
       <View style={styles.headingContainer}>
         <QanelasBold style={styles.headingText}>
-          Personal Information
+          {step == 1 ? 'Personal Information' : 'Login Credentials'}
         </QanelasBold>
       </View>
       {renderStep()}

@@ -67,7 +67,7 @@ export const Style = StyleSheet.create({
       },
     },
     leftContainer: {
-      width: '80%',
+      width: '90%',
       height: '100%',
       justifyContent: 'center',
 

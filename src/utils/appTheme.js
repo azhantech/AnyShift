@@ -46,7 +46,9 @@ export const colors = {
   warningColor: '#E99C2D',
   successColor: '#05D897',
   inProgress: '#CC02A4',
-  behindProfile: '#F7F3ED'
+  behindProfile: '#F7F3ED',
+  lightRed: '#FFF3F3',
+  lightBorderColor: '#E9E9E9'
 
 };
 export const linearColors = {

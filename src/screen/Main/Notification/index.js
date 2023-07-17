@@ -44,7 +44,7 @@ const Notifications = () => {
         </View>
         <View style={Style.thirdContainer}>
           <QanelasRegular style={Style.thirdContainer.text}>
-            2min
+            2 min
           </QanelasRegular>
         </View>
       </View>
@@ -90,6 +90,7 @@ const Notifications = () => {
         ListHeaderComponent={ListHeaderComponent}
         renderItem={renderItem}
         ItemSeparatorComponent={renderItemSeparatorComponent}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

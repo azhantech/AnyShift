@@ -85,9 +85,9 @@ const DrawerNavigator = props => {
       <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
       <Drawer.Screen name="FavStack" component={AnimatedFavStack} />
       <Drawer.Screen name="PlanningStack" component={AnimatedPlanningStack} />
+      <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />
       <Drawer.Screen name="AboutUS" component={AnimatedAboutUsStack} />
       <Drawer.Screen name="ContactUs" component={AnimatedContactUsStack} />
-      <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />
     </Drawer.Navigator>
   );
 };

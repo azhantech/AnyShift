@@ -64,4 +64,20 @@ export const styles = StyleSheet.create({
     color: colors.highlightedText,
     textDecorationLine: 'underline',
   },
+
+  textButton: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: 8 * vw,
+    height: 8 * vw,
+    borderRadius: 8 * vw,
+    marginBottom: 2 * vh
+  },
+
+  backIconStyle: {
+    resizeMode: 'contain',
+    height: 6 * vw,
+    width: 6 * vw,
+    tintColor: colors.black
+  },
 });

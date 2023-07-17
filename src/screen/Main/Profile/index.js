@@ -252,7 +252,7 @@ const Profile = ({navigation}) => {
           <View style={styles.mainDetailsRowViewStyle}>
             <View style={styles.profileDetailsSubRowOne}>
               <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-                ID Card Front
+                Location
               </QanelasSemiBold>
 
               <Image

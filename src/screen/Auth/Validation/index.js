@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import AuthHeader from '../../../component/Headers/AuthHeader';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
@@ -10,9 +10,19 @@ import OTPInputView from '@twotalltotems/react-native-otp-input';
 import TouchableText from '../../../component/Buttons/TouchableText';
 
 const Validation = props => {
+  const renderBackHeader = () => {
+    return (
+      <TouchableOpacity
+        onPress={() => props?.navigation.goBack()}
+        style={[styles.textButton]}>
+        <Image source={icons.back} style={styles.backIconStyle} />
+      </TouchableOpacity>
+    );
+  };
   return (
     <View style={styles.mainContainer}>
       <View style={styles.headerContainer}>
+        {renderBackHeader()}
         <QanelasBold style={styles.headingText}>
           Validate your phone number
         </QanelasBold>

@@ -13,9 +13,9 @@ const routeOrders = [
   'HomeStack',
   'FavStack',
   'PlanningStack',
+  'PaymentLogs',
   'AboutUS',
   'ContactUs',
-  'PaymentLogs',
 ];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);

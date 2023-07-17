@@ -27,31 +27,36 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-around',
     height: vh * 17,
     alignItems: 'center',
+    marginTop: 2 * vh
   },
-  selectionCOntainer: {
-    height: vh * 15,
-    width: containerWidth / 2.5,
+  selectionCOntainer: (signedInAs, valId) => ({
+    height: vw * 32,
+    width: 36 * vw,
     borderRadius: vh * 1.2,
     borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
+    backgroundColor: signedInAs == valId ? colors.lightRed : colors.white,
+    borderColor:
+      signedInAs == valId ? colors.primaryColor : colors.borderTopColor,
+  }),
   selectionImageContainer: {
     width: containerWidth / 3,
   },
-  employeeImage: {
+  employeeImage: (signedInAs, valId) => ({
     height: vh * 8,
     width: vw * 8,
     resizeMode: 'contain',
-  },
+    tintColor:
+      signedInAs == valId ? colors.primaryColor : colors.black,
+  }),
   selectiontext: {
     fontSize: vh * 1.7,
-    color: colors.grey,
+    color: colors.black,
   },
-  selectionMarkContainer: {
+  selectionMarkContainer: (signedInAs, valId) => ({
     height: vh * 3,
     width: vh * 3,
-
     position: 'absolute',
     top: 10,
     bottom: 0,
@@ -60,7 +65,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-  },
+    borderColor:
+      signedInAs == valId ? colors.primaryColor : colors.borderTopColor,
+  }),
   horizontalLineContainer: {
     height: containerWidth * 0.26,
     width: containerWidth,
