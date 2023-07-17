@@ -70,7 +70,7 @@ export const styles = StyleSheet.create({
   },
   iconStyle: {
     resizeMode: 'contain',
-    width: containerWidth / 17.733,
-    height: containerWidth / 17.733,
+    width: containerWidth / 10.733,
+    height: containerWidth / 10.733,
   },
 });

@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
     color: colors.black,
     width: 90 * vw,
     textAlign: 'center',
+
   },
 
   descriptionStyle: {

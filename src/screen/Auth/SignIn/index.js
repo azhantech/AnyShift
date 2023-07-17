@@ -17,6 +17,7 @@ const SignInScreen = props => {
       <View style={styles.fieldContainer}>
         <InputField placeholder="Enter email address" leftIcon={icons.email} />
         <InputField
+        secureTextEntry={true}
           placeholder="Enter email password"
           leftIcon={icons.privacyIcon}
         />

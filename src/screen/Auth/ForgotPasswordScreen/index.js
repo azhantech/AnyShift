@@ -65,7 +65,7 @@ const ForgotPasswordScreen = props => {
         <View style={styles.fieldsView}>
           <InputField
             placeholder="Enter Verification Code"
-            leftIcon={icons.email}
+            leftIcon={icons.verify}
             value={verificationCode}
             onChangeText={text => setVerificationCode(text)}
             keyboardType="number-pad"
@@ -90,6 +90,7 @@ const ForgotPasswordScreen = props => {
             leftIcon={icons.privacyIcon}
             value={password}
             onChangeText={text => setPassword(text)}
+            secureTextEntry
           />
 
           <InputField
@@ -99,6 +100,7 @@ const ForgotPasswordScreen = props => {
             onChangeText={text => setConfirmPassword(text)}
             onSubmitEditing={handleOnPress}
             inputContainerStyle={styles.inputFieldStyle}
+            secureTextEntry
           />
         </View>
       );

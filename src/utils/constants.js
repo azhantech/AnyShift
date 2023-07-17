@@ -4,19 +4,22 @@ const onboarding_screens = [
     {
         id: 1,
         backgroundImage: require('../assets/images/generalImage/board1.png'),
-        title: "Work On Your Own Time Get Paid Instantly!",
+        title: "Work On\n Your Own Time\n",
+        redTitle: 'Get Paid Instantly!',
         description: "AnyShift connects reliable worker to local business. Earn more and own your time."
     },
     {
         id: 2,
         backgroundImage: require('../assets/images/generalImage/board2.png'),
-        title: "Find The Perfect Job Opportunity!",
+        title: "Find The\nPerfect ",
+        redTitle: 'Job\n Opportunity!',
         description: "Scope out jobs in different industries with AnyShift, find your favorite gig, & make work feel like play."
     },
     {
         id: 3,
         backgroundImage: require('../assets/images/generalImage/board3.png'),
-        title: "Seamless Job Application Process!",
+        title: "Seamless\n Job Application\n",
+        redTitle: 'Process!',
         description: "With Anyshift, applying for jobs is a breeze. Simply submit your profile, upload your resume, and start applying to jobs that interest you."
     }
 ]

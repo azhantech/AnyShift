@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
     // paddingBottom: vh * 1,
   },
   icon: {
-    height: vh * 2.5,
-    width: vh * 2.5,
+    height: vh * 2,
+    width: vh * 2,
     resizeMode: 'contain',
     // backgroundColor: 'red',
   },

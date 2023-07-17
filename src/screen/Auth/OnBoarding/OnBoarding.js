@@ -1,10 +1,8 @@
-import React from 'react';
-import {View, Text, ImageBackground, Animated} from 'react-native';
-// import {TextButton} from '../../components';
+import React, {useEffect, useState} from 'react';
+import {View, ImageBackground, Animated} from 'react-native';
 import constants from '../../../utils/constants';
 import {colors} from '../../../utils/appTheme';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {vh} from '../../../utils/dimensions';
 import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
@@ -12,16 +10,12 @@ import QanelasMedium from '../../../component/Texts/QanelasMedium';
 const OnBoarding = ({navigation}) => {
   const scrollX = React.useRef(new Animated.Value(0)).current;
   const flatListRef = React.useRef();
-
   const [currentIndex, setCurrentIndex] = React.useState(0);
-
   const onViewChangeRef = React.useRef(({viewableItems, changed}) => {
     setCurrentIndex(viewableItems[0].index);
   });
-
   const Dots = () => {
     const dotPosition = Animated.divide(scrollX, constants.SIZES.width);
-
     return (
       <View style={styles.dotsViewStyle}>
         {constants.onboarding_screens.map((item, index) => {
@@ -88,7 +82,12 @@ const OnBoarding = ({navigation}) => {
                   style={styles.imageBackgroundStyle}>
                   <View style={styles.detailsViewStyle}>
                     <QanelasBold style={styles.headingTextStyle}>
-                      {item.title}
+                      {item?.title}
+                      <QanelasBold style={[styles.headingTextStyle, {
+                        color: colors.primaryColor
+                      }]}>
+                        {item?.redTitle}
+                      </QanelasBold>
                     </QanelasBold>
                     <QanelasMedium style={styles.descriptionStyle}>
                       {item.description}

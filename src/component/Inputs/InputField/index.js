@@ -81,6 +81,7 @@ const InputField = props => {
             style={[styles.input, props.inputContainer]}
             placeholder={props.placeholder}
             placeholderTextColor={'#999999'}
+            secureTextEntry={isPassword}
 
             // {...props}
           />
@@ -91,11 +92,11 @@ const InputField = props => {
             <Image source={props.rightIcon2} style={styles.icon2} />
           </TouchableOpacity>
         )}
-        {props.rightIcon && (
+        {props.secureTextEntry && (
           <TouchableOpacity
             activeOpacity={0.8}
             onPress={() => setIsPassword(!isPassword)}
-            style={{width: vw * 6}}>
+            style={{width: vw * 8}}>
             <Image
               source={isPassword ? icons.passwordHide : icons.passwordShow}
               style={styles.icon}

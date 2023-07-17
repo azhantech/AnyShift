@@ -68,7 +68,8 @@ export const icons = {
   aboutUsIcon: require('./icons/AboutUs.png'),
   paymentLogsIcon: require('./icons/paymentLogs.png'),
   arrowIcon: require('./icons/arrowIcon.png'),
-  rightArrow: require('./icons/rightArrow.png')
+  rightArrow: require('./icons/rightArrow.png'),
+  verify: require('./icons/verify.png')
 };
 
 export const generalImage = {
