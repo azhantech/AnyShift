@@ -418,3 +418,38 @@ export const planning = [
     bgColor: colors.warningColor,
   },
 ];
+
+export const notification = [
+  {
+    id: 1,
+    title: ' New Shift Opening',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    read: false,
+    time: '2 min'
+  },
+
+  {
+    id: 2,
+    title: ' New Shift Opening',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    read: true,
+    time: '2 min'
+  },
+
+  {
+    id: 3,
+    title: ' New Shift Opening',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    read: false,
+    time: '2 min'
+  },
+
+  {
+    id: 4,
+    title: ' New Shift Opening',
+    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    read: true,
+    time: '2 min'
+  },
+
+]

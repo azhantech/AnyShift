@@ -39,10 +39,10 @@ const styles = StyleSheet.create({
   },
 
   allOptionsViewStyle: {
-    // justifyContent: 'center',
-    // alignItems: 'center',
+    justifyContent:'space-evenly',
     flexDirection: 'row',
     alignItems: 'center',
+    width: 30 * vw
   },
 
   mainHeaderViewStyle: {

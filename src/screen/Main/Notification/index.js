@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, TouchableOpacity, FlatList, Image} from 'react-native';
 import {Style} from './Styles';
 import {icons} from '../../../assets/images';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import styles from '../../../component/ModalMessages/GeneralModal/styles';
+import { notification } from '../../../utils/tempData';
 
 const Notifications = () => {
-  const renderItem = () => {
+  const [read, setRead] = useState(false);
+
+  const handleMarkRead = () => {
+    setRead(!read);
+  };
+  const renderItem = ({item}) => {
     return (
       <View style={Style.renderItemMainContainer}>
         <View style={Style.firstContainer}>
@@ -19,7 +25,7 @@ const Notifications = () => {
           </View>
           <View style={Style.firstContainer.headingContainer}>
             <QanelasBold style={Style.firstContainer.headingContainer.text}>
-              New Shift Opening
+              {item?.title}
             </QanelasBold>
           </View>
         </View>
@@ -28,15 +34,13 @@ const Notifications = () => {
             <QanelasRegular
               numberOfLines={2}
               style={Style.secondContainer.leftContainer.text}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam.
-              erat, sed diam
+             {item?.description}
             </QanelasRegular>
           </View>
           <View Style={Style.secondContainer.rightContainer}>
             <TouchableOpacity Style={Style.secondContainer.rightContainer}>
               <Image
-                source={icons.readMessageIcon}
+                source={item?.read ? icons.unreadMessageIcon : icons.readMessageIcon}
                 style={Style.secondContainer.rightContainer.image}
               />
             </TouchableOpacity>
@@ -44,7 +48,7 @@ const Notifications = () => {
         </View>
         <View style={Style.thirdContainer}>
           <QanelasRegular style={Style.thirdContainer.text}>
-            2 min
+            {item?.title}
           </QanelasRegular>
         </View>
       </View>
@@ -75,8 +79,10 @@ const Notifications = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={Style.ListHeaderComponent.rightContainer}>
-          <QanelasRegular>Mark all as Read</QanelasRegular>
+        <TouchableOpacity  style={Style.ListHeaderComponent.rightContainer}>
+          <QanelasRegular style={styles.markAllReadStyle}>
+            Mark all as Read
+          </QanelasRegular>
         </TouchableOpacity>
       </View>
     );
@@ -84,7 +90,7 @@ const Notifications = () => {
   return (
     <View style={Style.mainContainer}>
       <FlatList
-        data={[1, 2, 3, 4, 5, 6, 7]}
+        data={notification}
         style={Style.listStyle}
         contentContainerStyle={Style.contentContainerStyle}
         ListHeaderComponent={ListHeaderComponent}

@@ -3,13 +3,13 @@ import {View, TouchableOpacity, FlatList, Image} from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
-import {favorites, planning} from '../../../utils/tempData';
+import {planning} from '../../../utils/tempData';
 import PlanningItem from '../../../component/PlanningItem';
 import {icons} from '../../../assets/images';
-import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import CalendarStrip from 'react-native-calendar-strip';
 import {vh, vw} from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
 const Planning = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -24,14 +24,27 @@ const Planning = ({navigation}) => {
               }}>
               <CalendarStrip
                 scrollable
-                style={{height: '100%', width: '100%'}}
+                style={{
+                  height: '100%', width: '100%'
+                }}
                 calendarColor={'red'}
-                calendarHeaderStyle={{color: 'white'}}
+                calendarHeaderStyle={{
+                  color: 'white',
+                }}
                 dateNumberStyle={{color: 'white'}}
                 dateNameStyle={{color: 'white'}}
                 iconContainer={{flex: 0.1}}
                 iconLeftStyle={{tintColor: 'white'}}
                 iconRightStyle={{tintColor: 'white'}}
+                highlightDateNumberContainerStyle={{
+                  backgroundColor: colors.white,
+                  borderRadius: 4 * vw,
+                  height: 7 * vw,
+                  width: 7 * vw,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+            
               />
             </View>
           </View>

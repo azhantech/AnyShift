@@ -166,8 +166,8 @@ const styles = StyleSheet.create({
 
   onlineIconStyle: (fav) => ({
     resizeMode: 'contain',
-    height: vw * 4,
-    width: vw * 4,
+    height: vw * 3,
+    width: vw * 3,
     tintColor: fav ? colors.primaryColor : null
     // alignSelf: 'flex-end',
     // position: 'absolute',
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   statusMainContainerStyle: {
     alignSelf: 'flex-start',
     position: 'absolute',
-    bottom: 0.5 * vh,
+    bottom: 0.2 * vh,
     // backgroundColor: 'green',
     flexDirection: 'row',
     alignItems: 'center',
@@ -188,7 +188,7 @@ const styles = StyleSheet.create({
   heartViewStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 15 * vw,
+    marginLeft: 17 * vw,
     backgroundColor: colors.white,
     borderRadius: 4 *vw,
     width: 7 * vw,

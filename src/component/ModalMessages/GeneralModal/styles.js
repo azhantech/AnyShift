@@ -97,4 +97,9 @@ export default StyleSheet.create({
     marginTop: 2 * vh,
     marginBottom: 3 * vh
   },
+
+  markAllReadStyle:{
+    color: colors.myMessageColor,
+    fontSize: 1.6 * vh
+  }
 });

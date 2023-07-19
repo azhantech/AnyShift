@@ -7,12 +7,13 @@ import QanelasBold from '../../../component/Texts/QanelasBold';
 import {vacancies} from '../../../utils/tempData';
 import VacancyItem from '../../../component/VacancyItem';
 import {icons} from '../../../assets/images';
-import Carousel from 'react-native-snap-carousel';
+import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
 const Vacancies = ({navigation}) => {
   const [grid, setGrid] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderFavIcon = () => {
     if (isFavourite) {
@@ -39,13 +40,31 @@ const Vacancies = ({navigation}) => {
           <TouchableOpacity
             style={styles.optionButtonStyle}
             onPress={() => setGrid(false)}>
-            <Image style={styles.optionIconStyle} source={icons.list} />
+            <Image
+              style={[
+                styles.optionIconStyle,
+                {
+                  tintColor: !grid
+                    ? colors.primaryColor
+                    : colors.borderTopColor,
+                },
+              ]}
+              source={icons.list}
+            />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.optionButtonStyle}
             onPress={() => setGrid(true)}>
-            <Image style={styles.optionIconStyle} source={icons.slider} />
+            <Image
+              style={[
+                styles.optionIconStyle,
+                {
+                  tintColor: grid ? colors.primaryColor : colors.borderTopColor,
+                },
+              ]}
+              source={icons.slider}
+            />
           </TouchableOpacity>
         </View>
       </View>
@@ -130,6 +149,38 @@ const Vacancies = ({navigation}) => {
     );
   };
 
+  const pagination = () => {
+    return (
+      <Pagination
+        dotsLength={vacancies.length}
+        activeDotIndex={currentIndex}
+        containerStyle={{
+          width: 50 * vw,
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+        }}
+        dotContainerStyle={{
+          width: 2 * vw,
+        }}
+        dotStyle={{
+          width: 5 * vw,
+          height: 1 * vh,
+          borderRadius: 2 * vw,
+          backgroundColor: colors.filled,
+        }}
+        inactiveDotStyle={{
+          backgroundColor: colors.unfilled,
+          width: 5 * vw,
+          height: 1 * vh,
+          borderRadius: 2 * vw,
+        }}
+        inactiveDotOpacity={0.4}
+        inactiveDotScale={0.6}
+      />
+    );
+  };
+
   const renderEmptyComponent = () => {
     return (
       <View style={styles.emptyComponentViewStyle}>
@@ -142,12 +193,16 @@ const Vacancies = ({navigation}) => {
   const renderMainView = () => {
     if (grid) {
       return (
-        <Carousel
-          data={vacancies}
-          renderItem={renderCarouselItem}
-          sliderWidth={vw * 100}
-          itemWidth={vw * 80}
-        />
+        <View>
+          <Carousel
+            data={vacancies}
+            renderItem={renderCarouselItem}
+            sliderWidth={vw * 100}
+            itemWidth={vw * 80}
+            onSnapToItem={index => setCurrentIndex(index)}
+          />
+          {pagination()}
+        </View>
       );
     } else {
       return (
