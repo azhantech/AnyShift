@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     width: vw * 45,
   },
   logoutbtn: {
-    width: '45%',
+    width: '40%',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

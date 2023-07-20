@@ -81,7 +81,7 @@ const DrawerContent = props => {
           style={styles.logoutbtn}
           onPress={() => props.navigation.navigate('AuthStack')}>
           <Image source={icons.logout} style={styles.logoutIcons} />
-          <QanelasRegular style={styles.signoutText}>Signout</QanelasRegular>
+          <QanelasRegular style={styles.signoutText}>Logout</QanelasRegular>
         </TouchableOpacity>
       </View>
     </View>

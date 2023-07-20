@@ -54,6 +54,12 @@ const notificationButtonRoutes = {
   Planning: 'Planning',
 };
 
+const noBorderRoutes = {
+  Profile: 'Profile',
+  JobDetails: 'Job Details',
+  VacancyJobDetails: 'Job Details',
+};
+
 const navigationOptions = (navProps, props) => {
   return {
     headerTitle: () => getTitle(navProps),
@@ -69,12 +75,19 @@ const navigationOptions = (navProps, props) => {
 };
 
 const getHeaderStyle = props => {
+  if (noBorderRoutes[props?.route?.name]) {
+    return {
+      height: 15 * vh, //25
+      maxHeight: 20 * vh,
+      backgroundColor: colors.primaryColor,
+    };
+  }
   return {
     height: 15 * vh, //25
     maxHeight: 20 * vh,
     backgroundColor: colors.primaryColor,
-    // borderBottomRightRadius: vh * 4,
-    // borderBottomLeftRadius: vh * 4,
+    borderBottomRightRadius: vh * 4,
+    borderBottomLeftRadius: vh * 4,
   };
 };
 
@@ -140,7 +153,7 @@ export const drawerRoutes = {
     icon: icons.heartNotFilled,
   },
   AboutUS: {
-    label: 'About US',
+    label: 'About Us',
     icon: icons.aboutUsIcon,
   },
   ContactUs: {

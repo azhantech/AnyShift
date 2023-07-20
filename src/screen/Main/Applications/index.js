@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import {View, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';

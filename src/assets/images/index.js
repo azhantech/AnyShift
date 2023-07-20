@@ -86,4 +86,5 @@ export const generalImage = {
   profile: require('../images/generalImage/profile.png'),
   placeholderImage: require('../images/generalImage/placeholderImage.png'),
   horizontalMap: require('../images/generalImage/horizontalmap.png'),
+  chatProfile: require('../images/generalImage/profile.png')
 };
