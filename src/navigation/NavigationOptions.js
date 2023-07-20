@@ -26,6 +26,7 @@ const titles = {
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
   Planning: 'Planning',
+  ReferalCode: 'Referal Code'
 };
 
 const backButtonRoutes = {
@@ -38,6 +39,7 @@ const backButtonRoutes = {
   GiveReview: 'Rate Job',
   VacancyJobDetails: 'Job Details',
   NotificationScreen: 'Notifications',
+  ReferalCode: 'Referal Code'
 };
 
 const notificationButtonRoutes = {
@@ -58,6 +60,7 @@ const noBorderRoutes = {
   Profile: 'Profile',
   JobDetails: 'Job Details',
   VacancyJobDetails: 'Job Details',
+  ReferalCode: 'Referal Code'
 };
 
 const navigationOptions = (navProps, props) => {

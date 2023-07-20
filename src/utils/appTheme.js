@@ -48,7 +48,8 @@ export const colors = {
   inProgress: '#CC02A4',
   behindProfile: '#F7F3ED',
   lightRed: '#FFF3F3',
-  lightBorderColor: '#E9E9E9'
+  lightBorderColor: '#E9E9E9',
+  lightDottedBorder: '#E4F1FF'
 
 };
 export const linearColors = {

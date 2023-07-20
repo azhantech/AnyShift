@@ -71,6 +71,7 @@ export const icons = {
   rightArrow: require('./icons/rightArrow.png'),
   verify: require('./icons/verify.png'),
   logout: require('./icons/logout.png'),
+  copy: require('./icons/copy.png')
 };
 
 export const generalImage = {
@@ -86,5 +87,6 @@ export const generalImage = {
   profile: require('../images/generalImage/profile.png'),
   placeholderImage: require('../images/generalImage/placeholderImage.png'),
   horizontalMap: require('../images/generalImage/horizontalmap.png'),
-  chatProfile: require('../images/generalImage/profile.png')
+  chatProfile: require('../images/generalImage/profile.png'),
+  code: require('../images/generalImage/code.png')
 };

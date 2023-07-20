@@ -54,7 +54,10 @@ const Planning = ({navigation}) => {
   });
 
   const renderItem = ({item}) => {
-    return <PlanningItem item={item} />;
+    return <PlanningItem 
+    item={item} 
+    onPress={() => navigation.navigate('ReferalCode')}
+    />;
   };
   const renderEmptyComponent = () => {
     return (
