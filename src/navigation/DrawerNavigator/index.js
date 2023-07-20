@@ -1,9 +1,9 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerScreenWrapper from '../../component/DrawerComponents/DrawerScreenWrapper';
 import DrawerContent from '../../component/DrawerComponents/DrawerContent';
 import TabNavigator from '../TabNavigator';
-import {colors} from '../../utils/appTheme';
+import { colors } from '../../utils/appTheme';
 import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
@@ -11,12 +11,29 @@ import PaymentLogs from '../../navigation/paymentLogsStack';
 import PlanningStack from '../PlanningStack';
 // import FavNavigator from '../FavStack';
 import FavStack from '../../navigation/FavStack';
+import TabNavigatorEmployer from '../TabNavigatorEmployer';
 
 const Drawer = createDrawerNavigator();
-const AnimatedHomeStack = props => {
+// const AnimatedHomeStack = (type, ...props) => {
+//   console.log('TYPEEEE==========>>>>>>>>>>>>', type);
+//   return (
+//     <DrawerScreenWrapper {...props}>
+//       {
+//         type == 'employer' ?
+//           <TabNavigatorEmployer />
+//           :
+//           <TabNavigator />
+//       }
+
+//     </DrawerScreenWrapper>
+//   );
+// };
+
+const AnimatedHomeStack = (type, ...props) => {
+  console.log('TYPEEEE==========>>>>>>>>>>>>', type);
   return (
     <DrawerScreenWrapper {...props}>
-      <TabNavigator />
+      <TabNavigatorEmployer />
     </DrawerScreenWrapper>
   );
 };

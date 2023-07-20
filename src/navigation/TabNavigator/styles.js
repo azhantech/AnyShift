@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { colors } from '../../utils/appTheme';
 import { vh, vw } from '../../utils/dimensions';
 const styles = StyleSheet.create({
@@ -22,20 +22,17 @@ const styles = StyleSheet.create({
     width: 22 * vw,
     justifyContent: 'center',
   },
-
   icon: (focused) => ({
     height: vh * 2.5,
     width: vh * 2.5,
     resizeMode: 'contain',
     tintColor: focused ? colors.blackappText : colors.tabPlaceHolderColor
   }),
-
   titleColorStyle: (focused) => ({
     color: focused ? colors.drawerColor : colors.tabPlaceHolderColor,
     fontSize: 1.6 * vh,
     // width: 15 * vw,
   }),
-
   activeTabColorStyle: {
     alignItems: 'center',
     justifyContent: 'center',

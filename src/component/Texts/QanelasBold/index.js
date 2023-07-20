@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+
 import { fonts } from '../../../assets/fonts';
-// fonts
 import TextWrapper from '../TextWrapper';
 
-const OpenSansRegular = props => {
+const QanelasBold = props => {
     return (
         <TextWrapper {...props} style={[styles.text, props.style]}>
             {props.children}
@@ -16,4 +16,4 @@ const styles = StyleSheet.create({
         fontFamily: fonts.Qanelas.bold,
     },
 });
-export default OpenSansRegular;
+export default QanelasBold;

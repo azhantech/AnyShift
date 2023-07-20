@@ -1,9 +1,9 @@
 import React from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 import InputField from '../../../component/Inputs/InputField';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {icons} from '../../../assets/images';
-import {styles} from './styles';
+import { icons } from '../../../assets/images';
+import { styles } from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
@@ -17,7 +17,7 @@ const SignInScreen = props => {
       <View style={styles.fieldContainer}>
         <InputField placeholder="Enter email address" leftIcon={icons.email} />
         <InputField
-        secureTextEntry={true}
+          secureTextEntry={true}
           placeholder="Enter email password"
           leftIcon={icons.privacyIcon}
         />
@@ -35,6 +35,10 @@ const SignInScreen = props => {
         <CustomButton
           text="Sign In"
           onPress={() => props?.navigation.navigate('DrawerNavigator')}
+        />
+        <CustomButton
+          text="Sign In as Employer"
+          onPress={() => props?.navigation.navigate('DrawerNavigator', { type: 'employer' })}
         />
       </View>
       <View style={styles.donthaveAccountContainer}>

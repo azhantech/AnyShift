@@ -71,6 +71,9 @@ export const icons = {
   rightArrow: require('./icons/rightArrow.png'),
   verify: require('./icons/verify.png'),
   logout: require('./icons/logout.png'),
+  arrowUp: require('./icons/arrow-up.png'),
+  company: require('./icons/company.png'),
+  job: require('./icons/job.png')
 };
 
 export const generalImage = {

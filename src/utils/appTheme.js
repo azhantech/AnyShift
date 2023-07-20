@@ -48,8 +48,10 @@ export const colors = {
   inProgress: '#CC02A4',
   behindProfile: '#F7F3ED',
   lightRed: '#FFF3F3',
-  lightBorderColor: '#E9E9E9'
-
+  lightBorderColor: '#E9E9E9',
+  border: '#E8E8E8',
+  green: '#06B100',
+  lightRed: '#FFE9E9'
 };
 export const linearColors = {
   black: ['rgba(29,29,29,0.65)', 'rgba(55,55,55,0)'],

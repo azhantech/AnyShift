@@ -1,9 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+
 import { fonts } from '../../../assets/fonts';
 import TextWrapper from '../TextWrapper';
 
-const OpenSansSemiBold = props => {
+const QanelasSemiBold = props => {
     return (
         <TextWrapper {...props} style={[styles.text, props.style]}>
             {props.children}
@@ -15,4 +16,4 @@ const styles = StyleSheet.create({
         fontFamily: fonts.Qanelas.semiBold,
     },
 });
-export default OpenSansSemiBold;
+export default QanelasSemiBold;
