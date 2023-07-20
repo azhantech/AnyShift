@@ -71,7 +71,8 @@ export const icons = {
   rightArrow: require('./icons/rightArrow.png'),
   verify: require('./icons/verify.png'),
   logout: require('./icons/logout.png'),
-  copy: require('./icons/copy.png')
+  copy: require('./icons/copy.png'),
+  calendarIcon: require('./icons/calendarIcon.png'),
 };
 
 export const generalImage = {

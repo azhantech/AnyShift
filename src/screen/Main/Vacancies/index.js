@@ -10,11 +10,13 @@ import {icons} from '../../../assets/images';
 import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
+import FilterModal from '../../../component/FilterModal';
 const Vacancies = ({navigation}) => {
   const [grid, setGrid] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [cancelReasonModal, setCancelReasonModal] = useState(false);
   const renderFavIcon = () => {
     if (isFavourite) {
       return icons.heartFilled;
@@ -25,6 +27,9 @@ const Vacancies = ({navigation}) => {
   const handleFav = () => {
     setIsFavourite(!isFavourite);
   };
+  const onHandleCancelReasonModal = () => {
+    setCancelReasonModal(!cancelReasonModal);
+  };
   const renderHeader = () => {
     return (
       <View style={styles.mainHeaderViewStyle}>
@@ -33,7 +38,9 @@ const Vacancies = ({navigation}) => {
         </View>
 
         <View style={styles.allOptionsViewStyle}>
-          <TouchableOpacity style={styles.optionButtonStyle}>
+          <TouchableOpacity
+            style={styles.optionButtonStyle}
+            onPress={onHandleCancelReasonModal}>
             <Image style={styles.optionIconStyle} source={icons.filter} />
           </TouchableOpacity>
 
@@ -221,6 +228,13 @@ const Vacancies = ({navigation}) => {
     <MainContainer>
       {renderHeader()}
       {renderMainView()}
+      <FilterModal
+        visible={cancelReasonModal}
+        onPress={onHandleCancelReasonModal}
+        onHide={onHandleCancelReasonModal}
+        vacancies
+        headerText="Filter Vacancies"
+      />
     </MainContainer>
   );
 };
