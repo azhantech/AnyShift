@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Image, LayoutAnimation, TouchableOpacity, View } from 'react-native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+
 import HomeStack from '../HomeStack';
 import ProfileStack from '../ProfileStack';
 import VacanciesStack from '../VacanciesStack'
@@ -10,14 +12,13 @@ import styles from './styles';
 import QanelasRegular from '../../component/Texts/QanelasRegular';
 import { icons } from '../../assets/images';
 import HomeNavigatorEmployer from '../HomeStackEmployer';
+import CompanyNavigator from '../Employeer/CompanyNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
 const tabIcons = {
     Home: { icon: icons.tab1 },
-    Vacancies: { icon: icons.tab2 },
-    Shift: { icon: icons.tab3 },
-    Chat: { icon: icons.tab4 },
+    Companies: { icon: icons.companyTab },
     Profile: { icon: icons.tab5 },
 };
 
@@ -29,10 +30,8 @@ const TabNavigatorEmployer = props => {
             screenOptions={{ swipeEnabled: false }}
             tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
             <Tab.Screen name="Home" component={HomeNavigatorEmployer} />
-            <Tab.Screen name="Vacancies" component={VacanciesStack} />
-            <Tab.Screen name="Shift" component={ShiftStack} />
-            <Tab.Screen name="Chat" component={ChatStack} />
-            <Tab.Screen name="Profile" component={ProfileStack} />
+            <Tab.Screen name="Companies" component={CompanyNavigator} />
+            <Tab.Screen name="Profile" component={ShiftStack} />
         </Tab.Navigator>
     );
 };

@@ -13,7 +13,8 @@ const styles = StyleSheet.create({
         width: vw * 90,
         alignSelf: 'center',
         padding: vh * 3,
-        flexDirection: 'row', alignItems: 'center',
+        paddingHorizontal: vw * 8,
+        flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
         ...themeShadow
     },
     statsRow: {
@@ -30,11 +31,14 @@ const styles = StyleSheet.create({
         marginHorizontal: vw * 1
     },
     iconContainer: {
-        height: vh * 8, width: vh * 8, alignItems: 'center', justifyContent: 'center',
+        height: vh * 7, width: vh * 7, alignItems: 'center', justifyContent: 'center',
         borderRadius: vh * 1, backgroundColor: colors.lightRed
     },
     icon: {
         height: vh * 3, width: vh * 3, resizeMode: 'contain'
+    },
+    title: {
+        textTransform: 'capitalize'
     }
 })
 

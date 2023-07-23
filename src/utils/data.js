@@ -1,104 +1,109 @@
-import { generalImages, icons } from "../assets/images";
+import { icons } from "../assets/images";
 
-export const courouselItem = [
+// export const courouselItem = [
+//     {
+//         sale: "Flash Sale",
+//         image: generalImages.trainer,
+//         title: "Summer Dress"
+//     },
+//     {
+//         sale: "Flash Sale",
+//         image: generalImages.trainer,
+//         title: "Summer Dress"
+//     },
+//     {
+//         sale: "Flash Sale",
+//         image: generalImages.trainer,
+//         title: "Summer Dress"
+//     },
+// ]
+// export const circuitData = [
+//     {
+//         title: "Circuit",
+//         icon: generalImages.stopwatch,
+//     },
+//     {
+//         title: "Home Workout",
+//         icon: generalImages.dumbbell,
+//     },
+//     {
+//         title: "Gym Workout",
+//         icon: generalImages.exercise,
+//     },
+// ]
+
+export const MealPlans = [
     {
-        sale: "Flash Sale",
-        image: generalImages.trainer,
-        title: "Summer Dress"
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     },
     {
-        sale: "Flash Sale",
-        image: generalImages.trainer,
-        title: "Summer Dress"
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     },
     {
-        sale: "Flash Sale",
-        image: generalImages.trainer,
-        title: "Summer Dress"
-    },
-]
-export const circuitData=[
-    {
-        title:"Circuit",
-        icon: generalImages.stopwatch,
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     },
     {
-        title:"Home Workout",
-        icon: generalImages.dumbbell,
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     },
     {
-        title:"Gym Workout",
-        icon: generalImages.exercise,
-    },
-]
-export const MealPlans=[
-    {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     },
     {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName:"Meal Plan 1",
-        planDescription:"Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
+        planName: "Meal Plan 1",
+        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
     }
 ]
-export const diet=[
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
-    {
-        price:134,
-        image: generalImages.diet,
-        title: "Summer Dress"
-    },
 
-]
+// export const diet = [
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+//     {
+//         price: 134,
+//         image: generalImages.diet,
+//         title: "Summer Dress"
+//     },
+
+// ]
+
 export const statuses = [
     'Completed',
     'Pending',
     'In-Process',
     'Completed',
     'Pending',
-  ]
+]
+
+export const homeData = [{ title: 'total companies', icon: icons.company }, { title: 'total jobs', icon: icons.job }]

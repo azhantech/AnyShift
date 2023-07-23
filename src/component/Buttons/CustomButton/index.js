@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
+
+
 import styles from './styles';
-import {TouchableOpacity} from 'react-native';
 import QanelasRegular from '../../Texts/QanelasRegular';
 
 const CustomButton = props => {

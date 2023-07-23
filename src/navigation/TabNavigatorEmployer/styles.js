@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     titleColorStyle: (focused) => ({
         color: focused ? colors.drawerColor : colors.tabPlaceHolderColor,
         fontSize: 1.6 * vh,
+        textTransform: 'uppercase'
         // width: 15 * vw,
     }),
     activeTabColorStyle: {

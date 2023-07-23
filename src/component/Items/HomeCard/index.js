@@ -7,12 +7,12 @@ import QanelasBold from '../../Texts/QanelasBold'
 import QanelasRegular from '../../Texts/QanelasRegular'
 import { icons } from '../../../assets/images'
 
-const HomeCard = () => {
+const HomeCard = ({ title, icon }) => {
     return (
         <View style={styles.container}>
             <View>
-                <QanelasSemiBold>
-                    Total Companies
+                <QanelasSemiBold style={styles.title}>
+                    {title}
                 </QanelasSemiBold>
                 <QanelasBold style={styles.bigText}>125</QanelasBold>
                 <View style={styles.statsRow}>
@@ -23,7 +23,7 @@ const HomeCard = () => {
             </View>
 
             <View style={styles.iconContainer}>
-                <Image source={icons.company} style={styles.icon} />
+                <Image source={icon} style={styles.icon} />
             </View>
         </View>
     )
