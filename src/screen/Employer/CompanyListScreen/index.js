@@ -49,8 +49,7 @@ const CompanyListScreen = ({ navigation }) => {
             />
 
             <CustomButton
-                // onPress={props?.onPress}
-                // style={[styles.yesButtonStyle, props?.yesbuttonStyle]}
+                onPress={() => navigation.navigate('CreateCompanyScreen')}
                 style={styles.button}
                 text='create company'
             />

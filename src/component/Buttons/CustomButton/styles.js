@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   text: {
     color: '#fff',
     fontSize: vh * 2,
+    textTransform: 'capitalize'
   },
 });
 export default styles;

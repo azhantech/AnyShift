@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         position: 'absolute',
         bottom: vh * 10,
+        backgroundColor: colors.myMessageColor
     }
 });
 
