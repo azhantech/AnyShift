@@ -9,7 +9,7 @@ import {icons} from '../../../assets/images';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import CalendarStrip from 'react-native-calendar-strip';
 import {vh, vw} from '../../../utils/dimensions';
-import { colors } from '../../../utils/appTheme';
+import {colors} from '../../../utils/appTheme';
 const Planning = ({navigation}) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -25,7 +25,8 @@ const Planning = ({navigation}) => {
               <CalendarStrip
                 scrollable
                 style={{
-                  height: '100%', width: '100%'
+                  height: '100%',
+                  width: '100%',
                 }}
                 calendarColor={'red'}
                 calendarHeaderStyle={{
@@ -44,7 +45,12 @@ const Planning = ({navigation}) => {
                   justifyContent: 'center',
                   alignItems: 'center',
                 }}
-            
+                highlightDateNumberStyle={{
+                  color: 'red',
+                }}
+                highlightDateNameStyle={{
+                  color: 'white',
+                }}
               />
             </View>
           </View>
@@ -54,10 +60,12 @@ const Planning = ({navigation}) => {
   });
 
   const renderItem = ({item}) => {
-    return <PlanningItem 
-    item={item} 
-    onPress={() => navigation.navigate('ReferalCode')}
-    />;
+    return (
+      <PlanningItem
+        item={item}
+        onPress={() => navigation.navigate('ReferalCode')}
+      />
+    );
   };
   const renderEmptyComponent = () => {
     return (
