@@ -26,7 +26,7 @@ const DrawerScreenWrapper = props => {
         {
           flex: 1,
           overflow: 'hidden',
-          borderColor: colors.white,
+          borderColor: colors.primaryColor,
         },
         animatedStyle,
       ]}>

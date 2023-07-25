@@ -5,7 +5,7 @@ import {vh, vw} from '../../../utils/dimensions';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.drawerColor,
+    backgroundColor: colors.screenBackgroundColor,
     alignItems: 'center',
   },
   routeContainer: {
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 2.6 * vh,
-    color: colors.white,
+    color: colors.black,
     width: 40 * vw,
     textAlign: 'center',
     marginTop: 1 * vh,
@@ -24,7 +24,6 @@ const styles = StyleSheet.create({
     height: vh * 7,
     width: vh * 7,
     borderRadius: (vh * 10) / 2,
-    tintColor: colors.white,
   },
   header: {
     alignItems: 'center',
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
   },
 
   locationTextStyle: {
-    color: colors.white,
+    color: colors.black,
     fontSize: 1.6 * vh,
     // width: 20 * vw
   },
@@ -62,6 +61,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: 3 * vh,
     width: 3 * vw,
+    tintColor: colors.black
   },
 
   locationViewStyle: {
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
 
   profileImageViewStyle: {
     borderWidth: 0.8 * vw,
-    borderColor: colors.white,
+    borderColor: colors.primaryColor,
     borderRadius: vh * 4,
   },
   signOutContainer: {
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: 4 * vh,
     width: 4 * vw,
-    tintColor: colors.white,
+    tintColor: colors.black,
   },
-  signoutText: {fontSize: vh * 2, color: 'white'},
+  signoutText: {fontSize: vh * 2, color: colors.black},
 });
 export default styles;

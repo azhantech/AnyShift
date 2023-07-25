@@ -17,7 +17,7 @@ const routeOrders = [
   'FavStack',
   'PlanningStack',
   'PaymentLogs',
-  'AboutUS',
+  // 'AboutUS',
   'ContactUs',
 ];
 
@@ -51,7 +51,7 @@ const DrawerContent = props => {
       <AnimatedTouchable style={[styles.header, animatedStyles]}>
         <View style={styles.profileImageViewStyle}>
           <Image
-            source={generalImage.profilePlaceholder}
+            source={generalImage.profile}
             style={styles.profileImage}
           />
         </View>

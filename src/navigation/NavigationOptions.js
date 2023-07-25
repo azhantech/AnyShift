@@ -60,7 +60,8 @@ const noBorderRoutes = {
   Profile: 'Profile',
   JobDetails: 'Job Details',
   VacancyJobDetails: 'Job Details',
-  ReferalCode: 'Referal Code'
+  ReferalCode: 'Referal Code',
+  EditProfile: 'Edit Profile',
 };
 
 const navigationOptions = (navProps, props) => {

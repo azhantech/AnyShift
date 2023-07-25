@@ -73,12 +73,12 @@ const DrawerNavigator = props => {
         drawerType: 'slide',
         headerShown: false,
         drawerStyle: {
-          backgroundColor: colors.drawerColor,
+          backgroundColor: colors.white,
           width: '55%',
         },
         overlayColor: 'transparent',
         sceneContainerStyle: {
-          backgroundColor: colors.drawerColor,
+          backgroundColor: colors.screenBackgroundColor,
         },
       }}
       drawerContent={props => <DrawerContent {...props} />}>
