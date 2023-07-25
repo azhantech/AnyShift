@@ -26,7 +26,7 @@ const Profile = ({navigation}) => {
         <View style={styles.profileImageViewStyle}>
           <Image
             style={styles.profileImageStyle}
-            source={generalImage.profile}
+            source={icons.profileImage}
           />
 
           <Image source={icons.online} style={styles.onlineIconStyle} />

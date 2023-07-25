@@ -100,7 +100,7 @@ const EditProfile = ({navigation}) => {
         <View style={styles.profileImageViewStyle}>
           <Image
             style={styles.profileImageStyle}
-            source={generalImage.profile}
+            source={icons.profileImage}
           />
 
           <TouchableOpacity style={styles.camViewStyle}>
