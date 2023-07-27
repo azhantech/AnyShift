@@ -107,3 +107,8 @@ export const statuses = [
 ]
 
 export const homeData = [{ title: 'total companies', icon: icons.company }, { title: 'total jobs', icon: icons.job }]
+
+export const homeDataCompany = [{ title: 'active jobs', icon: icons.activeJobs }, { title: 'upcoming jobs', icon: icons.upcomingJobs }, { title: 'completed jobs', icon: icons.completedJobs }]
+
+export const homeDataCompanySmall = [{ title: 'post feedback', icon: icons.tab4 }, { title: 'job applications', icon: icons.profile5 }]
+

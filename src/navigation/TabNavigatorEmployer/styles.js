@@ -23,14 +23,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     icon: (focused) => ({
-        height: vh * 2.5,
-        width: vh * 2.5,
+        height: vh * 3,
+        width: vh * 3,
         resizeMode: 'contain',
         tintColor: focused ? colors.blackappText : colors.tabPlaceHolderColor
     }),
     titleColorStyle: (focused) => ({
         color: focused ? colors.drawerColor : colors.tabPlaceHolderColor,
-        fontSize: 1.6 * vh,
+        fontSize: 1.2 * vh,
         textTransform: 'uppercase'
         // width: 15 * vw,
     }),

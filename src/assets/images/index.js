@@ -75,7 +75,12 @@ export const icons = {
   company: require('./icons/company.png'),
   job: require('./icons/job.png'),
   companyTab: require('./icons/companyTab.png'),
-  upload: require('./icons/upload.png')
+  upload: require('./icons/upload.png'),
+  jobs: require('./icons/jobs.png'),
+  attendance: require('./icons/attendance.png'),
+  activeJobs: require('./icons/active-jobs.png'),
+  upcomingJobs: require('./icons/upcoming-jobs.png'),
+  completedJobs: require('./icons/completed-jobs.png'),
 };
 
 export const generalImage = {
