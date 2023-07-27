@@ -14,7 +14,7 @@ const CompanyNavigator = () => {
             headerShown={false}
             screenOptions={navigationOptions}>
             <Stack.Screen name="CompanyListScreen" component={CompanyListScreen} />
-            <Stack.Screen name="CreateCompanyScreen" component={CreateCompanyScreen} />
+            {/* <Stack.Screen name="CreateCompanyScreen" component={CreateCompanyScreen} /> */}
         </Stack.Navigator>
     );
 };
