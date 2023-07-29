@@ -28,6 +28,7 @@ const titles = {
   PaymentLogs: 'Payments Logs',
   Planning: 'Planning',
   CreateCompanyScreen: 'Create Company',
+  JobListScreen: 'Job Management'
 };
 
 const backButtonRoutes = {

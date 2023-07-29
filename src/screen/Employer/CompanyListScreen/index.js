@@ -54,7 +54,6 @@ const CompanyListScreen = ({ navigation }) => {
                 text='create company'
             />
 
-
         </MainContainer>
     );
 };

@@ -1,4 +1,4 @@
-import {colors} from './appTheme';
+import { colors } from './appTheme';
 
 export const chatlist = [
   {
@@ -127,7 +127,7 @@ export const applicaitons = [
   },
 
   {
-    id: 1,
+    id: 2,
     date: 'May 08 2023',
     jobId: '#12345',
     employerName: 'JHA.CO',
@@ -137,7 +137,7 @@ export const applicaitons = [
   },
 
   {
-    id: 1,
+    id: 3,
     date: 'May 08 2023',
     jobId: '#12345',
     employerName: 'JHA.CO',
@@ -146,7 +146,7 @@ export const applicaitons = [
     totalAmount: '$100',
   },
   {
-    id: 1,
+    id: 4,
     date: 'May 08 2023',
     jobId: '#12345',
     employerName: 'JHA.CO',
@@ -155,13 +155,31 @@ export const applicaitons = [
     totalAmount: '$100',
   },
   {
-    id: 1,
+    id: 5,
     date: 'May 08 2023',
     jobId: '#12345',
     employerName: 'JHA.CO',
     status: 'paid',
     jobTitle: 'Cashier',
     totalAmount: '$100',
+  },
+];
+
+export const jobs = [
+  {
+    status: 'upcoming',
+  },
+  {
+    status: 'active',
+  },
+  {
+    status: 'ended',
+  },
+  {
+    status: 'upcoming',
+  },
+  {
+    status: 'active',
   },
 ];
 

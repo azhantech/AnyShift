@@ -49,6 +49,7 @@ const JobDetails = ({navigation, route}) => {
 
     return colors.darkGray;
   };
+  
   const renderProfile = () => {
     return (
       <View style={styles.mainContainerStyle}>

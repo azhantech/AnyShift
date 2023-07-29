@@ -14,6 +14,7 @@ import { icons } from '../../assets/images';
 import CompanyNavigator from '../Employeer/CompanyNavigator';
 import HomeNavigator from '../CompanyNavigation/HomeNavigator';
 import SFProDisplayRegular from '../../component/Texts/SFProDisplayRegular';
+import JobNavigator from '../CompanyNavigation/JobNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -53,7 +54,7 @@ const TabNavigatorEmployer = props => {
             screenOptions={{ swipeEnabled: false }}
             tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
             <Tab.Screen name="Home" component={HomeNavigator} />
-            <Tab.Screen name="Jobs" component={HomeNavigator} />
+            <Tab.Screen name="Jobs" component={JobNavigator} />
             <Tab.Screen name="Planning" component={HomeNavigator} />
             <Tab.Screen name="Attendance" component={HomeNavigator} />
             <Tab.Screen name="Favorites" component={HomeNavigator} />
