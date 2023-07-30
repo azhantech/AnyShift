@@ -28,7 +28,8 @@ const titles = {
   PaymentLogs: 'Payments Logs',
   Planning: 'Planning',
   CreateCompanyScreen: 'Create Company',
-  JobListScreen: 'Job Management'
+  JobListScreen: 'Job Management',
+  PlanningScreen: 'Planning'
 };
 
 const backButtonRoutes = {
@@ -58,6 +59,7 @@ const notificationButtonRoutes = {
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
   Planning: 'Planning',
+  PlanningScreen: 'PlanningScreen'
 };
 
 const navigationOptions = (navProps, props) => {

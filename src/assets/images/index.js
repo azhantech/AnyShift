@@ -81,7 +81,10 @@ export const icons = {
   activeJobs: require('./icons/active-jobs.png'),
   upcomingJobs: require('./icons/upcoming-jobs.png'),
   completedJobs: require('./icons/completed-jobs.png'),
-  dots: require('./icons/dots.png')
+  dots: require('./icons/dots.png'),
+  edit: require('./icons/edit.png'),
+  copy: require('./icons/copy.png'),
+  delete: require('./icons/delete.png'),
 };
 
 export const generalImage = {

@@ -1,3 +1,4 @@
+import { icons } from '../assets/images';
 import { colors } from './appTheme';
 
 export const chatlist = [
@@ -181,6 +182,36 @@ export const jobs = [
   {
     status: 'active',
   },
+];
+
+export const jobOptions = [
+  {
+    icon: icons.edit,
+    title: 'edit'
+  },
+  {
+    icon: icons.copy,
+    title: 'copy'
+  },
+  {
+    icon: icons.delete,
+    title: 'delete'
+  }
+];
+
+export const planningHeader = [
+  {
+    title: 'hours',
+    value: '24h 30m'
+  },
+  {
+    title: 'employees',
+    value: '5'
+  },
+  {
+    title: 'cost',
+    value: '$1100'
+  }
 ];
 
 export const jobDetails = [

@@ -5,7 +5,7 @@ import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
-import { applicaitons, jobs } from '../../../utils/tempData';
+import { jobOptions, jobs } from '../../../utils/tempData';
 import { icons } from '../../../assets/images';
 import JobItem from '../../../component/Items/JobItem';
 import CustomButton from '../../../component/Buttons/CustomButton';
@@ -119,6 +119,7 @@ const JobListScreen = ({ navigation }) => {
             visible={optionModal}
             onPress={onPressModal}
             onHide={onPressModal}
+            options={jobOptions}
         />
 
     </MainContainer>;

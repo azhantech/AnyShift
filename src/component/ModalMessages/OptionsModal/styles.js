@@ -19,9 +19,11 @@ export default StyleSheet.create({
 
     miniContainerView: {
         backgroundColor: colors.white,
-        width: 85 * vw,
-        // height: 35 * vh,
-        borderRadius: 3 * vw,
+        width: 100 * vw,
+        borderTopLeftRadius: vh * 2,
+        borderTopRightRadius: vh * 2,
+        position: 'absolute',
+        bottom: 0
     },
 
     crossIconStyle: {
@@ -101,5 +103,16 @@ export default StyleSheet.create({
     markAllReadStyle: {
         color: colors.myMessageColor,
         fontSize: 1.6 * vh
+    },
+
+    icon: {
+        height: vh * 2.5, width: vh * 2.5, resizeMode: 'contain'
+    },
+    item: {
+        flexDirection: 'row', alignItems: 'center', paddingHorizontal: vw * 6,
+        borderBottomWidth: 0.5, borderColor: colors.greyText, paddingVertical: vh * 3
+    },
+    title: {
+        marginLeft: vw * 5, textTransform: 'capitalize'
     }
 });
