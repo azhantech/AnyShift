@@ -16,11 +16,12 @@ const styles = StyleSheet.create({
     },
     headerTopContainer: {
         backgroundColor: colors.primaryColor,
-        height: vh * 10,
+        height: vh * 15,
         borderBottomRightRadius: vh * 2,
         borderBottomLeftRadius: vh * 2,
         width: vw * 100,
-        position: 'absolute'
+        position: 'absolute',
+        top: -vh * 5
     },
 })
 
