@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 2 * vh,
-    color: colors.white,
+    color: colors.black,
     marginLeft: 2 * vw,
   },
 
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
     height: 4 * vh,
     width: 4 * vw,
-    tintColor: colors.white,
+    tintColor: colors.black,
   },
 });
 export default DrawerButton;

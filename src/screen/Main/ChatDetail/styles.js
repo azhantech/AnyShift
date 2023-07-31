@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
   contentContainerStyle: {
     width: 100 * vw,
     paddingBottom: 10 * vh,
-    
   },
 
   sendButtonStyle: {
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8 * vw,
-    marginTop: 2 * vh
+    marginTop: 2 * vh,
   },
 
   inputContainer: {
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.lightPlaceHolder,
     height: 6 * vh,
-    ...themeShadow
+    ...themeShadow,
   },
 
   emptyComponentViewStyle: {
@@ -96,8 +95,48 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     textTransform: 'capitalize',
   },
-  flatListStyleView:{
-    marginBottom: 16 * vh
+  flatListStyleView: {
+    marginBottom: 16 * vh,
+  },
+
+  headerMainContainer: {
+    height: vh * 15,
+    borderBottomRightRadius: vh * 2,
+    borderBottomLeftRadius: vh * 2,
+    width: vw * 100,
+    backgroundColor: colors.primaryColor,
+    justifyContent: 'flex-end',
+    paddingBottom: vh * 2,
+  },
+
+  profileImageStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  profileImage: {
+    resizeMode: 'contain',
+    height: 10 * vw,
+    width: 10 * vw,
+  },
+
+  profileDetailsContainerStyle:{
+    flexDirection: 'row', 
+    alignItems: 'center',
+    width: 40 * vw,
+    justifyContent: 'space-between',
+    marginLeft:15 * vw
+  },
+
+  profileNameViewStyle:{
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+
+  profileNameTextStyle:{
+    color: colors.white,
+    fontSize: 2.1 * vh,
+
   }
 });
 

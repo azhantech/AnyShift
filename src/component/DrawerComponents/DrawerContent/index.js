@@ -17,7 +17,7 @@ const routeOrders = [
   'FavStack',
   'PlanningStack',
   'PaymentLogs',
-  'AboutUS',
+  // 'AboutUS',
   'ContactUs',
 ];
 
@@ -51,7 +51,7 @@ const DrawerContent = props => {
       <AnimatedTouchable style={[styles.header, animatedStyles]}>
         <View style={styles.profileImageViewStyle}>
           <Image
-            source={generalImage.profilePlaceholder}
+            source={generalImage.profile}
             style={styles.profileImage}
           />
         </View>
@@ -82,7 +82,7 @@ const DrawerContent = props => {
           style={styles.logoutbtn}
           onPress={() => props.navigation.navigate('AuthStack')}>
           <Image source={icons.logout} style={styles.logoutIcons} />
-          <QanelasRegular style={styles.signoutText}>Signout</QanelasRegular>
+          <QanelasRegular style={styles.signoutText}>Logout</QanelasRegular>
         </TouchableOpacity>
       </View>
     </View>

@@ -12,9 +12,7 @@ const styles = StyleSheet.create({
     height: vh * 12,
     width: vh * 12,
     borderRadius: (vh * 10) / 2,
-    tintColor: colors.white,
     resizeMode: 'contain',
-    tintColor: colors.black,
   },
   profileImageViewStyle: {
     borderWidth: 0.8 * vw,

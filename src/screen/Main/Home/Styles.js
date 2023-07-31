@@ -13,7 +13,6 @@ export const Styles = StyleSheet.create({
   },
   headerMainContainer: {
     height: vh * 44,
-
     alignItems: 'center',
     width: vw * 100,
     backgroundColor: colors.screenBackgroundColor,

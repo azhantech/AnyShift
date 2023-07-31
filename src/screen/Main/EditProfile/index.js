@@ -100,7 +100,7 @@ const EditProfile = ({navigation}) => {
         <View style={styles.profileImageViewStyle}>
           <Image
             style={styles.profileImageStyle}
-            source={generalImage.profilePlaceholder}
+            source={icons.profileImage}
           />
 
           <TouchableOpacity style={styles.camViewStyle}>
@@ -128,7 +128,7 @@ const EditProfile = ({navigation}) => {
         </View>
 
         <View style={styles.statusButtonViewStyle(item?.status)}>
-          <Image source={handleStatusIcon(item?.status)} style={styles.statusIconStyle} />
+          <Image source={handleStatusIcon(item?.status)} style={styles.statusIconStyle(item?.status)} />
         </View>
       </TouchableOpacity>
     );

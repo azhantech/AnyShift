@@ -12,9 +12,7 @@ const styles = StyleSheet.create({
     height: vh * 12,
     width: vh * 12,
     borderRadius: (vh * 10) / 2,
-    tintColor: colors.white,
     resizeMode: 'contain',
-    tintColor: colors.black,
   },
   profileImageViewStyle: {
     borderWidth: 0.8 * vw,
@@ -78,18 +76,24 @@ const styles = StyleSheet.create({
     height: 7 * vw,
     borderColor:
       status == 'incomplete'
-        ? colors.warningColor
+        ? colors.lightPlaceHolder
         : status == 'complete'
         ? colors.successColor
-        : colors.primaryColor,
+        : colors.lightPlaceHolder,
     borderRadius: 6 * vw,
   }),
 
-  statusIconStyle: {
+  statusIconStyle: status => ({
     resizeMode: 'contain',
     height: 1.5 * vh,
     width: 8 * vw,
-  },
+    tintColor:
+      status == 'incomplete'
+        ? colors.lightPlaceHolder
+        : status == 'complete'
+        ? colors.successColor
+        : colors.lightPlaceHolder,
+  }),
 
   nameKeyStyle: {
     color: colors.blackappText,

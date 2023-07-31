@@ -19,6 +19,8 @@ const styles = StyleSheet.create({
   inputContainerIcon: {
     borderRadius: vh * 4,
     height: vh * 6,
+    width: 90 * vw,
+    alignSelf: 'center'
   },
   contentContainerStyle: {
     width: 100 * vw,
