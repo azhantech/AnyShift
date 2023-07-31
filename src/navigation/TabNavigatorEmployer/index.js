@@ -16,6 +16,7 @@ import HomeNavigator from '../CompanyNavigation/HomeNavigator';
 import SFProDisplayRegular from '../../component/Texts/SFProDisplayRegular';
 import JobNavigator from '../CompanyNavigation/JobNavigator';
 import PlanningNavigator from '../CompanyNavigation/PlanningNavigator';
+import FavoriteNavigator from '../CompanyNavigation/FavoriteNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -58,7 +59,7 @@ const TabNavigatorEmployer = props => {
             <Tab.Screen name="Jobs" component={JobNavigator} />
             <Tab.Screen name="Planning" component={PlanningNavigator} />
             <Tab.Screen name="Attendance" component={HomeNavigator} />
-            <Tab.Screen name="Favorites" component={HomeNavigator} />
+            <Tab.Screen name="Favorites" component={FavoriteNavigator} />
         </Tab.Navigator>
     );
 };
