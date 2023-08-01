@@ -8,7 +8,6 @@ import QanelasMedium from '../../../../component/Texts/QanelasMedium';
 import { planning, planningHeader } from '../../../../utils/tempData';
 import PlanningItem from '../../../../component/PlanningItem';
 import { icons } from '../../../../assets/images';
-import QanelasRegular from '../../../../component/Texts/QanelasRegular';
 import { vh, vw } from '../../../../utils/dimensions';
 import { colors } from '../../../../utils/appTheme';
 
@@ -16,9 +15,9 @@ import { colors } from '../../../../utils/appTheme';
 const PlanningScreen = ({ navigation }) => {
 
     const renderHeaderData = () => {
-        return planningHeader.map(val => {
+        return planningHeader.map((val, i) => {
             return (
-                <View style={styles.row}>
+                <View style={styles.row} key={i}>
                     <QanelasMedium style={styles.headerText}>{val.title}</QanelasMedium>
                     <QanelasMedium style={styles.headerText}>{val.value}</QanelasMedium>
                 </View>

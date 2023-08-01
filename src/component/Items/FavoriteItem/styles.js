@@ -23,6 +23,13 @@ const styles = StyleSheet.create({
     },
     name: {
         fontSize: vh * 2.8, marginLeft: vw * 2
+    },
+    heartCircle: {
+        height: vh * 4, width: vh * 4, borderRadius: vh * 4 / 2, alignItems: 'center', justifyContent: 'center',
+        borderWidth: 1, borderColor: colors.grayBorder, position: 'absolute', right: vw * 4, top: vh * 1
+    },
+    heart: {
+        height: vh * 2, width: vh * 2, resizeMode: 'contain', tintColor: colors.primaryColor
     }
 })
 

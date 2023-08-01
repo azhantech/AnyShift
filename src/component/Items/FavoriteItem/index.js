@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Image } from 'react-native'
 
 import styles from './styles'
-import { generalImage } from '../../../assets/images'
+import { generalImage, icons } from '../../../assets/images'
 import QanelasBold from '../../Texts/QanelasBold'
 import QanelasSemiBold from '../../Texts/QanelasSemiBold'
 import { vh, vw } from '../../../utils/dimensions'
@@ -30,8 +30,8 @@ const FavoriteItem = () => {
 
     return (
         <View style={styles.container}>
-            <View>
-                
+            <View style={styles.heartCircle}>
+                <Image source={icons.heartFilled} style={styles.heart} />
             </View>
             <View style={styles.header}>
                 <View style={styles.profileCircle}>

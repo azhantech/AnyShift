@@ -52,7 +52,8 @@ export const colors = {
   border: '#E8E8E8',
   green: '#06B100',
   lightRed: '#FFE9E9',
-  lightDottedBorder: '#E4F1FF'
+  lightDottedBorder: '#E4F1FF',
+  grayBorder: '#BCBCBC'
 
 };
 export const linearColors = {

@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
     flatListStyle: {
         flex: 1,
     },
+    contentContainerStyle: {
+        paddingBottom: vh * 8
+    },
     headerRight: {
         width: vw * 25,
         flexDirection: 'row',
