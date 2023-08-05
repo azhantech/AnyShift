@@ -184,6 +184,18 @@ export const jobs = [
   },
 ];
 
+export const attendance = [
+  {
+    options: true
+  },
+  {
+    rejected: true
+  },
+  {
+    accepted: true
+  }
+]
+
 export const jobOptions = [
   {
     icon: icons.edit,

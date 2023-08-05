@@ -48,7 +48,7 @@ const FavoriteListScreen = ({ navigation }) => {
     });
 
     const renderItem = ({ item }) => {
-        return <FavoriteItem item={item} />;
+        return <FavoriteItem item={item} onPress={() => navigation.navigate('EmployeeDetailScreen')} />;
     };
 
     const renderEmptyComponent = () => {

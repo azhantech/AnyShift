@@ -86,6 +86,7 @@ export const icons = {
   copy: require('./icons/copy.png'),
   delete: require('./icons/delete.png'),
   calendarIcon: require('./icons/calendarIcon.png'),
+  cross: require('./icons/cross.png')
 };
 
 export const generalImage = {

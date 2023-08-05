@@ -53,8 +53,9 @@ export const colors = {
   green: '#06B100',
   lightRed: '#FFE9E9',
   lightDottedBorder: '#E4F1FF',
-  grayBorder: '#BCBCBC'
-
+  grayBorder: '#BCBCBC',
+  rejectRed: '#ED9595',
+  lightGreen: '#97DFC9'
 };
 export const linearColors = {
   black: ['rgba(29,29,29,0.65)', 'rgba(55,55,55,0)'],

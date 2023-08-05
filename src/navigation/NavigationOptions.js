@@ -30,7 +30,10 @@ const titles = {
   CreateCompanyScreen: 'Create Company',
   JobListScreen: 'Job Management',
   PlanningScreen: 'Planning',
-  ReferalCode: 'Referal Code'
+  ReferalCode: 'Referal Code',
+  AttendanceListScreen: 'Attendance',
+  FavoriteListScreen: 'Favorites',
+  EmployeeDetailScreen: 'Employee Detail'
 };
 
 const backButtonRoutes = {
@@ -44,7 +47,8 @@ const backButtonRoutes = {
   VacancyJobDetails: 'Job Details',
   NotificationScreen: 'Notifications',
   CreateCompanyScreen: 'Create Company',
-  ReferalCode: 'Referal Code'
+  ReferalCode: 'Referal Code',
+  EmployeeDetailScreen: 'Employee Detail'
 };
 
 const notificationButtonRoutes = {

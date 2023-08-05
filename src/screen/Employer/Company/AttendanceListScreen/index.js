@@ -5,13 +5,14 @@ import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import MainContainer from '../../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
-import { jobOptions, jobs } from '../../../../utils/tempData';
+import { attendance, jobOptions, jobs } from '../../../../utils/tempData';
 import { icons } from '../../../../assets/images';
 import JobItem from '../../../../component/Items/JobItem';
 import CustomButton from '../../../../component/Buttons/CustomButton';
 import InputField from '../../../../component/Inputs/InputField';
 import { vh } from '../../../../utils/dimensions';
 import OptionsModal from '../../../../component/ModalMessages/OptionsModal';
+import AttendanceItem from '../../../../component/Items/AttendanceItem';
 
 const AttendanceListScreen = ({ navigation }) => {
 
@@ -54,7 +55,7 @@ const AttendanceListScreen = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <JobItem
+            <AttendanceItem
                 item={item}
                 optionPress={onPressModal}
                 onPress={() =>
@@ -79,7 +80,7 @@ const AttendanceListScreen = ({ navigation }) => {
     const renderList = () => {
         return (
             <FlatList
-                data={jobs}
+                data={attendance}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}
                 style={styles.listStyle}
@@ -88,6 +89,7 @@ const AttendanceListScreen = ({ navigation }) => {
             />
         );
     };
+
     return <MainContainer>
         {renderList()}
 

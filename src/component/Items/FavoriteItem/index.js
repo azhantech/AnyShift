@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image } from 'react-native'
+import { View, Image, TouchableOpacity } from 'react-native'
 
 import styles from './styles'
 import { generalImage, icons } from '../../../assets/images'
@@ -14,13 +14,12 @@ const data = [
     { title: 'No of Cancellation', value: '2' }
 ]
 
-
-const FavoriteItem = () => {
+const FavoriteItem = ({ onPress }) => {
 
     const renderData = () => {
-        return data.map(val => {
+        return data.map((val, i) => {
             return (
-                <View style={{ width: vw * 40, marginVertical: vh * 1 }}>
+                <View style={{ width: vw * 40, marginVertical: vh * 1 }} key={i}>
                     <QanelasSemiBold>{val.title}</QanelasSemiBold>
                     <QanelasSemiBold>{val.value}</QanelasSemiBold>
                 </View>
@@ -37,7 +36,9 @@ const FavoriteItem = () => {
                 <View style={styles.profileCircle}>
                     <Image source={generalImage.profile} style={styles.profile} />
                 </View>
-                <QanelasBold style={styles.name}>James Milner</QanelasBold>
+                <TouchableOpacity onPress={onPress}>
+                    <QanelasBold style={styles.name}>James Milner</QanelasBold>
+                </TouchableOpacity>
             </View>
 
             <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}>
