@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Image, TouchableOpacity } from 'react-native';
+import {View, Image, TouchableOpacity} from 'react-native';
 import InputField from '../../../component/Inputs/InputField';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import { icons } from '../../../assets/images';
-import { styles } from './styles';
+import {icons} from '../../../assets/images';
+import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
@@ -36,10 +36,10 @@ const SignInScreen = props => {
           text="Sign In"
           onPress={() => props?.navigation.navigate('DrawerNavigator')}
         />
-        <CustomButton
+        {/* <CustomButton
           text="Sign In as Employer"
           onPress={() => props?.navigation.navigate('DrawerNavigator', { type: 'employer' })}
-        />
+        /> */}
       </View>
       <View style={styles.donthaveAccountContainer}>
         <View style={styles.rowContainer}>

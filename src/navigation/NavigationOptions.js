@@ -1,10 +1,11 @@
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
+
 import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
-import { vh, vw } from '../utils/dimensions';
-import { icons } from '../assets/images';
-import { colors } from '../utils/appTheme';
+import {vh, vw} from '../utils/dimensions';
+import {icons} from '../assets/images';
+import {colors} from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
@@ -26,14 +27,14 @@ const titles = {
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
-  Planning: 'Planning',
   CreateCompanyScreen: 'Create Company',
   JobListScreen: 'Job Management',
   PlanningScreen: 'Planning',
   ReferalCode: 'Referal Code',
   AttendanceListScreen: 'Attendance',
   FavoriteListScreen: 'Favorites',
-  EmployeeDetailScreen: 'Employee Detail'
+  EmployeeDetailScreen: 'Employee Detail',
+  VacancyDetailScreen: 'Vacancy Detail',
 };
 
 const backButtonRoutes = {
@@ -48,7 +49,8 @@ const backButtonRoutes = {
   NotificationScreen: 'Notifications',
   CreateCompanyScreen: 'Create Company',
   ReferalCode: 'Referal Code',
-  EmployeeDetailScreen: 'Employee Detail'
+  EmployeeDetailScreen: 'Employee Detail',
+  VacancyDetailScreen: 'Vacancy Detail',
 };
 
 const notificationButtonRoutes = {
@@ -65,7 +67,7 @@ const notificationButtonRoutes = {
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
   Planning: 'Planning',
-  PlanningScreen: 'PlanningScreen'
+  PlanningScreen: 'PlanningScreen',
 };
 
 const noBorderRoutes = {
@@ -84,8 +86,8 @@ const navigationOptions = (navProps, props) => {
     headerBackVisible: false,
     headerTitleAlign: 'center',
     headerShown: true,
-    headerLeftContainerStyle: { paddingLeft: 4 * vw },
-    headerRightContainerStyle: { paddingRight: 4 * vw },
+    headerLeftContainerStyle: {paddingLeft: 4 * vw},
+    headerRightContainerStyle: {paddingRight: 4 * vw},
     headerStyle: getHeaderStyle(navProps),
   };
 };

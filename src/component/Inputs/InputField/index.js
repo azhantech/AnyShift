@@ -1,5 +1,6 @@
 import React, {useImperativeHandle, useRef, useState} from 'react';
 import {View, TextInput, Image, TouchableOpacity} from 'react-native';
+
 import {icons} from '../../../assets/images';
 import {vh, vw} from '../../../utils/dimensions';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';

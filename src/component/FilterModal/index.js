@@ -30,7 +30,6 @@ const FilterModal = props => {
       animationOutTiming={1000}
       backdropTransitionInTiming={500}
       backdropTransitionOutTiming={1000}
-      
       avoidKeyboard={false}>
       <View style={styles.mainContainerView}>
         <TouchableOpacity
