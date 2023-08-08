@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {ScrollView, TouchableOpacity, View, Image} from 'react-native';
+import React, { useState } from 'react';
+import { ScrollView, TouchableOpacity, View, Image } from 'react-native';
 import InputField from '../../../component/Inputs/InputField';
-import {styles} from './styles';
+import { styles } from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import {icons} from '../../../assets/images';
-import {vh, vw} from '../../../utils/dimensions';
+import { icons } from '../../../assets/images';
+import { vh, vw } from '../../../utils/dimensions';
 import TouchableText from '../../../component/Buttons/TouchableText';
-import {colors} from '../../../utils/appTheme';
+import { colors } from '../../../utils/appTheme';
 const SignupScreen = props => {
   const [signedInAs, setSignedInAs] = useState(null);
   const registrationData = [
@@ -82,7 +82,11 @@ const SignupScreen = props => {
       <View style={styles.socialLoginMainContainer}>
         {socialLoginData.map((val, index) => {
           return (
-            <TouchableOpacity onPress={() => props?.navigation.navigate('Registration')} style={styles.renderSocialLogin}>
+            <TouchableOpacity
+              // onPress={() => props?.navigation.navigate('Registration')}
+              onPress={signedInAs == 1 ? () => props?.navigation.navigate('RegistrationEmployer') : () => props?.navigation.navigate('Registration')}
+              style={styles.renderSocialLogin}
+            >
               <View style={styles.socialLoginImageContainer}>
                 <Image source={val?.image} style={styles.socialLoginIcon} />
               </View>

@@ -1,11 +1,11 @@
-import React, {useLayoutEffect} from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { Image, TouchableOpacity, View } from 'react-native';
 
 import styles from './styles';
-import {homeDataCompany, homeDataCompanySmall} from '../../../../utils/data';
+import { homeDataCompany, homeDataCompanySmall } from '../../../../utils/data';
 import HomeCard from '../../../../component/Items/HomeCard';
 import HomeCardSmall from '../../../../component/Items/HomeCardSmall';
-import {icons} from '../../../../assets/images';
+import { icons } from '../../../../assets/images';
 
 const renderCards = () => {
   return homeDataCompany.map((val, i) => (
@@ -13,7 +13,7 @@ const renderCards = () => {
   ));
 };
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = ({ navigation }) => {
   const homeDataCompanySmall = [
     {
       title: 'post feedback(12)',
@@ -23,7 +23,7 @@ const HomeScreen = ({navigation}) => {
     {
       title: 'job applications(12)',
       icon: icons.profile5,
-      onPress: () => navigation.navigate('PostFeedbackScreen'),
+      onPress: () => navigation.navigate('JobApplicationScreen'),
     },
   ];
 
@@ -44,7 +44,7 @@ const HomeScreen = ({navigation}) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('AboutUS', {screen: 'NotificationScreen'});
+                navigation.navigate('AboutUS', { screen: 'NotificationScreen' });
               }}
               style={styles.textButton}>
               <Image

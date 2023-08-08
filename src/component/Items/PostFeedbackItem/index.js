@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 
 import styles from './styles';
 import QanelasBold from '../../Texts/QanelasBold';
-import QanelasRegular from '../../Texts/QanelasRegular';
 import QanelasMedium from '../../Texts/QanelasMedium';
-import {generalImage, icons} from '../../../assets/images';
+import { generalImage, icons } from '../../../assets/images';
 
 const PostFeedbackItem = props => {
-  const {item, onPress} = props;
+  const { item, onPress } = props;
 
   return (
     <TouchableOpacity
