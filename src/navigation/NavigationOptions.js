@@ -35,6 +35,7 @@ const titles = {
   FavoriteListScreen: 'Favorites',
   EmployeeDetailScreen: 'Employee Detail',
   VacancyDetailScreen: 'Vacancy Detail',
+  PostFeedbackScreen: 'Post Feedback',
 };
 
 const backButtonRoutes = {
@@ -51,6 +52,7 @@ const backButtonRoutes = {
   ReferalCode: 'Referal Code',
   EmployeeDetailScreen: 'Employee Detail',
   VacancyDetailScreen: 'Vacancy Detail',
+  PostFeedbackScreen: 'Post Feedback',
 };
 
 const notificationButtonRoutes = {
@@ -66,7 +68,6 @@ const notificationButtonRoutes = {
   AboutUS: 'About Us',
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
-  Planning: 'Planning',
   PlanningScreen: 'PlanningScreen',
 };
 

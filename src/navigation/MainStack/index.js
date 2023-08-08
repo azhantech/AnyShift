@@ -5,11 +5,11 @@ import AuthStack from '../AuthStack';
 import DrawerNavigator from '../DrawerNavigator';
 import CreateCompanyScreen from '../../screen/Employer/CreateCompanyScreen';
 import navigationOptions from '../NavigationOptions';
+import ChatNavigator from '../ChatStack';
 
 const RootStack = createStackNavigator();
 
 const MainNavigator = () => {
-  const loggedIn = false;
   return (
     <RootStack.Navigator initialRouteName="AuthStack">
       <RootStack.Screen
@@ -26,6 +26,11 @@ const MainNavigator = () => {
         name="CreateCompanyScreen"
         component={CreateCompanyScreen}
         options={navigationOptions}
+      />
+      <RootStack.Screen
+        name="ChatNavigator"
+        component={ChatNavigator}
+        options={{headerShown: false}}
       />
     </RootStack.Navigator>
   );

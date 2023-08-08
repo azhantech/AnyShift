@@ -1,4 +1,4 @@
-import { icons } from "../assets/images";
+import {icons} from '../assets/images';
 
 // export const courouselItem = [
 //     {
@@ -33,31 +33,37 @@ import { icons } from "../assets/images";
 // ]
 
 export const MealPlans = [
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    },
-    {
-        planName: "Meal Plan 1",
-        planDescription: "Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt."
-    }
-]
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+  {
+    planName: 'Meal Plan 1',
+    planDescription:
+      'Lorem ipsum dolor sit amet, consectetur iscing elit, sed do eiusmod tempor incididunt.',
+  },
+];
 
 // export const diet = [
 //     {
@@ -99,16 +105,25 @@ export const MealPlans = [
 // ]
 
 export const statuses = [
-    'Completed',
-    'Pending',
-    'In-Process',
-    'Completed',
-    'Pending',
-]
+  'Completed',
+  'Pending',
+  'In-Process',
+  'Completed',
+  'Pending',
+];
 
-export const homeData = [{ title: 'total companies', icon: icons.company }, { title: 'total jobs', icon: icons.job }]
+export const homeData = [
+  {title: 'total companies', icon: icons.company},
+  {title: 'total jobs', icon: icons.job},
+];
 
-export const homeDataCompany = [{ title: 'active jobs', icon: icons.activeJobs }, { title: 'upcoming jobs', icon: icons.upcomingJobs }, { title: 'completed jobs', icon: icons.completedJobs }]
+export const homeDataCompany = [
+  {title: 'active jobs', icon: icons.activeJobs},
+  {title: 'upcoming jobs', icon: icons.upcomingJobs},
+  {title: 'completed jobs', icon: icons.completedJobs},
+];
 
-export const homeDataCompanySmall = [{ title: 'post feedback(12)', icon: icons.tab4 }, { title: 'job applications(12)', icon: icons.profile5 }]
-
+export const homeDataCompanySmall = [
+  {title: 'post feedback(12)', icon: icons.tab4},
+  {title: 'job applications(12)', icon: icons.profile5},
+];
