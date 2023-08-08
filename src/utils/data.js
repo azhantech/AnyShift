@@ -110,5 +110,5 @@ export const homeData = [{ title: 'total companies', icon: icons.company }, { ti
 
 export const homeDataCompany = [{ title: 'active jobs', icon: icons.activeJobs }, { title: 'upcoming jobs', icon: icons.upcomingJobs }, { title: 'completed jobs', icon: icons.completedJobs }]
 
-export const homeDataCompanySmall = [{ title: 'post feedback', icon: icons.tab4 }, { title: 'job applications', icon: icons.profile5 }]
+export const homeDataCompanySmall = [{ title: 'post feedback(12)', icon: icons.tab4 }, { title: 'job applications(12)', icon: icons.profile5 }]
 

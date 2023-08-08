@@ -14,7 +14,7 @@ const HomeCardSmall = ({ title, icon }) => {
                 <View style={styles.circle}>
                     <Image style={styles.icon} source={icon} />
                 </View>
-                <QanelasBold style={styles.title}>Post Feedback (12)</QanelasBold>
+                <QanelasBold style={styles.title}>{title}</QanelasBold>
             </View>
 
             <Image source={icons.rightArrow} style={styles.arrow} />

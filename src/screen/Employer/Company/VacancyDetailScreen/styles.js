@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import {colors} from '../../../../utils/appTheme';
-import {vh, vw} from '../../../../utils/dimensions';
+import { colors } from '../../../../utils/appTheme';
+import { vh, vw } from '../../../../utils/dimensions';
 
 const styles = StyleSheet.create({
   container: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
   stepsRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: vh * 2,
+    marginTop: vh * 2,
   },
   stepsContainer: {
     marginVertical: vh * 2,
@@ -108,7 +108,35 @@ const styles = StyleSheet.create({
   headingContainer: {
     marginTop: vh * 2,
     marginBottom: vh * 3,
+    width: vw * 80
   },
+  headingContainerStepThree: {
+    marginTop: vh * 2,
+    width: vw * 80
+  },
+  shiftHeading: {
+    fontSize: vh * 2.5, alignSelf: 'center'
+  },
+  smallHeading: {
+    fontSize: vh * 2
+  },
+  calendar: {
+    backgroundColor: colors.offWhiteCircle,
+    padding: vh * 2,
+    borderRadius: vh * 2,
+    height: vh * 58,
+    width: vw * 80
+  },
+  dateContainer: {
+    backgroundColor: colors.highlightedText, borderRadius: vh * 2,
+    height: vh * 10, width: vw * 30, alignItems: 'center', justifyContent: 'center', marginHorizontal: vw * 2
+  },
+  date: {
+    color: colors.white, fontSize: vh * 2
+  },
+  dateRow: {
+    flexDirection: 'row', alignItems: 'center', marginVertical: vh * 1, width: vw * 80
+  }
 });
 
 export default styles;

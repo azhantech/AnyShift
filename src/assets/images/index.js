@@ -88,6 +88,7 @@ export const icons = {
   calendarIcon: require('./icons/calendarIcon.png'),
   cross: require('./icons/cross.png'),
   arrowDown: require('./icons/arrow-down.png'),
+  clock: require('./icons/clock.png')
 };
 
 export const generalImage = {
