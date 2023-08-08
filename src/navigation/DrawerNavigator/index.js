@@ -1,9 +1,9 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerScreenWrapper from '../../component/DrawerComponents/DrawerScreenWrapper';
 import DrawerContent from '../../component/DrawerComponents/DrawerContent';
 import TabNavigator from '../TabNavigator';
-import { colors } from '../../utils/appTheme';
+import {colors} from '../../utils/appTheme';
 import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
@@ -12,6 +12,8 @@ import PlanningStack from '../PlanningStack';
 // import FavNavigator from '../FavStack';
 import FavStack from '../../navigation/FavStack';
 import TabNavigatorEmployer from '../TabNavigatorEmployer';
+import {useSelector} from 'react-redux';
+import TabNavigatorCompany from '../TabNavigatorCompany';
 
 const Drawer = createDrawerNavigator();
 // const AnimatedHomeStack = (type, ...props) => {
@@ -29,11 +31,18 @@ const Drawer = createDrawerNavigator();
 //   );
 // };
 
-const AnimatedHomeStack = (type, ...props) => {
-  console.log('TYPEEEE==========>>>>>>>>>>>>', type);
+const AnimatedHomeStack = (...props) => {
   return (
     <DrawerScreenWrapper {...props}>
       <TabNavigatorEmployer />
+    </DrawerScreenWrapper>
+  );
+};
+
+const AnimatedHomeStackCompany = (...props) => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <TabNavigatorCompany />
     </DrawerScreenWrapper>
   );
 };
@@ -84,6 +93,8 @@ const AnimatedPaymentLogsStack = props => {
 // };
 
 const DrawerNavigator = props => {
+  const type = useSelector(state => state.general.type);
+
   return (
     <Drawer.Navigator
       screenOptions={{
@@ -99,7 +110,12 @@ const DrawerNavigator = props => {
         },
       }}
       drawerContent={props => <DrawerContent {...props} />}>
-      <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
+      <Drawer.Screen
+        name="HomeStack"
+        component={
+          type == 'company' ? AnimatedHomeStackCompany : AnimatedHomeStack
+        }
+      />
       <Drawer.Screen name="FavStack" component={AnimatedFavStack} />
       <Drawer.Screen name="PlanningStack" component={AnimatedPlanningStack} />
       <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />

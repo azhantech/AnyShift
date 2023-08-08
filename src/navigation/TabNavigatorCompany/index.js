@@ -24,27 +24,13 @@ const Tab = createMaterialTopTabNavigator();
 
 const tabIcons = {
   Home: {icon: icons.tab1},
-  Companies: {icon: icons.companyTab},
-  Profile: {icon: icons.tab5},
+  Jobs: {icon: icons.jobs},
+  Planning: {icon: icons.planning},
+  Attendance: {icon: icons.attendance},
+  Favorites: {icon: icons.heartNotFilled},
 };
 
-// const TabNavigatorEmployer = props => {
-//   return (
-//     <Tab.Navigator
-//       initialRouteName="Home"
-//       tabBarPosition="bottom"
-//       screenOptions={{swipeEnabled: false}}
-//       tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
-//       <Tab.Screen name="Home" component={HomeNavigatorEmployer} />
-//       <Tab.Screen name="Companies" component={CompanyNavigator} />
-//       <Tab.Screen name="Profile" component={ShiftStack} />
-//     </Tab.Navigator>
-//   );
-// };
-
-const TabNavigatorEmployer = props => {
-  const type = useSelector(state => state.general.type);
-
+const TabNavigatorCompany = props => {
   const MyTabBar = ({state, navigation}) => {
     const [activeTab, setActiveTab] = useState(null);
     return (
@@ -90,11 +76,13 @@ const TabNavigatorEmployer = props => {
       tabBarPosition="bottom"
       screenOptions={{swipeEnabled: false}}
       tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
-      <Tab.Screen name="Home" component={HomeNavigatorEmployer} />
-      <Tab.Screen name="Companies" component={CompanyNavigator} />
-      <Tab.Screen name="Profile" component={ShiftStack} />
+      <Tab.Screen name="Home" component={HomeNavigator} />
+      <Tab.Screen name="Jobs" component={JobNavigator} />
+      <Tab.Screen name="Planning" component={PlanningNavigator} />
+      <Tab.Screen name="Attendance" component={AttendanceNavigator} />
+      <Tab.Screen name="Favorites" component={FavoriteNavigator} />
     </Tab.Navigator>
   );
 };
 
-export default TabNavigatorEmployer;
+export default TabNavigatorCompany;

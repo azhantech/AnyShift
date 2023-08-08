@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
+
 import InputField from '../../../component/Inputs/InputField';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {icons} from '../../../assets/images';
@@ -7,6 +8,7 @@ import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
+
 const SignInScreen = props => {
   return (
     <View style={styles.mainContainer}>
