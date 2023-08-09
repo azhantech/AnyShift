@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 
 
 import styles from './styles';
@@ -18,6 +18,10 @@ const CustomButton = props => {
       <QanelasRegular style={[styles.text, props.textStyle]}>
         {props.text}
       </QanelasRegular>
+      {
+        props.icon &&
+        <Image source={props.icon} style={styles.icon} />
+      }
     </TouchableOpacity>
   );
 };

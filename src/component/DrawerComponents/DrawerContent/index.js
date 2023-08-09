@@ -1,18 +1,18 @@
 import React from 'react';
 import styles from './styles';
 import DrawerButton from '../DrawerButton';
-import {Image, TouchableOpacity, View} from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import QanelasMedium from '../../Texts/QanelasMedium';
 import QanelasRegular from '../../Texts/QanelasRegular';
 
-import {useDrawerProgress} from '@react-navigation/drawer';
+import { useDrawerProgress } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
-import {drawerRoutes} from '../../../navigation/NavigationOptions';
-import {generalImage, icons} from '../../../assets/images';
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
-import {useSelector} from 'react-redux';
+import { drawerRoutes, drawerRoutesCompany, drawerRoutesEmployer } from '../../../navigation/NavigationOptions';
+import { generalImage, icons } from '../../../assets/images';
+import { vh, vw } from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
+import { useSelector } from 'react-redux';
 const routeOrders = [
   'HomeStack',
   'FavStack',
@@ -35,19 +35,23 @@ const DrawerContent = props => {
     outputRange: [-40 * vw * (1 + 1), 0],
   });
   const animatedStyles = {
-    transform: [{translateX}],
+    transform: [{ translateX }],
+  };
+
+  const getRoute = (routeName) => {
+    if (type == 'company') {
+      return drawerRoutesCompany[routeName];
+    } else {
+      return drawerRoutesEmployer[routeName];
+    }
   };
 
   const handleOnDrawerItemPress = routeName => {
-    if (drawerRoutes[routeName]) {
-      console.log(drawerRoutes[routeName]);
-      if (routeName === routeOrders[routeOrders.length - 1]) {
-        console.log('logout', routeName);
-      }
-
-      if (drawerRoutes[routeName].notRoute != true) {
-        return props.navigation.navigate(routeName);
-      }
+    if (getRoute(routeName)) {
+      // if (routeName === routeOrders[routeOrders.length - 1]) {
+      //   console.log('logout', routeName);
+      // }
+      return props.navigation.navigate(routeName);
     }
   };
 

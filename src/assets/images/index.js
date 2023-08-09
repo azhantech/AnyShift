@@ -90,6 +90,7 @@ export const icons = {
   arrowDown: require('./icons/arrow-down.png'),
   clock: require('./icons/clock.png'),
   qrCode: require('./icons/qr-code.png'),
+  print: require('./icons/print.png')
 };
 
 export const generalImage = {
@@ -107,4 +108,5 @@ export const generalImage = {
   horizontalMap: require('../images/generalImage/horizontalmap.png'),
   chatProfile: require('../images/generalImage/profile.png'),
   code: require('../images/generalImage/code.png'),
+  qr: require('../images/generalImage/qr.png')
 };

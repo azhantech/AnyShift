@@ -1,9 +1,9 @@
 import React from 'react';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import DrawerScreenWrapper from '../../component/DrawerComponents/DrawerScreenWrapper';
 import DrawerContent from '../../component/DrawerComponents/DrawerContent';
 import TabNavigator from '../TabNavigator';
-import {colors} from '../../utils/appTheme';
+import { colors } from '../../utils/appTheme';
 import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
@@ -12,8 +12,9 @@ import PlanningStack from '../PlanningStack';
 // import FavNavigator from '../FavStack';
 import FavStack from '../../navigation/FavStack';
 import TabNavigatorEmployer from '../TabNavigatorEmployer';
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import TabNavigatorCompany from '../TabNavigatorCompany';
+import QRStack from '../QRStack';
 
 const Drawer = createDrawerNavigator();
 
@@ -50,7 +51,7 @@ const AnimatedAboutUsStack = props => {
 const AnimatedQRStack = props => {
   return (
     <DrawerScreenWrapper {...props}>
-      <AboutUS />
+      <QRStack />
     </DrawerScreenWrapper>
   );
 };

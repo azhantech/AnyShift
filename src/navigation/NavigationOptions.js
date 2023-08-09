@@ -1,11 +1,11 @@
 import React from 'react';
-import {Image, TouchableOpacity, View} from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 
 import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
-import {vh, vw} from '../utils/dimensions';
-import {icons} from '../assets/images';
-import {colors} from '../utils/appTheme';
+import { vh, vw } from '../utils/dimensions';
+import { icons } from '../assets/images';
+import { colors } from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
@@ -38,6 +38,7 @@ const titles = {
   PostFeedbackScreen: 'Post Feedback',
   JobApplicationScreen: 'Job Applications',
   FeedbackDetailScreen: 'Post Feedback',
+  QRScreen: 'QR Code'
 };
 
 const backButtonRoutes = {
@@ -73,6 +74,7 @@ const notificationButtonRoutes = {
   PaymentLogs: 'Payments Logs',
   PlanningScreen: 'PlanningScreen',
   FeedbackDetailScreen: 'Post Feedback',
+  QRScreen: 'QR Code'
 };
 
 const noBorderRoutes = {
@@ -91,8 +93,8 @@ const navigationOptions = (navProps, props) => {
     headerBackVisible: false,
     headerTitleAlign: 'center',
     headerShown: true,
-    headerLeftContainerStyle: {paddingLeft: 4 * vw},
-    headerRightContainerStyle: {paddingRight: 4 * vw},
+    headerLeftContainerStyle: { paddingLeft: 4 * vw },
+    headerRightContainerStyle: { paddingRight: 4 * vw },
     headerStyle: getHeaderStyle(navProps),
   };
 };

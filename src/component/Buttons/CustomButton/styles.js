@@ -17,11 +17,15 @@ const styles = StyleSheet.create({
     borderRadius: vh * 3,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row'
   },
   text: {
     color: '#fff',
     fontSize: vh * 2,
     textTransform: 'capitalize'
   },
+  icon: {
+    height: vh * 2, width: vh * 2, resizeMode: 'contain', marginLeft: vw * 4
+  }
 });
 export default styles;
