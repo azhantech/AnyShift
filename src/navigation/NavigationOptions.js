@@ -1,11 +1,11 @@
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 
 import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
-import { vh, vw } from '../utils/dimensions';
-import { icons } from '../assets/images';
-import { colors } from '../utils/appTheme';
+import {vh, vw} from '../utils/dimensions';
+import {icons} from '../assets/images';
+import {colors} from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
@@ -37,7 +37,7 @@ const titles = {
   VacancyDetailScreen: 'Vacancy Detail',
   PostFeedbackScreen: 'Post Feedback',
   JobApplicationScreen: 'Job Applications',
-  FeedbackDetailScreen: 'Post Feedback'
+  FeedbackDetailScreen: 'Post Feedback',
 };
 
 const backButtonRoutes = {
@@ -55,7 +55,7 @@ const backButtonRoutes = {
   EmployeeDetailScreen: 'Employee Detail',
   VacancyDetailScreen: 'Vacancy Detail',
   PostFeedbackScreen: 'Post Feedback',
-  JobApplicationScreen: 'Job Applications'
+  JobApplicationScreen: 'Job Applications',
 };
 
 const notificationButtonRoutes = {
@@ -72,7 +72,7 @@ const notificationButtonRoutes = {
   ContactUs: 'ContactUs',
   PaymentLogs: 'Payments Logs',
   PlanningScreen: 'PlanningScreen',
-  FeedbackDetailScreen: 'Post Feedback'
+  FeedbackDetailScreen: 'Post Feedback',
 };
 
 const noBorderRoutes = {
@@ -91,8 +91,8 @@ const navigationOptions = (navProps, props) => {
     headerBackVisible: false,
     headerTitleAlign: 'center',
     headerShown: true,
-    headerLeftContainerStyle: { paddingLeft: 4 * vw },
-    headerRightContainerStyle: { paddingRight: 4 * vw },
+    headerLeftContainerStyle: {paddingLeft: 4 * vw},
+    headerRightContainerStyle: {paddingRight: 4 * vw},
     headerStyle: getHeaderStyle(navProps),
   };
 };
@@ -204,6 +204,44 @@ export const drawerRoutes = {
   //   label: 'Payment Logs',
   //   icons: icons.paymentLogsIcon,
   // },
+};
+
+export const drawerRoutesEmployer = {
+  HomeStack: {
+    label: 'Home',
+    icon: icons.homeDrawer,
+  },
+  AboutUS: {
+    label: 'About Us',
+    icon: icons.aboutUsIcon,
+  },
+  QR: {
+    label: 'QR Code',
+    icon: icons.qrCode,
+  },
+  ContactUs: {
+    label: 'Contact Us',
+    icon: icons.contactUsIcon,
+  },
+};
+
+export const drawerRoutesCompany = {
+  HomeStack: {
+    label: 'Home',
+    icon: icons.homeDrawer,
+  },
+  AboutUS: {
+    label: 'About Us',
+    icon: icons.aboutUsIcon,
+  },
+  QR: {
+    label: 'QR Code',
+    icon: icons.qrCode,
+  },
+  ContactUs: {
+    label: 'Contact Us',
+    icon: icons.contactUsIcon,
+  },
 };
 
 export default navigationOptions;

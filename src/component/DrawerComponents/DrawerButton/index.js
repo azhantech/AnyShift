@@ -2,14 +2,20 @@ import {useDrawerProgress} from '@react-navigation/drawer';
 import React from 'react';
 import {StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Animated from 'react-native-reanimated';
-import {drawerRoutes} from '../../../navigation/NavigationOptions';
+import {
+  drawerRoutes,
+  drawerRoutesCompany,
+  drawerRoutesEmployer,
+} from '../../../navigation/NavigationOptions';
 import QanelasRegular from '../../Texts/QanelasRegular';
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
+import {useSelector} from 'react-redux';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
 const DrawerButton = props => {
+  const type = useSelector(state => state.general.type);
   const progress = useDrawerProgress();
   const translateX = Animated.interpolateNode(progress, {
     inputRange: [0, 1],
@@ -18,7 +24,18 @@ const DrawerButton = props => {
   const animatedStyles = {
     transform: [{translateX}],
   };
-  const routeConfigs = drawerRoutes[props.routeName];
+  // const routeConfigs = drawerRoutes[props.routeName];
+  // const routeConfigs = drawerRoutesEmployer[props.routeName];
+
+  const getRoute = () => {
+    if (type == 'company') {
+      return drawerRoutesCompany[props.routeName];
+    } else {
+      return drawerRoutesEmployer[props.routeName];
+    }
+  };
+  const routeConfigs = getRoute();
+
   if (!routeConfigs) {
     return null;
   }

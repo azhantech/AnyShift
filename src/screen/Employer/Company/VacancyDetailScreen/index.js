@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import React, {useState} from 'react';
+import {View, TouchableOpacity, Image} from 'react-native';
 
 import styles from './styles';
 import QanelasRegular from '../../../../component/Texts/QanelasRegular';
-import { icons } from '../../../../assets/images';
+import {icons} from '../../../../assets/images';
 import InputField from '../../../../component/Inputs/InputField';
-import { vh, vw } from '../../../../utils/dimensions';
+import {vh, vw} from '../../../../utils/dimensions';
 import CustomButton from '../../../../component/Buttons/CustomButton';
 import QanelasBold from '../../../../component/Texts/QanelasBold';
-import { colors } from '../../../../utils/appTheme';
+import {colors} from '../../../../utils/appTheme';
 import ScrollWrapper from '../../../../component/ScrollWrapper';
-import { Calendar } from 'react-native-calendars';
+import {Calendar} from 'react-native-calendars';
 import QanelasSemiBold from '../../../../component/Texts/QanelasSemiBold';
 
 const data = [
-  { active: true },
-  { active: false },
-  { active: false },
-  { active: false },
+  {active: true},
+  {active: false},
+  {active: false},
+  {active: false},
 ];
 
 const VacancyDetailScreen = () => {
@@ -35,8 +35,8 @@ const VacancyDetailScreen = () => {
         </View>
 
         <InputField
-          inputContainerIcon={{ height: vh * 15, width: vw * 90 }}
-          inputContainer={{ height: '100%' }}
+          inputContainerIcon={{height: vh * 15, width: vw * 90}}
+          inputContainer={{height: '100%'}}
           multiline={true}
           label="Job Description"
         />
@@ -50,7 +50,7 @@ const VacancyDetailScreen = () => {
 
         <InputField
           placeholder="Address"
-          inputContainerIcon={{ width: vw * 90 }}
+          inputContainerIcon={{width: vw * 90}}
           label="Address"
         />
 
@@ -78,14 +78,16 @@ const VacancyDetailScreen = () => {
           </View>
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   const renderStepTwo = () => {
     return (
-      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <QanelasBold style={styles.shiftHeading}>Shifts</QanelasBold>
-        <QanelasBold style={styles.smallHeading}>Select Working Days</QanelasBold>
+        <QanelasBold style={styles.smallHeading}>
+          Select Working Days
+        </QanelasBold>
 
         <View>
           <Calendar
@@ -95,10 +97,12 @@ const VacancyDetailScreen = () => {
             style={styles.calendar}
           />
         </View>
-        <QanelasBold style={styles.smallHeading}>Selected No. of Days: 1/ 3</QanelasBold>
+        <QanelasBold style={styles.smallHeading}>
+          Selected No. of Days: 1/ 3
+        </QanelasBold>
       </View>
-    )
-  }
+    );
+  };
 
   const renderStepThree = () => {
     return (
@@ -106,23 +110,27 @@ const VacancyDetailScreen = () => {
         <QanelasBold style={styles.shiftHeading}>Shift Timing</QanelasBold>
         <View style={styles.dateRow}>
           <View style={styles.dateContainer}>
-            <QanelasSemiBold style={styles.date}>
-              Mon-Wed
-            </QanelasSemiBold>
+            <QanelasSemiBold style={styles.date}>Mon-Wed</QanelasSemiBold>
             <QanelasSemiBold style={styles.date}>15-17 May</QanelasSemiBold>
           </View>
           <View style={styles.dateContainer}>
-            <QanelasSemiBold style={styles.date}>
-              Mon-Wed
-            </QanelasSemiBold>
+            <QanelasSemiBold style={styles.date}>Mon-Wed</QanelasSemiBold>
             <QanelasSemiBold style={styles.date}>15-17 May</QanelasSemiBold>
           </View>
         </View>
 
-        <View style={{ flexDirection: 'row', alignItems: 'center', width: vw * 80, marginVertical: vh * 1 }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: vw * 80,
+            marginVertical: vh * 1,
+          }}>
           <TouchableOpacity
             style={styles.tickBoxViewStyle()}></TouchableOpacity>
-          <QanelasRegular style={styles.boxTitle}>Each Day Same Schedule</QanelasRegular>
+          <QanelasRegular style={styles.boxTitle}>
+            Each Day Same Schedule
+          </QanelasRegular>
         </View>
 
         <View style={styles.headingContainerStepThree}>
@@ -144,38 +152,46 @@ const VacancyDetailScreen = () => {
         </View>
 
         <InputField
-          inputContainerIcon={{ width: vw * 90 }}
+          inputContainerIcon={{width: vw * 90}}
           label="How many people do you need?"
         />
 
         <InputField
-          inputContainerIcon={{ width: vw * 90 }}
+          inputContainerIcon={{width: vw * 90}}
           label="Shift changes"
-          placeholder='Enter Shift Charges'
+          placeholder="Enter Shift Charges"
         />
       </View>
-    )
-  }
+    );
+  };
 
   const renderStepFour = () => {
     return (
       <View>
         <QanelasBold style={styles.shiftHeading}>Background Check</QanelasBold>
-        <View style={{ flexDirection: 'row', alignItems: 'center', width: vw * 80, marginVertical: vh * 10 }}>
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: vw * 80,
+            marginVertical: vh * 10,
+          }}>
           <TouchableOpacity
             style={styles.tickBoxViewStyle()}></TouchableOpacity>
-          <QanelasRegular style={styles.boxTitle}>Backgroung check required for this job</QanelasRegular>
+          <QanelasRegular style={styles.boxTitle}>
+            Backgroung check required for this job
+          </QanelasRegular>
         </View>
       </View>
-    )
-  }
+    );
+  };
 
   const content = {
     1: renderStepOne(),
     2: renderStepTwo(),
     3: renderStepThree(),
-    4: renderStepFour()
-  }
+    4: renderStepFour(),
+  };
 
   const getSteps = () => {
     return steps.map((val, i) => {
@@ -184,7 +200,7 @@ const VacancyDetailScreen = () => {
           key={i}
           style={[
             styles.bar,
-            val.active && { backgroundColor: colors.primaryColor },
+            val.active && {backgroundColor: colors.primaryColor},
           ]}
         />
       );
@@ -201,9 +217,8 @@ const VacancyDetailScreen = () => {
   };
 
   const nextHandler = () => {
-
     if (activeStep == 4) {
-      return
+      return;
     }
 
     setActiveStep(prev => prev + 1);
@@ -214,7 +229,7 @@ const VacancyDetailScreen = () => {
 
   const renderContent = () => {
     return content[activeStep];
-  }
+  };
 
   return (
     // <View style={styles.container}>
@@ -228,7 +243,10 @@ const VacancyDetailScreen = () => {
         {renderContent()}
 
         <View style={styles.btnContainer}>
-          <CustomButton text={activeStep == 3 || activeStep == 4 ? 'Create Job' : "Next"} onPress={nextHandler} />
+          <CustomButton
+            text={activeStep == 3 || activeStep == 4 ? 'Create Job' : 'Next'}
+            onPress={nextHandler}
+          />
         </View>
       </View>
     </ScrollWrapper>
