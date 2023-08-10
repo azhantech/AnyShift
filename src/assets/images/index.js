@@ -91,7 +91,9 @@ export const icons = {
   clock: require('./icons/clock.png'),
   qrCode: require('./icons/qr-code.png'),
   print: require('./icons/print.png'),
-  star: require('./icons/star.png')
+  star: require('./icons/star.png'),
+  gift: require('./icons/gift.png'),
+  world: require('./icons/world.png'),
 };
 
 export const generalImage = {
@@ -109,5 +111,5 @@ export const generalImage = {
   horizontalMap: require('../images/generalImage/horizontalmap.png'),
   chatProfile: require('../images/generalImage/profile.png'),
   code: require('../images/generalImage/code.png'),
-  qr: require('../images/generalImage/qr.png')
+  qr: require('../images/generalImage/qr.png'),
 };
