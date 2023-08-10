@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import navigationOptions from '../NavigationOptions';
 import QRScreen from '../../screen/Employer/QRScreen';
@@ -7,14 +7,11 @@ import QRScreen from '../../screen/Employer/QRScreen';
 const Stack = createStackNavigator();
 
 const QRStack = () => {
-    return (
-        <Stack.Navigator
-            headerShown={false}
-            screenOptions={navigationOptions}
-        >
-            <Stack.Screen name="QRScreen" component={QRScreen} />
-        </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator headerShown={false} screenOptions={navigationOptions}>
+      <Stack.Screen name="QRScreen" component={QRScreen} />
+    </Stack.Navigator>
+  );
 };
 
 export default QRStack;

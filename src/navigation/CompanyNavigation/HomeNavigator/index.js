@@ -1,5 +1,5 @@
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
+import {createStackNavigator} from '@react-navigation/stack';
 
 import HomeScreen from '../../../screen/Employer/Company/HomeScreen';
 import navigationOptions from '../../NavigationOptions';
@@ -14,8 +14,14 @@ const HomeNavigator = () => {
     <Stack.Navigator headerShown={false} screenOptions={navigationOptions}>
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="PostFeedbackScreen" component={PostFeedbackScreen} />
-      <Stack.Screen name="FeedbackDetailScreen" component={FeedbackDetailScreen} />
-      <Stack.Screen name="JobApplicationScreen" component={JobApplicationScreen} />
+      <Stack.Screen
+        name="FeedbackDetailScreen"
+        component={FeedbackDetailScreen}
+      />
+      <Stack.Screen
+        name="JobApplicationScreen"
+        component={JobApplicationScreen}
+      />
     </Stack.Navigator>
   );
 };

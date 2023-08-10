@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {AirbnbRating} from 'react-native-ratings';
+
 import {vh, vw} from '../../utils/dimensions';
 import {colors, themeShadow} from '../../utils/appTheme';
 import QanelasSemiBold from '../Texts/QanelasSemiBold';
 import QanelasRegular from '../Texts/QanelasRegular';
-import {AirbnbRating} from 'react-native-ratings';
 
 const ReviewItem = props => {
   const item = props?.item;
@@ -29,7 +30,9 @@ const ReviewItem = props => {
       </View>
       <View style={styles.descriptionViewStyle}>
         <QanelasRegular style={styles.dateStyle}>{item?.date}</QanelasRegular>
-        <QanelasRegular style={styles.descriptionStyle}>{item?.description}</QanelasRegular>
+        <QanelasRegular style={styles.descriptionStyle}>
+          {item?.description}
+        </QanelasRegular>
       </View>
     </View>
   );
@@ -68,6 +71,7 @@ const styles = StyleSheet.create({
     color: colors.anotherBlackColor,
     fontSize: 1.8 * vh,
     textTransform: 'capitalize',
+    fontWeight: 'bold',
   },
 
   bankInfoValueStyle: {
@@ -80,27 +84,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 45 * vw,
   },
-
-  bankInfoHeadingStyle: {
-    color: colors.anotherBlackColor,
-    fontSize: 1.8 * vh,
-    textTransform: 'capitalize',
+  dateStyle: {
+    color: colors.highlightedText,
+    fontSize: 1.6 * vh,
   },
 
-  bankInfoValueStyle: {
+  descriptionStyle: {
     color: colors.darkGray,
     fontSize: 1.6 * vh,
-    textTransform: 'capitalize',
   },
-
-  dateStyle:{
-    color: colors.highlightedText,
-    fontSize: 1.6 * vh
-  },
-
-  descriptionStyle:{
-    color: colors.darkGray,
-    fontSize: 1.6 * vh
-  }
 });
 export default ReviewItem;

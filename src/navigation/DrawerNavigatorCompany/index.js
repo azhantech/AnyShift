@@ -1,9 +1,9 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import DrawerScreenWrapper from '../../component/DrawerComponents/DrawerScreenWrapper';
 import DrawerContent from '../../component/DrawerComponents/DrawerContent';
 import TabNavigator from '../TabNavigator';
-import { colors } from '../../utils/appTheme';
+import {colors} from '../../utils/appTheme';
 import AboutUS from '../../navigation/AboutUsStack';
 import navigationOptions from '../NavigationOptions';
 import ContactUs from '../../navigation/ContactUsStack';
@@ -12,9 +12,11 @@ import PlanningStack from '../PlanningStack';
 // import FavNavigator from '../FavStack';
 import FavStack from '../../navigation/FavStack';
 import TabNavigatorEmployer from '../TabNavigatorEmployer';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 import TabNavigatorCompany from '../TabNavigatorCompany';
 import ProfileNavigator from '../CompanyNavigation/ProfileNavigator';
+import QRStack from '../QRStack';
+import ReviewsNavigator from '../CompanyNavigation/ReviewsNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,21 +28,6 @@ const AnimatedHomeStackCompany = (...props) => {
   );
 };
 
-const AnimatedFavStack = props => {
-  return (
-    <DrawerScreenWrapper {...props}>
-      <FavStack />
-    </DrawerScreenWrapper>
-  );
-};
-
-const AnimatedPlanningStack = props => {
-  return (
-    <DrawerScreenWrapper {...props}>
-      <PlanningStack />
-    </DrawerScreenWrapper>
-  );
-};
 const AnimatedAboutUsStack = props => {
   return (
     <DrawerScreenWrapper {...props}>
@@ -62,10 +49,18 @@ const AnimatedContactUsStack = props => {
     </DrawerScreenWrapper>
   );
 };
-const AnimatedPaymentLogsStack = props => {
+const AnimatedQRStack = props => {
   return (
     <DrawerScreenWrapper {...props}>
-      <PaymentLogs />
+      <QRStack />
+    </DrawerScreenWrapper>
+  );
+};
+
+const AnimatedReviewStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <ReviewsNavigator />
     </DrawerScreenWrapper>
   );
 };
@@ -92,6 +87,8 @@ const DrawerNavigatorCompany = props => {
       <Drawer.Screen name="AboutUS" component={AnimatedAboutUsStack} />
       <Drawer.Screen name="Profile" component={AnimatedProfileStack} />
       <Drawer.Screen name="ContactUs" component={AnimatedContactUsStack} />
+      <Drawer.Screen name="QR" component={AnimatedQRStack} />
+      <Drawer.Screen name="Reviews" component={AnimatedReviewStack} />
     </Drawer.Navigator>
   );
 };

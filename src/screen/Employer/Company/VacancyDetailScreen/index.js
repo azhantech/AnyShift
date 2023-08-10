@@ -119,13 +119,7 @@ const VacancyDetailScreen = () => {
           </View>
         </View>
 
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            width: vw * 80,
-            marginVertical: vh * 1,
-          }}>
+        <View style={styles.checkBoxRow}>
           <TouchableOpacity
             style={styles.tickBoxViewStyle()}></TouchableOpacity>
           <QanelasRegular style={styles.boxTitle}>
@@ -169,7 +163,7 @@ const VacancyDetailScreen = () => {
     return (
       <View>
         <QanelasBold style={styles.shiftHeading}>Background Check</QanelasBold>
-        <View
+        {/* <View
           style={{
             flexDirection: 'row',
             alignItems: 'center',
@@ -181,7 +175,22 @@ const VacancyDetailScreen = () => {
           <QanelasRegular style={styles.boxTitle}>
             Backgroung check required for this job
           </QanelasRegular>
+        </View> */}
+
+        <View style={styles.uploadBtn}>
+          <TouchableOpacity style={styles.logoButton}>
+            <Image source={icons.upload} style={styles.uploadIcon} />
+            <QanelasBold style={styles.uploadText}>Upload Document</QanelasBold>
+          </TouchableOpacity>
         </View>
+
+        <QanelasRegular style={{textAlign: 'center'}}>OR</QanelasRegular>
+
+        <InputField
+          placeholder="Enter URL"
+          inputContainerIcon={{width: vw * 90}}
+          label="URL"
+        />
       </View>
     );
   };

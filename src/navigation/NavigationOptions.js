@@ -44,6 +44,7 @@ const titles = {
   UpdateNameScreen: 'Update Your Name',
   UpdatePasswordScreen: 'Change Password',
   UpdateBankDetailScreen: 'Change Bank Detail',
+  ReviewListScreen: 'Reviews',
 };
 
 const backButtonRoutes = {
@@ -66,6 +67,7 @@ const backButtonRoutes = {
   UpdateNameScreen: 'Update Your Name',
   UpdatePasswordScreen: 'Change Password',
   UpdateBankDetailScreen: 'Change Bank Detail',
+  FeedbackDetailScreen: 'Post Feedback',
 };
 
 const notificationButtonRoutes = {

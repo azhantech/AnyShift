@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import {View, FlatList} from 'react-native';
 
 import MainContainer from '../../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
-import { planning } from '../../../../utils/tempData';
+import {planning} from '../../../../utils/tempData';
 import PostFeedbackItem from '../../../../component/Items/PostFeedbackItem';
 
-const PostFeedbackScreen = ({ navigation }) => {
-  const renderItem = ({ item }) => {
+const PostFeedbackScreen = ({navigation}) => {
+  const renderItem = ({item}) => {
     return (
       <PostFeedbackItem
         item={item}
@@ -36,7 +36,7 @@ const PostFeedbackScreen = ({ navigation }) => {
         contentContainerStyle={styles.contentContainerStyle}
         ListEmptyComponent={renderEmptyComponent}
         showsVerticalScrollIndicator={false}
-      // ListHeaderComponent={ListHeaderComponent}
+        // ListHeaderComponent={ListHeaderComponent}
       />
     </MainContainer>
   );
