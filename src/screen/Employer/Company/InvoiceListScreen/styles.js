@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
+import {vh, vw} from '../../../../utils/dimensions';
+import {colors} from '../../../../utils/appTheme';
 
 const styles = StyleSheet.create({
   listStyle: {

@@ -45,6 +45,8 @@ const titles = {
   UpdatePasswordScreen: 'Change Password',
   UpdateBankDetailScreen: 'Change Bank Detail',
   ReviewListScreen: 'Reviews',
+  InvoiceListScreen: 'Invoice',
+  InvoiceDetailScreen: 'Invoice Detail',
 };
 
 const backButtonRoutes = {
@@ -68,6 +70,7 @@ const backButtonRoutes = {
   UpdatePasswordScreen: 'Change Password',
   UpdateBankDetailScreen: 'Change Bank Detail',
   FeedbackDetailScreen: 'Post Feedback',
+  InvoiceDetailScreen: 'Invoice Detail',
 };
 
 const notificationButtonRoutes = {

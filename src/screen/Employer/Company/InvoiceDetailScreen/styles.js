@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
+import {vh, vw} from '../../../../utils/dimensions';
+import {colors} from '../../../../utils/appTheme';
 
 const styles = StyleSheet.create({
   listStyle: {
@@ -67,6 +67,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     alignSelf: 'center',
+  },
+  grayContainerFirst: {
+    backgroundColor: colors.border,
+    borderRadius: vh * 2,
+    padding: vh * 2,
+    marginVertical: vh * 1,
+    maxWidth: vw * 55,
+  },
+  grayContainerSecond: {
+    backgroundColor: colors.border,
+    borderRadius: vh * 2,
+    padding: vh * 2,
+    marginVertical: vh * 1,
+    maxWidth: vw * 70,
+  },
+  grayContainerText: {
+    fontWeight: 'bold',
+  },
+  statusContainer: {
+    backgroundColor: colors.lighterRed,
+    borderRadius: vh * 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: vw * 20,
+    height: vh * 5,
+    position: 'absolute',
+    right: 0,
+    top: vh * 2,
+  },
+  statusText: {
+    color: colors.primaryColor,
+    fontWeight: 'bold',
+    textTransform: 'capitalize',
   },
 });
 

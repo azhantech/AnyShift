@@ -1,39 +1,16 @@
 import React from 'react';
-import {View, TouchableOpacity, Image} from 'react-native';
+import {View} from 'react-native';
 
 import styles from './styles';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import QanelasMedium from '../../Texts/QanelasMedium';
-import {colors} from '../../../utils/appTheme';
-import {icons} from '../../../assets/images';
 
-const JobItem = props => {
+const InvoiceDetailItem = props => {
   const item = props?.item;
 
-  const handleStatusColor = () => {
-    if (item.status == 'upcoming') {
-      return colors.warningColor;
-    }
-
-    if (item.status == 'active') {
-      return colors.successColor;
-    }
-
-    if (item.status == 'ended') {
-      return colors.primaryColor;
-    }
-
-    return colors.darkGray;
-  };
-
   return (
-    <TouchableOpacity
-      onPress={props?.onPress}
-      style={styles.mainContentContainerStyle}>
+    <View style={styles.mainContentContainerStyle}>
       <View style={styles.mainDetailsRowViewStyle}>
-        <TouchableOpacity style={styles.dotsCircle} onPress={props.optionPress}>
-          <Image source={icons.dots} style={styles.dots} />
-        </TouchableOpacity>
         <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
             Job ID
@@ -46,31 +23,23 @@ const JobItem = props => {
 
         <View style={styles.profileDetailsSubRowSecond}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-            Status
+            Job Title
           </QanelasSemiBold>
 
-          <View
-            style={[
-              styles.statusViewStyle,
-              {
-                backgroundColor: handleStatusColor(),
-              },
-            ]}>
-            <QanelasSemiBold style={styles.statusTextStyle}>
-              {item.status}
-            </QanelasSemiBold>
-          </View>
+          <QanelasMedium style={[styles.bankInfoValueStyle]}>
+            Counter Cashier
+          </QanelasMedium>
         </View>
       </View>
 
       <View style={styles.mainDetailsRowViewStyle}>
         <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-            Job Title
+            Employee Name
           </QanelasSemiBold>
 
           <QanelasMedium style={styles.bankInfoValueStyle}>
-            Cashier
+            James Milner
           </QanelasMedium>
         </View>
 
@@ -88,24 +57,21 @@ const JobItem = props => {
       <View style={styles.mainDetailsRowViewStyle}>
         <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-            Total Applications
+            Amount Paid
           </QanelasSemiBold>
 
-          <QanelasMedium style={styles.bankInfoValueStyle}>4</QanelasMedium>
+          <QanelasMedium style={styles.bankInfoValueStyle}>$40</QanelasMedium>
         </View>
-
-        <View style={styles.profileDetailsSubRowSecond}>
+        <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
-            Creation Date
+            Commission Amount
           </QanelasSemiBold>
 
-          <QanelasMedium style={[styles.bankInfoValueStyle]}>
-            05/12/2023
-          </QanelasMedium>
+          <QanelasMedium style={styles.bankInfoValueStyle}>$100</QanelasMedium>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 
-export default JobItem;
+export default InvoiceDetailItem;

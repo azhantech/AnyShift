@@ -1,5 +1,5 @@
-import { icons } from '../assets/images';
-import { colors } from './appTheme';
+import {icons} from '../assets/images';
+import {colors} from './appTheme';
 
 export const chatlist = [
   {
@@ -184,46 +184,64 @@ export const jobs = [
   },
 ];
 
+export const invoice = [
+  {
+    status: 'unpaid',
+  },
+  {
+    status: 'paid',
+  },
+  {
+    status: 'paid',
+  },
+  {
+    status: 'paid',
+  },
+  {
+    status: 'paid',
+  },
+];
+
 export const attendance = [
   {
-    options: true
+    options: true,
   },
   {
-    rejected: true
+    rejected: true,
   },
   {
-    accepted: true
-  }
-]
+    accepted: true,
+  },
+];
 
 export const jobOptions = [
   {
     icon: icons.edit,
-    title: 'edit'
+    title: 'edit',
   },
   {
     icon: icons.copy,
-    title: 'copy'
+    title: 'copy',
   },
   {
     icon: icons.delete,
-    title: 'delete'
-  }
+    title: 'delete',
+  },
 ];
 
 export const planningHeader = [
   {
     title: 'hours',
-    value: '24h 30m'
+    value: '24h 30m',
   },
   {
     title: 'employees',
-    value: '5'
+    value: '5',
   },
   {
     title: 'cost',
-    value: '$1100'
-  }
+    value: '$1100',
+  },
 ];
 
 export const jobDetails = [
@@ -484,33 +502,36 @@ export const notification = [
   {
     id: 1,
     title: ' New Shift Opening',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
     read: false,
-    time: '2 min'
+    time: '2 min',
   },
 
   {
     id: 2,
     title: ' New Shift Opening',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
     read: true,
-    time: '2 min'
+    time: '2 min',
   },
 
   {
     id: 3,
     title: ' New Shift Opening',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
     read: false,
-    time: '2 min'
+    time: '2 min',
   },
 
   {
     id: 4,
     title: ' New Shift Opening',
-    description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
+    description:
+      'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt. ut labore et dolore magna aliquyam. erat, sed diam',
     read: true,
-    time: '2 min'
+    time: '2 min',
   },
-
-]
+];

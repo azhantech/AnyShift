@@ -17,6 +17,7 @@ import TabNavigatorCompany from '../TabNavigatorCompany';
 import ProfileNavigator from '../CompanyNavigation/ProfileNavigator';
 import QRStack from '../QRStack';
 import ReviewsNavigator from '../CompanyNavigation/ReviewsNavigator';
+import InvoiceNavigator from '../CompanyNavigation/InvoiceNavigator';
 
 const Drawer = createDrawerNavigator();
 
@@ -65,6 +66,14 @@ const AnimatedReviewStack = props => {
   );
 };
 
+const AnimatedInvoiceStack = props => {
+  return (
+    <DrawerScreenWrapper {...props}>
+      <InvoiceNavigator />
+    </DrawerScreenWrapper>
+  );
+};
+
 const DrawerNavigatorCompany = props => {
   const type = useSelector(state => state.general.type);
 
@@ -89,6 +98,7 @@ const DrawerNavigatorCompany = props => {
       <Drawer.Screen name="ContactUs" component={AnimatedContactUsStack} />
       <Drawer.Screen name="QR" component={AnimatedQRStack} />
       <Drawer.Screen name="Reviews" component={AnimatedReviewStack} />
+      <Drawer.Screen name="Invoice" component={AnimatedInvoiceStack} />
     </Drawer.Navigator>
   );
 };
