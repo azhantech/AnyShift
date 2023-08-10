@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         height: vh * 3, width: vh * 3, resizeMode: 'contain',
     },
     title: {
-        fontSize: vh * 2.5, marginLeft: vw * 3, textTransform: 'capitalize'
+        fontSize: vh * 2, marginLeft: vw * 3, textTransform: 'capitalize', fontWeight: 'bold'
     },
     leftContainer: {
         flexDirection: 'row', alignItems: 'center'

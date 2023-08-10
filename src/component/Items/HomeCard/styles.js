@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row', alignItems: 'center'
     },
     bigText: {
-        fontSize: vh * 4
+        fontSize: vh * 4, fontWeight: 'bold'
     },
     greenText: {
         color: colors.green

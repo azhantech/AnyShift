@@ -22,7 +22,7 @@ const routeOrders = [
   'ContactUs',
 ];
 const routeOrdersEmployer = ['HomeStack', 'AboutUS', 'QR', 'ContactUs'];
-const routeOrdersCompany = ['HomeStack', 'AboutUS', 'QR', 'ContactUs'];
+const routeOrdersCompany = ['HomeStack', 'AboutUS', 'Profile', 'QR', 'Reviews', 'Manager', 'Invoice', 'ContactUs'];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);
 

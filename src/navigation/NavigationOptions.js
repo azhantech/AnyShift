@@ -38,7 +38,9 @@ const titles = {
   PostFeedbackScreen: 'Post Feedback',
   JobApplicationScreen: 'Job Applications',
   FeedbackDetailScreen: 'Post Feedback',
-  QRScreen: 'QR Code'
+  QRScreen: 'QR Code',
+  ProfileScreen: 'Company Profile',
+  EditProfileScreen: 'Edit Profile',
 };
 
 const backButtonRoutes = {
@@ -74,7 +76,8 @@ const notificationButtonRoutes = {
   PaymentLogs: 'Payments Logs',
   PlanningScreen: 'PlanningScreen',
   FeedbackDetailScreen: 'Post Feedback',
-  QRScreen: 'QR Code'
+  QRScreen: 'QR Code',
+  ProfileScreen: 'Company Profile'
 };
 
 const noBorderRoutes = {
@@ -236,9 +239,25 @@ export const drawerRoutesCompany = {
     label: 'About Us',
     icon: icons.aboutUsIcon,
   },
+  Profile: {
+    label: 'Profile',
+    icon: icons.tab5,
+  },
   QR: {
     label: 'QR Code',
     icon: icons.qrCode,
+  },
+  Reviews: {
+    label: 'Reviews',
+    icon: icons.star,
+  },
+  Manager: {
+    label: 'Manager',
+    icon: icons.profile1,
+  },
+  Invoice: {
+    label: 'Invoice',
+    icon: icons.tab2,
   },
   ContactUs: {
     label: 'Contact Us',
