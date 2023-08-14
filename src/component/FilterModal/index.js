@@ -35,7 +35,12 @@ const FilterModal = props => {
         <TouchableOpacity
           onPress={() => handleHide()}
           style={styles.mainBlurViewContiner}></TouchableOpacity>
-        <View style={[styles.miniContainerView, props?.style]}>
+        <View
+          style={[
+            styles.miniContainerView,
+            props?.style,
+            props.status && {height: vh * 50},
+          ]}>
           <View style={styles.headingContainer}>
             <QanelasBold style={styles.headingText}>
               {props?.headerText}
@@ -78,6 +83,25 @@ const FilterModal = props => {
               </View>
             </View>
           </TouchableOpacity>
+
+          {props.status && (
+            <TouchableOpacity style={styles.dateContainer}>
+              <QanelasRegular style={styles.dateContainer.text}>
+                Filter by Status
+              </QanelasRegular>
+              <View style={styles.daterow}>
+                <View style={styles.daterow.dateTextContainer}>
+                  <QanelasRegular style={styles.daterow.dateTextContainer.text}>
+                    Upcoming
+                  </QanelasRegular>
+                </View>
+                <View style={styles.daterow.iconContainer}>
+                  <Image source={icons.arrowDown} style={styles.arrow} />
+                </View>
+              </View>
+            </TouchableOpacity>
+          )}
+
           {props?.vacancies && (
             <KeyboardAwareScrollView style={{flex: 1}}>
               <View>

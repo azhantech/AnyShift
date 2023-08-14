@@ -95,4 +95,9 @@ export default StyleSheet.create({
     height: vh * 12,
     justifyContent: 'center',
   },
+  arrow: {
+    height: vh * 2,
+    width: vh * 2,
+    resizeMode: 'contain',
+  },
 });

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
+import {Calendar} from 'react-native-calendars';
 
 import styles from './styles';
 import QanelasRegular from '../../../../component/Texts/QanelasRegular';
@@ -10,8 +11,9 @@ import CustomButton from '../../../../component/Buttons/CustomButton';
 import QanelasBold from '../../../../component/Texts/QanelasBold';
 import {colors} from '../../../../utils/appTheme';
 import ScrollWrapper from '../../../../component/ScrollWrapper';
-import {Calendar} from 'react-native-calendars';
 import QanelasSemiBold from '../../../../component/Texts/QanelasSemiBold';
+import QanelasMedium from '../../../../component/Texts/QanelasMedium';
+import GeneralModal from '../../../../component/ModalMessages/GeneralModal';
 
 const data = [
   {active: true},
@@ -20,9 +22,21 @@ const data = [
   {active: false},
 ];
 
-const VacancyDetailScreen = () => {
+const VacancyDetailScreen = props => {
   const [steps, setSteps] = useState(data);
   const [activeStep, setActiveStep] = useState(1);
+  const [successModal, setSuccessModal] = useState(false);
+  const edit = props.route.params?.edit;
+
+  const modalHandler = () => {
+    setSuccessModal(!successModal);
+    // props.navigation.goBack();
+  };
+
+  const modalHandlerPress = () => {
+    setSuccessModal(!successModal);
+    props.navigation.goBack();
+  };
 
   const renderStepOne = () => {
     return (
@@ -30,6 +44,7 @@ const VacancyDetailScreen = () => {
         <View style={styles.item}>
           <QanelasRegular style={styles.labelText}>Job Title</QanelasRegular>
           <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
+            {edit ? <QanelasMedium>Cash Counter</QanelasMedium> : <View />}
             <Image source={icons.arrowDown} style={styles.dropDown} />
           </TouchableOpacity>
         </View>
@@ -39,11 +54,16 @@ const VacancyDetailScreen = () => {
           inputContainer={{height: '100%'}}
           multiline={true}
           label="Job Description"
+          value={
+            edit &&
+            'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.'
+          }
         />
 
         <View style={styles.item}>
           <QanelasRegular style={styles.labelText}>Languages</QanelasRegular>
           <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
+            {edit ? <QanelasMedium>English</QanelasMedium> : <View />}
             <Image source={icons.arrowDown} style={styles.dropDown} />
           </TouchableOpacity>
         </View>
@@ -61,14 +81,17 @@ const VacancyDetailScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.headingContainer}>
+        {/* <View style={styles.headingContainer}>
           <QanelasBold style={styles.heading}>Who can Apply?</QanelasBold>
         </View>
 
         <View style={styles.boxRow}>
           <View style={styles.boxContainer}>
-            <TouchableOpacity
-              style={styles.tickBoxViewStyle()}></TouchableOpacity>
+            <TouchableOpacity style={styles.tickBoxViewStyle(edit)}>
+              {edit && (
+                <Image source={icons.whiteTick} style={styles.checkIcon} />
+              )}
+            </TouchableOpacity>
             <QanelasRegular style={styles.boxTitle}>Normal</QanelasRegular>
           </View>
           <View style={styles.boxContainer}>
@@ -76,7 +99,7 @@ const VacancyDetailScreen = () => {
               style={styles.tickBoxViewStyle()}></TouchableOpacity>
             <QanelasRegular style={styles.boxTitle}>Student</QanelasRegular>
           </View>
-        </View>
+        </View> */}
       </View>
     );
   };
@@ -119,28 +142,18 @@ const VacancyDetailScreen = () => {
           </View>
         </View>
 
-        <View style={styles.checkBoxRow}>
-          <TouchableOpacity
-            style={styles.tickBoxViewStyle()}></TouchableOpacity>
-          <QanelasRegular style={styles.boxTitle}>
-            Each Day Same Schedule
-          </QanelasRegular>
-        </View>
-
         <View style={styles.headingContainerStepThree}>
           <QanelasBold style={styles.heading}>Monday 15 May, 2023</QanelasBold>
         </View>
 
         <View style={styles.item}>
-          <QanelasRegular style={styles.labelText}>From</QanelasRegular>
+          <QanelasRegular style={styles.labelText}>Break</QanelasRegular>
           <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
-            <Image source={icons.clock} style={styles.dropDown} />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.item}>
-          <QanelasRegular style={styles.labelText}>To</QanelasRegular>
-          <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
+            {edit ? (
+              <QanelasMedium>12:00</QanelasMedium>
+            ) : (
+              <QanelasMedium>Enter Break Time</QanelasMedium>
+            )}
             <Image source={icons.clock} style={styles.dropDown} />
           </TouchableOpacity>
         </View>
@@ -148,13 +161,52 @@ const VacancyDetailScreen = () => {
         <InputField
           inputContainerIcon={{width: vw * 90}}
           label="How many people do you need?"
+          keyboardType="number-pad"
+          value={edit && '6'}
         />
+
+        <View style={styles.item}>
+          <QanelasRegular style={styles.labelText}>From</QanelasRegular>
+          <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
+            {edit ? (
+              <QanelasMedium>12:00</QanelasMedium>
+            ) : (
+              <QanelasMedium>Enter From Time</QanelasMedium>
+            )}
+            <Image source={icons.clock} style={styles.dropDown} />
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.item}>
+          <QanelasRegular style={styles.labelText}>To</QanelasRegular>
+          <TouchableOpacity style={styles.inputWithIcon} activeOpacity={0.7}>
+            {edit ? (
+              <QanelasMedium>16:00</QanelasMedium>
+            ) : (
+              <QanelasMedium>Enter To Time</QanelasMedium>
+            )}
+            <Image source={icons.clock} style={styles.dropDown} />
+          </TouchableOpacity>
+        </View>
 
         <InputField
           inputContainerIcon={{width: vw * 90}}
-          label="Shift changes"
+          label="Shift charges"
           placeholder="Enter Shift Charges"
+          value={edit && '$ 200'}
+          keyboardType="number-pad"
         />
+
+        <View style={[styles.checkBoxRow, {marginTop: vh * 4}]}>
+          <TouchableOpacity style={styles.tickBoxViewStyle(edit)}>
+            {edit && (
+              <Image source={icons.whiteTick} style={styles.checkIcon} />
+            )}
+          </TouchableOpacity>
+          <QanelasRegular style={styles.boxTitle}>
+            Each Day Same Schedule
+          </QanelasRegular>
+        </View>
       </View>
     );
   };
@@ -162,7 +214,9 @@ const VacancyDetailScreen = () => {
   const renderStepFour = () => {
     return (
       <View>
-        <QanelasBold style={styles.shiftHeading}>Background Check</QanelasBold>
+        <QanelasBold style={styles.shiftHeading}>
+          Terms and Conditions Document
+        </QanelasBold>
         {/* <View
           style={{
             flexDirection: 'row',
@@ -191,6 +245,10 @@ const VacancyDetailScreen = () => {
           inputContainerIcon={{width: vw * 90}}
           label="URL"
         />
+        <QanelasRegular>
+          Note: We will only share your terms and conditions with approved
+          employee only over email
+        </QanelasRegular>
       </View>
     );
   };
@@ -227,7 +285,7 @@ const VacancyDetailScreen = () => {
 
   const nextHandler = () => {
     if (activeStep == 4) {
-      return;
+      return modalHandler();
     }
 
     setActiveStep(prev => prev + 1);
@@ -241,7 +299,6 @@ const VacancyDetailScreen = () => {
   };
 
   return (
-    // <View style={styles.container}>
     <ScrollWrapper
       avoidKeyboard={true}
       style={styles.scroll}
@@ -253,13 +310,21 @@ const VacancyDetailScreen = () => {
 
         <View style={styles.btnContainer}>
           <CustomButton
-            text={activeStep == 3 || activeStep == 4 ? 'Create Job' : 'Next'}
+            text={activeStep == 4 ? 'Create Job' : 'Next'}
             onPress={nextHandler}
           />
         </View>
       </View>
+      <GeneralModal
+        visible={successModal}
+        onPress={modalHandlerPress}
+        onHide={modalHandler}
+        buttonTitle="Okay"
+        icon={icons.success}
+        firstDescription="SUCCESS"
+        placeholder="Job has been created successfully"
+      />
     </ScrollWrapper>
-    // </View>
   );
 };
 

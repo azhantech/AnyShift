@@ -61,11 +61,11 @@ const JobListScreen = ({navigation}) => {
       <JobItem
         item={item}
         optionPress={onPressModal}
-        onPress={() =>
-          navigation.navigate('JobDetails', {
-            status: item?.status,
-          })
-        }
+        // onPress={() =>
+        //   navigation.navigate('JobDetails', {
+        //     status: item?.status,
+        //   })
+        // }
       />
     );
   };
@@ -92,6 +92,12 @@ const JobListScreen = ({navigation}) => {
       />
     );
   };
+
+  const onPressEditHandler = () => {
+    setOptionModal(!optionModal);
+    navigation.navigate('VacancyDetailScreen', {edit: true});
+  };
+
   return (
     <MainContainer>
       <View style={styles.header}>
@@ -119,6 +125,7 @@ const JobListScreen = ({navigation}) => {
         onPress={onPressModal}
         onHide={onPressModal}
         options={jobOptions}
+        onPressEdit={onPressEditHandler}
       />
 
       <FilterModal
@@ -126,7 +133,8 @@ const JobListScreen = ({navigation}) => {
         onPress={onFilterModal}
         onHide={onFilterModal}
         style={{height: vh * 46}}
-        headerText="Filter Date"
+        headerText="Filter"
+        status
       />
     </MainContainer>
   );

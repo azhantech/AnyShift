@@ -54,6 +54,7 @@ export default StyleSheet.create({
     color: colors.black,
     width: 40 * vw,
     textTransform: 'uppercase',
+    fontWeight: 'bold',
   },
 
   textDescriptionView: {
@@ -95,11 +96,11 @@ export default StyleSheet.create({
   CustomButtonStyle: {
     width: 40 * vw,
     marginTop: 2 * vh,
-    marginBottom: 3 * vh
+    marginBottom: 3 * vh,
   },
 
-  markAllReadStyle:{
+  markAllReadStyle: {
     color: colors.myMessageColor,
-    fontSize: 1.6 * vh
-  }
+    fontSize: 1.6 * vh,
+  },
 });

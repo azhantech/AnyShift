@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     borderColor: colors.borderColor2,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     backgroundColor: colors.textInputBackgroundColor,
     height: vh * 7,
     borderRadius: vh * 4,
@@ -45,6 +45,12 @@ const styles = StyleSheet.create({
     width: vh * 2,
     resizeMode: 'contain',
     tintColor: colors.darkGray,
+  },
+  checkIcon: {
+    height: vh * 2,
+    width: vh * 2,
+    resizeMode: 'contain',
+    tintColor: colors.white,
   },
   btnContainer: {
     height: vh * 10,
@@ -81,15 +87,15 @@ const styles = StyleSheet.create({
     paddingBottom: vh * 10,
   },
   tickBoxViewStyle: checked => ({
-    height: vh * 2.5,
-    width: vh * 2.5,
-    borderRadius: 2,
+    height: vh * 3,
+    width: vh * 3,
+    borderRadius: vh * 0.6,
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 1,
-    borderColor: checked ? colors.primaryColor : colors.lightBorderColor,
+    borderColor: checked ? colors.highlightedText : colors.lightBorderColor,
     backgroundColor: checked
-      ? colors.lightRed
+      ? colors.highlightedText
       : colors.textInputBackgroundColor,
   }),
   boxContainer: {
@@ -108,6 +114,7 @@ const styles = StyleSheet.create({
   heading: {
     color: colors.highlightedText,
     fontSize: vh * 3,
+    fontWeight: 'bold',
   },
   headingContainer: {
     marginTop: vh * 2,

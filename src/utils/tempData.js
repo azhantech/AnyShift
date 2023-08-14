@@ -221,7 +221,7 @@ export const jobOptions = [
   },
   {
     icon: icons.copy,
-    title: 'copy',
+    title: 'duplicate',
   },
   {
     icon: icons.delete,
