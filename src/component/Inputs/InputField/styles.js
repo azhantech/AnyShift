@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   labelText: {
     color: colors.black,
     fontSize: vh * 1.5,
-    textTransform: 'capitalize',
+    // textTransform: 'capitalize',
   },
   optionalStyle: {
     color: colors.highlightedText,

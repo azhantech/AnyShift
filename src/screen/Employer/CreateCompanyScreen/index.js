@@ -15,6 +15,7 @@ const CreateCompanyScreen = props => {
 
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
+    props.navigation.goBack();
   };
 
   return (

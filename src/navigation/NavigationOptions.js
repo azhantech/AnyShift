@@ -40,6 +40,7 @@ const titles = {
   FeedbackDetailScreen: 'Post Feedback',
   QRScreen: 'QR Code',
   ProfileScreen: 'Company Profile',
+  ProfileScreenEmployer: 'Profile',
   EditProfileScreen: 'Edit Profile',
   UpdateNameScreen: 'Update Your Name',
   UpdatePasswordScreen: 'Change Password',

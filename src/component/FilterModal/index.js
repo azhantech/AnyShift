@@ -1,18 +1,18 @@
 import React from 'react';
-import {View, Modal, Image, Animated, TouchableOpacity} from 'react-native';
+import {View, Modal, Image, TouchableOpacity} from 'react-native';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 import styles from './styles';
 import QanelasBold from '../Texts/QanelasBold';
 import QanelasRegular from '../Texts/QanelasRegular';
-import QanelasSemiBold from '../Texts/QanelasSemiBold';
 import CustomButton from '../Buttons/CustomButton';
 import {icons} from '../../assets/images';
 import InputField from '../Inputs/InputField';
 import {vh, vw} from '../../utils/dimensions';
 import {colors} from '../../utils/appTheme';
 import CustomSlider from '../CustomSlider';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+
 const FilterModal = props => {
-  console.log('Props ===>', props);
   const handleHide = () => {
     props?.onHide();
     if (props?.hidePress) {

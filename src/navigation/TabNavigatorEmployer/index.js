@@ -2,23 +2,12 @@ import React, {useState} from 'react';
 import {Image, LayoutAnimation, TouchableOpacity, View} from 'react-native';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 
-import HomeStack from '../HomeStack';
-import ProfileStack from '../ProfileStack';
-import VacanciesStack from '../VacanciesStack';
-import ShiftStack from '../ShiftStack';
-import ChatStack from '../ChatStack';
 import styles from './styles';
-import QanelasRegular from '../../component/Texts/QanelasRegular';
 import {icons} from '../../assets/images';
 import CompanyNavigator from '../Employeer/CompanyNavigator';
-import HomeNavigator from '../CompanyNavigation/HomeNavigator';
 import SFProDisplayRegular from '../../component/Texts/SFProDisplayRegular';
-import JobNavigator from '../CompanyNavigation/JobNavigator';
-import PlanningNavigator from '../CompanyNavigation/PlanningNavigator';
-import FavoriteNavigator from '../CompanyNavigation/FavoriteNavigator';
-import AttendanceNavigator from '../CompanyNavigation/AttendanceNavigator';
-import {useSelector} from 'react-redux';
 import HomeNavigatorEmployer from '../HomeStackEmployer';
+import EmployerProfileNavigator from '../EmployerProfileNavigator';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -43,8 +32,6 @@ const tabIcons = {
 // };
 
 const TabNavigatorEmployer = props => {
-  const type = useSelector(state => state.general.type);
-
   const MyTabBar = ({state, navigation}) => {
     const [activeTab, setActiveTab] = useState(null);
     return (
@@ -92,7 +79,7 @@ const TabNavigatorEmployer = props => {
       tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
       <Tab.Screen name="Home" component={HomeNavigatorEmployer} />
       <Tab.Screen name="Companies" component={CompanyNavigator} />
-      <Tab.Screen name="Profile" component={ShiftStack} />
+      <Tab.Screen name="Profile" component={EmployerProfileNavigator} />
     </Tab.Navigator>
   );
 };

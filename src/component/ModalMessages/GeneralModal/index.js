@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Modal, Image, Animated, TouchableOpacity} from 'react-native';
+import {View, Modal, Animated, TouchableOpacity} from 'react-native';
+
 import styles from './styles';
 import QanelasBold from '../../Texts/QanelasBold';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import CustomButton from '../../Buttons/CustomButton';
 import {icons} from '../../../assets/images';
-import {colors} from '../../../utils/appTheme';
 
 const GeneralModal = props => {
   const handleHide = () => {

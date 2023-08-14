@@ -11,12 +11,18 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import InputField from '../../../component/Inputs/InputField';
 import {vh} from '../../../utils/dimensions';
 import OptionsModal from '../../../component/ModalMessages/OptionsModal';
+import FilterModal from '../../../component/FilterModal';
 
 const JobListScreen = ({navigation}) => {
   const [optionModal, setOptionModal] = useState(false);
+  const [filterModal, setFilterModal] = useState(false);
 
   const onPressModal = () => {
     setOptionModal(!optionModal);
+  };
+
+  const onFilterModal = () => {
+    setFilterModal(!filterModal);
   };
 
   useLayoutEffect(() => {
@@ -95,9 +101,7 @@ const JobListScreen = ({navigation}) => {
           inputContainerIcon={styles.inputContainerIcon}
         />
         <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('NotificationScreen');
-          }}
+          onPress={onFilterModal}
           style={[styles.textButton, {marginTop: vh * 1}]}>
           <Image source={icons.filter} style={styles.notificationsIconStyle} />
         </TouchableOpacity>
@@ -115,6 +119,14 @@ const JobListScreen = ({navigation}) => {
         onPress={onPressModal}
         onHide={onPressModal}
         options={jobOptions}
+      />
+
+      <FilterModal
+        visible={filterModal}
+        onPress={onFilterModal}
+        onHide={onFilterModal}
+        style={{height: vh * 46}}
+        headerText="Filter Date"
       />
     </MainContainer>
   );

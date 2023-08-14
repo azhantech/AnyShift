@@ -1,11 +1,11 @@
-import React, { useLayoutEffect } from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import React, {useLayoutEffect} from 'react';
+import {Image, ScrollView, TouchableOpacity, View} from 'react-native';
 
 import styles from './styles';
-import { homeDataCompany, homeDataCompanySmall } from '../../../../utils/data';
+import {homeDataCompany} from '../../../../utils/data';
 import HomeCard from '../../../../component/Items/HomeCard';
 import HomeCardSmall from '../../../../component/Items/HomeCardSmall';
-import { icons } from '../../../../assets/images';
+import {icons} from '../../../../assets/images';
 
 const renderCards = () => {
   return homeDataCompany.map((val, i) => (
@@ -13,7 +13,7 @@ const renderCards = () => {
   ));
 };
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = ({navigation}) => {
   const homeDataCompanySmall = [
     {
       title: 'post feedback(12)',
@@ -44,7 +44,7 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('AboutUS', { screen: 'NotificationScreen' });
+                navigation.navigate('AboutUS', {screen: 'NotificationScreen'});
               }}
               style={styles.textButton}>
               <Image
@@ -72,8 +72,12 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.headerTopContainer}></View>
-      {renderCards()}
-      {renderSmallCards()}
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.contentContainer}>
+        {renderCards()}
+        {renderSmallCards()}
+      </ScrollView>
     </View>
   );
 };

@@ -42,6 +42,9 @@ const styles = StyleSheet.create({
     width: 4 * vw,
     tintColor: colors.primaryColor,
   },
+  contentContainer: {
+    paddingBottom: vh * 10,
+  },
 });
 
 export default styles;

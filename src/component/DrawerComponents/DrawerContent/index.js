@@ -28,9 +28,7 @@ const routeOrders = [
 const routeOrdersEmployer = ['HomeStack', 'ContactUs'];
 const routeOrdersCompany = [
   'HomeStack',
-  'AboutUS',
   'Profile',
-  'QR',
   'Reviews',
   'Manager',
   'Invoice',
