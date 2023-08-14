@@ -26,7 +26,9 @@ const Registration = props => {
   const renderStep = () => {
     if (step == 1) {
       return (
-        <Animated.View entering={SlideInRight.duration(2)} exiting={SlideOutLeft.duration(2)}>
+        <Animated.View
+          entering={SlideInRight.duration(2)}
+          exiting={SlideOutLeft.duration(2)}>
           <View style={styles.fieldContainer}>
             <InputField
               placeholder="Enter First Name"
@@ -119,7 +121,11 @@ const Registration = props => {
               )}
             </TouchableOpacity>
             <View>
-              <QanelasRegular style={[styles.noteText, {color: colors.grey, fontSize: vh * 1.3}]}>
+              <QanelasRegular
+                style={[
+                  styles.noteText,
+                  {color: colors.grey, fontSize: vh * 1.3},
+                ]}>
                 I agree to General Terms and Condition & Privacy Policy of
                 Anyshift
               </QanelasRegular>
@@ -175,7 +181,11 @@ const Registration = props => {
       {renderStep()}
       <View style={styles.btnContainer}>
         <CustomButton text="Sign up" onPress={hanldebtn} />
-        <TouchableText text="Back to" touchableText="Login" onPress={() => props?.navigation?.navigate('SignInScreen')}/>
+        <TouchableText
+          text="Back to"
+          touchableText="Login"
+          onPress={() => props?.navigation?.navigate('SignInScreen')}
+        />
       </View>
     </Scrollable>
   );

@@ -16,20 +16,6 @@ import {useSelector} from 'react-redux';
 import TabNavigatorCompany from '../TabNavigatorCompany';
 
 const Drawer = createDrawerNavigator();
-// const AnimatedHomeStack = (type, ...props) => {
-//   console.log('TYPEEEE==========>>>>>>>>>>>>', type);
-//   return (
-//     <DrawerScreenWrapper {...props}>
-//       {
-//         type == 'employer' ?
-//           <TabNavigatorEmployer />
-//           :
-//           <TabNavigator />
-//       }
-
-//     </DrawerScreenWrapper>
-//   );
-// };
 
 const AnimatedHomeStack = (...props) => {
   return (

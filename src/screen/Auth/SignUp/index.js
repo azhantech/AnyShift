@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
-import { ScrollView, TouchableOpacity, View, Image } from 'react-native';
-import InputField from '../../../component/Inputs/InputField';
-import { styles } from './styles';
+import React, {useState} from 'react';
+import {ScrollView, TouchableOpacity, View, Image} from 'react-native';
+
+import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import { icons } from '../../../assets/images';
-import { vh, vw } from '../../../utils/dimensions';
+import {icons} from '../../../assets/images';
 import TouchableText from '../../../component/Buttons/TouchableText';
-import { colors } from '../../../utils/appTheme';
+
 const SignupScreen = props => {
   const [signedInAs, setSignedInAs] = useState(null);
   const registrationData = [
@@ -55,9 +54,9 @@ const SignupScreen = props => {
         {registrationData.map((val, index) => {
           return (
             <TouchableOpacity
+              key={index}
               style={styles.selectionCOntainer(signedInAs, val?.id)}
-              onPress={() => handleSignUp(val?.id)}
-            >
+              onPress={() => handleSignUp(val?.id)}>
               <View style={styles.selectionImageContainer}>
                 <Image
                   source={val?.image}
@@ -77,16 +76,21 @@ const SignupScreen = props => {
       </View>
     );
   };
+
   const renderSocialLogin = () => {
     return (
       <View style={styles.socialLoginMainContainer}>
         {socialLoginData.map((val, index) => {
           return (
             <TouchableOpacity
+              key={index}
               // onPress={() => props?.navigation.navigate('Registration')}
-              onPress={signedInAs == 1 ? () => props?.navigation.navigate('RegistrationEmployer') : () => props?.navigation.navigate('Registration')}
-              style={styles.renderSocialLogin}
-            >
+              onPress={
+                signedInAs == 1
+                  ? () => props?.navigation.navigate('RegistrationEmployer')
+                  : () => props?.navigation.navigate('Registration')
+              }
+              style={styles.renderSocialLogin}>
               <View style={styles.socialLoginImageContainer}>
                 <Image source={val?.image} style={styles.socialLoginIcon} />
               </View>
@@ -101,6 +105,7 @@ const SignupScreen = props => {
       </View>
     );
   };
+
   return (
     <ScrollView
       style={styles.mainContainer}
@@ -113,7 +118,11 @@ const SignupScreen = props => {
         <View style={styles.horizontalLine}></View>
       </View>
       {renderSocialLogin()}
-      <TouchableText text={'Back to'} touchableText={'Login'} />
+      <TouchableText
+        text={'Back to'}
+        touchableText={'Login'}
+        onPress={() => props.navigation.goBack()}
+      />
     </ScrollView>
   );
 };

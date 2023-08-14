@@ -1,7 +1,9 @@
 import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
+
 import QanelasRegular from '../../Texts/QanelasRegular';
 import {styles} from './styles';
+
 const TouchableOpacityText = ({
   mainContainerStyles,
   text,

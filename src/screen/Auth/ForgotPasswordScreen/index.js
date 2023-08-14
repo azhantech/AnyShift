@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View} from 'react-native';
+
 import {icons} from '../../../assets/images/index';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
@@ -160,7 +161,8 @@ const ForgotPasswordScreen = props => {
         </View>
 
         <TouchableOpacity
-          onPress={onHandleCancelReasonModal}
+          // onPress={onHandleCancelReasonModal}
+          onPress={() => props.navigation.goBack()}
           style={styles.donthaveAccountContainer}>
           <View style={styles.rowContainer}>
             <QanelasRegular style={styles.backToTextStyle}>

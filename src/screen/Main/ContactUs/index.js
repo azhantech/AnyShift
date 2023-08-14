@@ -1,7 +1,8 @@
 import React, {useLayoutEffect} from 'react';
 import {View, Image} from 'react-native';
+
 import {Styles} from './styles';
-import {generalImage, icons} from '../../../assets/images';
+import {generalImage} from '../../../assets/images';
 import InputField from '../../../component/Inputs/InputField';
 import Scrollwrapper from '../../../component/ScrollWrapper';
 import {vh} from '../../../utils/dimensions';
@@ -24,6 +25,7 @@ const ContactUs = props => {
       },
     });
   });
+
   return (
     <Scrollwrapper
       style={Styles.mainContainer}

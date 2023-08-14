@@ -9,7 +9,7 @@ import styles from './styles';
 
 const InputField = props => {
   console.log('props.isPassword ===>', props.isPassword);
-  const [isPassword, setIsPassword] = useState(true);
+  const [isPassword, setIsPassword] = useState(false);
 
   const inputRef = useRef(null);
   useImperativeHandle(props?.reference, () => ({
@@ -46,13 +46,7 @@ const InputField = props => {
 
       <View style={[styles.inputWithIcon, props.inputContainerIcon]}>
         {props.leftIcon && (
-          <View
-            style={{
-              height: vh * 5,
-              justifyContent: 'center',
-              width: vw * 9,
-              alignItems: 'center',
-            }}>
+          <View style={styles.leftIconContainer}>
             <Image source={props.leftIcon} style={styles.leftIcon} />
           </View>
         )}
@@ -83,7 +77,6 @@ const InputField = props => {
             placeholder={props.placeholder}
             placeholderTextColor={'#999999'}
             secureTextEntry={isPassword}
-
             // {...props}
           />
         )}

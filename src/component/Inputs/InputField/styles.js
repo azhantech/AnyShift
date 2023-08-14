@@ -8,8 +8,7 @@ const styles = StyleSheet.create({
     // flexDirection: 'row',
     // marginVertical  : vh*2,
     width: vw * 80,
-    marginTop: 2 * vh
-    
+    marginTop: 2 * vh,
   },
   inputWithIcon: {
     // flexDirection: 'row',
@@ -55,7 +54,7 @@ const styles = StyleSheet.create({
   },
   labelContainer: {
     flexDirection: 'row',
-    marginBottom: vh * 0.5
+    marginBottom: vh * 0.5,
   },
   label: {
     color: colors.blackappText,
@@ -75,6 +74,12 @@ const styles = StyleSheet.create({
     fontSize: vh * 1.5,
     textTransform: 'capitalize',
     marginLeft: vw,
+  },
+  leftIconContainer: {
+    height: vh * 5,
+    justifyContent: 'center',
+    width: vw * 9,
+    alignItems: 'center',
   },
 });
 

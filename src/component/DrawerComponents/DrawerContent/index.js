@@ -1,18 +1,22 @@
 import React from 'react';
 import styles from './styles';
 import DrawerButton from '../DrawerButton';
-import { Image, TouchableOpacity, View } from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import QanelasMedium from '../../Texts/QanelasMedium';
 import QanelasRegular from '../../Texts/QanelasRegular';
 
-import { useDrawerProgress } from '@react-navigation/drawer';
+import {useDrawerProgress} from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
-import { drawerRoutes, drawerRoutesCompany, drawerRoutesEmployer } from '../../../navigation/NavigationOptions';
-import { generalImage, icons } from '../../../assets/images';
-import { vh, vw } from '../../../utils/dimensions';
-import { colors } from '../../../utils/appTheme';
-import { useSelector } from 'react-redux';
+import {
+  drawerRoutes,
+  drawerRoutesCompany,
+  drawerRoutesEmployer,
+} from '../../../navigation/NavigationOptions';
+import {generalImage, icons} from '../../../assets/images';
+import {vh, vw} from '../../../utils/dimensions';
+import {colors} from '../../../utils/appTheme';
+import {useSelector} from 'react-redux';
 const routeOrders = [
   'HomeStack',
   'FavStack',
@@ -21,8 +25,17 @@ const routeOrders = [
   // 'AboutUS',
   'ContactUs',
 ];
-const routeOrdersEmployer = ['HomeStack', 'AboutUS', 'QR', 'ContactUs'];
-const routeOrdersCompany = ['HomeStack', 'AboutUS', 'Profile', 'QR', 'Reviews', 'Manager', 'Invoice', 'ContactUs'];
+const routeOrdersEmployer = ['HomeStack', 'ContactUs'];
+const routeOrdersCompany = [
+  'HomeStack',
+  'AboutUS',
+  'Profile',
+  'QR',
+  'Reviews',
+  'Manager',
+  'Invoice',
+  'ContactUs',
+];
 
 const AnimatedTouchable = Animated.createAnimatedComponent(View);
 
@@ -35,10 +48,10 @@ const DrawerContent = props => {
     outputRange: [-40 * vw * (1 + 1), 0],
   });
   const animatedStyles = {
-    transform: [{ translateX }],
+    transform: [{translateX}],
   };
 
-  const getRoute = (routeName) => {
+  const getRoute = routeName => {
     if (type == 'company') {
       return drawerRoutesCompany[routeName];
     } else {
