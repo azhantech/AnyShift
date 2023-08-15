@@ -6,7 +6,6 @@ import styles from './styles';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
 import { jobOptions, jobs, managers } from '../../../../utils/tempData';
 import { icons } from '../../../../assets/images';
-import JobItem from '../../../../component/Items/JobItem';
 import CustomButton from '../../../../component/Buttons/CustomButton';
 import InputField from '../../../../component/Inputs/InputField';
 import { vh } from '../../../../utils/dimensions';
@@ -59,7 +58,7 @@ const ManagerListScreen = ({ navigation }) => {
 
     const renderItem = ({ item }) => {
         return (
-            <ManagerItem item={item} />
+            <ManagerItem item={item} onPress={() => navigation.navigate('ManagerDetailScreen')} />
         );
     };
 

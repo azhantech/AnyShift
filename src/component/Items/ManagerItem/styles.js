@@ -70,6 +70,15 @@ const styles = StyleSheet.create({
     },
     dots: {
         height: vh * 2, width: vh * 2, resizeMode: 'contain'
+    },
+    statusText: {
+        textTransform: 'capitalize'
+    },
+    statusContainer: {
+        width: vw * 28, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'
+    },
+    switchContainer: {
+        backgroundColor: colors.successColor, borderRadius: vh * 2
     }
 });
 

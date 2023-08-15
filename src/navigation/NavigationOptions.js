@@ -49,7 +49,8 @@ const titles = {
   InvoiceListScreen: 'Invoice',
   InvoiceDetailScreen: 'Invoice Detail',
   ManagerListScreen: 'Manager',
-  AddManagerScreen: 'Add Manager'
+  AddManagerScreen: 'Add Manager',
+  ManagerDetailScreen: 'Manager Details'
 };
 
 const backButtonRoutes = {
@@ -74,7 +75,8 @@ const backButtonRoutes = {
   UpdateBankDetailScreen: 'Change Bank Detail',
   FeedbackDetailScreen: 'Post Feedback',
   InvoiceDetailScreen: 'Invoice Detail',
-  AddManagerScreen: 'Add Manager'
+  AddManagerScreen: 'Add Manager',
+  ManagerDetailScreen: 'Manager Details'
 };
 
 const notificationButtonRoutes = {

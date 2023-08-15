@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated';
 
 import Scrollable from '../../../../component/ScrollWrapper';
@@ -10,14 +10,15 @@ import { vh, vw } from '../../../../utils/dimensions';
 import CustomButton from '../../../../component/Buttons/CustomButton';
 import QanelasRegular from '../../../../component/Texts/QanelasRegular';
 import QanelasSemiBold from '../../../../component/Texts/QanelasSemiBold';
+import { icons } from '../../../../assets/images';
 
 const data = [
     {
         title: 'Dashboard',
         options: [
             { title: 'All', selected: false },
-            { title: 'Create', selected: false },
-            { title: 'View', selected: false },
+            { title: 'Create', selected: true },
+            { title: 'View', selected: true },
             { title: 'Update', selected: false },
             { title: 'Delete', selected: false }
         ]
@@ -26,9 +27,9 @@ const data = [
         title: 'Job Management',
         options: [
             { title: 'All', selected: false },
-            { title: 'Create', selected: false },
+            { title: 'Create', selected: true },
             { title: 'View', selected: false },
-            { title: 'Update', selected: false },
+            { title: 'Update', selected: true },
             { title: 'Delete', selected: false }
         ]
     },
@@ -46,8 +47,8 @@ const data = [
         title: 'Attendance',
         options: [
             { title: 'All', selected: false },
-            { title: 'Create', selected: false },
-            { title: 'View', selected: false },
+            { title: 'Create', selected: true },
+            { title: 'View', selected: true },
             { title: 'Update', selected: false },
             { title: 'Delete', selected: false }
         ]
@@ -56,21 +57,31 @@ const data = [
         title: 'Favorites',
         options: [
             { title: 'All', selected: false },
-            { title: 'Create', selected: false },
-            { title: 'View', selected: false },
+            { title: 'Create', selected: true },
+            { title: 'View', selected: true },
             { title: 'Update', selected: false },
             { title: 'Delete', selected: false }
         ]
     }
 ]
 
-const AddManagerScreen = props => {
+const headerData = [
+    { title: 'First Name', value: 'James' },
+    { title: 'Last Name', value: 'Milner' },
+    { title: 'Mobile Number', value: '26467911312' },
+    { title: 'Email Address', value: 'info@email.com' }
+]
+
+const ManagerDetailScreen = props => {
 
     const renderOptions = (options) => {
         return options.map((val, i) => {
             return (
                 <View style={styles.boxContainer} key={i}>
-                    <TouchableOpacity style={styles.tickBoxViewStyle()}>
+                    <TouchableOpacity style={styles.tickBoxViewStyle(val.selected)}>
+                        {val.selected && (
+                            <Image source={icons.whiteTick} style={styles.checkIcon} />
+                        )}
                     </TouchableOpacity>
                     <QanelasRegular style={styles.boxTitle}>{val.title}</QanelasRegular>
                 </View>
@@ -91,70 +102,35 @@ const AddManagerScreen = props => {
         })
     }
 
+    const renderHeader = () => {
+        return headerData.map(val => {
+            return (
+                <View style={{ width: vw * 40, marginVertical: vh * 3 }}>
+                    <QanelasRegular>{val.title}</QanelasRegular>
+                    <QanelasSemiBold>{val.value}</QanelasSemiBold>
+                </View>
+            )
+        })
+    }
+
     return (
         <Scrollable
             style={styles.mainContainer}
             contentContainerStyle={styles.contentContainerStyle}>
 
-            <Animated.View
-                entering={SlideInRight.duration(2)}
-                exiting={SlideOutLeft.duration(2)}>
-                <View style={styles.fieldContainer}>
-                    <InputField
-                        placeholder="Enter First Name"
-                        label="First name"
-                        required
-                    />
-                    <InputField
-                        placeholder="Enter Last Name"
-                        label="Last name"
-                        required
-                    />
-                    <InputField
-                        placeholder="Enter Your Email Address"
-                        label="Mobile Number"
-                        required
-                        keyboardType="number-pad"
-                    />
-                </View>
-
-                <View style={styles.fieldContainer}>
-                    <InputField
-                        placeholder="Enter Your Email Address"
-                        label="Email Address"
-                        required
-                    />
-                    <InputField
-                        placeholder="Enter Password"
-                        label="Password"
-                        secureTextEntry
-                        required
-                    />
-                    <InputField
-                        placeholder="Confirm Password"
-                        label="Confirm Password"
-                        secureTextEntry
-                        required
-                    />
-                    <></>
-                </View>
-            </Animated.View>
-
+            <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', width: vw * 90, justifyContent: 'center' }}>
+                {
+                    renderHeader()
+                }
+            </View>
 
             <View style={{ width: vw * 85, marginVertical: vh * 1 }}>
                 <QanelasBold style={styles.heading}>Privilages</QanelasBold>
             </View>
 
             {renderData()}
-
-            <View style={styles.btnContainer}>
-                <CustomButton
-                    text="Add"
-                    style={{ marginTop: vh * 3 }}
-                />
-            </View>
         </Scrollable>
     );
 };
 
-export default AddManagerScreen;
+export default ManagerDetailScreen;

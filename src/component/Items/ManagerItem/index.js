@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, TouchableOpacity, Switch } from 'react-native';
 
 import styles from './styles';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
@@ -8,6 +8,8 @@ import { colors } from '../../../utils/appTheme';
 
 const ManagerItem = props => {
     const item = props?.item;
+    const [isEnabled, setIsEnabled] = useState(false);
+    const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
     const handleStatusColor = () => {
         if (item.status == 'upcoming') {
@@ -25,10 +27,21 @@ const ManagerItem = props => {
         return colors.darkGray;
     };
 
+    const getStatusColor = () => {
+        if (item.status == 'active') {
+            return colors.successColor
+        }
+        else {
+            return colors.primaryColor
+        }
+    }
+
     return (
         <TouchableOpacity
             onPress={props?.onPress}
-            style={styles.mainContentContainerStyle}>
+            style={styles.mainContentContainerStyle}
+            activeOpacity={0.7}
+        >
             <View style={styles.mainDetailsRowViewStyle}>
 
                 <View style={styles.profileDetailsSubRowOne}>
@@ -46,7 +59,20 @@ const ManagerItem = props => {
                         Status
                     </QanelasSemiBold>
 
-                    <View
+                    <View style={styles.statusContainer}>
+                        <QanelasSemiBold style={[styles.statusText, { color: getStatusColor() }]}>{item.status}</QanelasSemiBold>
+                        <View style={[styles.switchContainer, { backgroundColor: getStatusColor() }]}>
+                            <Switch
+                                trackColor={{ false: 'transparent', true: 'transparent' }}
+                                thumbColor={isEnabled ? colors.white : colors.white}
+                                ios_backgroundColor="#3e3e3e"
+                                onValueChange={toggleSwitch}
+                                value={isEnabled}
+                            />
+                        </View>
+                    </View>
+
+                    {/* <View
                         style={[
                             styles.statusViewStyle,
                             {
@@ -56,7 +82,7 @@ const ManagerItem = props => {
                         <QanelasSemiBold style={styles.statusTextStyle}>
                             {item.status}
                         </QanelasSemiBold>
-                    </View>
+                    </View> */}
                 </View>
             </View>
 
