@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between', marginVertical: vh * 0.5
     },
     headerText: {
-        color: colors.white, textTransform: 'capitalize'
+        color: colors.white, textTransform: 'capitalize', textAlign: 'center',
     }
 });
 

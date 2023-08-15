@@ -19,7 +19,9 @@ const PlanningScreen = ({ navigation }) => {
             return (
                 <View style={styles.row} key={i}>
                     <QanelasMedium style={styles.headerText}>{val.title}</QanelasMedium>
-                    <QanelasMedium style={styles.headerText}>{val.value}</QanelasMedium>
+                    <View style={{ width: vw * 20 }}>
+                        <QanelasMedium style={styles.headerText}>{val.value}</QanelasMedium>
+                    </View>
                 </View>
             )
         })
