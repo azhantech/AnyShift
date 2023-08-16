@@ -13,8 +13,9 @@ import {reviews} from '../../../../utils/tempData';
 import ReviewItem from '../../../../component/ReviewItem';
 import ConfirmationModal from '../../../../component/ModalMessages/ConfirmationModal';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
+import {colors} from '../../../../utils/appTheme';
 
-const EmployeeDetailScreen = ({navigation, route}) => {
+const EmployeeDetailJobApplication = ({navigation, route}) => {
   const [isFavourite, setIsFavourite] = useState(false);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
 
@@ -40,6 +41,7 @@ const EmployeeDetailScreen = ({navigation, route}) => {
             </TouchableOpacity>
           </View>
         </View>
+
         <QanelasBold style={styles.titleTextStyle}>James Milner</QanelasBold>
         <QanelasSemiBold style={styles.profession}>Student</QanelasSemiBold>
       </View>
@@ -65,7 +67,45 @@ const EmployeeDetailScreen = ({navigation, route}) => {
           <Image source={icons.tab4} style={styles.chatIcon} />
         </TouchableOpacity>
 
+        <View style={styles.buttonsRow}>
+          <TouchableOpacity style={styles.approveButton}>
+            <QanelasMedium style={styles.buttonText}>Approve</QanelasMedium>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[
+              styles.approveButton,
+              {backgroundColor: colors.primaryColor},
+            ]}>
+            <QanelasMedium style={styles.buttonText}>Reject</QanelasMedium>
+          </TouchableOpacity>
+        </View>
+
         <View style={styles.breakerViewStyle} />
+
+        <View style={styles.item}>
+          <QanelasBold style={styles.bigDate}>Monday 15 May, 2023</QanelasBold>
+        </View>
+
+        <View style={styles.item}>
+          <QanelasSemiBold style={styles.heading}>
+            Shift Charges
+          </QanelasSemiBold>
+          <QanelasMedium style={styles.itemValue}>$200</QanelasMedium>
+        </View>
+
+        <View style={styles.hourContainer}>
+          <View>
+            <QanelasSemiBold style={styles.heading}>From</QanelasSemiBold>
+            <QanelasSemiBold style={styles.itemValue}>01:00 PM</QanelasSemiBold>
+            <QanelasSemiBold style={styles.itemValue}>06:00 PM</QanelasSemiBold>
+          </View>
+
+          <View style={styles.leftContainer}>
+            <QanelasSemiBold style={styles.heading}>To</QanelasSemiBold>
+            <QanelasSemiBold style={styles.itemValue}>01:00 PM</QanelasSemiBold>
+            <QanelasSemiBold style={styles.itemValue}>06:00 PM</QanelasSemiBold>
+          </View>
+        </View>
 
         <QanelasSemiBold style={styles.contentHeadingStyle}>
           Reviews
@@ -79,7 +119,7 @@ const EmployeeDetailScreen = ({navigation, route}) => {
   };
 
   return (
-    <MainContainer>
+    <MainContainer style={{backgroundColor: colors.white}}>
       <HalfHeader />
       {renderProfile()}
       {/* {renderTitles()} */}
@@ -103,4 +143,4 @@ const EmployeeDetailScreen = ({navigation, route}) => {
   );
 };
 
-export default EmployeeDetailScreen;
+export default EmployeeDetailJobApplication;

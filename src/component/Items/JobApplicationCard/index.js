@@ -27,18 +27,18 @@ const JobApplicationCard = props => {
   };
 
   return (
-    <TouchableOpacity
-      onPress={props?.onPress}
-      style={styles.mainContentContainerStyle}>
+    <View style={styles.mainContentContainerStyle}>
       <View style={styles.mainDetailsRowViewStyle}>
         <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
             Employee Name
           </QanelasSemiBold>
 
-          <QanelasMedium style={styles.bankInfoValueStyle}>
-            James Milner
-          </QanelasMedium>
+          <TouchableOpacity onPress={props.onPress}>
+            <QanelasMedium style={styles.bankInfoValueStyle}>
+              James Milner
+            </QanelasMedium>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.profileDetailsSubRowSecond}>
@@ -119,7 +119,7 @@ const JobApplicationCard = props => {
           </QanelasMedium>
         </View>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 };
 

@@ -4,28 +4,27 @@ import {View, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainContainer from '../../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
-import {jobApplications, jobOptions, jobs} from '../../../../utils/tempData';
+import {jobApplications} from '../../../../utils/tempData';
 import {icons} from '../../../../assets/images';
 import InputField from '../../../../component/Inputs/InputField';
 import {vh} from '../../../../utils/dimensions';
-import OptionsModal from '../../../../component/ModalMessages/OptionsModal';
 import FilterModal from '../../../../component/FilterModal';
 import JobApplicationCard from '../../../../component/Items/JobApplicationCard';
 
 const JobApplicationListScreen = ({navigation}) => {
-  const [optionModal, setOptionModal] = useState(false);
   const [filterModal, setFilterModal] = useState(false);
-
-  const onPressModal = () => {
-    setOptionModal(!optionModal);
-  };
 
   const onFilterModal = () => {
     setFilterModal(!filterModal);
   };
 
   const renderItem = ({item}) => {
-    return <JobApplicationCard item={item} optionPress={onPressModal} />;
+    return (
+      <JobApplicationCard
+        item={item}
+        onPress={() => navigation.navigate('EmployeeDetailJobApplication')}
+      />
+    );
   };
 
   const renderEmptyComponent = () => {
@@ -51,11 +50,6 @@ const JobApplicationListScreen = ({navigation}) => {
     );
   };
 
-  const onPressEditHandler = () => {
-    setOptionModal(!optionModal);
-    navigation.navigate('VacancyDetailScreen', {edit: true});
-  };
-
   return (
     <MainContainer>
       <View style={styles.header}>
@@ -71,14 +65,6 @@ const JobApplicationListScreen = ({navigation}) => {
         </TouchableOpacity>
       </View>
       {renderList()}
-
-      <OptionsModal
-        visible={optionModal}
-        onPress={onPressModal}
-        onHide={onPressModal}
-        options={jobOptions}
-        onPressEdit={onPressEditHandler}
-      />
 
       <FilterModal
         visible={filterModal}

@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import { colors } from '../../utils/appTheme';
-import { vh, vw } from '../../utils/dimensions';
+import {View, StyleSheet} from 'react-native';
+import {colors} from '../../utils/appTheme';
+import {vh, vw} from '../../utils/dimensions';
 
 const HalfHeader = props => {
   return (
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: vh * 2,
     width: vw * 100,
     position: 'absolute',
-    top: -vh * 5
+    top: -vh * 5,
   },
 });
 

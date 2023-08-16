@@ -54,6 +54,7 @@ const titles = {
   EditManagerScreen: 'Edit Manager',
   JobDetailScreen: 'Job Detail',
   JobApplicationListScreen: 'Job Applications',
+  EmployeeDetailJobApplication: 'Employee Detail',
 };
 
 const backButtonRoutes = {
@@ -83,6 +84,7 @@ const backButtonRoutes = {
   EditManagerScreen: 'Edit Manager',
   JobDetailScreen: 'Job Detail',
   JobApplicationListScreen: 'Job Applications',
+  EmployeeDetailJobApplication: 'Employee Detail',
 };
 
 const notificationButtonRoutes = {

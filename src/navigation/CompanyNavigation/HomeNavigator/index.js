@@ -8,6 +8,7 @@ import JobApplicationScreen from '../../../screen/Employer/Company/JobApplicatio
 import FeedbackDetailScreen from '../../../screen/Employer/Company/FeedbackDetailScreen';
 import JobDetailScreen from '../../../screen/Employer/Company/JobDetailScreen';
 import JobApplicationListScreen from '../../../screen/Employer/Company/JobApplicationListScreen';
+import EmployeeDetailJobApplication from '../../../screen/Employer/Company/EmployeeDetailJobApplication';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,10 @@ const HomeNavigator = () => {
       <Stack.Screen
         name="JobApplicationListScreen"
         component={JobApplicationListScreen}
+      />
+      <Stack.Screen
+        name="EmployeeDetailJobApplication"
+        component={EmployeeDetailJobApplication}
       />
     </Stack.Navigator>
   );
