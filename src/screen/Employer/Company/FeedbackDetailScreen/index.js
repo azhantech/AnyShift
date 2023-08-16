@@ -13,22 +13,13 @@ import QanelasSemiBold from '../../../../component/Texts/QanelasSemiBold';
 import {colors} from '../../../../utils/appTheme';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../../component/ScrollWrapper';
-import {jobDetails, shifts} from '../../../../utils/tempData';
 import CustomButton from '../../../../component/Buttons/CustomButton';
-import {reviews} from '../../../../utils/tempData';
-import ReviewItem from '../../../../component/ReviewItem';
-import ShiftItem from '../../../../component/ShiftItem';
 import ConfirmationModal from '../../../../component/ModalMessages/ConfirmationModal';
 import InputField from '../../../../component/Inputs/InputField';
 
 const FeedbackDetailScreen = ({navigation, route}) => {
-  const [selectedTab, setSelectedTab] = useState(0);
   const [isFavourite, setIsFavourite] = useState(false);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
-
-  const handleTabChange = index => {
-    setSelectedTab(index);
-  };
 
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
@@ -123,7 +114,6 @@ const FeedbackDetailScreen = ({navigation, route}) => {
 
         <CustomButton
           text="Submit"
-          onPress={() => props?.navigation.navigate('DrawerNavigator')}
           style={{alignSelf: 'center', marginTop: vh * 2}}
         />
       </View>

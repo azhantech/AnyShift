@@ -13,6 +13,7 @@ import CustomButton from '../../../../component/Buttons/CustomButton';
 import {reviews} from '../../../../utils/tempData';
 import ReviewItem from '../../../../component/ReviewItem';
 import ConfirmationModal from '../../../../component/ModalMessages/ConfirmationModal';
+import QanelasMedium from '../../../../component/Texts/QanelasMedium';
 
 const EmployeeDetailScreen = ({navigation, route}) => {
   const [isFavourite, setIsFavourite] = useState(false);
@@ -30,7 +31,7 @@ const EmployeeDetailScreen = ({navigation, route}) => {
     return (
       <View style={styles.mainContainerStyle}>
         <View style={styles.profileImageViewStyle}>
-          <Image style={styles.profileImageStyle} source={icons.amazon} />
+          <Image style={styles.profileImageStyle} source={icons.profileImage} />
           <View style={styles.statusMainContainerStyle}>
             <TouchableOpacity onPress={handleFav} style={styles.heartViewStyle}>
               <Image
@@ -59,11 +60,11 @@ const EmployeeDetailScreen = ({navigation, route}) => {
           minonumy eirmod tempor invidunt ut labore et dolore magna ali quyam
           erat, sed diam voluptua.
         </QanelasRegular>
-        <CustomButton
-          style={styles.buttonStyle}
-          textStyle={styles.buttonTextStyle}
-          text="Chat"
-        />
+
+        <TouchableOpacity style={styles.chatButton}>
+          <QanelasMedium style={styles.chatText}>Chat</QanelasMedium>
+          <Image source={icons.tab4} style={styles.chatIcon} />
+        </TouchableOpacity>
 
         <View style={styles.breakerViewStyle} />
 
@@ -72,7 +73,7 @@ const EmployeeDetailScreen = ({navigation, route}) => {
         </QanelasSemiBold>
 
         {reviews?.map((item, index) => (
-          <ReviewItem item={item} />
+          <ReviewItem item={item} key={index} />
         ))}
       </View>
     );

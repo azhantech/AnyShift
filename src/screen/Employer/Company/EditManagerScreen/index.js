@@ -4,6 +4,7 @@ import {Image, TouchableOpacity, View} from 'react-native';
 import Scrollable from '../../../../component/ScrollWrapper';
 import QanelasBold from '../../../../component/Texts/QanelasBold';
 import {styles} from './styles';
+import InputField from '../../../../component/Inputs/InputField';
 import {vh, vw} from '../../../../utils/dimensions';
 import CustomButton from '../../../../component/Buttons/CustomButton';
 import QanelasRegular from '../../../../component/Texts/QanelasRegular';
@@ -63,14 +64,7 @@ const data = [
   },
 ];
 
-const headerData = [
-  {title: 'First Name', value: 'James'},
-  {title: 'Last Name', value: 'Milner'},
-  {title: 'Mobile Number', value: '26467911312'},
-  {title: 'Email Address', value: 'info@email.com'},
-];
-
-const ManagerDetailScreen = props => {
+const EditManagerScreen = props => {
   const renderOptions = options => {
     return options.map((val, i) => {
       return (
@@ -106,22 +100,23 @@ const ManagerDetailScreen = props => {
     });
   };
 
-  const renderHeader = () => {
-    return headerData.map((val, i) => {
-      return (
-        <View style={{width: vw * 40, marginVertical: vh * 3}} key={i}>
-          <QanelasRegular>{val.title}</QanelasRegular>
-          <QanelasSemiBold>{val.value}</QanelasSemiBold>
-        </View>
-      );
-    });
-  };
-
   return (
     <Scrollable
       style={styles.mainContainer}
       contentContainerStyle={styles.contentContainerStyle}>
-      <View style={styles.headerContainer}>{renderHeader()}</View>
+      <InputField placeholder="Enter First Name" label="First Name" required />
+      <InputField placeholder="Enter Last Name" label="Last Name" required />
+      <InputField
+        placeholder="Enter Your Email Address"
+        label="Mobile Number"
+        required
+        keyboardType="number-pad"
+      />
+      <InputField
+        placeholder="Enter Your Email Address"
+        label="Email Address"
+        required
+      />
 
       <View style={{width: vw * 85, marginVertical: vh * 1}}>
         <QanelasBold style={styles.heading}>Privilages</QanelasBold>
@@ -129,11 +124,11 @@ const ManagerDetailScreen = props => {
 
       {renderData()}
       <CustomButton
-        text="Edit"
-        onPress={() => props?.navigation.navigate('EditManagerScreen')}
+        text="Edit Profile"
+        onPress={() => props?.navigation.navigate('DrawerNavigator')}
       />
     </Scrollable>
   );
 };
 
-export default ManagerDetailScreen;
+export default EditManagerScreen;

@@ -1,5 +1,5 @@
-import { icons } from '../assets/images';
-import { colors } from './appTheme';
+import {icons} from '../assets/images';
+import {colors} from './appTheme';
 
 export const chatlist = [
   {
@@ -181,6 +181,21 @@ export const jobs = [
   },
   {
     status: 'active',
+  },
+];
+
+export const jobApplications = [
+  {
+    status: 'pending',
+  },
+  {
+    status: 'pending',
+  },
+  {
+    status: 'approved',
+  },
+  {
+    status: 'rejected',
   },
 ];
 

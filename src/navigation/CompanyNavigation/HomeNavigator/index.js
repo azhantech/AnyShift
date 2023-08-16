@@ -6,6 +6,8 @@ import navigationOptions from '../../NavigationOptions';
 import PostFeedbackScreen from '../../../screen/Employer/Company/PostFeedbackScreen';
 import JobApplicationScreen from '../../../screen/Employer/Company/JobApplicationScreen';
 import FeedbackDetailScreen from '../../../screen/Employer/Company/FeedbackDetailScreen';
+import JobDetailScreen from '../../../screen/Employer/Company/JobDetailScreen';
+import JobApplicationListScreen from '../../../screen/Employer/Company/JobApplicationListScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +23,11 @@ const HomeNavigator = () => {
       <Stack.Screen
         name="JobApplicationScreen"
         component={JobApplicationScreen}
+      />
+      <Stack.Screen name="JobDetailScreen" component={JobDetailScreen} />
+      <Stack.Screen
+        name="JobApplicationListScreen"
+        component={JobApplicationListScreen}
       />
     </Stack.Navigator>
   );

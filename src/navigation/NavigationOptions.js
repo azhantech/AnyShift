@@ -1,11 +1,11 @@
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import {Image, TouchableOpacity, View} from 'react-native';
 
 import styles from './styles';
 import QanelasBold from '../component/Texts/QanelasBold';
-import { vh, vw } from '../utils/dimensions';
-import { icons } from '../assets/images';
-import { colors } from '../utils/appTheme';
+import {vh, vw} from '../utils/dimensions';
+import {icons} from '../assets/images';
+import {colors} from '../utils/appTheme';
 
 const titles = {
   Home: 'Home',
@@ -50,7 +50,10 @@ const titles = {
   InvoiceDetailScreen: 'Invoice Detail',
   ManagerListScreen: 'Manager',
   AddManagerScreen: 'Add Manager',
-  ManagerDetailScreen: 'Manager Details'
+  ManagerDetailScreen: 'Manager Details',
+  EditManagerScreen: 'Edit Manager',
+  JobDetailScreen: 'Job Detail',
+  JobApplicationListScreen: 'Job Applications',
 };
 
 const backButtonRoutes = {
@@ -76,7 +79,10 @@ const backButtonRoutes = {
   FeedbackDetailScreen: 'Post Feedback',
   InvoiceDetailScreen: 'Invoice Detail',
   AddManagerScreen: 'Add Manager',
-  ManagerDetailScreen: 'Manager Details'
+  ManagerDetailScreen: 'Manager Details',
+  EditManagerScreen: 'Edit Manager',
+  JobDetailScreen: 'Job Detail',
+  JobApplicationListScreen: 'Job Applications',
 };
 
 const notificationButtonRoutes = {
@@ -114,8 +120,8 @@ const navigationOptions = (navProps, props) => {
     headerBackVisible: false,
     headerTitleAlign: 'center',
     headerShown: true,
-    headerLeftContainerStyle: { paddingLeft: 4 * vw },
-    headerRightContainerStyle: { paddingRight: 4 * vw },
+    headerLeftContainerStyle: {paddingLeft: 4 * vw},
+    headerRightContainerStyle: {paddingRight: 4 * vw},
     headerStyle: getHeaderStyle(navProps),
   };
 };

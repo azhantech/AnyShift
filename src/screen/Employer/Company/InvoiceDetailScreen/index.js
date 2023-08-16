@@ -4,14 +4,11 @@ import {View, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainContainer from '../../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../../component/Texts/QanelasMedium';
-import {invoice, jobOptions, jobs} from '../../../../utils/tempData';
+import {invoice, jobOptions} from '../../../../utils/tempData';
 import {icons} from '../../../../assets/images';
-import JobItem from '../../../../component/Items/JobItem';
-import CustomButton from '../../../../component/Buttons/CustomButton';
 import InputField from '../../../../component/Inputs/InputField';
 import {vh, vw} from '../../../../utils/dimensions';
 import OptionsModal from '../../../../component/ModalMessages/OptionsModal';
-import InvoiceItem from '../../../../component/Items/InvoiceItem';
 import InvoiceDetailItem from '../../../../component/Items/InvoiceDetailItem';
 import QanelasBold from '../../../../component/Texts/QanelasBold';
 import {colors} from '../../../../utils/appTheme';
@@ -105,11 +102,7 @@ const InvoiceDetailScreen = ({navigation, route}) => {
           leftIcon={icons.search}
           inputContainerIcon={styles.inputContainerIcon}
         />
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('NotificationScreen');
-          }}
-          style={[styles.textButton, {marginTop: vh * 1}]}>
+        <TouchableOpacity style={[styles.textButton, {marginTop: vh * 1}]}>
           <Image source={icons.filter} style={styles.notificationsIconStyle} />
         </TouchableOpacity>
       </View>
