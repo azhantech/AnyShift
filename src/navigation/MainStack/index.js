@@ -14,15 +14,18 @@ const RootStack = createStackNavigator();
 
 const MainNavigator = () => {
   const type = useSelector(state => state.general.type);
+  const navigatorMap = {
+    company: DrawerNavigatorCompany,
+    employee: DrawerNavigator,
+    employer: DrawerNavigatorEmployer,
+  };
+  const navigator = navigatorMap[type] || DrawerNavigator;
 
   return (
     <RootStack.Navigator initialRouteName="AuthStack">
       <RootStack.Screen
         name="DrawerNavigator"
-        // component={DrawerNavigator}
-        component={
-          type == 'company' ? DrawerNavigatorCompany : DrawerNavigatorEmployer
-        }
+        component={navigator}
         options={{headerShown: false}}
       />
       <RootStack.Screen

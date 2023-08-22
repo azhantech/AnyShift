@@ -5,7 +5,7 @@ import {colors} from '../../../utils/appTheme';
 const styles = StyleSheet.create({
   mainContainerStyle: {
     alignItems: 'center',
-    marginTop: -8 * vh,
+    // marginTop: -8 * vh,
   },
 
   profileImageStyle: {

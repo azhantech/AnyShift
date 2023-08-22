@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {View, Image, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Image, TouchableOpacity} from 'react-native';
+import {AirbnbRating} from 'react-native-ratings';
+
 import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
@@ -7,7 +9,6 @@ import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {generalImage, icons} from '../../../assets/images';
-import {AirbnbRating} from 'react-native-ratings';
 import {vh} from '../../../utils/dimensions';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import {colors} from '../../../utils/appTheme';
@@ -24,10 +25,7 @@ const Profile = ({navigation}) => {
     return (
       <View style={styles.mainContainerStyle}>
         <View style={styles.profileImageViewStyle}>
-          <Image
-            style={styles.profileImageStyle}
-            source={icons.profileImage}
-          />
+          <Image style={styles.profileImageStyle} source={icons.profileImage} />
 
           <Image source={icons.online} style={styles.onlineIconStyle} />
         </View>

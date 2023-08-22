@@ -2,6 +2,7 @@ const general = {
   state: {
     loading: false,
     type: null,
+    loginType: null,
   },
   name: 'general',
 };

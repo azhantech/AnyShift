@@ -1,13 +1,17 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {View, ImageBackground, Animated} from 'react-native';
+import {useDispatch} from 'react-redux';
+
 import constants from '../../../utils/constants';
 import {colors} from '../../../utils/appTheme';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
+import {setType} from '../../../redux/general';
 
 const OnBoarding = ({navigation}) => {
+  const dispatch = useDispatch();
   const scrollX = React.useRef(new Animated.Value(0)).current;
   const flatListRef = React.useRef();
   const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -52,6 +56,11 @@ const OnBoarding = ({navigation}) => {
     );
   }
 
+  const loginHandler = type => {
+    dispatch(setType(type));
+    navigation.navigate('SignInScreen');
+  };
+
   return (
     <View style={styles.mainFlatListContainer}>
       <Animated.FlatList
@@ -83,9 +92,13 @@ const OnBoarding = ({navigation}) => {
                   <View style={styles.detailsViewStyle}>
                     <QanelasBold style={styles.headingTextStyle}>
                       {item?.title}
-                      <QanelasBold style={[styles.headingTextStyle, {
-                        color: colors.primaryColor
-                      }]}>
+                      <QanelasBold
+                        style={[
+                          styles.headingTextStyle,
+                          {
+                            color: colors.primaryColor,
+                          },
+                        ]}>
                         {item?.redTitle}
                       </QanelasBold>
                     </QanelasBold>
@@ -96,8 +109,15 @@ const OnBoarding = ({navigation}) => {
                     <View style={styles.customButtonStyle}>
                       <CustomButton
                         style={styles.getStartedButtonStyle}
-                        text="Get Started"
-                        onPress={() => navigation.navigate('SignInScreen')}
+                        text="Sign in as Employee"
+                        onPress={() => loginHandler('employee')}
+                      />
+
+                      <CustomButton
+                        style={styles.loginButtonOther}
+                        textStyle={styles.buttonText}
+                        text="Sign in as Employer"
+                        onPress={() => loginHandler('employer')}
                       />
                     </View>
                   </View>

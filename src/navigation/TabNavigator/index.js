@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-import { Image, LayoutAnimation, TouchableOpacity, View } from 'react-native';
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import React, {useState} from 'react';
+import {Image, LayoutAnimation, TouchableOpacity, View} from 'react-native';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+
 import HomeStack from '../HomeStack';
 import ProfileStack from '../ProfileStack';
-import VacanciesStack from '../VacanciesStack'
-import ShiftStack from '../ShiftStack'
-import ChatStack from '../ChatStack'
+import VacanciesStack from '../VacanciesStack';
+import ShiftStack from '../ShiftStack';
+import ChatStack from '../ChatStack';
 import styles from './styles';
 import QanelasRegular from '../../component/Texts/QanelasRegular';
-import { icons } from '../../assets/images';
+import {icons} from '../../assets/images';
 
 const Tab = createMaterialTopTabNavigator();
 
 const tabIcons = {
-  Home: { icon: icons.tab1 },
-  Vacancies: { icon: icons.tab2 },
-  Shift: { icon: icons.tab3 },
-  Chat: { icon: icons.tab4 },
-  Profile: { icon: icons.tab5 },
+  Home: {icon: icons.tab1},
+  Vacancies: {icon: icons.tab2},
+  Shift: {icon: icons.tab3},
+  Chat: {icon: icons.tab4},
+  Profile: {icon: icons.tab5},
 };
 
 const TabNavigator = props => {
@@ -25,7 +26,7 @@ const TabNavigator = props => {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarPosition="bottom"
-      screenOptions={{ swipeEnabled: false }}
+      screenOptions={{swipeEnabled: false}}
       tabBar={tabProps => <MyTabBar {...tabProps} {...props} />}>
       <Tab.Screen name="Home" component={HomeStack} />
       <Tab.Screen name="Vacancies" component={VacanciesStack} />
@@ -36,7 +37,7 @@ const TabNavigator = props => {
   );
 };
 
-const MyTabBar = ({ state, navigation }) => {
+const MyTabBar = ({state, navigation}) => {
   const [activeTab, setActiveTab] = useState(null);
   return (
     <View style={styles.container}>
@@ -61,7 +62,10 @@ const MyTabBar = ({ state, navigation }) => {
             onPress={onPress}
             activeOpacity={0.7}
             style={isFocused ? styles.activeTabColorStyle : styles.tabItem}>
-            <Image source={tabIcons[route?.name].icon} style={[styles.icon(isFocused)]} />
+            <Image
+              source={tabIcons[route?.name].icon}
+              style={[styles.icon(isFocused)]}
+            />
             <QanelasRegular style={styles.titleColorStyle(isFocused)}>
               {route?.name}
             </QanelasRegular>

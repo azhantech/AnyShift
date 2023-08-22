@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../../utils/appTheme';
+import {colors, themeShadow} from '../../../utils/appTheme';
 import {vh, vw} from '../../../utils/dimensions';
 import constants from '../../../utils/constants';
 
@@ -10,7 +10,6 @@ export const styles = StyleSheet.create({
     color: colors.black,
     width: 90 * vw,
     textAlign: 'center',
-
   },
 
   descriptionStyle: {
@@ -19,13 +18,13 @@ export const styles = StyleSheet.create({
     color: colors.darkGray,
     fontSize: 1.8 * vh,
     width: 70 * vw,
-    top: 5 * vh
+    top: 5 * vh,
   },
 
   customButtonStyle: {
     paddingHorizontal: constants.SIZES.padding,
-    marginVertical: constants.SIZES.padding,
-    top: 8 * vh
+    marginTop: vh * 8,
+    paddingBottom: vh * 4,
   },
 
   detailsViewStyle: {
@@ -79,7 +78,17 @@ export const styles = StyleSheet.create({
     backgroundColor: dotColor,
   }),
 
-  getStartedButtonStyle:{
-    width: 60 * vw
-  }
+  getStartedButtonStyle: {
+    width: 60 * vw,
+    marginVertical: vh * 1.5,
+  },
+  loginButtonOther: {
+    width: 60 * vw,
+    marginVertical: vh * 1.5,
+    backgroundColor: colors.white,
+    ...themeShadow,
+  },
+  buttonText: {
+    color: colors.primaryColor,
+  },
 });

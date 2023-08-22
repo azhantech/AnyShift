@@ -20,15 +20,7 @@ const Drawer = createDrawerNavigator();
 const AnimatedHomeStack = (...props) => {
   return (
     <DrawerScreenWrapper {...props}>
-      <TabNavigatorEmployer />
-    </DrawerScreenWrapper>
-  );
-};
-
-const AnimatedHomeStackCompany = (...props) => {
-  return (
-    <DrawerScreenWrapper {...props}>
-      <TabNavigatorCompany />
+      <TabNavigator />
     </DrawerScreenWrapper>
   );
 };
@@ -96,12 +88,7 @@ const DrawerNavigator = props => {
         },
       }}
       drawerContent={props => <DrawerContent {...props} />}>
-      <Drawer.Screen
-        name="HomeStack"
-        component={
-          type == 'company' ? AnimatedHomeStackCompany : AnimatedHomeStack
-        }
-      />
+      <Drawer.Screen name="HomeStack" component={AnimatedHomeStack} />
       <Drawer.Screen name="FavStack" component={AnimatedFavStack} />
       <Drawer.Screen name="PlanningStack" component={AnimatedPlanningStack} />
       <Drawer.Screen name="PaymentLogs" component={AnimatedPaymentLogsStack} />

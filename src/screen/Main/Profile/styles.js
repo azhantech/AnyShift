@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
+
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
 
 const styles = StyleSheet.create({
   mainContainerStyle: {
     alignItems: 'center',
-    marginTop: -8 * vh,
+    // marginTop: -8 * vh,
   },
 
   profileImageStyle: {
@@ -143,13 +144,13 @@ const styles = StyleSheet.create({
     bottom: 0.5 * vh,
   },
 
-  listStyle:{
-    height: 100 * vh
+  listStyle: {
+    height: 100 * vh,
   },
 
-  contentContainerStyle:{
-    paddingBottom: 10 * vh
-  }
+  contentContainerStyle: {
+    paddingBottom: 10 * vh,
+  },
 });
 
 export default styles;

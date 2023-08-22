@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Image, TouchableOpacity, FlatList} from 'react-native';
+
 import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
-import {generalImage, icons} from '../../../assets/images';
+import {icons} from '../../../assets/images';
 
 const EditProfile = ({navigation}) => {
   const profileData = [
@@ -14,7 +15,7 @@ const EditProfile = ({navigation}) => {
       value: 'James Milner Jimmy',
       icon: icons.profile1,
       status: 'incomplete',
-      onPress: () => navigation.navigate('UpdateName')
+      onPress: () => navigation.navigate('UpdateName'),
     },
 
     {
@@ -38,7 +39,7 @@ const EditProfile = ({navigation}) => {
       key: 'Change Password',
       icon: icons.profile4,
       status: 'empty',
-      onPress: () => navigation.navigate('UpdatePassword')
+      onPress: () => navigation.navigate('UpdatePassword'),
     },
 
     {
@@ -74,8 +75,7 @@ const EditProfile = ({navigation}) => {
       key: 'Bank Info',
       icon: icons.profile9,
       status: 'incomplete',
-      onPress: () => navigation.navigate('UpdateBankDetails')
-
+      onPress: () => navigation.navigate('UpdateBankDetails'),
     },
   ];
 
@@ -91,17 +91,12 @@ const EditProfile = ({navigation}) => {
     if (status == 'empty') {
       return icons.empty;
     }
-
-
   };
   const renderProfile = () => {
     return (
       <View style={styles.mainContainerStyle}>
         <View style={styles.profileImageViewStyle}>
-          <Image
-            style={styles.profileImageStyle}
-            source={icons.profileImage}
-          />
+          <Image style={styles.profileImageStyle} source={icons.profileImage} />
 
           <TouchableOpacity style={styles.camViewStyle}>
             <Image source={icons.cam} style={styles.onlineIconStyle} />
@@ -113,7 +108,9 @@ const EditProfile = ({navigation}) => {
 
   const renderData = ({item}) => {
     return (
-      <TouchableOpacity onPress={item?.onPress} style={styles.mainButtonViewStyle}>
+      <TouchableOpacity
+        onPress={item?.onPress}
+        style={styles.mainButtonViewStyle}>
         <View style={styles.itemIconViewStyle}>
           <Image source={item?.icon} style={styles.itemIconStyle} />
         </View>
@@ -128,7 +125,10 @@ const EditProfile = ({navigation}) => {
         </View>
 
         <View style={styles.statusButtonViewStyle(item?.status)}>
-          <Image source={handleStatusIcon(item?.status)} style={styles.statusIconStyle(item?.status)} />
+          <Image
+            source={handleStatusIcon(item?.status)}
+            style={styles.statusIconStyle(item?.status)}
+          />
         </View>
       </TouchableOpacity>
     );
