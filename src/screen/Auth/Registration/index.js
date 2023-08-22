@@ -15,7 +15,15 @@ import Animated, {SlideInRight, SlideOutLeft} from 'react-native-reanimated';
 const Registration = props => {
   const [checked, setChecked] = useState(false);
   const [step, setStep] = useState(1);
-
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [nickName, setNickName] = useState('');
+  const [address, setAdress] = useState('');
+  const [invitationCode, setInvitationCode] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [cnfromPassword, setCnfromPassword] = useState('');
+  // const [isCheck, setChecked] = useState(false);
   const hanldebtn = () => {
     if (step == 1) {
       setStep(e => e + 1);
@@ -34,16 +42,25 @@ const Registration = props => {
               placeholder="Enter First Name"
               label="First name"
               required
+              onChangeText={setFirstName}
+              value={firstName}
+              returnKeyType="next"
             />
             <InputField
               placeholder="Enter Last Name"
               label="Last name"
               required
+              onChangeText={setLastName}
+              value={lastName}
+              returnKeyType="next"
             />
             <InputField
               placeholder="Enter Nick Name"
               label="Nick Name"
               optional
+              onChangeText={setNickName}
+              value={nickName}
+              returnKeyType="next"
             />
           </View>
           <View style={styles.noteContainer}>
@@ -64,11 +81,17 @@ const Registration = props => {
               placeholder="Enter Your Address"
               label="Address "
               required
+              onChangeText={setAdress}
+              value={address}
+              returnKeyType="next"
             />
             <InputField
               placeholder="Enter Invitation Code"
               label="Invitation Code"
               optional
+              onChangeText={setInvitationCode}
+              value={invitationCode}
+              returnKeyType="next"
             />
           </View>
         </Animated.View>
@@ -81,18 +104,27 @@ const Registration = props => {
               placeholder="Enter Your Email Address"
               label="Email Address"
               required
+              onChangeText={setEmail}
+              value={email}
+              returnKeyType="next"
             />
             <InputField
               placeholder="Enter Password"
               label="Password"
               secureTextEntry
               required
+              onChangeText={setPassword}
+              value={password}
+              returnKeyType="next"
             />
             <InputField
               placeholder="Confirm Password"
               label="Confirm Password"
               secureTextEntry
               required
+              onChangeText={setCnfromPassword}
+              value={cnfromPassword}
+              returnKeyType="next"
             />
           </View>
           <View style={styles.requirementContainer}>
