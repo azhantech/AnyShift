@@ -1,17 +1,23 @@
 /* eslint-disable no-shadow */
-import Toast from "react-native-toast";
-import { store } from "../Statemanagement/store";
+// import Toast from "react-native-toast";
+
 import { EventRegister } from "react-native-event-listeners";
 
-import RNFetchBlob from "rn-fetch-blob";
+// import RNFetchBlob from "rn-fetch-blob";
 import { Alert, Platform } from "react-native";
-import { getLocale, getLocalizedString } from "../Translations";
-import FileViewer from "react-native-file-viewer";
-import moment from "moment";
+// import { getLocale, getLocalizedString } from "../Translations";
+// import FileViewer from "react-native-file-viewer";
+// import moment from "moment";
+import { showMessage } from "react-native-flash-message";
+import { store } from "../redux/store";
 
 export const showToast = msg => {
   setTimeout(() => {
-    Toast.show(getMessage(msg));
+    // Toast.show(getMessage(msg));
+    showMessage({
+      message: msg,
+      type: 'default'
+    })
   }, 500);
 };
 
@@ -187,98 +193,98 @@ export const dataToQueryParameter = data => {
   return "";
 };
 
-const checkFolderExist = async () => {
-  try {
-    const folder = await RNFetchBlob.fs.exists(RNFetchBlob.fs.dirs.DocumentDir);
+// const checkFolderExist = async () => {
+//   try {
+//     const folder = await RNFetchBlob.fs.exists(RNFetchBlob.fs.dirs.DocumentDir);
 
-    if (!folder) {
-      const creationSuccess = await RNFetchBlob.fs.mkdir(
-        RNFetchBlob.fs.dirs.DocumentDir,
-      );
+//     if (!folder) {
+//       const creationSuccess = await RNFetchBlob.fs.mkdir(
+//         RNFetchBlob.fs.dirs.DocumentDir,
+//       );
 
-      if (creationSuccess) {
-        return Promise.resolve(true);
-      }
-    } else {
-      return Promise.resolve(true);
-    }
-  } catch (error) {
-    return Promise.reject(error);
-  }
-};
+//       if (creationSuccess) {
+//         return Promise.resolve(true);
+//       }
+//     } else {
+//       return Promise.resolve(true);
+//     }
+//   } catch (error) {
+//     return Promise.reject(error);
+//   }
+// };
 
-export const downloadFile = async (uri, extension) => {
-  try {
-    const { dirs } = RNFetchBlob.fs;
-    const ifExist = await checkFolderExist();
-    if (ifExist) {
-      const dirToSave = Platform.select({
-        ios: dirs.DocumentDir,
-        android: dirs.DownloadDir,
-      });
-      const state = store.getState();
-      const reportName = `${dirToSave}/Tickd${moment().format(
-        "DD_MMM_YYYY_hh_mm_ss",
-      )}.${extension}`;
-      var token = null;
-      if (state) {
-        if (state.SessionReducer) {
-          if (state.SessionReducer.token != null) {
-            if (state.SessionReducer.token) {
-              token = state.SessionReducer.token;
-            }
-          }
-        }
-      }
-      const config = {
-        addAndroidDownloads: {
-          useDownloadManager: true,
-          notification: true,
-          mediaScannable: true,
-          description: "Tickd",
-          title: "Tickd Attachment",
-          path: reportName,
-        },
-        mediaScannable: true,
-        title: "Tickd Attachment",
-        path: reportName,
-        appendExt: extension,
-        fileCache: true,
-        trusty: true,
-      };
-      const response = await RNFetchBlob.config(config).fetch("GET", uri, {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/" + extension,
-      });
-      Alert.alert(
-        getLocalizedString().downloadManager[getLocale()],
-        getLocalizedString().downloadManagerMessage[getLocale()],
-        [
-          {
-            text: getLocalizedString().downloadManagerPositiveButton[
-              getLocale()
-            ],
-            onPress: () =>
-              FileViewer?.open(response.path(), {
-                showOpenWithDialog: false,
-              }),
-            style: "default",
-          },
-          {
-            text: getLocalizedString().downloadManagerNegativeButton[
-              getLocale()
-            ],
-            style: "destructive",
-          },
-        ],
-        {
-          cancelable: true,
-        },
-      );
-      return Promise.resolve("File downloaded successfully");
-    }
-  } catch (e) {
-    const message = getMessage(e);
-    return Promise.reject(message);
-  }
-};
+// export const downloadFile = async (uri, extension) => {
+//   try {
+//     const { dirs } = RNFetchBlob.fs;
+//     const ifExist = await checkFolderExist();
+//     if (ifExist) {
+//       const dirToSave = Platform.select({
+//         ios: dirs.DocumentDir,
+//         android: dirs.DownloadDir,
+//       });
+//       const state = store.getState();
+//       const reportName = `${dirToSave}/Tickd${moment().format(
+//         "DD_MMM_YYYY_hh_mm_ss",
+//       )}.${extension}`;
+//       var token = null;
+//       if (state) {
+//         if (state.SessionReducer) {
+//           if (state.SessionReducer.token != null) {
+//             if (state.SessionReducer.token) {
+//               token = state.SessionReducer.token;
+//             }
+//           }
+//         }
+//       }
+//       const config = {
+//         addAndroidDownloads: {
+//           useDownloadManager: true,
+//           notification: true,
+//           mediaScannable: true,
+//           description: "Tickd",
+//           title: "Tickd Attachment",
+//           path: reportName,
+//         },
+//         mediaScannable: true,
+//         title: "Tickd Attachment",
+//         path: reportName,
+//         appendExt: extension,
+//         fileCache: true,
+//         trusty: true,
+//       };
+//       const response = await RNFetchBlob.config(config).fetch("GET", uri, {
+//         Authorization: `Bearer ${token}`,
+//         "Content-Type": "application/" + extension,
+//       });
+//       Alert.alert(
+//         getLocalizedString().downloadManager[getLocale()],
+//         getLocalizedString().downloadManagerMessage[getLocale()],
+//         [
+//           {
+//             text: getLocalizedString().downloadManagerPositiveButton[
+//               getLocale()
+//             ],
+//             onPress: () =>
+//               FileViewer?.open(response.path(), {
+//                 showOpenWithDialog: false,
+//               }),
+//             style: "default",
+//           },
+//           {
+//             text: getLocalizedString().downloadManagerNegativeButton[
+//               getLocale()
+//             ],
+//             style: "destructive",
+//           },
+//         ],
+//         {
+//           cancelable: true,
+//         },
+//       );
+//       return Promise.resolve("File downloaded successfully");
+//     }
+//   } catch (e) {
+//     const message = getMessage(e);
+//     return Promise.reject(message);
+//   }
+// };

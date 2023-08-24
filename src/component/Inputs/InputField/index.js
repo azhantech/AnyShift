@@ -71,6 +71,7 @@ const InputField = props => {
           <TextInput
             {...props}
             ref={inputRef}
+            
             value={props.value}
             onChangeText={props.onChangeText}
             style={[styles.input, props.inputContainer]}

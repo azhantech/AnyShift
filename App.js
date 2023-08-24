@@ -4,10 +4,11 @@ import {View, StyleSheet, StatusBar} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
-
+import FlashMessage from 'react-native-flash-message';
 import {colors} from './src/utils/appTheme';
 import Navigation from './src/navigation';
 import {persistor, store} from './src/redux/store';
+import Loader from './src/component/Loader';
 
 const App = () => {
   useEffect(() => {
@@ -23,7 +24,9 @@ const App = () => {
             barStyle="light-content"
           />
           <Navigation />
+          <Loader />
         </View>
+        <FlashMessage position="top" />
       </PersistGate>
     </Provider>
   );

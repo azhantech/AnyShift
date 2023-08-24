@@ -11,8 +11,12 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import AuthHeader from '../../../component/Headers/AuthHeader';
 import InputField from '../../../component/Inputs/InputField';
 import GeneralModal from '../../../component/ModalMessages/GeneralModal';
+import {showMessage} from 'react-native-flash-message';
+import {useDispatch} from 'react-redux';
+import {ResetPassword, SendForgotPasswordEmail, VerifyCode} from '../../../redux/UserSlice';
 
 const ForgotPasswordScreen = props => {
+  const dispatch = useDispatch();
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
 
   const [email, setEmail] = useState(null);
@@ -21,17 +25,102 @@ const ForgotPasswordScreen = props => {
   const [verificationCode, setVerificationCode] = useState(null);
 
   const [step, setStep] = useState(1);
-  const handleEmail = () => {
-    setStep(step + 1);
+  const handleEmail = async () => {
+    if (email == null) {
+      showMessage({
+        message: 'Please enter email address',
+        type: 'danger',
+      });
+      return;
+    }
+    try {
+      const response = await dispatch(
+        SendForgotPasswordEmail({
+          email,
+        }),
+      );
+      if (response) {
+        setStep(step + 1);
+      }
+    } catch (error) {
+      showMessage({
+        message: error,
+        type: 'danger',
+      });
+    }
   };
 
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
   };
 
-  const handleVerification = () => {
-    setStep(step + 1);
+  const handleVerification = async () => {
+    try {
+      if (verificationCode == null) {
+        showMessage({
+          message: 'Please enter code',
+          type: 'danger',
+        });
+        return;
+      }
+      const response = await dispatch(
+        VerifyCode({
+          email,
+          verificationCode,
+        }),
+      );
+      if (response) {
+        setStep(step + 1);
+      }
+    } catch (e) {
+      showMessage({
+        message: e,
+        type: 'danger',
+      });
+    }
   };
+
+  const handleUpdatedPassword = async () => {
+    if(password == null){
+      showMessage({
+        message: 'Please enter password',
+        type: 'danger'
+      })
+      return
+    }
+
+    if(confirmPassword == null){
+      showMessage({
+        message: 'Please confirm password',
+        type: 'danger'
+      })
+      return
+    }
+
+    if(password !== confirmPassword){
+      showMessage({
+        message: 'Passwords do not match',
+        type: 'danger'
+      })
+      return
+    }
+
+    try {
+      const response = await dispatch(ResetPassword({
+        email,
+        code,
+        password
+      }))
+      if(response){
+        props.navigation.goBack()
+      }
+    } catch(e){
+      showMessage({
+        message: e,
+        type: 'danger'
+      })
+    }
+  }
 
   const handleOnPress = () => {
     if (step == 1) {
@@ -39,6 +128,25 @@ const ForgotPasswordScreen = props => {
     }
     if (step == 2) {
       handleVerification();
+    }
+
+    if(step == 3){
+      handleUpdatedPassword();
+    }
+  };
+
+  const handleResendCode = async () => {
+    try {
+      const response = await dispatch(
+        SendForgotPasswordEmail({
+          email,
+        }),
+      );
+    } catch (e) {
+      showMessage({
+        message: e,
+        type: 'danger',
+      });
     }
   };
 
@@ -74,7 +182,9 @@ const ForgotPasswordScreen = props => {
           />
 
           <View style={styles.forgotPasswordContainer}>
-            <TouchableOpacity style={styles.forgotPasswordTouchable}>
+            <TouchableOpacity
+              onPress={handleResendCode}
+              style={styles.forgotPasswordTouchable}>
               <QanelasRegular style={styles.forgotPasswordText}>
                 Resend Code
               </QanelasRegular>

@@ -26,6 +26,8 @@
     "react-native-calendar-strip": "^2.2.6",
     "react-native-calendars": "^1.1300.0",
     "react-native-device-info": "^10.8.0",
+    "react-native-event-listeners": "^1.0.7",
+    "react-native-flash-message": "^0.4.2",
     "react-native-gesture-handler": "2.9.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-pager-view": "6.1.2",

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useRef} from 'react';
 import {View, Image, TouchableOpacity} from 'react-native';
 
 import InputField from '../../../component/Inputs/InputField';
@@ -8,8 +8,52 @@ import {styles} from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
+import {useSelector} from 'react-redux';
+import {showMessage} from 'react-native-flash-message';
+import {useDispatch} from 'react-redux';
+import {LoginUser} from '../../../redux/UserSlice';
 
 const SignInScreen = props => {
+  const dispatch = useDispatch();
+  const emailRef = useRef(null);
+  const passwordRef = useRef(null);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const handleSignIn = async () => {
+    if (email == null) {
+      showMessage({
+        message: 'Please enter email address',
+        type: 'danger',
+      });
+      return;
+    }
+
+    if (password == null) {
+      showMessage({
+        message: 'Please enter password',
+        type: 'danger',
+      });
+      return;
+    }
+
+    try {
+      const data = {
+        email,
+        password,
+      };
+
+      const response = await dispatch(LoginUser(data));
+      if (response) {
+        console.log(response, 'response');
+      }
+    } catch (error) {
+      showMessage({
+        message: error,
+        type: 'danger',
+      });
+    }
+  };
   return (
     <View style={styles.mainContainer}>
       <AuthHeader />
@@ -17,11 +61,23 @@ const SignInScreen = props => {
         Login to your account
       </QanelasBold>
       <View style={styles.fieldContainer}>
-        <InputField placeholder="Enter email address" leftIcon={icons.email} />
         <InputField
+          placeholder="Enter email address"
+          leftIcon={icons.email}
+          keyboardType="email-address"
+          value={email}
+          onChangeText={text => setEmail(text)}
+          reference={emailRef}
+          onSubmitEditing={() => passwordRef.current.focus()}
+        />
+        <InputField
+        reference={passwordRef}
           secureTextEntry={true}
           placeholder="Enter email password"
           leftIcon={icons.privacyIcon}
+          value={password}
+          onChangeText={text => setPassword(text)}
+          onSubmitEditing={() => handleSignIn()}
         />
       </View>
       <View style={styles.forgotPasswordContainer}>
@@ -36,7 +92,8 @@ const SignInScreen = props => {
       <View style={styles.btnContainer}>
         <CustomButton
           text="Sign In"
-          onPress={() => props?.navigation.navigate('DrawerNavigator')}
+          onPress={handleSignIn}
+          // onPress={() => props?.navigation.navigate('DrawerNavigator')}
         />
         {/* <CustomButton
           text="Sign In as Employer"
