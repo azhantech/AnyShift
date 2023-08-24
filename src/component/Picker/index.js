@@ -10,22 +10,24 @@ const Picker = ({
   pickerText,
   pickerIconContainer,
   pickerIcon,
+  onPress,
 }) => {
   return (
-    <View style={[styles.pickerMainContainer, pickerMainContainer]}>
+    <TouchableOpacity
+      style={[styles.pickerMainContainer, pickerMainContainer]}
+      onPress={onPress}>
       <View style={[styles.pickerTextContainer, pickerTextContainer]}>
         <QanelasRegular style={[styles.pickerText, pickerText]}>
           {text}
         </QanelasRegular>
       </View>
-      <TouchableOpacity
-        style={[styles.pickerIconContainer, pickerIconContainer]}>
+      <View style={[styles.pickerIconContainer, pickerIconContainer]}>
         <Image
           source={icons.dropDown}
           style={[styles.pickerIcon, pickerIcon]}
         />
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 export default Picker;

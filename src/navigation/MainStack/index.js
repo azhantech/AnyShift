@@ -14,25 +14,30 @@ const RootStack = createStackNavigator();
 
 const MainNavigator = () => {
   const type = useSelector(state => state.general.type);
+  const token = useSelector(state => state?.user?.user);
+  console.log('Token ==================>');
   const navigatorMap = {
     company: DrawerNavigatorCompany,
     employee: DrawerNavigator,
     employer: DrawerNavigatorEmployer,
   };
   const navigator = navigatorMap[type] || DrawerNavigator;
-
+  // console.log('Navigator ==========>', JSON.stringify(navigator, null, 2));
   return (
     <RootStack.Navigator initialRouteName="AuthStack">
-      <RootStack.Screen
-        name="DrawerNavigator"
-        component={navigator}
-        options={{headerShown: false}}
-      />
-      <RootStack.Screen
-        name="AuthStack"
-        component={AuthStack}
-        options={{headerShown: false}}
-      />
+      {token?.token ? (
+        <RootStack.Screen
+          name="DrawerNavigator"
+          component={navigator}
+          options={{headerShown: false}}
+        />
+      ) : (
+        <RootStack.Screen
+          name="AuthStack"
+          component={AuthStack}
+          options={{headerShown: false}}
+        />
+      )}
       <RootStack.Screen
         name="CreateCompanyScreen"
         component={CreateCompanyScreen}

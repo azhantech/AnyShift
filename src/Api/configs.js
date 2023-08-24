@@ -1,6 +1,6 @@
 export const endpoints = {
   auth: {
-    signup: "/user/signup",
+    signup: "/Auth/RegisterEmployee",
     login: "/Auth/Login",
     forgotPassword: "/Auth/SendOtp",
     verifyCode: '/Auth/VerifyOtp/',

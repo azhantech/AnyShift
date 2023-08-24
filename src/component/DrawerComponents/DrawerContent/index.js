@@ -16,7 +16,8 @@ import {
 import {generalImage, icons} from '../../../assets/images';
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
+import {logout} from '../../../redux/UserSlice';
 const routeOrders = [
   'HomeStack',
   'FavStack',
@@ -39,8 +40,12 @@ const AnimatedTouchable = Animated.createAnimatedComponent(View);
 
 const DrawerContent = props => {
   const type = useSelector(state => state.general.type);
+  const userDetails = useSelector(state => state?.user?.user);
+  // console.log('Token ==========>', token);
   const progress = useDrawerProgress();
   let orders = null;
+  const dispatch = useDispatch();
+
   const translateX = Animated.interpolateNode(progress, {
     inputRange: [0, 1],
     outputRange: [-40 * vw * (1 + 1), 0],
@@ -55,6 +60,10 @@ const DrawerContent = props => {
     } else {
       return drawerRoutesEmployer[routeName];
     }
+  };
+
+  const hanldebtn = () => {
+    dispatch(logout());
   };
 
   const handleOnDrawerItemPress = routeName => {
@@ -103,9 +112,7 @@ const DrawerContent = props => {
         })}
       </View>
       <View style={styles.signOutContainer}>
-        <TouchableOpacity
-          style={styles.logoutbtn}
-          onPress={() => props.navigation.navigate('AuthStack')}>
+        <TouchableOpacity style={styles.logoutbtn} onPress={hanldebtn}>
           <Image source={icons.logout} style={styles.logoutIcons} />
           <QanelasRegular style={styles.signoutText}>Logout</QanelasRegular>
         </TouchableOpacity>

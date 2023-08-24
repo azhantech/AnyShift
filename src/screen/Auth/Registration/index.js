@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {TouchableOpacity, View, Image} from 'react-native';
 import Scrollable from '../../../component/ScrollWrapper';
 import QanelasBold from '../../../component/Texts/QanelasBold';
@@ -11,26 +11,134 @@ import {vh} from '../../../utils/dimensions';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 import {colors} from '../../../utils/appTheme';
+import DatePickerPopUp from '../../../component/Popups/DatePickerPopUp';
+
 import Animated, {SlideInRight, SlideOutLeft} from 'react-native-reanimated';
+import {DateTimePickerAndroid} from '@react-native-community/datetimepicker';
+import {useDispatch} from 'react-redux';
+import {SignUpEmployee} from '../../../redux/UserSlice';
+import {showMessage} from 'react-native-flash-message';
+
 const Registration = props => {
+  const dispatch = useDispatch();
+
   const [checked, setChecked] = useState(false);
   const [step, setStep] = useState(1);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [nickName, setNickName] = useState('');
+  const [nickName, setNickName] = useState(null);
   const [address, setAdress] = useState('');
-  const [invitationCode, setInvitationCode] = useState('');
+  const [invitationCode, setInvitationCode] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [cnfromPassword, setCnfromPassword] = useState('');
+  const [date, setDate] = useState(new Date());
+
   // const [isCheck, setChecked] = useState(false);
-  const hanldebtn = () => {
+  const dobRef = useRef();
+
+  const hanldebtn = async () => {
     if (step == 1) {
-      setStep(e => e + 1);
+      if (firstName == '') {
+        showMessage({
+          message: 'Please enter your FirstName',
+          type: 'danger',
+        });
+      } else if (lastName == '') {
+        showMessage({
+          message: 'Please enter your LastName',
+          type: 'danger',
+        });
+      } else if (address == '') {
+        showMessage({
+          message: 'Please enter your Adress',
+          type: 'danger',
+        });
+      } else {
+        setStep(e => e + 1);
+      }
     } else {
-      props.navigation.navigate('Validation');
+      if (email == '') {
+        showMessage({
+          message: 'Please enter your Email',
+          type: 'danger',
+        });
+      } else if (password == '') {
+        showMessage({
+          message: 'Please enter password',
+          type: 'danger',
+        });
+      } else if (cnfromPassword == '') {
+        showMessage({
+          message: 'Please enter password',
+          type: 'danger',
+        });
+      } else if (cnfromPassword != password) {
+        showMessage({
+          message: 'password doesnot match!',
+          type: 'danger',
+        });
+      } else if (!checked) {
+        showMessage({
+          message: 'Kindly Agree to the General Terms and condition',
+          type: 'danger',
+        });
+      } else {
+        try {
+          const data = {
+            firstName: firstName,
+            lastName: lastName,
+            nickName: nickName,
+            birthDate: '1993-08-13',
+            address: address,
+            phoneNumber: '+111111111',
+            invitationCode: invitationCode,
+            emailAddress: email,
+            password: password,
+          };
+          const response = await dispatch(SignUpEmployee(data));
+          if (response) {
+            showMessage({
+              message: response?.message,
+              type: 'success',
+            });
+            props.navigation.navigate('Validation');
+          }
+        } catch (err) {
+          showMessage({
+            message: err,
+            type: 'danger',
+          });
+        }
+      }
+      // console.log('Data from Registration ============>', data);
     }
   };
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate;
+    setDate(currentDate);
+    // setEditableProfile({
+    //   ...editableProfile,
+    //   DOB: moment(currentDate).format('YYYY-MM-DD'),
+    // });
+  };
+  const showMode = currentMode => {
+    DateTimePickerAndroid.open({
+      value: date,
+      onChange,
+      mode: currentMode,
+      is24Hour: true,
+    });
+  };
+
+  const showDatepicker = () => {
+    if (Platform.OS === 'ios') {
+      dobRef?.current?.show();
+    } else {
+      showMode('date');
+    }
+  };
+
   const renderStep = () => {
     if (step == 1) {
       return (
@@ -71,7 +179,7 @@ const Registration = props => {
           <View style={styles.dobContainer}>
             <QanelasRegular style={styles.text}>Date of Birth</QanelasRegular>
             <View style={styles.pickerContainer}>
-              <Picker text="Day" />
+              <Picker text="Day" onPress={() => showDatepicker()} />
               <Picker text="Month" />
               <Picker text="Year" />
             </View>
@@ -219,6 +327,11 @@ const Registration = props => {
           onPress={() => props?.navigation?.navigate('SignInScreen')}
         />
       </View>
+      <DatePickerPopUp
+        ref={dobRef}
+        onYes={item => onChange(null, item)}
+        date={true}
+      />
     </Scrollable>
   );
 };

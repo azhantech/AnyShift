@@ -12,7 +12,9 @@
   "dependencies": {
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/blur": "^4.3.2",
     "@react-native-community/clipboard": "^1.5.1",
+    "@react-native-community/datetimepicker": "^7.4.2",
     "@react-navigation/bottom-tabs": "^6.5.8",
     "@react-navigation/drawer": "6.1.4",
     "@react-navigation/material-top-tabs": "^6.6.3",
@@ -25,6 +27,7 @@
     "react-native": "0.68.1",
     "react-native-calendar-strip": "^2.2.6",
     "react-native-calendars": "^1.1300.0",
+    "react-native-date-picker": "^4.2.14",
     "react-native-device-info": "^10.8.0",
     "react-native-event-listeners": "^1.0.7",
     "react-native-flash-message": "^0.4.2",

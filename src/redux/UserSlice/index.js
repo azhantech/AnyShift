@@ -4,33 +4,96 @@ import {endpoints} from '../../Api/configs';
 import {hideLoader, showLoader} from '../LoaderSlice';
 import {showMessage} from 'react-native-flash-message';
 
+//Signup Employee Thunk
+export const SignUpEmployee = createAsyncThunk(
+  'user/SignUpEmployee',
+  async (
+    {
+      firstName,
+      lastName,
+      nickName,
+      birthDate,
+      address,
+      phoneNumber,
+      invitationCode,
+      emailAddress,
+      password,
+    },
+    {dispatch},
+  ) => {
+    dispatch(showLoader());
+    try {
+      const response = await Api.post(endpoints.auth.signup, {
+        firstName,
+        lastName,
+        nickName,
+        birthDate,
+        address,
+        phoneNumber,
+        invitationCode,
+        emailAddress,
+        password,
+      });
+      dispatch(hideLoader());
+
+      return Promise.resolve(response);
+
+      // .catch(e => {
+
+      //   throw new Error(e);
+      // });
+
+      // return response;
+    } catch (error) {
+      dispatch(hideLoader());
+      setTimeout(() => {
+        showMessage({
+          message: error,
+          type: 'danger',
+        });
+      }, 500);
+      throw new Error(error);
+    }
+  },
+);
+
 // LOGIN USER THUNK
 export const LoginUser = createAsyncThunk(
   'user/loginuser',
   async ({email, password}, {dispatch}) => {
     dispatch(showLoader());
     try {
-      let response;
-      await Api.post(endpoints.auth.login, {
+      let response = await Api.post(endpoints.auth.login, {
         email,
         password,
-      })
-        .then(res => {
-          response = res;
-        })
-        .catch(e => {
-          dispatch(hideLoader());
-          setTimeout(() => {
-            showMessage({
-              message: e,
-              type: 'danger',
-            });
-          }, 500);
-          throw new Error(e);
-        });
+      });
+      dispatch(hideLoader());
 
-      return response;
+      return Promise.resolve(response?.data);
+      //   .then(res => {
+      //     response = res;
+      //     dispatch(hideLoader());
+      //   })
+      //   .catch(e => {
+      //     dispatch(hideLoader());
+      //     setTimeout(() => {
+      //       showMessage({
+      //         message: e,
+      //         type: 'danger',
+      //       });
+      //     }, 500);
+      //     throw new Error(e);
+      //   });
+
+      // return response;
     } catch (error) {
+      dispatch(hideLoader());
+      setTimeout(() => {
+        showMessage({
+          message: error,
+          type: 'danger',
+        });
+      }, 500);
       throw new Error(error);
     }
   },
@@ -128,7 +191,7 @@ export const ResetPassword = createAsyncThunk(
         {
           email,
           newPassword: password,
-          token: code
+          token: code,
         },
         false,
       )
@@ -137,8 +200,8 @@ export const ResetPassword = createAsyncThunk(
           // showToast(getMessage(res));
           showMessage({
             message: res?.message,
-            type: 'success'
-          })
+            type: 'success',
+          });
           dispatch(hideLoader());
         })
         .catch(e => {
@@ -148,8 +211,8 @@ export const ResetPassword = createAsyncThunk(
             // showToast(getMessage(e));
             showMessage({
               message: e,
-              type: 'danger'
-            })
+              type: 'danger',
+            });
           }, 500);
           throw new Error(e);
         });
@@ -195,3 +258,5 @@ export const {login, logout} = userSlice.actions;
 export const selectUser = state => state.user.user;
 
 export default userSlice.reducer;
+// export const { setData } = dataSlice.actions;
+// export default dataSlice.reducer;

@@ -11,7 +11,7 @@ import AuthHeader from '../../../component/Headers/AuthHeader';
 import {useSelector} from 'react-redux';
 import {showMessage} from 'react-native-flash-message';
 import {useDispatch} from 'react-redux';
-import {LoginUser} from '../../../redux/UserSlice';
+import {LoginUser, login} from '../../../redux/UserSlice';
 
 const SignInScreen = props => {
   const dispatch = useDispatch();
@@ -44,8 +44,12 @@ const SignInScreen = props => {
       };
 
       const response = await dispatch(LoginUser(data));
-      if (response) {
-        console.log(response, 'response');
+      if (response?.payload) {
+        console.log(
+          response,
+          'response==============================================',
+        );
+        dispatch(login(response?.payload));
       }
     } catch (error) {
       showMessage({
@@ -71,7 +75,7 @@ const SignInScreen = props => {
           onSubmitEditing={() => passwordRef.current.focus()}
         />
         <InputField
-        reference={passwordRef}
+          reference={passwordRef}
           secureTextEntry={true}
           placeholder="Enter email password"
           leftIcon={icons.privacyIcon}
