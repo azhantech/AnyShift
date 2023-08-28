@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
-import Api from '../../Api';
+import Api, {get} from '../../Api';
 import {endpoints} from '../../Api/configs';
 import {hideLoader, showLoader} from '../LoaderSlice';
 import {showMessage} from 'react-native-flash-message';
@@ -223,6 +223,43 @@ export const ResetPassword = createAsyncThunk(
     }
   },
 );
+
+//getJobsAction
+export const getJobs = () => {
+  return async dispatch => {
+    try {
+      // dispatch(showLoader());
+
+      const response = await get(endpoints.jobs.jobs);
+      // dispatch({
+      //   type: types.PROFILE_DETAILS,
+      //   payload: response,
+      // });
+      // dispatch(hideLoader());
+
+      return Promise.resolve(response);
+    } catch (e) {
+      // dispatch(hideLoader());
+
+      return Promise.reject(e);
+    }
+  };
+};
+// export const getJobs = createAsyncThunk('user/getJobbs', async dispatch => {
+//   dispatch(showLoader());
+//   try {
+//     const response = await Api.get(endpoints.jobs.jobs);
+//     console.log('Response from Getjobs Actions ======>', response);
+//     dispatch(hideLoader());
+
+//     return Promise.resolve(response);
+//   } catch (error) {
+//     console.log('Error from getJobs ===========>', error);
+//     dispatch(hideLoader());
+
+//     throw new Error(error);
+//   }
+// });
 
 export const userSlice = createSlice({
   name: 'user',

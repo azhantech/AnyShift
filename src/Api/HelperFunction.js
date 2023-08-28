@@ -1,32 +1,32 @@
 /* eslint-disable no-shadow */
 // import Toast from "react-native-toast";
 
-import { EventRegister } from "react-native-event-listeners";
+import {EventRegister} from 'react-native-event-listeners';
 
 // import RNFetchBlob from "rn-fetch-blob";
-import { Alert, Platform } from "react-native";
+import {Alert, Platform} from 'react-native';
 // import { getLocale, getLocalizedString } from "../Translations";
 // import FileViewer from "react-native-file-viewer";
 // import moment from "moment";
-import { showMessage } from "react-native-flash-message";
-import { store } from "../redux/store";
+import {showMessage} from 'react-native-flash-message';
+import {store} from '../redux/store';
 
 export const showToast = msg => {
   setTimeout(() => {
     // Toast.show(getMessage(msg));
     showMessage({
       message: msg,
-      type: 'default'
-    })
+      type: 'default',
+    });
   }, 500);
 };
 
-export const handleResponse = ({ response, jsonResponse }) => {
+export const handleResponse = ({response, jsonResponse}) => {
   switch (response.status) {
     case 200: {
       if (
-        jsonResponse.hasOwnProperty("errors") ||
-        (jsonResponse.hasOwnProperty("error") && jsonResponse.error == true)
+        jsonResponse.hasOwnProperty('errors') ||
+        (jsonResponse.hasOwnProperty('error') && jsonResponse.error == true)
       ) {
         const message = getMessage(jsonResponse);
         return Promise.reject(message);
@@ -36,8 +36,8 @@ export const handleResponse = ({ response, jsonResponse }) => {
     }
     case 201: {
       if (
-        jsonResponse.hasOwnProperty("errors") ||
-        (jsonResponse.hasOwnProperty("error") && jsonResponse.error == true)
+        jsonResponse.hasOwnProperty('errors') ||
+        (jsonResponse.hasOwnProperty('error') && jsonResponse.error == true)
       ) {
         const message = getMessage(jsonResponse);
         return Promise.reject(message);
@@ -47,13 +47,13 @@ export const handleResponse = ({ response, jsonResponse }) => {
     }
     case 401: {
       const message = getMessage(jsonResponse);
-      EventRegister.emit("logout");
+      EventRegister.emit('logout');
       return Promise.reject(message);
       // break;
     }
     case 500: {
       const message = getMessage(jsonResponse);
-      EventRegister.emit("logout");
+      EventRegister.emit('logout');
       return Promise.reject(message);
     }
     default: {
@@ -67,25 +67,25 @@ export const performNetworkRequest = async (url, configs) => {
   try {
     const response = await fetch(url, configs);
     const jsonResponse = await response.json();
-    return Promise.resolve({ response, jsonResponse });
+    return Promise.resolve({response, jsonResponse});
   } catch (e) {
     return Promise.reject(e);
   }
 };
-export const message = "Something went wrong";
+export const message = 'Something went wrong';
 export const getMessage = json => {
   switch (typeof json) {
-    case "string": {
+    case 'string': {
       return json;
     }
-    case "object": {
+    case 'object': {
       if (Array.isArray(json)) {
         var data = json[0];
         return getMessage(data);
       } else {
         if (json.errors) {
           const data = json.errors;
-          if (typeof data === "object") {
+          if (typeof data === 'object') {
             const values = Object.values(data);
             return getMessage(values);
           } else {
@@ -93,7 +93,7 @@ export const getMessage = json => {
           }
         } else if (json.error) {
           const data = json.error;
-          if (typeof data === "object") {
+          if (typeof data === 'object') {
             const values = Object.values(data);
             return getMessage(values);
           } else {
@@ -109,7 +109,7 @@ export const getMessage = json => {
           }
         } else if (json?.response) {
           const data = json?.response;
-          if (typeof data === "object") {
+          if (typeof data === 'object') {
             const values = Object.values(data);
             return getMessage(values);
           } else {
@@ -117,7 +117,7 @@ export const getMessage = json => {
           }
         } else {
           const data = json;
-          if (typeof data === "object") {
+          if (typeof data === 'object') {
             const values = Object.values(data);
             return getMessage(values);
           } else {
@@ -141,19 +141,23 @@ export const jsonToFormdata = json => {
 };
 export const getConfigs = (method, body, formData = true) => {
   var headers = {
-    Accept: "application/json",
-    "X-Requested-With": "XMLHttpRequest",
-    "Content-Type": "application/json",
+    Accept: 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Content-Type': 'application/json',
   };
   if (formData === true) {
-    headers["Content-Type"] = "multipart/form-data";
+    headers['Content-Type'] = 'multipart/form-data';
   }
   const data = store.getState();
   if (data) {
     if (data.SessionReducer) {
       if (data.SessionReducer.token != null) {
         if (data.SessionReducer.token) {
-          headers.Authorization = "Bearer " + data.SessionReducer.token;
+          console.log(
+            'data.SessionReducer.token =========>',
+            data.SessionReducer.token,
+          );
+          headers.Authorization = 'Bearer ' + data.SessionReducer.token;
         }
       }
     }
@@ -163,7 +167,7 @@ export const getConfigs = (method, body, formData = true) => {
     headers: headers,
   };
   if (body) {
-    if (method === "POST" || method === "PUT") {
+    if (method === 'POST' || method === 'PUT') {
       if (formData === true) {
         configs.body = jsonToFormdata(body);
       } else {
@@ -171,26 +175,26 @@ export const getConfigs = (method, body, formData = true) => {
       }
     }
   }
-  console.log("CONFIGS", configs);
+  console.log('CONFIGS', configs);
   return configs;
 };
 export const dataToQueryParameter = data => {
-  if (typeof data === "object") {
+  if (typeof data === 'object') {
     if (!Array.isArray(data)) {
-      var params = "?";
+      var params = '?';
       const dataArray = Object.entries(data);
       if (dataArray.length > 0) {
         dataArray.forEach((entry, index) => {
-          var amp = index < dataArray.length - 1 ? "&" : "";
+          var amp = index < dataArray.length - 1 ? '&' : '';
           params = `${params}${entry[0]}=${entry[1]}${amp}`;
         });
         return params;
       }
     }
-  } else if (typeof data === "string") {
+  } else if (typeof data === 'string') {
     return data;
   }
-  return "";
+  return '';
 };
 
 // const checkFolderExist = async () => {

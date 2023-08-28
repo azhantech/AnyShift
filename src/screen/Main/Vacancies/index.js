@@ -1,5 +1,11 @@
-import React, {useState} from 'react';
-import {View, FlatList, TouchableOpacity, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image,
+  ToastAndroid,
+} from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
@@ -11,7 +17,11 @@ import Carousel, {Pagination} from 'react-native-snap-carousel';
 import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
 import FilterModal from '../../../component/FilterModal';
+import {useDispatch} from 'react-redux';
+import {showMessage} from 'react-native-flash-message';
+import {getJobs} from '../../../redux/UserSlice';
 const Vacancies = ({navigation}) => {
+  const dispatch = useDispatch();
   const [grid, setGrid] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,6 +40,25 @@ const Vacancies = ({navigation}) => {
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
   };
+
+  const getData = async () => {
+    try {
+      const response = await getJobs();
+      console.log('Response from GetJobs ========>', response);
+      // .then(res => {
+      //   console.log('Response from GetData functions =========>', res);
+      // });
+      // console.log('response from getJobs =======>', response);
+    } catch (err) {
+      console.log('Error from getJobs ==>', err);
+      // showMessage(err)
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const renderHeader = () => {
     return (
       <View style={styles.mainHeaderViewStyle}>

@@ -4,13 +4,13 @@ import {
   getMessage,
   handleResponse,
   performNetworkRequest,
-} from "./HelperFunction";
-import { base_url } from "./configs";
+} from './HelperFunction';
+import {base_url} from './configs';
 
 export const post = async (endpoint, body, formData = false, queryParams) => {
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
-  console.log(url, 'urlurlurlurlurl')
-  const configs = getConfigs("POST", body, formData);
+  console.log(url, 'urlurlurlurlurl');
+  const configs = getConfigs('POST', body, formData);
 
   try {
     const networkResult = await performNetworkRequest(url, configs);
@@ -24,8 +24,10 @@ export const post = async (endpoint, body, formData = false, queryParams) => {
 };
 
 export const get = async (endpoint, queryParams) => {
+  console.log('Inside get Mehthod ');
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
-  const configs = getConfigs("GET");
+  const configs = getConfigs('GET');
+  console.log('configs =======>,', configs);
 
   try {
     const networkResult = await performNetworkRequest(url, configs);
@@ -40,7 +42,7 @@ export const get = async (endpoint, queryParams) => {
 
 export const put = async (endpoint, body, formData, queryParams) => {
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
-  const configs = getConfigs("PUT", body, formData);
+  const configs = getConfigs('PUT', body, formData);
   try {
     const networkResult = await performNetworkRequest(url, configs);
     const result = await handleResponse(networkResult);
@@ -53,7 +55,7 @@ export const put = async (endpoint, body, formData, queryParams) => {
 
 export const deleteRequest = async (endpoint, queryParams) => {
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
-  const configs = getConfigs("DELETE");
+  const configs = getConfigs('DELETE');
   try {
     const networkResult = await performNetworkRequest(url, configs);
     const result = await handleResponse(networkResult);

@@ -15,7 +15,6 @@ const RootStack = createStackNavigator();
 const MainNavigator = () => {
   const type = useSelector(state => state.general.type);
   const token = useSelector(state => state?.user?.user);
-  console.log('Token ==================>');
   const navigatorMap = {
     company: DrawerNavigatorCompany,
     employee: DrawerNavigator,
