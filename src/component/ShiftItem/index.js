@@ -7,43 +7,51 @@ import QanelasMedium from '../Texts/QanelasMedium';
 import QanelasBold from '../Texts/QanelasBold';
 import QanelasRegular from '../Texts/QanelasRegular';
 import {icons} from '../../assets/images';
+import moment from 'moment';
 
 const ShiftItem = props => {
   const [selected, setSelected] = useState(false);
-
   const renderSelected = () => {
     if (selected) {
       return icons.whiteTick;
     }
   };
 
-  const handleSelected = () => {
+  const handleSelected = item => {
+    props?.setId(item?.id);
     setSelected(!selected);
   };
+  // console.log('id ========>', id);
   const item = props?.item;
 
   if (props?.selectable) {
     return (
       <View style={styles.mainContentContainerStyle}>
         <TouchableOpacity
-          onPress={handleSelected}
+          onPress={() => handleSelected(item)}
           style={styles.mainTickContainerStyle}>
           <View style={styles.tickViewStyle(selected)}>
             <Image style={styles.tickIconStyle} source={renderSelected()} />
           </View>
         </TouchableOpacity>
-        <View style={[styles.timeContainerStyle, {
-          width: 40 * vw,
-          marginLeft: 5 * vw
-        }]}>
-          <QanelasBold style={styles.dateTextStyle}>{item?.date}</QanelasBold>
+        <View
+          style={[
+            styles.timeContainerStyle,
+            {
+              width: 40 * vw,
+              marginLeft: 5 * vw,
+            },
+          ]}>
+          <QanelasBold style={styles.dateTextStyle}>
+            {moment(item?.date).format('dddd DD MMM, YYYY')}
+          </QanelasBold>
 
           <View style={styles.rowContainerStyle}>
             <QanelasRegular style={styles.fromStyle}>
-              From {item?.from1}
+              From {moment(item?.from1).format('HH:MM a')}
             </QanelasRegular>
             <QanelasRegular style={styles.toStyle}>
-              To {item?.to1}
+              To {moment(item?.to1).format('HH:MM a')}
             </QanelasRegular>
           </View>
 
@@ -51,18 +59,22 @@ const ShiftItem = props => {
 
           <View style={styles.rowContainerStyle}>
             <QanelasRegular style={styles.fromStyle}>
-              From {item?.to1}
+              From {moment(item?.to1).format('HH:MM a')}
             </QanelasRegular>
             <QanelasRegular style={styles.toStyle}>
-              To {item?.to2}
+              To {moment(item?.to2).format('HH:MM a')}
             </QanelasRegular>
           </View>
         </View>
 
-        <View style={[styles.amountViewStyle, {
-          borderWidth: 0,
-          borderColor: 'transparent'
-        }]}>
+        <View
+          style={[
+            styles.amountViewStyle,
+            {
+              borderWidth: 0,
+              borderColor: 'transparent',
+            },
+          ]}>
           <QanelasSemiBold style={styles.amountTextStyle}>
             {item?.amount}
           </QanelasSemiBold>
@@ -187,15 +199,15 @@ const styles = StyleSheet.create({
     borderColor: colors.grey,
   },
 
-  tickViewStyle: (selected) => ({
-    backgroundColor: selected ? colors.primaryColor: colors.white,
+  tickViewStyle: selected => ({
+    backgroundColor: selected ? colors.primaryColor : colors.white,
     borderRadius: 1 * vw,
     height: 6 * vw,
     width: 6 * vw,
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: selected ? colors.primaryColor : colors.darkGray,
-    borderWidth: 0.2
+    borderWidth: 0.2,
   }),
 
   tickIconStyle: {

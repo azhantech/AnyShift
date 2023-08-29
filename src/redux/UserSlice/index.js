@@ -224,26 +224,70 @@ export const ResetPassword = createAsyncThunk(
   },
 );
 
-//getJobsAction
-export const getJobs = () => {
-  return async dispatch => {
+export const ApplyFOrJob = createAsyncThunk(
+  'user/jobapply',
+  async (data, {dispatch}) => {
+    // dispatch(showLoader());
     try {
-      // dispatch(showLoader());
+      const response = await Api.post(endpoints.jobs.applied, data, false);
+      // dispatch(hideLoader());
 
-      const response = await get(endpoints.jobs.jobs);
-      // dispatch({
-      //   type: types.PROFILE_DETAILS,
-      //   payload: response,
+      return response;
+
+      // .catch(e => {
+
+      //   throw new Error(e);
       // });
-      // dispatch(hideLoader());
 
-      return Promise.resolve(response);
-    } catch (e) {
-      // dispatch(hideLoader());
-
-      return Promise.reject(e);
+      // return response;
+    } catch (error) {
+      dispatch(hideLoader());
+      setTimeout(() => {
+        showMessage({
+          message: error,
+          type: 'danger',
+        });
+      }, 500);
+      throw new Error(error);
     }
-  };
+  },
+);
+//getJobsAction
+export const getJobs = async () => {
+  try {
+    // dispatch(showLoader());
+
+    const response = await get(endpoints.jobs.jobs);
+    // dispatch({
+    //   type: types.PROFILE_DETAILS,
+    //   payload: response,
+    // });
+    // dispatch(hideLoader());
+
+    return response;
+  } catch (e) {
+    // dispatch(hideLoader());
+
+    return Promise.reject(e);
+  }
+};
+export const getJobsDetails = async id => {
+  try {
+    // dispatch(showLoader());
+
+    const response = await get(endpoints.jobs.jobs + `/${id}`, false);
+    // dispatch({
+    //   type: types.PROFILE_DETAILS,
+    //   payload: response,
+    // });
+    // console.log('Response from get jobsDetail Action ==>', response);
+    // dispatch(hideLoader());
+    return response;
+  } catch (e) {
+    dispatch(hideLoader());
+
+    return Promise.reject(e);
+  }
 };
 // export const getJobs = createAsyncThunk('user/getJobbs', async dispatch => {
 //   dispatch(showLoader());

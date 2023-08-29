@@ -17,11 +17,14 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import {reviews} from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
+import {useDispatch} from 'react-redux';
 
 const JobDetails = ({navigation, route}) => {
+  const dispatch = useDispatch();
+
   const status = route?.params?.status;
   const [selectedTab, setSelectedTab] = useState(0);
-
+  console.log('route?.params?.status========>', route?.params);
   const handleTabChange = index => {
     setSelectedTab(index);
   };
@@ -49,7 +52,7 @@ const JobDetails = ({navigation, route}) => {
 
     return colors.darkGray;
   };
-  
+
   const renderProfile = () => {
     return (
       <View style={styles.mainContainerStyle}>

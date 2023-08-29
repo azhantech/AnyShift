@@ -5,11 +5,12 @@ import QanelasBold from '../Texts/QanelasBold';
 import QanelasRegular from '../Texts/QanelasRegular';
 import QanelasMedium from '../Texts/QanelasMedium';
 import {icons} from '../../assets/images';
+import moment from 'moment/moment';
 
 const VacancyItem = props => {
   const {item, onPress} = props;
   const [isFavourite, setIsFavourite] = useState(item?.favorite);
-
+  console.log('VacancyItem ===========>', item?.company?.imagePath);
   const renderFavIcon = () => {
     if (isFavourite) {
       return icons.heartFilled;
@@ -28,12 +29,18 @@ const VacancyItem = props => {
       activeOpacity={0.8}>
       <View style={styles.row}>
         <View style={styles.profileImageViewStyle}>
-          <Image source={item?.picture} style={styles.userImage} />
+          <Image
+            source={
+              item?.company?.imagePath
+                ? {uri: item?.company?.imagePath}
+                : icons.planning
+            }
+            style={styles.userImage}
+          />
         </View>
-
         <View style={styles.userNameContainer}>
           <View style={styles.nameViewStyle}>
-            <QanelasBold style={styles.userName}>{item?.name}</QanelasBold>
+            <QanelasBold style={styles.userName}>{item?.title}</QanelasBold>
             <TouchableOpacity
               onPress={handleFav}
               style={styles.heartFilledViewStyle}>
@@ -43,7 +50,9 @@ const VacancyItem = props => {
               />
             </TouchableOpacity>
           </View>
-          <QanelasRegular style={styles.dateStyle}>{item?.date}</QanelasRegular>
+          <QanelasRegular style={styles.dateStyle}>
+            {moment(item?.createdAt).utc().local().fromNow()}
+          </QanelasRegular>
 
           <View style={styles.locationDetailsStyle}>
             <View style={styles.mainLocationViewStyle}>
@@ -52,16 +61,17 @@ const VacancyItem = props => {
                   source={icons.location}
                   style={styles.locationIconStyle}
                 />
-
-                <QanelasMedium style={styles.locationTextStyle}>
-                  Texas
+                <QanelasMedium
+                  style={styles.locationTextStyle}
+                  numberOfLines={1}>
+                  {item?.address}
                 </QanelasMedium>
               </View>
             </View>
 
             <View style={styles.amountViewStyle}>
               <QanelasBold style={styles.amountTextStyle}>
-                {item?.amount}
+                {item?.number}
               </QanelasBold>
             </View>
           </View>

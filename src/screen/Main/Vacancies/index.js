@@ -25,7 +25,7 @@ const Vacancies = ({navigation}) => {
   const [grid, setGrid] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const [data, setData] = useState([]);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
   const renderFavIcon = () => {
     if (isFavourite) {
@@ -44,11 +44,8 @@ const Vacancies = ({navigation}) => {
   const getData = async () => {
     try {
       const response = await getJobs();
-      console.log('Response from GetJobs ========>', response);
-      // .then(res => {
-      //   console.log('Response from GetData functions =========>', res);
-      // });
-      // console.log('response from getJobs =======>', response);
+      // console.log('Response from GetJobs ========>', response?.data?.jobs);
+      setData(response?.data?.jobs);
     } catch (err) {
       console.log('Error from getJobs ==>', err);
       // showMessage(err)
@@ -107,9 +104,10 @@ const Vacancies = ({navigation}) => {
     );
   };
   const renderItem = ({item}) => {
+    // console.log('item ==============>', item?.id);
     return (
       <VacancyItem
-        onPress={() => navigation.navigate('VacancyJobDetails')}
+        onPress={() => navigation.navigate('VacancyJobDetails', {id: item?.id})}
         item={item}
       />
     );
@@ -231,7 +229,7 @@ const Vacancies = ({navigation}) => {
       return (
         <View>
           <Carousel
-            data={vacancies}
+            data={data}
             renderItem={renderCarouselItem}
             sliderWidth={vw * 100}
             itemWidth={vw * 80}
@@ -243,7 +241,7 @@ const Vacancies = ({navigation}) => {
     } else {
       return (
         <FlatList
-          data={vacancies}
+          data={data}
           renderItem={renderItem}
           style={styles.flatListStyle}
           contentContainerStyle={styles.contentContainerStyle}

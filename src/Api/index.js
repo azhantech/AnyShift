@@ -27,7 +27,7 @@ export const get = async (endpoint, queryParams) => {
   console.log('Inside get Mehthod ');
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
   const configs = getConfigs('GET');
-  console.log('configs =======>,', configs);
+  console.log('configs =======>,', url);
 
   try {
     const networkResult = await performNetworkRequest(url, configs);

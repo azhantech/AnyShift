@@ -164,11 +164,11 @@ const styles = StyleSheet.create({
     marginTop: 1 * vh,
   },
 
-  onlineIconStyle: (fav) => ({
+  onlineIconStyle: fav => ({
     resizeMode: 'contain',
     height: vw * 3,
     width: vw * 3,
-    tintColor: fav ? colors.primaryColor : null
+    tintColor: fav ? colors.primaryColor : null,
     // alignSelf: 'flex-end',
     // position: 'absolute',
     // bottom: 0.5 * vh,
@@ -190,10 +190,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginLeft: 17 * vw,
     backgroundColor: colors.white,
-    borderRadius: 4 *vw,
+    borderRadius: 4 * vw,
     width: 7 * vw,
     height: 7 * vw,
-    ...themeShadow
+    ...themeShadow,
   },
 
   statusViewStyle: {
@@ -222,7 +222,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    width: 20 * vw,
+    width: 80 * vw,
   },
 
   locationIconStyle: {
@@ -296,19 +296,19 @@ const styles = StyleSheet.create({
     height: 7 * vh,
     borderRadius: 8 * vw,
     position: 'absolute',
-    bottom: 10 * vh
+    bottom: 10 * vh,
   },
 
-  heartIconStyle:{
+  heartIconStyle: {
     resizeMode: 'contain',
     height: 3 * vh,
-    width: 3 * vw
+    width: 3 * vw,
   },
 
-  textButtonStyle:{
+  textButtonStyle: {
     color: colors.white,
     fontSize: 2 * vh,
-  }
+  },
 });
 
 export default styles;

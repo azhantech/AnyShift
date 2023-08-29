@@ -139,7 +139,7 @@ export const jsonToFormdata = json => {
   });
   return data;
 };
-export const getConfigs = (method, body, formData = true) => {
+export const getConfigs = (method, body, formData) => {
   var headers = {
     Accept: 'application/json',
     'X-Requested-With': 'XMLHttpRequest',
@@ -150,14 +150,10 @@ export const getConfigs = (method, body, formData = true) => {
   }
   const data = store.getState();
   if (data) {
-    if (data.SessionReducer) {
-      if (data.SessionReducer.token != null) {
-        if (data.SessionReducer.token) {
-          console.log(
-            'data.SessionReducer.token =========>',
-            data.SessionReducer.token,
-          );
-          headers.Authorization = 'Bearer ' + data.SessionReducer.token;
+    if (data?.user) {
+      if (data?.user?.user?.token != null) {
+        if (data?.user?.user?.token) {
+          headers.Authorization = 'Bearer ' + data?.user?.user?.token;
         }
       }
     }

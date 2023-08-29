@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   },
   userNameContainer: {
     marginLeft: vw * 3,
-    width: 65 * vw
+    width: 65 * vw,
   },
   row: {
     flexDirection: 'row',
@@ -91,50 +91,49 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  locationViewStyle:{
+  locationViewStyle: {
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    width: 10 * vw,
   },
 
-  locationIconStyle:{
+  locationIconStyle: {
     resizeMode: 'contain',
     height: 3 * vh,
     width: 3 * vw,
-    tintColor: colors.primaryColor
+    tintColor: colors.primaryColor,
   },
 
-
-  locationTextStyle:{
+  locationTextStyle: {
     color: colors.darkGray,
     fontSize: 1.6 * vh,
-    marginLeft: 1 * vw
+    marginLeft: 1 * vw,
     // width: 20 * vw
   },
 
-  locationDetailsStyle:{
+  locationDetailsStyle: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 
-  mainLocationViewStyle:{
+  mainLocationViewStyle: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    width: vw * 40,
   },
 
-  amountViewStyle:{
+  amountViewStyle: {
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
-  amountTextStyle:{
+  amountTextStyle: {
     color: colors.myMessageColor,
     fontSize: 1.8 * vh,
     width: 25 * vw,
-    textAlign: 'right'
-  }
+    textAlign: 'right',
+  },
 });
 
 export default styles;

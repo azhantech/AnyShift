@@ -15,9 +15,10 @@ export const endpoints = {
   },
   jobs: {
     jobs: '/Jobs',
+    applied: '/Jobs/Apply',
   },
 };
 
 export const base_url =
-  'http://portaldemo-001-site19.ctempurl.com/api/mobileapp';
+  'https://portaldemo-001-site19.ctempurl.com/api/mobileapp';
 export const web_url = 'https://dev124.onlinetestingserver.com/';

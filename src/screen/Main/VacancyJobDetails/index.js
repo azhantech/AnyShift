@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import {View, Image, TouchableOpacity, Linking} from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
@@ -11,23 +11,77 @@ import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import {colors} from '../../../utils/appTheme';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../component/ScrollWrapper';
-import {jobDetails, shifts} from '../../../utils/tempData';
+// import {jobDetails, shifts} from '../../../utils/tempData';
 import {AirbnbRating} from 'react-native-ratings';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {reviews} from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
 import ConfirmationModal from '../../../component/ModalMessages/ConfirmationModal';
+import {useDispatch} from 'react-redux';
+import {getJobsDetails,ApplyFOrJob} from '../../../redux/UserSlice';
+import {useEffect} from 'react';
 
 const VacancyJobDetails = ({navigation, route}) => {
+  const dispatch = useDispatch();
+
+  const {id} = route?.params;
   const [selectedTab, setSelectedTab] = useState(0);
   const [isFavourite, setIsFavourite] = useState(false);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
+  const [jobDetail, setJobDetail] = useState(null);
+  const [Shiftid, setId] = useState(null);
 
+  // var myHeaders = new Headers();
+  // var myHeaders = new Headers();
+  // myHeaders.append(
+  //   'Authorization',
+  //   'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibWljaGVhbEB5b3BtYWlsLmNvbSIsImp0aSI6IjFlYTdjMmIwLWRkNzAtNDIwNS1hZjJhLTY3ZjlkYjdjODNhZiIsIlVzZXJJbmZvIjoie1wiRnVsbE5hbWVcIjpcIk1pY2hlYWwgQ2xhcmtcIixcIkZpcnN0TmFtZVwiOlwiTWljaGVhbFwiLFwiTGFzdE5hbWVcIjpcIkNsYXJrXCIsXCJVc2VybmFtZVwiOlwibWljaGVhbEB5b3BtYWlsLmNvbVwiLFwiUGFzc3dvcmRcIjpcIkRldkAxMjNcIixcIkltYWdlUGF0aFwiOm51bGwsXCJFbWFpbEFkZHJlc3NcIjpcIm1pY2hlYWxAeW9wbWFpbC5jb21cIixcIklzQWN0aXZlXCI6dHJ1ZX0iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJFbXBsb3llZSIsImV4cCI6MTY5MzM1ODE5MSwiaXNzIjoiaHR0cHM6Ly9hbnlzaGlmdC5jb20iLCJhdWQiOiJodHRwczovL2FueXNoaWZ0LmNvbSJ9.M870aT_DXLnw_hJytLFo4BAGDRUy8gP0nGI_AgcteyI',
+  // );
+  // myHeaders.append(
+  //   'Cookie',
+  //   '.AspNetCore.Identity.Application=CfDJ8BfStcnSFtVGpnOObcEPkMwavRpzFi_7yxl0eV1nIn6cLpKBry9ZKcXAhgZ4R-wzo1jzkRvCYihuy1eP5cmrYMY6kbbslt3W2B3HS5RVqaJx_Fde-bLVOftIDU3EJKyw_B0f83Hak-OULhprt8Wo7VbGixqSkesRQg_LOxuC8th-RFi955qva8wG3jEi0bBdQkB7ILmIdCB0g07toVZEeSw9KwPUlhZYK1i-d_mdDGa4_rhPhPhooOY4-boWdNI7S9N2eadCDBqI4LFkFlJLHqDt8lWLq-xMPeBJ3wKweGZP4FHOK5bia1JHnI1hhIdB867i662axxvIiERDqWJ8ZEptG_mf5WKdWBBYY1kVa9hfO5ZUysMUQTE2cESzrnD0SPy1MKI63bk_df10Pu2OLCRJ0_rdcLle_uUY_Gec02GTDWnDGiS3vfL-vdiq-yionmgsTGft5K-Wo4jrgCRYU5FRL0Uw-f08DK0NAJi7DAPR1wb6isFFgjAIV0Pt5D9PzceXyHp8FID8MAeznTqG_KBxrN0Jn8C55cZQ0stnUBzCFHUPw4fFtGnManjqVoWMpmG7aIwA18blrkSykIGI1MOlSVF1xuiasTf0JIAFVYP5oM46ey5BrRhz28rri0ZY6Q3rcb0if7rOWCIYJBbg9LkVaYxqay5ocEnuxPdtmlPcHj4b30_swYf-EJ4lMTxs20BnEnyDM2GXOZ_VQoMUOWMhtBMkwTAneuOGRhhq2-MggPRqHU2Pq90CwOFTLFsRKHrlpbSAoHzcha46IrboiKGLRYIfTsEeJt1y2PbsQHMjj1qfLlRalIaoZUIK1YoTImi4uEnubg9LO6dI2AwIcOUMifL0j23cMZNnf6WlCHwQ',
+  // );
+
+  // var raw = '';
+
+  // var requestOptions = {
+  //   method: 'GET',
+  //   headers: myHeaders,
+  //   body: raw,
+  //   redirect: 'follow',
+  // };
+
+  const getData = async () => {
+    // const response = await fetch(
+    //   'https://portaldemo-001-site19.ctempurl.com/api/mobileapp/Jobs/6',
+    //   requestOptions,
+    // )
+    //   .then(response => console.log('Response =============>', response.json()))
+    //   .then(result => console.log('resresult', result))
+    //   .catch(error => console.log('error', error));
+    // console.log('response ===========>', response);
+    try {
+      const response = await getJobsDetails(id);
+      // console.log('Response from GetJobsDetails ========>', response);
+      setJobDetail(response?.data?.job);
+    } catch (err) {
+      console.log('Error from getJobsDetail ==>', err);
+      // showMessage(err)
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   const handleTabChange = index => {
     setSelectedTab(index);
   };
-
+  const hanldeAppliedForJob = async () => {
+    const data = {jobShiftId: Shiftid};
+    const response = await ApplyFOrJob(data);
+    console.log('Response from ApplyFOrJob ==>', response);
+  };
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
   };
@@ -58,17 +112,23 @@ const VacancyJobDetails = ({navigation, route}) => {
             </TouchableOpacity>
           </View>
         </View>
-
-        <QanelasBold style={styles.titleTextStyle}>Counter Cashier</QanelasBold>
-
+        <QanelasBold style={styles.titleTextStyle}>
+          {jobDetail?.title}
+        </QanelasBold>
         <View style={styles.locationViewStyle}>
           <Image source={icons.location} style={styles.locationIconStyle} />
 
-          <QanelasMedium style={styles.locationTextStyle}>Texas</QanelasMedium>
+          <QanelasMedium style={styles.locationTextStyle}>
+            {jobDetail?.location}
+          </QanelasMedium>
         </View>
 
-        <QanelasBold style={styles.daysTextStyle}>$100/6days</QanelasBold>
-        <QanelasBold style={styles.daysAgoTextStyle}>2 days ago</QanelasBold>
+        <QanelasBold style={styles.daysTextStyle}>
+          ${jobDetail?.number}/6days
+        </QanelasBold>
+        <QanelasBold style={styles.daysAgoTextStyle}>
+          {jobDetail?.postedOn}
+        </QanelasBold>
       </View>
     );
   };
@@ -138,19 +198,17 @@ const VacancyJobDetails = ({navigation, route}) => {
       </View>
     );
   };
-
+  console.log('jobDetail?.policyUrl ===>', jobDetail?.policyUrl);
   const renderContent = () => {
     if (selectedTab == 0) {
       return (
         <View style={styles.mainContentContainerStyle}>
           <QanelasSemiBold style={styles.contentHeadingStyle}>
-            Job Description{' '}
+            Job Description
           </QanelasSemiBold>
 
           <QanelasRegular style={styles.contentDescriptionStyle}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dia
-            minonumy eirmod tempor invidunt ut labore et dolore magna ali quyam
-            erat, sed diam voluptua.
+            {jobDetail?.description}
           </QanelasRegular>
 
           {jobDetails?.map((item, index) => (
@@ -171,7 +229,7 @@ const VacancyJobDetails = ({navigation, route}) => {
               </QanelasSemiBold>
 
               <QanelasMedium style={styles.bankInfoValueStyle}>
-                Frankfurter Alee Berlin, Germany
+                {jobDetail?.address}
               </QanelasMedium>
             </View>
           </View>
@@ -194,23 +252,28 @@ const VacancyJobDetails = ({navigation, route}) => {
     if (selectedTab == 1) {
       return (
         <View style={styles.customerContentContainerStyle}>
-          <QanelasBold style={styles.titleTextStyle}>Amazon</QanelasBold>
+          <QanelasBold style={styles.titleTextStyle}>
+            {jobDetail?.company?.name}
+          </QanelasBold>
           <AirbnbRating
             isDisabled={true}
             count={5}
-            defaultRating={3}
+            defaultRating={
+              jobDetail?.company?.starReviews?.length
+                ? jobDetail?.company?.starReviews?.length
+                : 1
+            }
             size={3 * vh}
             showRating={false}
           />
           <QanelasRegular style={styles.customerContentDescriptionStyle}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dia
-            minonumy eirmod tempor invidunt ut labore et dolore magna ali quyam
-            erat, sed diam voluptua.
+            {jobDetail?.company?.address}
           </QanelasRegular>
           <CustomButton
             style={styles.buttonStyle}
             textStyle={styles.buttonTextStyle}
             text="Visit Website"
+            onPress={() => Linking.openURL(jobDetail?.policyUrl)}
           />
 
           <View style={styles.breakerViewStyle} />
@@ -219,7 +282,7 @@ const VacancyJobDetails = ({navigation, route}) => {
             Candidate Reviews
           </QanelasSemiBold>
 
-          {reviews?.map((item, index) => (
+          {jobDetail?.candidateReviews?.map((item, index) => (
             <ReviewItem item={item} />
           ))}
         </View>
@@ -233,8 +296,13 @@ const VacancyJobDetails = ({navigation, route}) => {
             Shifts
           </QanelasSemiBold>
 
-          {shifts?.map((item, index) => (
-            <ShiftItem item={item} selectable={true} />
+          {jobDetail?.shifts?.map((item, index) => (
+            <ShiftItem
+              item={item}
+              selectable={true}
+              Shiftid={Shiftid}
+              setId={setId}
+            />
           ))}
         </View>
       );
@@ -269,7 +337,7 @@ const VacancyJobDetails = ({navigation, route}) => {
 
       <ConfirmationModal
         visible={cancelReasonModal}
-        onPress={onHandleCancelReasonModal}
+        onPress={hanldeAppliedForJob}
         onHide={onHandleCancelReasonModal}
         yesbuttonTitle="Yes"
         nobuttonTitle="No"
