@@ -50,7 +50,7 @@ const ConfirmationModal = props => {
               text={props?.yesbuttonTitle}
             />
              <CustomButton
-              onPress={props?.onPress}
+              onPress={props?.onHide}
               style={[styles.noButtonStyle, props?.nobuttonStyle]}
               text={props?.nobuttonTitle}
               textStyle={styles.noButtonTextStyle}

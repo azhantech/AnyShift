@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderColor: selected ? colors.primaryColor : colors.darkGray,
-    borderWidth: 0.2,
+    borderWidth: 1,
   }),
 
   tickIconStyle: {

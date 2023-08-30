@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
   profileImageViewStyle: {
     height: 10 * vh,
     backgroundColor: colors.behindProfile,
-    borderWidth: 0.2,
     borderColor: colors.grey,
     width: 20 * vw,
     borderRadius: 3 * vw,

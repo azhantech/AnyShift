@@ -68,24 +68,7 @@ export const LoginUser = createAsyncThunk(
         password,
       });
       dispatch(hideLoader());
-
       return Promise.resolve(response?.data);
-      //   .then(res => {
-      //     response = res;
-      //     dispatch(hideLoader());
-      //   })
-      //   .catch(e => {
-      //     dispatch(hideLoader());
-      //     setTimeout(() => {
-      //       showMessage({
-      //         message: e,
-      //         type: 'danger',
-      //       });
-      //     }, 500);
-      //     throw new Error(e);
-      //   });
-
-      // return response;
     } catch (error) {
       dispatch(hideLoader());
       setTimeout(() => {
@@ -227,27 +210,19 @@ export const ResetPassword = createAsyncThunk(
 export const ApplyFOrJob = createAsyncThunk(
   'user/jobapply',
   async (data, {dispatch}) => {
-    // dispatch(showLoader());
+    dispatch(showLoader());
     try {
       const response = await Api.post(endpoints.jobs.applied, data, false);
-      // dispatch(hideLoader());
-
-      return response;
-
-      // .catch(e => {
-
-      //   throw new Error(e);
-      // });
-
-      // return response;
+      dispatch(hideLoader());
+      return Promise.resolve(response);
     } catch (error) {
       dispatch(hideLoader());
-      setTimeout(() => {
-        showMessage({
-          message: error,
-          type: 'danger',
-        });
-      }, 500);
+      // setTimeout(() => {
+      //   showMessage({
+      //     message: error,
+      //     type: 'danger',
+      //   });
+      // }, 500);
       throw new Error(error);
     }
   },

@@ -20,6 +20,7 @@ import FilterModal from '../../../component/FilterModal';
 import {useDispatch} from 'react-redux';
 import {showMessage} from 'react-native-flash-message';
 import {getJobs} from '../../../redux/UserSlice';
+import moment from 'moment';
 const Vacancies = ({navigation}) => {
   const dispatch = useDispatch();
   const [grid, setGrid] = useState(false);
@@ -113,17 +114,27 @@ const Vacancies = ({navigation}) => {
     );
   };
 
-  const renderCarouselItem = () => {
+  const renderCarouselItem = ({item}) => {
     return (
-      <View style={styles.renderCarouselItem}>
+      <TouchableOpacity
+        onPress={() => navigation.navigate('VacancyJobDetails', {id: item?.id})}
+        style={styles.renderCarouselItem}>
         <View style={styles.imageContainer}>
-          <Image source={icons.amazon} style={styles.imageContainer.image} />
+          {/* <Image source={icons.amazon} style={styles.imageContainer.image} /> */}
+          <Image
+            source={
+              item?.company?.imagePath
+                ? {uri: item?.company?.imagePath}
+                : icons.planning
+            }
+            style={styles.imageContainer.image}
+          />
         </View>
         <View style={styles.detailsContainer}>
           <View style={styles.row}>
             <View style={styles.nameViewStyle}>
               <QanelasBold style={[styles.userName, {fontSize: vh * 2.5}]}>
-                Counter Cashier
+                {item?.title}
               </QanelasBold>
               <TouchableOpacity
                 onPress={handleFav}
@@ -139,7 +150,7 @@ const Vacancies = ({navigation}) => {
             <View style={styles.nameViewStyle}>
               <QanelasBold
                 style={[styles.userName, {color: colors.successColor}]}>
-                2 days ago
+                {moment(item?.createdAt).utc().local().fromNow()}
               </QanelasBold>
               <QanelasMedium
                 style={{color: colors.highlightedText, fontSize: vh * 1.7}}>
@@ -167,19 +178,19 @@ const Vacancies = ({navigation}) => {
                 <QanelasBold
                   style={[
                     styles.userName,
-                    {marginLeft: vw * 1.5, color: colors.textColor},
+                    {marginLeft: vw * 1.5, color: colors.textColor, width: 70 * vw},
                   ]}>
-                  Texas
+                  {item?.address}
                 </QanelasBold>
               </View>
               <QanelasMedium
                 style={{color: colors.highlightedText, fontSize: vh * 1.7}}>
-                6 days
+                {item?.number}
               </QanelasMedium>
             </View>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
 
