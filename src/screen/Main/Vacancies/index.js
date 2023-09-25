@@ -1,11 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  FlatList,
-  TouchableOpacity,
-  Image,
-  ToastAndroid,
-} from 'react-native';
+import {View, FlatList, TouchableOpacity, Image} from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
@@ -18,8 +12,7 @@ import {vh, vw} from '../../../utils/dimensions';
 import {colors} from '../../../utils/appTheme';
 import FilterModal from '../../../component/FilterModal';
 import {useDispatch} from 'react-redux';
-import {showMessage} from 'react-native-flash-message';
-import {getJobs} from '../../../redux/UserSlice';
+import {getJobs} from '../../../redux/JobSlice';
 import moment from 'moment';
 const Vacancies = ({navigation}) => {
   const dispatch = useDispatch();
@@ -41,16 +34,25 @@ const Vacancies = ({navigation}) => {
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
   };
-
+  const [pageNo, setPageNo] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
+  const [searchText, setSearchText] = useState('');
   const getData = async () => {
-    try {
-      const response = await getJobs();
-      // console.log('Response from GetJobs ========>', response?.data?.jobs);
-      setData(response?.data?.jobs);
-    } catch (err) {
-      console.log('Error from getJobs ==>', err);
-      // showMessage(err)
-    }
+    // try {
+    const data = {
+      pageNo: pageNo,
+      pageSize: pageSize,
+      searchText: searchText,
+    };
+    await dispatch(getJobs(data))
+      .then(response => {
+        console.log('Response from GetJobs ========>', response);
+
+        setData(response?.payload?.jobs);
+      })
+      .catch(err => {
+        console.log('Error from getJobs ==>', err);
+      });
   };
 
   useEffect(() => {
@@ -178,7 +180,11 @@ const Vacancies = ({navigation}) => {
                 <QanelasBold
                   style={[
                     styles.userName,
-                    {marginLeft: vw * 1.5, color: colors.textColor, width: 70 * vw},
+                    {
+                      marginLeft: vw * 1.5,
+                      color: colors.textColor,
+                      width: 70 * vw,
+                    },
                   ]}>
                   {item?.address}
                 </QanelasBold>

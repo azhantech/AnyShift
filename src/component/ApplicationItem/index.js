@@ -4,6 +4,7 @@ import {vh, vw} from '../../utils/dimensions';
 import {colors, themeShadow} from '../../utils/appTheme';
 import QanelasSemiBold from '../Texts/QanelasSemiBold';
 import QanelasMedium from '../Texts/QanelasMedium';
+import moment from 'moment/moment';
 
 const ApplicationItem = props => {
   const item = props?.item;
@@ -32,7 +33,9 @@ const ApplicationItem = props => {
     return colors.darkGray;
   };
   return (
-    <TouchableOpacity onPress={props?.onPress} style={styles.mainContentContainerStyle}>
+    <TouchableOpacity
+      onPress={props?.onPress}
+      style={styles.mainContentContainerStyle}>
       <View style={styles.mainDetailsRowViewStyle}>
         <View style={styles.profileDetailsSubRowOne}>
           <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
@@ -40,7 +43,7 @@ const ApplicationItem = props => {
           </QanelasSemiBold>
 
           <QanelasMedium style={styles.bankInfoValueStyle}>
-            {item?.date}
+            {moment(item?.appliedOn).format('DD MMM YYYY')}
           </QanelasMedium>
         </View>
 
@@ -68,7 +71,7 @@ const ApplicationItem = props => {
           </QanelasSemiBold>
 
           <QanelasMedium style={styles.bankInfoValueStyle}>
-            {item?.jobId}
+            {item?.jobShift?.job?.id}
           </QanelasMedium>
         </View>
 
@@ -78,7 +81,7 @@ const ApplicationItem = props => {
           </QanelasSemiBold>
 
           <QanelasMedium style={[styles.bankInfoValueStyle]}>
-            {item?.jobTitle}
+            {item?.jobShift?.job?.title}
           </QanelasMedium>
         </View>
       </View>
@@ -90,7 +93,7 @@ const ApplicationItem = props => {
           </QanelasSemiBold>
 
           <QanelasMedium style={styles.bankInfoValueStyle}>
-            {item?.employerName}
+            {item?.jobShift?.job?.company?.name}
           </QanelasMedium>
         </View>
 
@@ -100,7 +103,7 @@ const ApplicationItem = props => {
           </QanelasSemiBold>
 
           <QanelasMedium style={[styles.bankInfoValueStyle]}>
-            {item?.totalAmount}
+            $ {item?.jobShift?.charges}
           </QanelasMedium>
         </View>
       </View>

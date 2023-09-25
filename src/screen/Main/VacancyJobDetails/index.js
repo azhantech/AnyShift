@@ -19,7 +19,7 @@ import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
 import ConfirmationModal from '../../../component/ModalMessages/ConfirmationModal';
 import {useDispatch} from 'react-redux';
-import {getJobsDetails, ApplyFOrJob} from '../../../redux/UserSlice';
+import {getJobsDetails, ApplyFOrJob} from '../../../redux/JobSlice';
 import {useEffect} from 'react';
 import {showMessage} from 'react-native-flash-message';
 

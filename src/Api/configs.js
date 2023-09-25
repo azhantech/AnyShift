@@ -17,6 +17,9 @@ export const endpoints = {
     jobs: '/Jobs',
     applied: '/Jobs/Apply',
   },
+  application: {
+    jobApplication: '/JobApplications',
+  },
 };
 
 export const base_url =
