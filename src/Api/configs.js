@@ -19,6 +19,7 @@ export const endpoints = {
   },
   application: {
     jobApplication: '/JobApplications',
+    reviewJobApplication: '/Companies/AddReview'
   },
 };
 

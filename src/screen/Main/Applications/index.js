@@ -1,17 +1,17 @@
-import React, {useLayoutEffect} from 'react';
-import {View, FlatList, TouchableOpacity, Image} from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
-import {applicaitons} from '../../../utils/tempData';
+import { applicaitons } from '../../../utils/tempData';
 import ApplicationItem from '../../../component/ApplicationItem';
-import {icons} from '../../../assets/images';
-import {getJobsApplication} from '../../../redux/ApplicationSlice';
-import {useState} from 'react';
-import {useEffect} from 'react';
-import {useDispatch} from 'react-redux';
+import { icons } from '../../../assets/images';
+import { getJobsApplication } from '../../../redux/ApplicationSlice';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-const Applications = ({navigation}) => {
+const Applications = ({ navigation }) => {
   const dispatch = useDispatch();
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -59,36 +59,24 @@ const Applications = ({navigation}) => {
     };
     await dispatch(getJobsApplication(data))
       .then(response => {
-        console.log('Response from GetJobs ========>', response);
-
         setData(response?.payload?.jobApplications);
       })
       .catch(err => {
         console.log('Error from getJobs ==>', err);
       });
-    //   const response = await getJobsApplication(data);
-    //   // console.log(
-    //   //   'Response from GetJobs ========>',
-    //   //   response?.data?.jobApplications,
-    //   // );
-    //   setData(response?.data?.jobApplications);
-    // } catch (err) {
-    //   console.log('Error from getJobs ==>', err);
-    //   // showMessage(err)
-    // }
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-  const renderItem = ({item}) => {
-    // console.log('item =========>', item);
+  const renderItem = ({ item }) => {
     return (
       <ApplicationItem
         item={item}
         onPress={() =>
           navigation.navigate('JobDetails', {
+            id: item?.id,
             status: item?.status,
           })
         }

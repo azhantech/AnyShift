@@ -1,20 +1,17 @@
-import {StyleSheet} from 'react-native';
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
+import { StyleSheet } from 'react-native';
+import { vh, vw } from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
 
 const styles = StyleSheet.create({
   mainContainerStyle: {
     alignItems: 'center',
-    marginTop: -8 * vh,
   },
 
   profileImageStyle: {
-    height: vh * 12,
-    width: vh * 12,
-    borderRadius: (vh * 10) / 2,
-    tintColor: colors.white,
+    height: vw * 25,
+    width: vw * 25,
+    borderRadius: vw * 25,
     resizeMode: 'contain',
-    tintColor: colors.black,
   },
   profileImageViewStyle: {
     borderWidth: 0.8 * vw,
@@ -216,7 +213,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    width: 20 * vw,
+    width: 80 * vw,
   },
 
   locationIconStyle: {
@@ -293,13 +290,13 @@ const styles = StyleSheet.create({
     bottom: 10 * vh
   },
 
-  heartIconStyle:{
+  heartIconStyle: {
     resizeMode: 'contain',
     height: 3 * vh,
     width: 3 * vw
   },
 
-  textButtonStyle:{
+  textButtonStyle: {
     color: colors.white,
     fontSize: 2 * vh,
   }

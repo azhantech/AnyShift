@@ -1,31 +1,31 @@
-import React, {useState} from 'react';
-import {View, Image, TouchableOpacity, Linking} from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import {generalImage, icons} from '../../../assets/images';
-import {vh} from '../../../utils/dimensions';
+import { generalImage, icons } from '../../../assets/images';
+import { vh } from '../../../utils/dimensions';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
-import {colors} from '../../../utils/appTheme';
+import { colors } from '../../../utils/appTheme';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../component/ScrollWrapper';
 // import {jobDetails, shifts} from '../../../utils/tempData';
-import {AirbnbRating} from 'react-native-ratings';
+import { AirbnbRating } from 'react-native-ratings';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {reviews} from '../../../utils/tempData';
+import { reviews } from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
 import ConfirmationModal from '../../../component/ModalMessages/ConfirmationModal';
-import {useDispatch} from 'react-redux';
-import {getJobsDetails, ApplyFOrJob} from '../../../redux/JobSlice';
-import {useEffect} from 'react';
-import {showMessage} from 'react-native-flash-message';
+import { useDispatch } from 'react-redux';
+import { getJobsDetails, ApplyFOrJob } from '../../../redux/JobSlice';
+import { useEffect } from 'react';
+import { showMessage } from 'react-native-flash-message';
 
-const VacancyJobDetails = ({navigation, route}) => {
+const VacancyJobDetails = ({ navigation, route }) => {
   const dispatch = useDispatch();
-  const {id} = route?.params;
+  const { id } = route?.params;
   const [selectedTab, setSelectedTab] = useState(0);
   const [isFavourite, setIsFavourite] = useState(false);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
@@ -33,8 +33,8 @@ const VacancyJobDetails = ({navigation, route}) => {
   const [Shiftid, setId] = useState(null);
   const getData = async () => {
     try {
-      const response = await getJobsDetails(id);
-      setJobDetail(response?.data?.job);
+      const response = await dispatch(getJobsDetails(id));
+      setJobDetail(response?.payload?.data?.job);
     } catch (err) {
       console.log('Error from getJobsDetail ==>', err);
     }
@@ -56,7 +56,7 @@ const VacancyJobDetails = ({navigation, route}) => {
     //   return;
     // }
     try {
-      const data = {jobShiftId: jobDetail?.id};
+      const data = { jobShiftId: jobDetail?.id };
       const response = await dispatch(ApplyFOrJob(data));
       if (response) {
         console.log(response, 'responseresponseresponse')

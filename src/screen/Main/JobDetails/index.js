@@ -1,55 +1,72 @@
-import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import HalfHeader from '../../../component/HalfHeader';
 import styles from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import {generalImage, icons} from '../../../assets/images';
-import {vh} from '../../../utils/dimensions';
+import { generalImage, icons } from '../../../assets/images';
+import { vh } from '../../../utils/dimensions';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
-import {colors} from '../../../utils/appTheme';
+import { colors } from '../../../utils/appTheme';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import ScrollWrapper from '../../../component/ScrollWrapper';
-import {jobDetails, shifts} from '../../../utils/tempData';
-import {AirbnbRating} from 'react-native-ratings';
+import { jobDetails, shifts } from '../../../utils/tempData';
+import { AirbnbRating } from 'react-native-ratings';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {reviews} from '../../../utils/tempData';
+import { reviews } from '../../../utils/tempData';
 import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
-import {useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { JobApplicationDetail } from '../../../redux/ApplicationSlice';
+import { showMessage } from 'react-native-flash-message';
 
-const JobDetails = ({navigation, route}) => {
+const JobDetails = ({ navigation, route }) => {
   const dispatch = useDispatch();
-
   const status = route?.params?.status;
+  const id = route?.params?.id
   const [selectedTab, setSelectedTab] = useState(0);
-  console.log('route?.params?.status========>', route?.params);
+  const [jobDetail, setJobDetail] = useState(null)
+  const handleJobDetails = async () => {
+    try {
+      const response = await dispatch(JobApplicationDetail(id));
+      setJobDetail(response?.payload?.jobApplication);
+    } catch (err) {
+      console.log('Error from getJobsDetail ==>', err);
+    }
+  }
+
+
+
+  useEffect(() => {
+    handleJobDetails()
+  }, [id])
+
+
   const handleTabChange = index => {
     setSelectedTab(index);
   };
 
   const handleStatusColor = () => {
-    if (status == 'pending') {
+    if (jobDetail?.status == 'Pending') {
       return colors.warningColor;
     }
 
-    if (status == 'rejected') {
+    if (jobDetail?.status == 'Rejected') {
       return colors.primaryColor;
     }
 
-    if (status == 'completed') {
+    if (jobDetail?.status == 'Completed') {
       return colors.successColor;
     }
 
-    if (status == 'in-progress') {
+    if (jobDetail?.status == 'In-progress') {
       return colors.inProgress;
     }
 
-    if (status == 'paid') {
+    if (jobDetail?.status == 'Paid') {
       return colors.highlightedText;
     }
-
     return colors.darkGray;
   };
 
@@ -57,7 +74,7 @@ const JobDetails = ({navigation, route}) => {
     return (
       <View style={styles.mainContainerStyle}>
         <View style={styles.profileImageViewStyle}>
-          <Image style={styles.profileImageStyle} source={icons.amazon} />
+          <Image style={styles.profileImageStyle} source={{ uri: jobDetail?.jobShift?.job?.company?.imagePath }} />
           <View style={styles.statusMainContainerStyle}>
             <TouchableOpacity style={styles.heartViewStyle}>
               <Image source={icons.heart} style={styles.onlineIconStyle} />
@@ -71,22 +88,22 @@ const JobDetails = ({navigation, route}) => {
                 },
               ]}>
               <QanelasSemiBold style={styles.statusTextStyle}>
-                {status}
+                {jobDetail?.status}
               </QanelasSemiBold>
             </View>
           </View>
         </View>
 
-        <QanelasBold style={styles.titleTextStyle}>Counter Cashier</QanelasBold>
+        <QanelasBold style={styles.titleTextStyle}>{jobDetail?.jobShift?.job?.title}</QanelasBold>
 
         <View style={styles.locationViewStyle}>
           <Image source={icons.location} style={styles.locationIconStyle} />
 
-          <QanelasMedium style={styles.locationTextStyle}>Texas</QanelasMedium>
+          <QanelasMedium style={styles.locationTextStyle}>{jobDetail?.jobShift?.job?.company?.address}</QanelasMedium>
         </View>
 
-        <QanelasBold style={styles.daysTextStyle}>$100/6days</QanelasBold>
-        <QanelasBold style={styles.daysAgoTextStyle}>2 days ago</QanelasBold>
+        <QanelasBold style={styles.daysTextStyle}>{jobDetail?.jobShift?.charges}/{jobDetail?.jobShift?.hourlyCharges}</QanelasBold>
+        {/* <QanelasBold style={styles.daysAgoTextStyle}>2 days ago</QanelasBold> */}
       </View>
     );
   };
@@ -166,12 +183,10 @@ const JobDetails = ({navigation, route}) => {
           </QanelasSemiBold>
 
           <QanelasRegular style={styles.contentDescriptionStyle}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed dia
-            minonumy eirmod tempor invidunt ut labore et dolore magna ali quyam
-            erat, sed diam voluptua.
+            {jobDetail?.jobShift?.job?.description}
           </QanelasRegular>
 
-          {jobDetails?.map((item, index) => (
+          {/* {jobDetails?.map((item, index) => (
             <View style={styles.jobPointsViewStyle}>
               <View style={styles.bulletViewStyle} />
               <View style={styles.bulletTextViewStyle}>
@@ -180,7 +195,7 @@ const JobDetails = ({navigation, route}) => {
                 </QanelasRegular>
               </View>
             </View>
-          ))}
+          ))} */}
 
           <View style={styles.mainDetailsRowViewStyle}>
             <View style={styles.profileDetailsSubRowOne}>
@@ -189,12 +204,12 @@ const JobDetails = ({navigation, route}) => {
               </QanelasSemiBold>
 
               <QanelasMedium style={styles.bankInfoValueStyle}>
-                Frankfurter Alee Berlin, Germany
+                {jobDetail?.jobShift?.job?.company?.address}
               </QanelasMedium>
             </View>
           </View>
 
-          <View style={styles.mainDetailsRowViewStyle}>
+          {/* <View style={styles.mainDetailsRowViewStyle}>
             <View style={styles.profileDetailsSubRowOne}>
               <QanelasSemiBold style={styles.bankInfoHeadingStyle}>
                 ID Card Front
@@ -205,18 +220,18 @@ const JobDetails = ({navigation, route}) => {
                 style={styles.mapImageStyle}
               />
             </View>
-          </View>
+          </View> */}
         </View>
       );
     }
     if (selectedTab == 1) {
       return (
         <View style={styles.customerContentContainerStyle}>
-          <QanelasBold style={styles.titleTextStyle}>Amazon</QanelasBold>
+          <QanelasBold style={styles.titleTextStyle}>{jobDetail?.jobShift?.job?.company?.name}</QanelasBold>
           <AirbnbRating
             isDisabled={true}
             count={5}
-            defaultRating={3}
+            defaultRating={jobDetail?.jobShift?.job?.company?.rating}
             size={3 * vh}
             showRating={false}
           />
@@ -237,7 +252,7 @@ const JobDetails = ({navigation, route}) => {
             Candidate Reviews
           </QanelasSemiBold>
 
-          {reviews?.map((item, index) => (
+          {jobDetail?.jobShift?.job?.company?.reviews?.map((item, index) => (
             <ReviewItem item={item} />
           ))}
         </View>
@@ -251,14 +266,16 @@ const JobDetails = ({navigation, route}) => {
             Shifts
           </QanelasSemiBold>
 
-          {shifts?.map((item, index) => (
+          {/* {shifts?.map((item, index) => (
             <ShiftItem item={item} />
-          ))}
+          ))} */}
 
           <CustomButton
             style={styles.rateButtonStyle}
             textStyle={styles.buttonTextStyle}
-            onPress={() => navigation.navigate('GiveReview')}
+            onPress={() => navigation.navigate('GiveReview', {
+              companyId: jobDetail?.jobShift?.job?.companyId
+            })}
             text="Give Rate and Review"
           />
         </View>
