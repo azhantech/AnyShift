@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
   pickerText: {
     fontSize: vh * 1.5,
     textTransform: 'capitalize',
+
   },
   pickerIconContainer: {
     width: '40%',

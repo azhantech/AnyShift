@@ -7,18 +7,18 @@ import {styles} from './Styles';
 import InputField from '../../../component/Inputs/InputField';
 import {icons} from '../../../assets/images';
 import Picker from '../../../component/Picker';
-import {vh} from '../../../utils/dimensions';
+import {vh, vw} from '../../../utils/dimensions';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 import {colors} from '../../../utils/appTheme';
 import DatePickerPopUp from '../../../component/Popups/DatePickerPopUp';
-
 import Animated, {SlideInRight, SlideOutLeft} from 'react-native-reanimated';
 import {DateTimePickerAndroid} from '@react-native-community/datetimepicker';
 import {useDispatch} from 'react-redux';
 import {SignUpEmployee} from '../../../redux/UserSlice';
 import {showMessage} from 'react-native-flash-message';
-
+import moment from 'moment';
+import PhoneInput from 'react-native-phone-number-input';
 const Registration = props => {
   const dispatch = useDispatch();
 
@@ -33,7 +33,8 @@ const Registration = props => {
   const [password, setPassword] = useState('');
   const [cnfromPassword, setCnfromPassword] = useState('');
   const [date, setDate] = useState(new Date());
-
+  const [selectedDate, setSelectedDate] = useState('');
+  const [phone, setPhone] = useState('');
   // const [isCheck, setChecked] = useState(false);
   const dobRef = useRef();
 
@@ -52,6 +53,16 @@ const Registration = props => {
       } else if (address == '') {
         showMessage({
           message: 'Please enter your Adress',
+          type: 'danger',
+        });
+      } else if (phone == '') {
+        showMessage({
+          message: 'Please enter your phone number',
+          type: 'danger',
+        });
+      } else if (selectedDate == '') {
+        showMessage({
+          message: 'Please select date of birth',
           type: 'danger',
         });
       } else {
@@ -89,9 +100,9 @@ const Registration = props => {
             firstName: firstName,
             lastName: lastName,
             nickName: nickName,
-            birthDate: '1993-08-13',
+            birthDate: selectedDate,
             address: address,
-            phoneNumber: '+111111111',
+            phoneNumber: phone,
             invitationCode: invitationCode,
             emailAddress: email,
             password: password,
@@ -102,7 +113,7 @@ const Registration = props => {
               message: response?.message,
               type: 'success',
             });
-            props.navigation.navigate('Validation');
+            props.navigation.navigate('SignInScreen');
           }
         } catch (err) {
           showMessage({
@@ -117,6 +128,9 @@ const Registration = props => {
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate;
     setDate(currentDate);
+    // 1993-08-13 date format
+    const dateSelected = moment(currentDate).format('YYYY-MM-DD');
+    setSelectedDate(dateSelected);
     // setEditableProfile({
     //   ...editableProfile,
     //   DOB: moment(currentDate).format('YYYY-MM-DD'),
@@ -163,6 +177,15 @@ const Registration = props => {
               returnKeyType="next"
             />
             <InputField
+              placeholder="Enter phone number"
+              label="Phone number"
+              required
+              onChangeText={setPhone}
+              value={phone}
+              returnKeyType="next"
+              keyboardType="number-pad"
+            />
+            <InputField
               placeholder="Enter Nick Name"
               label="Nick Name"
               optional
@@ -176,12 +199,70 @@ const Registration = props => {
               Note: This is the name we share with employers
             </QanelasRegular>
           </View>
+
+          {/* <View
+            style={{
+              height: '12%',
+              justifyContent: 'space-around',
+              backgroundColor: 'red',
+              width: '80%',
+            }}>
+            <QanelasRegular style={[styles.text]}>Phone Number</QanelasRegular>
+            <View style={{height: '60%'}}>
+              <PhoneInput
+                // ref={phoneInput}
+                // defaultValue={'Please Enter your number'}
+                defaultCode="DM"
+                layout="first"
+                onChangeText={text => {
+                  // setValue(text);
+                  console.log('Text from ChangeText =======>', text);
+                }}
+                onChangeFormattedText={text => {
+                  setPhone(text);
+                  // setFormattedValue(text);
+                }}
+                // withDarkTheme
+                // withShadow
+                // autoFocus
+                containerStyle={{
+                  backgroundColor: colors.textInputBackgroundColor,
+                  borderRadius: vh * 2,
+                }}
+                textContainerStyle={{
+                  backgroundColor: colors.textInputBackgroundColor,
+                  borderRadius: vh * 2,
+                }}
+              />
+            </View>
+          </View> */}
           <View style={styles.dobContainer}>
             <QanelasRegular style={styles.text}>Date of Birth</QanelasRegular>
             <View style={styles.pickerContainer}>
-              <Picker text="Day" onPress={() => showDatepicker()} />
-              <Picker text="Month" />
-              <Picker text="Year" />
+              <Picker
+                pickerMainContainer={{
+                  width: '100%',
+                  backgroundColor: colors.textInputBackgroundColor,
+                }}
+                text={selectedDate ? selectedDate : 'Select Date of Birth'}
+                onPress={() => showDatepicker()}
+                pickerTextContainer={{
+                  width: '80%',
+                  height: '50%',
+                  justifyContent: 'center',
+                  alignItems: 'flex-start',
+                  paddingHorizontal: vw * 5,
+                }}
+                pickerIconContainer={{
+                  width: '20%',
+                }}
+                pickerIcon={{
+                  tintColor: colors.primaryColor,
+                }}
+                pickerText={{
+                  color: colors.textColor,
+                }}
+              />
             </View>
           </View>
           <View style={[styles.fieldContainer, {height: vh * 25}]}>

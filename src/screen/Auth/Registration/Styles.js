@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     color: colors.black,
   },
   fieldContainer: {
-    height: vh * 37,
+    height: vh * 46,
     width: containerWidth,
     justifyContent: 'space-around',
   },
@@ -62,7 +62,7 @@ export const styles = StyleSheet.create({
   noteText: {
     color: colors.highlightedText,
     fontSize: vh * 1.5,
-    width: containerWidth -10,
+    width: containerWidth - 10,
   },
   dobContainer: {
     height: vh * 10,

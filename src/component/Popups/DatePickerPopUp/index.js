@@ -111,9 +111,7 @@ class DatePickerPopUp extends Component {
             textColor={colors.white}
             fadeToColor={'none'}
             mode={this.props?.date && 'date'}
-            minimumDate={
-              this.props?.minimumDate && new Date(moment().format('YYYY-MM-DD'))
-            }
+            minimumDate={this.props?.minimumDate}
           />
         </View>
       </Modal>
