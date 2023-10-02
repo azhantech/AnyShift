@@ -1,24 +1,25 @@
-import React, {useRef, useState} from 'react';
-import {TouchableOpacity, View, Image} from 'react-native';
+import React, { useRef, useState } from 'react';
+import { TouchableOpacity, View, Image } from 'react-native';
 import Scrollable from '../../../component/ScrollWrapper';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
-import {styles} from './Styles';
+import { styles } from './Styles';
 import InputField from '../../../component/Inputs/InputField';
-import {icons} from '../../../assets/images';
+import { icons } from '../../../assets/images';
 import Picker from '../../../component/Picker';
-import {vh, vw} from '../../../utils/dimensions';
+import { vh, vw } from '../../../utils/dimensions';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
-import {colors} from '../../../utils/appTheme';
+import { colors } from '../../../utils/appTheme';
 import DatePickerPopUp from '../../../component/Popups/DatePickerPopUp';
-import Animated, {SlideInRight, SlideOutLeft} from 'react-native-reanimated';
-import {DateTimePickerAndroid} from '@react-native-community/datetimepicker';
-import {useDispatch} from 'react-redux';
-import {SignUpEmployee} from '../../../redux/UserSlice';
-import {showMessage} from 'react-native-flash-message';
+import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated';
+import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+import { useDispatch } from 'react-redux';
+import { SignUpEmployee } from '../../../redux/UserSlice';
+import { showMessage } from 'react-native-flash-message';
 import moment from 'moment';
 import PhoneInput from 'react-native-phone-number-input';
+import { showToast } from '../../../Api/HelperFunction';
 const Registration = props => {
   const dispatch = useDispatch();
 
@@ -41,59 +42,78 @@ const Registration = props => {
   const hanldebtn = async () => {
     if (step == 1) {
       if (firstName == '') {
-        showMessage({
-          message: 'Please enter your FirstName',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter your FirstName',
+        //   type: 'danger',
+        // });
+        showToast('Please enter your FirstName')
       } else if (lastName == '') {
-        showMessage({
-          message: 'Please enter your LastName',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter your LastName',
+        //   type: 'danger',
+        // });
+        showToast('Please enter your LastName')
+
       } else if (address == '') {
-        showMessage({
-          message: 'Please enter your Adress',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter your Adress',
+        //   type: 'danger',
+        // });
+        showToast('Please enter your Address')
+
       } else if (phone == '') {
-        showMessage({
-          message: 'Please enter your phone number',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter your phone number',
+        //   type: 'danger',
+        // });
+        showToast('Please enter your phone number')
+
       } else if (selectedDate == '') {
-        showMessage({
-          message: 'Please select date of birth',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please select date of birth',
+        //   type: 'danger',
+        // });
+        showToast('Please select date of birth')
+
       } else {
         setStep(e => e + 1);
       }
     } else {
       if (email == '') {
-        showMessage({
-          message: 'Please enter your Email',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter your Email',
+        //   type: 'danger',
+        // });
+        showToast('Please enter your Email')
+
       } else if (password == '') {
-        showMessage({
-          message: 'Please enter password',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter password',
+        //   type: 'danger',
+        // });
+        showToast('Please enter password')
+
       } else if (cnfromPassword == '') {
-        showMessage({
-          message: 'Please enter password',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Please enter password',
+        //   type: 'danger',
+        // });
+        showToast('Please enter password')
+
       } else if (cnfromPassword != password) {
-        showMessage({
-          message: 'password doesnot match!',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'password doesnot match!',
+        //   type: 'danger',
+        // });
+        showToast('Password doesnot match!')
+
       } else if (!checked) {
-        showMessage({
-          message: 'Kindly Agree to the General Terms and condition',
-          type: 'danger',
-        });
+        // showMessage({
+        //   message: 'Kindly Agree to the General Terms and condition',
+        //   type: 'danger',
+        // });
+        showToast('Kindly Agree to the General Terms and condition')
+
       } else {
         try {
           const data = {
@@ -109,17 +129,21 @@ const Registration = props => {
           };
           const response = await dispatch(SignUpEmployee(data));
           if (response) {
-            showMessage({
-              message: response?.message,
-              type: 'success',
-            });
+            // showMessage({
+            //   message: response?.message,
+            //   type: 'success',
+            // });
+            showToast(response?.message)
+
             props.navigation.navigate('SignInScreen');
           }
         } catch (err) {
-          showMessage({
-            message: err,
-            type: 'danger',
-          });
+          // showMessage({
+          //   message: err,
+          //   type: 'danger',
+          // });
+          showToast(err)
+
         }
       }
       // console.log('Data from Registration ============>', data);
@@ -265,7 +289,7 @@ const Registration = props => {
               />
             </View>
           </View>
-          <View style={[styles.fieldContainer, {height: vh * 25}]}>
+          <View style={[styles.fieldContainer, { height: vh * 25 }]}>
             <InputField
               placeholder="Enter Your Address"
               label="Address "
@@ -345,7 +369,7 @@ const Registration = props => {
               <QanelasRegular
                 style={[
                   styles.noteText,
-                  {color: colors.grey, fontSize: vh * 1.3},
+                  { color: colors.grey, fontSize: vh * 1.3 },
                 ]}>
                 I agree to General Terms and Condition & Privacy Policy of
                 Anyshift

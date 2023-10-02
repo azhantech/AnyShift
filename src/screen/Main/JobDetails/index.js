@@ -19,7 +19,6 @@ import ReviewItem from '../../../component/ReviewItem';
 import ShiftItem from '../../../component/ShiftItem';
 import { useDispatch } from 'react-redux';
 import { JobApplicationDetail } from '../../../redux/ApplicationSlice';
-import { showMessage } from 'react-native-flash-message';
 
 const JobDetails = ({ navigation, route }) => {
   const dispatch = useDispatch();

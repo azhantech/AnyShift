@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
-import {TouchableOpacity, View, Image} from 'react-native';
-import Animated, {SlideInRight, SlideOutLeft} from 'react-native-reanimated';
+import React, { useState } from 'react';
+import { TouchableOpacity, View, Image } from 'react-native';
+import Animated, { SlideInRight, SlideOutLeft } from 'react-native-reanimated';
 
 import Scrollable from '../../../component/ScrollWrapper';
 import QanelasBold from '../../../component/Texts/QanelasBold';
-import {styles} from './styles';
+import { styles } from './styles';
 import InputField from '../../../component/Inputs/InputField';
-import {icons} from '../../../assets/images';
-import {vh, vw} from '../../../utils/dimensions';
+import { icons } from '../../../assets/images';
+import { vh, vw } from '../../../utils/dimensions';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import TouchableText from '../../../component/Buttons/TouchableText';
 
@@ -36,7 +36,7 @@ const RegistrationEmployer = props => {
               required
             />
             <InputField
-              placeholder="Enter Your Email Address"
+              placeholder="Enter Your Mobile Number"
               label="Mobile Number"
               required
               keyboardType="number-pad"
@@ -85,7 +85,7 @@ const RegistrationEmployer = props => {
         <TouchableOpacity onPress={handleOnPress} style={[styles.textButton]}>
           <Image source={icons.back} style={styles.backIconStyle} />
         </TouchableOpacity>
-        <QanelasBold style={{fontSize: vh * 3}}>Sign up</QanelasBold>
+        <QanelasBold style={{ fontSize: vh * 3 }}>Sign up</QanelasBold>
         <View />
       </View>
     );
@@ -101,7 +101,7 @@ const RegistrationEmployer = props => {
         <CustomButton
           text="Sign up"
           onPress={hanldebtn}
-          style={{marginTop: vh * 3}}
+          style={{ marginTop: vh * 3 }}
         />
         <TouchableText
           text="Back to"

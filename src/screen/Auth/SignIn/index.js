@@ -1,17 +1,18 @@
-import React, {useState, useRef} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import React, { useState, useRef } from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 
 import InputField from '../../../component/Inputs/InputField';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {icons} from '../../../assets/images';
-import {styles} from './styles';
+import { icons } from '../../../assets/images';
+import { styles } from './styles';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import AuthHeader from '../../../component/Headers/AuthHeader';
-import {useSelector} from 'react-redux';
-import {showMessage} from 'react-native-flash-message';
-import {useDispatch} from 'react-redux';
-import {LoginUser, login} from '../../../redux/UserSlice';
+import { useSelector } from 'react-redux';
+import { showMessage } from 'react-native-flash-message';
+import { useDispatch } from 'react-redux';
+import { LoginUser, login } from '../../../redux/UserSlice';
+import { showToast } from '../../../Api/HelperFunction';
 
 const SignInScreen = props => {
   const dispatch = useDispatch();
@@ -22,18 +23,20 @@ const SignInScreen = props => {
 
   const handleSignIn = async () => {
     if (email == null) {
-      showMessage({
-        message: 'Please enter email address',
-        type: 'danger',
-      });
+      // showMessage({
+      //   message: 'Please enter email address',
+      //   type: 'danger',
+      // });
+      showToast('Please enter email address')
       return;
     }
 
     if (password == null) {
-      showMessage({
-        message: 'Please enter password',
-        type: 'danger',
-      });
+      // showMessage({
+      //   message: 'Please enter password',
+      //   type: 'danger',
+      // });
+      showToast('Please enter password')
       return;
     }
 
@@ -52,10 +55,12 @@ const SignInScreen = props => {
         dispatch(login(response?.payload));
       }
     } catch (error) {
-      showMessage({
-        message: error,
-        type: 'danger',
-      });
+      // showMessage({
+      //   message: error,
+      //   type: 'danger',
+      // });
+      showToast(error)
+
     }
   };
   return (
@@ -97,7 +102,7 @@ const SignInScreen = props => {
         <CustomButton
           text="Sign In"
           onPress={handleSignIn}
-          // onPress={() => props?.navigation.navigate('DrawerNavigator')}
+        // onPress={() => props?.navigation.navigate('DrawerNavigator')}
         />
         {/* <CustomButton
           text="Sign In as Employer"
