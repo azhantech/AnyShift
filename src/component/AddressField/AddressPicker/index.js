@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Modal,
   View,
@@ -14,9 +14,7 @@ import AddressItem from './AddressItem';
 import Api from '../Api';
 import vw from './Units/vw';
 import vh from './Units/vh';
-import {appTheme} from '../../../../Utils';
-import {icons} from '../../../../Assets';
-import {getLocale, getLocalizedString} from '../../../../Translations';
+import { icons } from '../../../assets/images';
 
 class AddressPicker extends Component {
   constructor(props) {
@@ -59,7 +57,7 @@ class AddressPicker extends Component {
     });
 
     if (item) {
-      this.props.onValueChange({...item, found: true});
+      this.props.onValueChange({ ...item, found: true });
       this.modalDismiss();
     }
 
@@ -127,7 +125,7 @@ class AddressPicker extends Component {
     if (this.props.defaultSelectedIndex) {
       textToShow =
         this.props.data[this.props.defaultSelectedIndex][
-          this.props.labelProperty
+        this.props.labelProperty
         ];
     }
     if (this.state.selected === true) {
@@ -145,7 +143,7 @@ class AddressPicker extends Component {
         left: 0 * vw,
       };
     }
-    let item = {description: this.state.text};
+    let item = { description: this.state.text };
     return (
       <Modal
         visible={this.state.visible}
@@ -160,16 +158,16 @@ class AddressPicker extends Component {
             <TouchableHOC onPress={this.modalDismiss} style={styles.closeBtn}>
               <Image
                 source={icons.cross}
-                style={{width: 3 * vw, height: 3 * vw, resizeMode: 'contain'}}
+                style={{ width: 3 * vw, height: 3 * vw, resizeMode: 'contain' }}
               />
             </TouchableHOC>
 
             <Text style={styles.Heading}>Search Location</Text>
           </View>
           <View
-            style={{width: '100%', paddingTop: 1 * vh, alignItems: 'center'}}>
+            style={{ width: '100%', paddingTop: 1 * vh, alignItems: 'center' }}>
             <TextInput
-              placeholder={getLocalizedString().SearchAddressHere[getLocale()]}
+              placeholder={'Search location'}
               autoFocus
               onChangeText={this.getPredictions}
               // containerStyle={styles.searchInput}

@@ -20,6 +20,7 @@ import { showMessage } from 'react-native-flash-message';
 import moment from 'moment';
 import PhoneInput from 'react-native-phone-number-input';
 import { showToast } from '../../../Api/HelperFunction';
+import AddressPicker from '../../../component/AddressField/AddressPicker';
 const Registration = props => {
   const dispatch = useDispatch();
 
@@ -38,6 +39,8 @@ const Registration = props => {
   const [phone, setPhone] = useState('');
   // const [isCheck, setChecked] = useState(false);
   const dobRef = useRef();
+  const pickerRef = useRef(null);
+
 
   const hanldebtn = async () => {
     if (step == 1) {
@@ -297,6 +300,7 @@ const Registration = props => {
               onChangeText={setAdress}
               value={address}
               returnKeyType="next"
+              onPress={() => pickerRef.current.modalShow()}
             />
             <InputField
               placeholder="Enter Invitation Code"
@@ -436,6 +440,23 @@ const Registration = props => {
         ref={dobRef}
         onYes={item => onChange(null, item)}
         date={true}
+      />
+
+      <AddressPicker
+        ref={pickerRef}
+        onAccept={data => console.log(data)}
+        onValueChange={item => {
+          if (item?.found) {
+            // setLocation(item?.description);
+            // animateToCoords({
+            //   latitude: parseFloat(item?.lat),
+            //   longitude: parseFloat(item?.lng),
+            // });
+            // setLongtitude(item?.lng);
+            // setLattidue(item?.lat);
+            setAdress(item?.description)
+          }
+        }}
       />
     </Scrollable>
   );

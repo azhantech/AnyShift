@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styles from './styles';
 import AddressPicker from './AddressPicker';
 import TouchableHOC from '../../TouchableHOC';
