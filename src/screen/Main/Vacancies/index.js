@@ -1,20 +1,20 @@
-import React, {useEffect, useState} from 'react';
-import {View, FlatList, TouchableOpacity, Image} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, FlatList, TouchableOpacity, Image } from 'react-native';
 import MainContainer from '../../../component/MainContainer';
 import styles from './styles';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import QanelasBold from '../../../component/Texts/QanelasBold';
-import {vacancies} from '../../../utils/tempData';
+import { vacancies } from '../../../utils/tempData';
 import VacancyItem from '../../../component/VacancyItem';
-import {icons} from '../../../assets/images';
-import Carousel, {Pagination} from 'react-native-snap-carousel';
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
+import { icons } from '../../../assets/images';
+import Carousel, { Pagination } from 'react-native-snap-carousel';
+import { vh, vw } from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
 import FilterModal from '../../../component/FilterModal';
-import {useDispatch} from 'react-redux';
-import {getJobs} from '../../../redux/JobSlice';
+import { useDispatch } from 'react-redux';
+import { getJobs } from '../../../redux/JobSlice';
 import moment from 'moment';
-const Vacancies = ({navigation}) => {
+const Vacancies = ({ navigation }) => {
   const dispatch = useDispatch();
   const [grid, setGrid] = useState(false);
   const [isFavourite, setIsFavourite] = useState(false);
@@ -106,27 +106,27 @@ const Vacancies = ({navigation}) => {
       </View>
     );
   };
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     // console.log('item ==============>', item?.id);
     return (
       <VacancyItem
-        onPress={() => navigation.navigate('VacancyJobDetails', {id: item?.id})}
+        onPress={() => navigation.navigate('VacancyJobDetails', { id: item?.id })}
         item={item}
       />
     );
   };
 
-  const renderCarouselItem = ({item}) => {
+  const renderCarouselItem = ({ item }) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('VacancyJobDetails', {id: item?.id})}
+        onPress={() => navigation.navigate('VacancyJobDetails', { id: item?.id })}
         style={styles.renderCarouselItem}>
         <View style={styles.imageContainer}>
           {/* <Image source={icons.amazon} style={styles.imageContainer.image} /> */}
           <Image
             source={
               item?.company?.imagePath
-                ? {uri: item?.company?.imagePath}
+                ? { uri: item?.company?.imagePath }
                 : icons.planning
             }
             style={styles.imageContainer.image}
@@ -135,7 +135,7 @@ const Vacancies = ({navigation}) => {
         <View style={styles.detailsContainer}>
           <View style={styles.row}>
             <View style={styles.nameViewStyle}>
-              <QanelasBold style={[styles.userName, {fontSize: vh * 2.5}]}>
+              <QanelasBold style={[styles.userName, { fontSize: vh * 2.5 }]}>
                 {item?.title}
               </QanelasBold>
               <TouchableOpacity
@@ -151,11 +151,12 @@ const Vacancies = ({navigation}) => {
           <View style={styles.row}>
             <View style={styles.nameViewStyle}>
               <QanelasBold
-                style={[styles.userName, {color: colors.successColor}]}>
-                {moment(item?.createdAt).utc().local().fromNow()}
+                style={[styles.userName, { color: colors.successColor }]}>
+                {/* {moment(item?.createdAt).utc().local().fromNow()} */}
+                {item?.postedOn}
               </QanelasBold>
               <QanelasMedium
-                style={{color: colors.highlightedText, fontSize: vh * 1.7}}>
+                style={{ color: colors.highlightedText, fontSize: vh * 1.7 }}>
                 $100
               </QanelasMedium>
             </View>
@@ -190,7 +191,7 @@ const Vacancies = ({navigation}) => {
                 </QanelasBold>
               </View>
               <QanelasMedium
-                style={{color: colors.highlightedText, fontSize: vh * 1.7}}>
+                style={{ color: colors.highlightedText, fontSize: vh * 1.7 }}>
                 {item?.number}
               </QanelasMedium>
             </View>

@@ -3,7 +3,7 @@ export const endpoints = {
     signup: '/Auth/RegisterEmployee',
     login: '/Auth/Login',
     forgotPassword: '/Auth/SendOtp',
-    verifyCode: '/Auth/VerifyOtp/',
+    verifyCode: '/Auth/VerifyOtp',
     resetPassword: '/Auth/ResetPassword',
     logout: '/user/logout',
   },

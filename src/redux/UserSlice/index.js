@@ -101,29 +101,16 @@ export const SendForgotPasswordEmail = createAsyncThunk(
       )
         .then(res => {
           response = res;
-          // showToast(getMessage(res));
-          // showMessage({
-          //   message: res.message,
-          //   type: 'success',
-          // });
           showToast(res.message)
-
           dispatch(hideLoader());
         })
         .catch(e => {
           dispatch(hideLoader());
-
           setTimeout(() => {
-            // showToast(getMessage(e));
-            // showMessage({
-            //   message: e,
-            //   type: 'danger',
-            // });
             showToast(e)
           }, 500);
           throw new Error(e);
         });
-
       return response;
     } catch (error) {
       throw new Error(error);
@@ -134,19 +121,14 @@ export const SendForgotPasswordEmail = createAsyncThunk(
 // VERIFY OTP CODE THUNK
 export const VerifyCode = createAsyncThunk(
   'user/verifycode',
-  async ({ email, code }, { dispatch }) => {
+  async (data, { dispatch }) => {
     dispatch(showLoader());
     try {
       let response;
-      await Api.post(`${endpoints.auth.verifyCode}/${email}/${code}`)
+      await Api.post(endpoints.auth.verifyCode, data, false)
         .then(res => {
           response = res;
-          showToast(getMessage(res?.message));
-          // showMessage({
-          //   message: res.message,
-          //   type: 'success',
-          // });
-
+          showToast(res?.message);
           dispatch(hideLoader());
         })
         .catch(e => {
@@ -154,10 +136,6 @@ export const VerifyCode = createAsyncThunk(
 
           setTimeout(() => {
             showToast(e);
-            // showMessage({
-            //   message: e,
-            //   type: 'danger',
-            // });
           }, 500);
           throw new Error(e);
         });
@@ -187,21 +165,12 @@ export const ResetPassword = createAsyncThunk(
         .then(res => {
           response = res;
           showToast(res?.message);
-          // showMessage({
-          //   message: res?.message,
-          //   type: 'success',
-          // });
           dispatch(hideLoader());
         })
         .catch(e => {
           dispatch(hideLoader());
-
           setTimeout(() => {
             showToast(e);
-            // showMessage({
-            //   message: e,
-            //   type: 'danger',
-            // });
           }, 500);
           throw new Error(e);
         });

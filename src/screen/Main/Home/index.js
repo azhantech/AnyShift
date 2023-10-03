@@ -1,16 +1,16 @@
-import React, {useLayoutEffect} from 'react';
-import {ScrollView, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { ScrollView, Text, View, Image, TouchableOpacity } from 'react-native';
 import Scrollable from '../../../component/ScrollWrapper';
-import {Styles} from './Styles';
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
-import {icons} from '../../../assets/images';
+import { Styles } from './Styles';
+import { vh, vw } from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
+import { icons } from '../../../assets/images';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasSemiBold from '../../../component/Texts/QanelasSemiBold';
 import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import CustomButton from '../../../component/Buttons/CustomButton';
-import {FlatList} from 'react-native-gesture-handler';
-import {AirbnbRating} from 'react-native-ratings';
+import { FlatList } from 'react-native-gesture-handler';
+import { AirbnbRating } from 'react-native-ratings';
 
 const Home = props => {
   useLayoutEffect(() => {
@@ -51,10 +51,10 @@ const Home = props => {
             style={Styles.renderItemMainContainer.leftContainer.headingText}>
             No reviews Yet
           </QanelasBold>
-          <QanelasMedium
+          {/* <QanelasMedium
             style={Styles.renderItemMainContainer.leftContainer.reviewText}>
             Invite someone to write a review about you!
-          </QanelasMedium>
+          </QanelasMedium> */}
         </View>
         <TouchableOpacity style={Styles.renderItemMainContainer.rightContainer}>
           <Image
@@ -87,7 +87,7 @@ const Home = props => {
       <View style={Styles.headingContainer}>
         <QanelasBold style={Styles.todoHeading}>To-do list</QanelasBold>
       </View>
-      <View style={{marginTop: vh}}>
+      <View style={{ marginTop: vh }}>
         <FlatList data={[1]} renderItem={renderItem} />
       </View>
     </ScrollView>

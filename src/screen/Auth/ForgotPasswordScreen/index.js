@@ -28,10 +28,6 @@ const ForgotPasswordScreen = props => {
   const [step, setStep] = useState(1);
   const handleEmail = async () => {
     if (email == null) {
-      // showMessage({
-      //   message: 'Please enter email address',
-      //   type: 'danger',
-      // });
       showToast('Please enter email address')
       return;
     }
@@ -41,15 +37,11 @@ const ForgotPasswordScreen = props => {
           email,
         }),
       );
-      if (response) {
+      if (response?.payload) {
         setStep(step + 1);
       }
     } catch (error) {
       showToast(error)
-      // showMessage({
-      //   message: error,
-      //   type: 'danger',
-      // });
     }
   };
 
@@ -60,56 +52,38 @@ const ForgotPasswordScreen = props => {
   const handleVerification = async () => {
     try {
       if (verificationCode == null) {
-        // showMessage({
-        //   message: 'Please enter code',
-        //   type: 'danger',
-        // });
         showToast('Please enter code')
         return;
       }
+      const data = {
+        email,
+        otp: verificationCode,
+      }
+
       const response = await dispatch(
-        VerifyCode({
-          email,
-          verificationCode,
-        }),
+        VerifyCode(data),
       );
-      if (response) {
+      if (response?.payload) {
         setStep(step + 1);
       }
     } catch (e) {
       showToast(e)
-      // showMessage({
-      //   message: e,
-      //   type: 'danger',
-      // });
     }
   };
 
   const handleUpdatedPassword = async () => {
     if (password == null) {
-      // showMessage({
-      //   message: 'Please enter password',
-      //   type: 'danger'
-      // })
       showToast('Please enter password')
       return
     }
 
     if (confirmPassword == null) {
-      // showMessage({
-      //   message: 'Please confirm password',
-      //   type: 'danger'
-      // })
       showToast('Please confirm password')
 
       return
     }
 
     if (password !== confirmPassword) {
-      // showMessage({
-      //   message: 'Passwords do not match',
-      //   type: 'danger'
-      // })
       showToast('Passwords do not match')
       return
     }
@@ -120,14 +94,10 @@ const ForgotPasswordScreen = props => {
         code,
         password
       }))
-      if (response) {
+      if (response?.payload) {
         props.navigation.goBack()
       }
     } catch (e) {
-      // showMessage({
-      //   message: e,
-      //   type: 'danger'
-      // })
       showToast(e)
     }
   }
@@ -153,10 +123,6 @@ const ForgotPasswordScreen = props => {
         }),
       );
     } catch (e) {
-      // showMessage({
-      //   message: e,
-      //   type: 'danger',
-      // });
       showToast(e)
     }
   };
