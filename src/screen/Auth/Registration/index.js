@@ -204,15 +204,6 @@ const Registration = props => {
               returnKeyType="next"
             />
             <InputField
-              placeholder="Enter phone number"
-              label="Phone number"
-              required
-              onChangeText={setPhone}
-              value={phone}
-              returnKeyType="next"
-              keyboardType="number-pad"
-            />
-            <InputField
               placeholder="Enter Nick Name"
               label="Nick Name"
               optional
@@ -227,42 +218,41 @@ const Registration = props => {
             </QanelasRegular>
           </View>
 
-          {/* <View
+          <View
             style={{
               height: '12%',
               justifyContent: 'space-around',
-              backgroundColor: 'red',
               width: '80%',
             }}>
             <QanelasRegular style={[styles.text]}>Phone Number</QanelasRegular>
-            <View style={{height: '60%'}}>
+            <View style={{ height: '60%' }}>
               <PhoneInput
-                // ref={phoneInput}
-                // defaultValue={'Please Enter your number'}
+                layout='second'
                 defaultCode="DM"
-                layout="first"
                 onChangeText={text => {
-                  // setValue(text);
                   console.log('Text from ChangeText =======>', text);
                 }}
                 onChangeFormattedText={text => {
                   setPhone(text);
-                  // setFormattedValue(text);
                 }}
-                // withDarkTheme
-                // withShadow
-                // autoFocus
+
                 containerStyle={{
                   backgroundColor: colors.textInputBackgroundColor,
                   borderRadius: vh * 2,
+                  height: 7 * vh
+
                 }}
                 textContainerStyle={{
                   backgroundColor: colors.textInputBackgroundColor,
                   borderRadius: vh * 2,
+                  height: 7 * vh
+                }}
+                textInputStyle={{
+                  height: 7 * vh
                 }}
               />
             </View>
-          </View> */}
+          </View>
           <View style={styles.dobContainer}>
             <QanelasRegular style={styles.text}>Date of Birth</QanelasRegular>
             <View style={styles.pickerContainer}>

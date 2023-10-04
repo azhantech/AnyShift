@@ -1,6 +1,6 @@
-import {StyleSheet} from 'react-native';
-import {colors} from '../../../utils/appTheme';
-import {vh, vw} from '../../../utils/dimensions';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../../utils/appTheme';
+import { vh, vw } from '../../../utils/dimensions';
 const containerWidth = vw * 80;
 export const styles = StyleSheet.create({
   mainContainer: {
@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
     color: colors.black,
   },
   fieldContainer: {
-    height: vh * 46,
+    height: vh * 35,
     width: containerWidth,
     justifyContent: 'space-around',
   },
@@ -68,6 +68,7 @@ export const styles = StyleSheet.create({
     height: vh * 10,
     width: containerWidth,
     justifyContent: 'center',
+    marginTop: 2 * vh
   },
   pickerContainer: {
     flexDirection: 'row',
@@ -96,7 +97,7 @@ export const styles = StyleSheet.create({
     height: 8 * vw,
     borderRadius: 8 * vw,
   },
-  text: {fontSize: vh * 1.5},
+  text: { fontSize: vh * 1.5 },
 
   backIconStyle: {
     resizeMode: 'contain',

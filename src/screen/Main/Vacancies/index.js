@@ -21,6 +21,14 @@ const Vacancies = ({ navigation }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [data, setData] = useState([]);
   const [cancelReasonModal, setCancelReasonModal] = useState(false);
+  const [refreshing, setRefreshing] = useState(false);
+  const [pageNo, setPageNo] = useState(1);
+  const [pageSize, setPageSize] = useState(20);
+  const [searchText, setSearchText] = useState('');
+  const handleRefresh = () => {
+    setRefreshing(true)
+    getData()
+  }
   const renderFavIcon = () => {
     if (isFavourite) {
       return icons.heartFilled;
@@ -34,9 +42,7 @@ const Vacancies = ({ navigation }) => {
   const onHandleCancelReasonModal = () => {
     setCancelReasonModal(!cancelReasonModal);
   };
-  const [pageNo, setPageNo] = useState(1);
-  const [pageSize, setPageSize] = useState(20);
-  const [searchText, setSearchText] = useState('');
+
   const getData = async () => {
     // try {
     const data = {
@@ -47,11 +53,12 @@ const Vacancies = ({ navigation }) => {
     await dispatch(getJobs(data))
       .then(response => {
         console.log('Response from GetJobs ========>', response);
-
         setData(response?.payload?.jobs);
+        setRefreshing(false)
       })
       .catch(err => {
         console.log('Error from getJobs ==>', err);
+        setRefreshing(false)
       });
   };
 
@@ -247,6 +254,8 @@ const Vacancies = ({ navigation }) => {
       return (
         <View>
           <Carousel
+            refreshing={refreshing}
+            onRefresh={handleRefresh}
             data={data}
             renderItem={renderCarouselItem}
             sliderWidth={vw * 100}
@@ -259,6 +268,8 @@ const Vacancies = ({ navigation }) => {
     } else {
       return (
         <FlatList
+          refreshing={refreshing}
+          onRefresh={handleRefresh}
           data={data}
           renderItem={renderItem}
           style={styles.flatListStyle}
