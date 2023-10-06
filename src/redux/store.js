@@ -8,6 +8,7 @@ import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import general from './general';
 import LoaderSlice from './LoaderSlice';
 import UserSlice from './UserSlice';
+import AuthSlice from './Employer/AuthSlice';
 
 export const persistConfig = {
   key: 'anyshift-storage-root',
@@ -28,6 +29,7 @@ const reducers = combineReducers({
   general: general,
   user: UserSlice,
   loader: LoaderSlice,
+  auth: AuthSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);

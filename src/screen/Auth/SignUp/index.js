@@ -45,7 +45,8 @@ const SignupScreen = props => {
   ];
 
   const handleSignUp = id => {
-    setSignedInAs(id);
+    setSignedInAs(id?.id);
+    console.log('val ==>', id);
   };
 
   const renderSelectionView = () => {
@@ -56,7 +57,7 @@ const SignupScreen = props => {
             <TouchableOpacity
               key={index}
               style={styles.selectionCOntainer(signedInAs, val?.id)}
-              onPress={() => handleSignUp(val?.id)}>
+              onPress={() => handleSignUp(val)}>
               <View style={styles.selectionImageContainer}>
                 <Image
                   source={val?.image}

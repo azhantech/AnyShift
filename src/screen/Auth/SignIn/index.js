@@ -20,6 +20,7 @@ const SignInScreen = props => {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
+
   const handleSignIn = async () => {
     if (email == null) {
       showMessage({

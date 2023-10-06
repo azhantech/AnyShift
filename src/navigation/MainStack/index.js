@@ -21,7 +21,7 @@ const MainNavigator = () => {
     employer: DrawerNavigatorEmployer,
   };
   const navigator = navigatorMap[type] || DrawerNavigator;
-  // console.log('Navigator ==========>', JSON.stringify(navigator, null, 2));
+  console.log('Navigator ==========>', navigatorMap[type]);
   return (
     <RootStack.Navigator initialRouteName="AuthStack">
       {token?.token ? (
