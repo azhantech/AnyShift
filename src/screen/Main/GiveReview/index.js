@@ -15,6 +15,7 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import { useDispatch } from 'react-redux';
 import { ReviewJobApplicationDetail } from '../../../redux/ApplicationSlice';
 import { showMessage } from 'react-native-flash-message';
+import { showToast } from '../../../Api/HelperFunction';
 
 const GiveReview = ({ navigation, route }) => {
   const companyId = route?.params?.companyId
@@ -25,10 +26,11 @@ const GiveReview = ({ navigation, route }) => {
   const handleReviewJob = async () => {
     try {
       if (comment == null) {
-        showMessage({
-          message: 'Please write a review',
-          type: 'danger'
-        })
+        // showMessage({
+        //   message: 'Please write a review',
+        //   type: 'danger'
+        // })
+        showToast('Please write a review')
         return
       }
       const data = {
@@ -39,18 +41,20 @@ const GiveReview = ({ navigation, route }) => {
       const response = await dispatch(ReviewJobApplicationDetail(data))
       console.warn(response)
       if (response?.payload?.statusCode == 200) {
-        showMessage({
-          message: 'Review Posted Successfully',
-          type: 'success'
-        })
+        // showMessage({
+        //   message: 'Review Posted Successfully',
+        //   type: 'success'
+        // })
+        showToast('Review Posted Successfully')
         navigation.goBack();
       }
 
     } catch (e) {
-      showMessage({
-        message: e,
-        type: 'danger'
-      })
+      // showMessage({
+      //   message: e,
+      //   type: 'danger'
+      // })
+      showToast(e)
     }
   }
   const renderReviews = () => {

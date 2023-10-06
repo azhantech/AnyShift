@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
+import React, { useState } from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import QanelasBold from '../Texts/QanelasBold';
 import QanelasRegular from '../Texts/QanelasRegular';
 import QanelasMedium from '../Texts/QanelasMedium';
-import {icons} from '../../assets/images';
+import { icons } from '../../assets/images';
 import moment from 'moment/moment';
 
 const VacancyItem = props => {
-  const {item, onPress} = props;
+  const { item, onPress } = props;
   const [isFavourite, setIsFavourite] = useState(item?.favorite);
   console.log('VacancyItem ===========>', item?.company?.imagePath);
   const renderFavIcon = () => {
@@ -22,6 +22,8 @@ const VacancyItem = props => {
   const handleFav = () => {
     setIsFavourite(!isFavourite);
   };
+
+  console.log(JSON.stringify(item, null, 2), 'itemshereeeee')
   return (
     <TouchableOpacity
       onPress={onPress}
@@ -32,7 +34,7 @@ const VacancyItem = props => {
           <Image
             source={
               item?.company?.imagePath
-                ? {uri: item?.company?.imagePath}
+                ? { uri: item?.company?.imagePath }
                 : icons.planning
             }
             style={styles.userImage}
@@ -51,7 +53,8 @@ const VacancyItem = props => {
             </TouchableOpacity>
           </View>
           <QanelasRegular style={styles.dateStyle}>
-            {moment(item?.createdAt).utc().local().fromNow()}
+            {/* {moment(item?.createdAt).utc().local().fromNow()} */}
+            {item?.postedOn}
           </QanelasRegular>
 
           <View style={styles.locationDetailsStyle}>

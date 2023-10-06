@@ -22,6 +22,7 @@ import { useDispatch } from 'react-redux';
 import { getJobsDetails, ApplyFOrJob } from '../../../redux/JobSlice';
 import { useEffect } from 'react';
 import { showMessage } from 'react-native-flash-message';
+import { showToast } from '../../../Api/HelperFunction';
 
 const VacancyJobDetails = ({ navigation, route }) => {
   const dispatch = useDispatch();
@@ -60,17 +61,19 @@ const VacancyJobDetails = ({ navigation, route }) => {
       const response = await dispatch(ApplyFOrJob(data));
       if (response) {
         console.log(response, 'responseresponseresponse')
-        showMessage({
-          message: 'Applied successfully',
-          type: 'success',
-        });
+        // showMessage({
+        //   message: 'Applied successfully',
+        //   type: 'success',
+        // });
+        showToast('Applied successfully')
         onHandleCancelReasonModal();
       }
     } catch (e) {
-      showMessage({
-        message: e,
-        type: 'danger',
-      });
+      // showMessage({
+      //   message: e,
+      //   type: 'danger',
+      // });
+      showToast(e)
     }
   };
   const onHandleCancelReasonModal = () => {

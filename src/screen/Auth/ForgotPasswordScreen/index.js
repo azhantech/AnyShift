@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import React, { useState } from 'react';
+import { TouchableOpacity, View } from 'react-native';
 
-import {icons} from '../../../assets/images/index';
+import { icons } from '../../../assets/images/index';
 import QanelasBold from '../../../component/Texts/QanelasBold';
 import QanelasRegular from '../../../component/Texts/QanelasRegular';
 import styles from './styles';
@@ -11,9 +11,10 @@ import CustomButton from '../../../component/Buttons/CustomButton';
 import AuthHeader from '../../../component/Headers/AuthHeader';
 import InputField from '../../../component/Inputs/InputField';
 import GeneralModal from '../../../component/ModalMessages/GeneralModal';
-import {showMessage} from 'react-native-flash-message';
-import {useDispatch} from 'react-redux';
-import {ResetPassword, SendForgotPasswordEmail, VerifyCode} from '../../../redux/UserSlice';
+import { showMessage } from 'react-native-flash-message';
+import { useDispatch } from 'react-redux';
+import { ResetPassword, SendForgotPasswordEmail, VerifyCode } from '../../../redux/UserSlice';
+import { showToast } from '../../../Api/HelperFunction';
 
 const ForgotPasswordScreen = props => {
   const dispatch = useDispatch();
@@ -27,10 +28,7 @@ const ForgotPasswordScreen = props => {
   const [step, setStep] = useState(1);
   const handleEmail = async () => {
     if (email == null) {
-      showMessage({
-        message: 'Please enter email address',
-        type: 'danger',
-      });
+      showToast('Please enter email address')
       return;
     }
     try {
@@ -39,14 +37,11 @@ const ForgotPasswordScreen = props => {
           email,
         }),
       );
-      if (response) {
+      if (response?.payload) {
         setStep(step + 1);
       }
     } catch (error) {
-      showMessage({
-        message: error,
-        type: 'danger',
-      });
+      showToast(error)
     }
   };
 
@@ -57,51 +52,39 @@ const ForgotPasswordScreen = props => {
   const handleVerification = async () => {
     try {
       if (verificationCode == null) {
-        showMessage({
-          message: 'Please enter code',
-          type: 'danger',
-        });
+        showToast('Please enter code')
         return;
       }
+      const data = {
+        email,
+        otp: verificationCode,
+      }
+
       const response = await dispatch(
-        VerifyCode({
-          email,
-          verificationCode,
-        }),
+        VerifyCode(data),
       );
-      if (response) {
+      if (response?.payload) {
         setStep(step + 1);
       }
     } catch (e) {
-      showMessage({
-        message: e,
-        type: 'danger',
-      });
+      showToast(e)
     }
   };
 
   const handleUpdatedPassword = async () => {
-    if(password == null){
-      showMessage({
-        message: 'Please enter password',
-        type: 'danger'
-      })
+    if (password == null) {
+      showToast('Please enter password')
       return
     }
 
-    if(confirmPassword == null){
-      showMessage({
-        message: 'Please confirm password',
-        type: 'danger'
-      })
+    if (confirmPassword == null) {
+      showToast('Please confirm password')
+
       return
     }
 
-    if(password !== confirmPassword){
-      showMessage({
-        message: 'Passwords do not match',
-        type: 'danger'
-      })
+    if (password !== confirmPassword) {
+      showToast('Passwords do not match')
       return
     }
 
@@ -111,14 +94,11 @@ const ForgotPasswordScreen = props => {
         code,
         password
       }))
-      if(response){
+      if (response?.payload) {
         props.navigation.goBack()
       }
-    } catch(e){
-      showMessage({
-        message: e,
-        type: 'danger'
-      })
+    } catch (e) {
+      showToast(e)
     }
   }
 
@@ -130,7 +110,7 @@ const ForgotPasswordScreen = props => {
       handleVerification();
     }
 
-    if(step == 3){
+    if (step == 3) {
       handleUpdatedPassword();
     }
   };
@@ -143,10 +123,7 @@ const ForgotPasswordScreen = props => {
         }),
       );
     } catch (e) {
-      showMessage({
-        message: e,
-        type: 'danger',
-      });
+      showToast(e)
     }
   };
 

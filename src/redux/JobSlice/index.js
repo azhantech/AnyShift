@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api, { get, post } from '../../Api';
 import { endpoints } from '../../Api/configs';
 import { hideLoader, showLoader } from '../LoaderSlice';
-import { showMessage } from 'react-native-flash-message';
 
 export const ApplyFOrJob = createAsyncThunk(
   'user/jobapply',

@@ -6167,6 +6167,10 @@ react-native-tab-view@^3.5.2:
   dependencies:
     use-latest-callback "^0.1.5"
 
+"react-native-toast@git+https://github.com/Salsoft-Technologies/react-native-toast.git":
+  version "1.0.7"
+  resolved "git+https://github.com/Salsoft-Technologies/react-native-toast.git#1b75b095d72061b69cce7853d56510c327787582"
+
 react-native@0.68.1:
   version "0.68.1"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.68.1.tgz#c3d92f89028cdc2453fe7cd2d532b3f68d1c27c8"
