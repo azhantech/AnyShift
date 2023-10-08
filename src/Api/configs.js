@@ -6,6 +6,7 @@ export const endpoints = {
     verifyCode: '/Auth/VerifyOtp',
     resetPassword: '/Auth/ResetPassword',
     logout: '/user/logout',
+    contactUs: '/Admin/ContactUs'
   },
   general: {
     getCountries: '/user/get-countries',

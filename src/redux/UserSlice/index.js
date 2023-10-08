@@ -182,6 +182,26 @@ export const ResetPassword = createAsyncThunk(
   },
 );
 
+export const contactUs = createAsyncThunk(
+  'user/contactUs',
+  async ({ Name, EmailAddress, Subject, Message }, { dispatch }) => {
+    dispatch(showLoader());
+    try {
+      let response = await Api.post(endpoints.auth.contactUs, {
+        Name, EmailAddress, Subject, Message
+      });
+      dispatch(hideLoader());
+      return Promise.resolve(response?.data);
+    } catch (error) {
+      dispatch(hideLoader());
+      setTimeout(() => {
+        showToast(error)
+      }, 500);
+      throw new Error(error);
+    }
+  },
+);
+
 
 // export const getJobs = createAsyncThunk('user/getJobbs', async dispatch => {
 //   dispatch(showLoader());
