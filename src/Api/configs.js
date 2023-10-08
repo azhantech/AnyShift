@@ -6,7 +6,7 @@ export const endpoints = {
     verifyCode: '/Auth/VerifyOtp',
     resetPassword: '/Auth/ResetPassword',
     logout: '/user/logout',
-    contactUs: '/Admin/ContactUs'
+    contactUs: '/Admin/ContactUs',
   },
   general: {
     getCountries: '/user/get-countries',
@@ -20,10 +20,9 @@ export const endpoints = {
   },
   application: {
     jobApplication: '/JobApplications',
-    reviewJobApplication: '/Companies/AddReview'
+    reviewJobApplication: '/Companies/AddReview',
   },
 };
-
 
 export const employersEndpoints = {
   auth: {
@@ -34,7 +33,10 @@ export const employersEndpoints = {
     resetPassword: '/Auth/ResetPassword',
     logout: '/user/logout',
   },
-}
+  companies: {
+    company: '/Companies',
+  },
+};
 export const base_url =
   'https://portaldemo-001-site19.ctempurl.com/api/mobileapp';
 export const web_url = 'https://dev124.onlinetestingserver.com/';

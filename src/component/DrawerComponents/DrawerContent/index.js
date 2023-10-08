@@ -41,7 +41,7 @@ const AnimatedTouchable = Animated.createAnimatedComponent(View);
 const DrawerContent = props => {
   const type = useSelector(state => state.general.type);
   const userDetails = useSelector(state => state?.user?.user);
-  // console.log('Token ==========>', token);
+  console.log('userDetails ==========>', userDetails);
   const progress = useDrawerProgress();
   let orders = null;
   const dispatch = useDispatch();

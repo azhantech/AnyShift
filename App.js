@@ -26,7 +26,7 @@ const App = () => {
           <Navigation />
           <Loader />
         </View>
-        <FlashMessage position="top" />
+        <FlashMessage position="bottom" />
       </PersistGate>
     </Provider>
   );

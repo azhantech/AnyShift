@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, FlatList} from 'react-native';
 import {useDispatch} from 'react-redux';
 
@@ -8,10 +8,26 @@ import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import CompanyItem from '../../../component/Items/CompanyItem';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import {setType} from '../../../redux/general';
+import {getCompanies} from '../../../redux/Employer/CompanySlice';
 
 const CompanyListScreen = ({navigation}) => {
   const dispatch = useDispatch();
+  const getData = async () => {
+    // try {
 
+    await dispatch(getCompanies())
+      .then(response => {
+        console.log('Response  ================>', response);
+        // setData(response?.payload?.jobApplications);
+      })
+      .catch(err => {
+        console.log('Error from getJobs ==>', err);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   const renderItem = ({item}) => {
     return (
       <CompanyItem
