@@ -46,8 +46,8 @@ const ContactUs = props => {
         Message: message
       }
       const response = await dispatch(contactUs(data))
-      if (response) {
-        console.warn(response, 'responseeeeehereee')
+      if (response?.payload?.statusCode == 200) {
+        showToast('Your feedback has been submitted successfully', 'success')
       }
     } catch (e) {
       showToast(e)

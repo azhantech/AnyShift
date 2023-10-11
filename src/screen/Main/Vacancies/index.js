@@ -52,7 +52,6 @@ const Vacancies = ({ navigation }) => {
     };
     await dispatch(getJobs(data))
       .then(response => {
-        console.log('Response from GetJobs ========>', response);
         setData(response?.payload?.jobs);
         setRefreshing(false)
       })

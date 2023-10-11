@@ -22,6 +22,9 @@ export const endpoints = {
     jobApplication: '/JobApplications',
     reviewJobApplication: '/Companies/AddReview',
   },
+  profile: {
+    getProfile: '/Employees/GetProfile'
+  }
 };
 
 export const employersEndpoints = {

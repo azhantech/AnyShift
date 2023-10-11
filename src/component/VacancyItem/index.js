@@ -10,7 +10,6 @@ import moment from 'moment/moment';
 const VacancyItem = props => {
   const { item, onPress } = props;
   const [isFavourite, setIsFavourite] = useState(item?.favorite);
-  console.log('VacancyItem ===========>', item?.company?.imagePath);
   const renderFavIcon = () => {
     if (isFavourite) {
       return icons.heartFilled;
@@ -23,7 +22,6 @@ const VacancyItem = props => {
     setIsFavourite(!isFavourite);
   };
 
-  console.log(JSON.stringify(item, null, 2), 'itemshereeeee')
   return (
     <TouchableOpacity
       onPress={onPress}

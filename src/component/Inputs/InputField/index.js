@@ -8,7 +8,6 @@ import styles from './styles';
 // import TextInputMask from 'react-native-text-input-mask';
 
 const InputField = props => {
-  console.log('props.isPassword ===>', props.isPassword);
   const [isPassword, setIsPassword] = useState(props.secureTextEntry);
 
   const inputRef = useRef(null);

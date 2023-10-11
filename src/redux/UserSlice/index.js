@@ -2,10 +2,8 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import Api, { get, post } from '../../Api';
 import { endpoints } from '../../Api/configs';
 import { hideLoader, showLoader } from '../LoaderSlice';
-import { showMessage } from 'react-native-flash-message';
 import { showToast } from '../../Api/HelperFunction';
 
-//Signup Employee Thunk
 export const SignUpEmployee = createAsyncThunk(
   'user/SignUpEmployee',
   async (
@@ -59,7 +57,6 @@ export const SignUpEmployee = createAsyncThunk(
   },
 );
 
-// LOGIN USER THUNK
 export const LoginUser = createAsyncThunk(
   'user/loginuser',
   async ({ email, password }, { dispatch }) => {
@@ -85,7 +82,6 @@ export const LoginUser = createAsyncThunk(
   },
 );
 
-// FORGOT PASSWORD THUNK
 export const SendForgotPasswordEmail = createAsyncThunk(
   'user/forgotpassword',
   async ({ email }, { dispatch }) => {
@@ -118,7 +114,6 @@ export const SendForgotPasswordEmail = createAsyncThunk(
   },
 );
 
-// VERIFY OTP CODE THUNK
 export const VerifyCode = createAsyncThunk(
   'user/verifycode',
   async (data, { dispatch }) => {
@@ -191,7 +186,7 @@ export const contactUs = createAsyncThunk(
         Name, EmailAddress, Subject, Message
       });
       dispatch(hideLoader());
-      return Promise.resolve(response?.data);
+      return Promise.resolve(response);
     } catch (error) {
       dispatch(hideLoader());
       setTimeout(() => {
@@ -202,32 +197,38 @@ export const contactUs = createAsyncThunk(
   },
 );
 
-
-// export const getJobs = createAsyncThunk('user/getJobbs', async dispatch => {
-//   dispatch(showLoader());
-//   try {
-//     const response = await Api.get(endpoints.jobs.jobs);
-//     console.log('Response from Getjobs Actions ======>', response);
-//     dispatch(hideLoader());
-
-//     return Promise.resolve(response);
-//   } catch (error) {
-//     console.log('Error from getJobs ===========>', error);
-//     dispatch(hideLoader());
-
-//     throw new Error(error);
-//   }
-// });
+export const getProfileDetails = createAsyncThunk(
+  'user/getProfileDetails',
+  async ({ }, { dispatch }) => {
+    dispatch(showLoader());
+    try {
+      let response = await get(endpoints.profile.getProfile, false);
+      dispatch(hideLoader());
+      return Promise.resolve(response);
+    } catch (error) {
+      dispatch(hideLoader());
+      setTimeout(() => {
+        showToast(error, 'danger')
+      }, 500);
+      throw new Error(error);
+    }
+  },
+);
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: null,
+    profile: null
   },
   reducers: {
     login: (state, action) => {
       console.log(action.payload);
       state.user = action.payload;
+    },
+    profile: (state, action) => {
+      console.log(action.payload);
+      state.profile = action.payload;
     },
     logout: state => {
       state.user = null;
@@ -243,6 +244,17 @@ export const userSlice = createSlice({
     },
     [LoginUser.rejected]: state => {
       // state.loading = 'failed';
+      console.error('FAILED');
+    },
+    [getProfileDetails.fulfilled]: (state, { payload }) => {
+      state.profile = payload;
+      state.loading = false;
+    },
+    [getProfileDetails.pending]: state => {
+      state.loading = true;
+    },
+    [getProfileDetails.rejected]: state => {
+      state.loading = 'failed';
       console.error('FAILED');
     },
   },

@@ -1,23 +1,23 @@
 import React from 'react';
 import styles from './styles';
 import DrawerButton from '../DrawerButton';
-import {Image, TouchableOpacity, View} from 'react-native';
+import { Image, TouchableOpacity, View } from 'react-native';
 import QanelasSemiBold from '../../Texts/QanelasSemiBold';
 import QanelasMedium from '../../Texts/QanelasMedium';
 import QanelasRegular from '../../Texts/QanelasRegular';
 
-import {useDrawerProgress} from '@react-navigation/drawer';
+import { useDrawerProgress } from '@react-navigation/drawer';
 import Animated from 'react-native-reanimated';
 import {
   drawerRoutes,
   drawerRoutesCompany,
   drawerRoutesEmployer,
 } from '../../../navigation/NavigationOptions';
-import {generalImage, icons} from '../../../assets/images';
-import {vh, vw} from '../../../utils/dimensions';
-import {colors} from '../../../utils/appTheme';
-import {useDispatch, useSelector} from 'react-redux';
-import {logout} from '../../../redux/UserSlice';
+import { generalImage, icons } from '../../../assets/images';
+import { vh, vw } from '../../../utils/dimensions';
+import { colors } from '../../../utils/appTheme';
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../../redux/UserSlice';
 const routeOrders = [
   'HomeStack',
   'FavStack',
@@ -41,7 +41,6 @@ const AnimatedTouchable = Animated.createAnimatedComponent(View);
 const DrawerContent = props => {
   const type = useSelector(state => state.general.type);
   const userDetails = useSelector(state => state?.user?.user);
-  console.log('userDetails ==========>', userDetails);
   const progress = useDrawerProgress();
   let orders = null;
   const dispatch = useDispatch();
@@ -51,7 +50,7 @@ const DrawerContent = props => {
     outputRange: [-40 * vw * (1 + 1), 0],
   });
   const animatedStyles = {
-    transform: [{translateX}],
+    transform: [{ translateX }],
   };
 
   const getRoute = routeName => {

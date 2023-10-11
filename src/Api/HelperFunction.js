@@ -1,24 +1,24 @@
 /* eslint-disable no-shadow */
-import {EventRegister} from 'react-native-event-listeners';
+import { EventRegister } from 'react-native-event-listeners';
 
 // import RNFetchBlob from "rn-fetch-blob";
-import {Alert, Platform} from 'react-native';
+import { Alert, Platform } from 'react-native';
 // import { getLocale, getLocalizedString } from "../Translations";
 // import FileViewer from "react-native-file-viewer";
 // import moment from "moment";
-import {showMessage} from 'react-native-flash-message';
-import {store} from '../redux/store';
+import { showMessage } from 'react-native-flash-message';
+import { store } from '../redux/store';
 
-export const showToast = msg => {
+export const showToast = (msg, type) => {
   setTimeout(() => {
     showMessage({
       message: msg,
-      type: 'default',
+      type: type ? type : 'default',
     });
   }, 500);
 };
 
-export const handleResponse = ({response, jsonResponse}) => {
+export const handleResponse = ({ response, jsonResponse }) => {
   switch (response.status) {
     case 200: {
       if (
@@ -64,7 +64,7 @@ export const performNetworkRequest = async (url, configs) => {
   try {
     const response = await fetch(url, configs);
     const jsonResponse = await response.json();
-    return Promise.resolve({response, jsonResponse});
+    return Promise.resolve({ response, jsonResponse });
   } catch (e) {
     return Promise.reject(e);
   }

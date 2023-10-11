@@ -5,11 +5,10 @@ import {
   handleResponse,
   performNetworkRequest,
 } from './HelperFunction';
-import {base_url} from './configs';
+import { base_url } from './configs';
 
 export const post = async (endpoint, body, formData = false, queryParams) => {
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
-  console.log(url, 'urlurlurlurlurl');
   const configs = getConfigs('POST', body, formData);
 
   try {
@@ -26,6 +25,7 @@ export const post = async (endpoint, body, formData = false, queryParams) => {
 export const get = async (endpoint, queryParams) => {
   console.log('Inside get Mehthod ');
   const url = base_url + endpoint + dataToQueryParameter(queryParams);
+  console.log(url, 'urlurlurlurlurl')
   const configs = getConfigs('GET');
   console.log('configs =======>,', url);
 

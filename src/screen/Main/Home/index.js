@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useEffect } from 'react';
 import { ScrollView, Text, View, Image, TouchableOpacity } from 'react-native';
 import Scrollable from '../../../component/ScrollWrapper';
 import { Styles } from './Styles';
@@ -11,8 +11,12 @@ import QanelasMedium from '../../../component/Texts/QanelasMedium';
 import CustomButton from '../../../component/Buttons/CustomButton';
 import { FlatList } from 'react-native-gesture-handler';
 import { AirbnbRating } from 'react-native-ratings';
+import { showToast } from '../../../Api/HelperFunction';
+import { useDispatch } from 'react-redux';
+import { getProfileDetails } from '../../../redux/UserSlice';
 
 const Home = props => {
+  const dispatch = useDispatch();
   useLayoutEffect(() => {
     props.navigation.setOptions({
       headerBackground: () => {
@@ -42,6 +46,24 @@ const Home = props => {
       },
     });
   });
+
+  const handleProfileDetails = async () => {
+    try {
+      await dispatch(getProfileDetails())
+        .then(response => {
+          console.log(response, 'responsehereeePRofileDetails')
+        })
+        .catch(err => {
+          console.log('Error from getJobs ==>', err);
+        });
+    } catch (e) {
+      showToast(e)
+    }
+  }
+
+  useEffect(() => {
+    handleProfileDetails()
+  }, [])
 
   const renderItem = () => {
     return (
