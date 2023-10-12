@@ -1,8 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import Api, { get, post } from '../../Api';
-import { endpoints } from '../../Api/configs';
-import { hideLoader, showLoader } from '../LoaderSlice';
-import { showToast } from '../../Api/HelperFunction';
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
+import Api, {get, post} from '../../Api';
+import {endpoints} from '../../Api/configs';
+import {hideLoader, showLoader} from '../LoaderSlice';
+import {showToast} from '../../Api/HelperFunction';
 
 export const SignUpEmployee = createAsyncThunk(
   'user/SignUpEmployee',
@@ -18,7 +18,7 @@ export const SignUpEmployee = createAsyncThunk(
       emailAddress,
       password,
     },
-    { dispatch },
+    {dispatch},
   ) => {
     dispatch(showLoader());
     try {
@@ -50,7 +50,7 @@ export const SignUpEmployee = createAsyncThunk(
         //   message: error,
         //   type: 'danger',
         // });
-        showToast(error)
+        showToast(error);
       }, 500);
       throw new Error(error);
     }
@@ -59,7 +59,7 @@ export const SignUpEmployee = createAsyncThunk(
 
 export const LoginUser = createAsyncThunk(
   'user/loginuser',
-  async ({ email, password }, { dispatch }) => {
+  async ({email, password}, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response = await Api.post(endpoints.auth.login, {
@@ -75,7 +75,7 @@ export const LoginUser = createAsyncThunk(
         //   message: error,
         //   type: 'danger',
         // });
-        showToast(error)
+        showToast(error);
       }, 500);
       throw new Error(error);
     }
@@ -84,7 +84,7 @@ export const LoginUser = createAsyncThunk(
 
 export const SendForgotPasswordEmail = createAsyncThunk(
   'user/forgotpassword',
-  async ({ email }, { dispatch }) => {
+  async ({email}, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response;
@@ -97,13 +97,13 @@ export const SendForgotPasswordEmail = createAsyncThunk(
       )
         .then(res => {
           response = res;
-          showToast(res.message)
+          showToast(res.message);
           dispatch(hideLoader());
         })
         .catch(e => {
           dispatch(hideLoader());
           setTimeout(() => {
-            showToast(e)
+            showToast(e);
           }, 500);
           throw new Error(e);
         });
@@ -116,7 +116,7 @@ export const SendForgotPasswordEmail = createAsyncThunk(
 
 export const VerifyCode = createAsyncThunk(
   'user/verifycode',
-  async (data, { dispatch }) => {
+  async (data, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response;
@@ -144,7 +144,7 @@ export const VerifyCode = createAsyncThunk(
 
 export const ResetPassword = createAsyncThunk(
   'user/resetpassword',
-  async ({ email, code, password }, { dispatch }) => {
+  async ({email, code, password}, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response;
@@ -179,18 +179,21 @@ export const ResetPassword = createAsyncThunk(
 
 export const contactUs = createAsyncThunk(
   'user/contactUs',
-  async ({ Name, EmailAddress, Subject, Message }, { dispatch }) => {
+  async ({Name, EmailAddress, Subject, Message}, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response = await Api.post(endpoints.auth.contactUs, {
-        Name, EmailAddress, Subject, Message
+        Name,
+        EmailAddress,
+        Subject,
+        Message,
       });
       dispatch(hideLoader());
       return Promise.resolve(response);
     } catch (error) {
       dispatch(hideLoader());
       setTimeout(() => {
-        showToast(error)
+        showToast(error);
       }, 500);
       throw new Error(error);
     }
@@ -199,7 +202,7 @@ export const contactUs = createAsyncThunk(
 
 export const getProfileDetails = createAsyncThunk(
   'user/getProfileDetails',
-  async ({ }, { dispatch }) => {
+  async (_, {dispatch}) => {
     dispatch(showLoader());
     try {
       let response = await get(endpoints.profile.getProfile, false);
@@ -207,9 +210,9 @@ export const getProfileDetails = createAsyncThunk(
       return Promise.resolve(response);
     } catch (error) {
       dispatch(hideLoader());
-      setTimeout(() => {
-        showToast(error, 'danger')
-      }, 500);
+      // setTimeout(() => {
+      //   showToast(error, 'danger');
+      // }, 500);
       throw new Error(error);
     }
   },
@@ -219,7 +222,7 @@ export const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: null,
-    profile: null
+    profile: null,
   },
   reducers: {
     login: (state, action) => {
@@ -235,7 +238,7 @@ export const userSlice = createSlice({
     },
   },
   extraReducers: {
-    [LoginUser.fulfilled]: (state, { payload }) => {
+    [LoginUser.fulfilled]: (state, {payload}) => {
       state.user = payload;
       // state.loading = false;
     },
@@ -246,7 +249,7 @@ export const userSlice = createSlice({
       // state.loading = 'failed';
       console.error('FAILED');
     },
-    [getProfileDetails.fulfilled]: (state, { payload }) => {
+    [getProfileDetails.fulfilled]: (state, {payload}) => {
       state.profile = payload;
       state.loading = false;
     },
@@ -260,7 +263,7 @@ export const userSlice = createSlice({
   },
 });
 
-export const { login, logout } = userSlice.actions;
+export const {login, logout} = userSlice.actions;
 
 export const selectUser = state => state.user.user;
 
